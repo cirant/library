@@ -1957,5 +1957,17 @@ ProgressBar.propTypes = {
   helperAlign: propTypes.oneOf(['start', 'between', 'end'])
 };
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
+var styles$c = {"tooltipContainer":"__tooltip__tooltipContainer__1KTrf","tooltip":"__tooltip__tooltip__1lp9e"};
+
+const Tooltip = ({
+  children
+}) => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$c.tooltipContainer
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$c.tooltip
+  }, " log "), children);
+};
+
+export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection, Tooltip };
 //# sourceMappingURL=index.modern.js.map

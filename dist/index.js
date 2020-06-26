@@ -2013,6 +2013,17 @@ ProgressBar.propTypes = {
   helperAlign: propTypes.oneOf(['start', 'between', 'end'])
 };
 
+var styles$c = {"tooltipContainer":"__tooltip__tooltipContainer__1KTrf","tooltip":"__tooltip__tooltip__1lp9e"};
+
+var Tooltip = function Tooltip(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$c.tooltipContainer
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$c.tooltip
+  }, " log "), children);
+};
+
 exports.Button = Button;
 exports.Card = Card;
 exports.Checkbox = Checkbox;
@@ -2032,4 +2043,5 @@ exports.Sidebar = Sidebar;
 exports.SidebarElement = SidebarElement;
 exports.Switch = Switch;
 exports.TitleSection = TitleSection;
+exports.Tooltip = Tooltip;
 //# sourceMappingURL=index.js.map

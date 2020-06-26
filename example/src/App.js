@@ -17,7 +17,8 @@ import {
   TitleSection,
   InputChip,
   Loading,
-  ProgressBar
+  ProgressBar,
+  Tooltip
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -407,8 +408,8 @@ const App = () => {
 
       <div className="d-flex">
         <div className="container">
-          <ProgressBar assistText="un texto de asistencia" progress={25} />
-          <ProgressBar assistText="un texto de asistencia" progress={25} percent />
+          <ProgressBar label="label 1" assistText="un texto de asistencia" progress={25} />
+          <ProgressBar label="label 2" assistText="un texto de asistencia" progress={25} percent />
           <ProgressBar progress={50} percent helperAlign="end" />
           <ProgressBar assistText="un texto de asistencia" helperAlign="start" progress={75} />
         </div>
@@ -435,6 +436,16 @@ const App = () => {
           } progress={75} />
           <ProgressBar assistText="un texto de asistencia" percent progress={100} />
         </div>
+      </div>
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">Tooltip</h1>
+
+      <div className="d-flex">
+        <Tooltip content="este es el content">
+          <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)} />
+        </Tooltip>
       </div>
     </div>
 
