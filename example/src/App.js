@@ -439,6 +439,16 @@ const App = () => {
       </div>
     </div>
 
+    <div className="container my-4">
+      <h1 className="mb-4">Tooltip</h1>
+
+      <div className="d-flex">
+        <Tooltip content="este es el content">
+          <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)} />
+        </Tooltip>
+      </div>
+    </div>
+
     <br />
 
     <Bullets typeList="order" items={[

@@ -18,6 +18,7 @@ import TitleSection from './title';
 import InputChip from './input/chips';
 import ProgressBar from './progressbar'
 import Bullets from './bullets'
+import Tooltip from './tooltip';
 
 export {
   Button,
@@ -39,5 +40,6 @@ export {
   InputChip,
   Loading,
   ProgressBar,
-  Bullets
+  Bullets,
+  Tooltip
 };

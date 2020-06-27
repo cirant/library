@@ -2423,45 +2423,39 @@
     .__progressbar__progressBar__R0HpQ .__progressbar__bellowContent__1lqZ7 .__progressbar__full__1WMCD {
       color: #007DB7; }
 
-.__bullets__bullets__cW0U2 {
-  display: flex;
-  flex-direction: column;
-  width: 100%; }
-
-.__bullet__bulletElement__1OQ67.__bullet__level-2__2xtuk, .__bullet__bulletElement__1OQ67.__bullet__level-3__3zm8A {
-  padding-left: 2rem;
-  font-size: 14px; }
-
-.__bullet__boxCircle__2C1_e {
-  margin: 0;
-  padding: 0;
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  background-color: black; }
-
-.__bullet__bulletElement__1OQ67 {
-  display: flex; }
-  .__bullet__bulletElement__1OQ67.__bullet__level-1__34DvD {
-    color: #383638; }
-    .__bullet__bulletElement__1OQ67.__bullet__level-1__34DvD .__bullet__notification__OHyf5 {
-      display: flex;
-      width: 8px;
-      height: 8px;
-      border-radius: 100%;
-      margin-left: 0.25rem;
-      background-color: #E81E2B; }
-  .__bullet__bulletElement__1OQ67.__bullet__level-2__2xtuk {
-    color: #646569; }
-  .__bullet__bulletElement__1OQ67.__bullet__level-3__3zm8A {
-    color: #9C9A9F; }
-  .__bullet__bulletElement__1OQ67 .__bullet__textContainer__3DxYi {
-    align-items: center;
-    display: flex; }
-    .__bullet__bulletElement__1OQ67 .__bullet__textContainer__3DxYi i {
-      margin-right: 0.5rem; }
-  .__bullet__bulletElement__1OQ67.__bullet__active__1eHUK {
-    color: #E81E2B; }
-  .__bullet__bulletElement__1OQ67:hover {
-    background-color: #F6F3F5;
-    cursor: pointer; }
+.__tooltip__tooltipContainer__1KTrf {
+  border: 1px dashed red;
+  position: relative; }
+  .__tooltip__tooltipContainer__1KTrf:hover .__tooltip__tooltip__1lp9e {
+    opacity: 1; }
+  .__tooltip__tooltipContainer__1KTrf .__tooltip__tooltip__1lp9e {
+    max-width: 256px;
+    position: absolute;
+    left: calc(100% + 24px);
+    background: white;
+    border-radius: 4px;
+    padding: 0.75rem;
+    opacity: 0;
+    pointer-events: none; }
+    .__tooltip__tooltipContainer__1KTrf .__tooltip__tooltip__1lp9e:after {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      z-index: -3;
+      box-shadow: 0 1px 2px 0 rgba(31, 30, 30, 0.35); }
+    .__tooltip__tooltipContainer__1KTrf .__tooltip__tooltip__1lp9e:before {
+      content: '';
+      opacity: 1;
+      z-index: -1;
+      background-color: white;
+      transform: rotate(45deg);
+      right: calc(100% - 8px);
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      position: absolute;
+      box-shadow: 0 1px 2px 0 rgba(31, 30, 30, 0.35); }
