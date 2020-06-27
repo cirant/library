@@ -1,53 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './_sidebarElement.scss';
-import { Icon } from '../../';
+import styles from './_bullet.scss';
 
-const SidebarElement = ({ text, icon, sublevel, level, notification, active, open, ...props }) => {
-  const defaultIcon = (!icon && level === 3) ? <Icon name="arrow-right" size="1" /> : icon;
-  let containerClasses = [styles.sidebarElement, styles['level-' + level]];
+const BulletElement = ({ count,text,typeList , icon, variant, active,number,index , ...props }) => {
 
-  if (active === true) {
-    containerClasses = containerClasses.concat(styles.active);
-  }
+  let numberList = count + 1;
+  const defaultPrefix = (typeList === 'order') ? numberList: (typeList === 'unorder') ?
+  <div className={styles.boxCircle}> </div>: '';
+  console.log(props);
+  console.log(typeList);
+
+  console.log(defaultPrefix);
+
+
 
   return <React.Fragment>
-    <div role="component" data-status={active ? 'active' : ''} className={containerClasses.join(' ')} {...props}>
-      <div className={[styles.textContainer].join(' ')}>
-        {defaultIcon}
-        {text}
-      </div>
-      {
-        (notification === true) && <span role="notification" className={[styles.notification].join(' ')}></span>
-      }
+    <div id={numberList} className={styles.bulletElement}>
+      {defaultPrefix}
+      <p>hellou 1</p>
     </div>
-    {
-      open && sublevel.map((child, index) => <SidebarElement key={index} level={level + 1} {...child} />)
-    }
   </React.Fragment>
 }
 
-SidebarElement.defaultProps = {
+BulletElement.defaultProps = {
   level: 1,
   open: false,
   sublevel: []
 }
 
-SidebarElement.propTypes = {
-  text: PropTypes.string.isRequired,
-  open: PropTypes.bool,
-  icon: PropTypes.element,
-  sublevel: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string,
-    icon: PropTypes.element,
-    level: PropTypes.number,
-    sublevel: PropTypes.array,
-    notification: PropTypes.bool,
-    active: PropTypes.bool
-  })),
-  level: PropTypes.number,
-  notification: PropTypes.bool,
-  active: PropTypes.bool
-};
 
-export default SidebarElement;
+export default BulletElement;

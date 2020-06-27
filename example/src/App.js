@@ -17,7 +17,8 @@ import {
   TitleSection,
   InputChip,
   Loading,
-  ProgressBar
+  ProgressBar,
+  Bullets
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -439,6 +440,16 @@ const App = () => {
     </div>
 
     <br />
+
+    <Bullets typeList="order" items={[
+      {
+        text: 'label first level B',
+      },
+      {
+        text: 'label first level B',
+      }
+    ]}>
+    </Bullets>
 
   </>
 }

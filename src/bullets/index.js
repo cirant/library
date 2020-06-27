@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SidebarElement from './sidebarElement';
-import styles from './_sidebar.scss';
+import styles from './_bullets.scss';
+import BulletElement from './Bullet'
 
-const Sidebar = ({ items }) => {
-  return <div className={[styles.sidebar].join(' ')}>
+const Bullets = ({ items, typeList }) => {
+
+  const typeOfBullet = typeList ? typeList : '';
+
+  return <div className={[styles.bullets].join(' ')}>
     {
-      items.map((element, index) => <SidebarElement key={index} {...element} />)
+       (typeOfBullet === 'order') ? items.map((element, index) => <BulletElement key={index} count={index} typeList={typeOfBullet} {...element} />) :
+       (typeOfBullet === 'unorder')? items.map((element, index) => <BulletElement key={index} {...element} typeList={typeOfBullet}/>):
+         (typeOfBullet === 'unorder') ? items.map((element, index) => <BulletElement key={index} {...element} />): ''
     }
   </div>;
 }
 
-Sidebar.propTypes = {
+Bullets.propTypes = {
   items: PropTypes.array.isRequired,
 };
 
-export default Sidebar;
+export default Bullets;

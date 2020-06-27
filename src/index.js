@@ -17,6 +17,7 @@ import Loading from './loading';
 import TitleSection from './title';
 import InputChip from './input/chips';
 import ProgressBar from './progressbar'
+import Bullets from './bullets'
 
 export {
   Button,
@@ -37,5 +38,6 @@ export {
   TitleSection,
   InputChip,
   Loading,
-  ProgressBar
+  ProgressBar,
+  Bullets
 };

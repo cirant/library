@@ -2013,6 +2013,64 @@ ProgressBar.propTypes = {
   helperAlign: propTypes.oneOf(['start', 'between', 'end'])
 };
 
+var styles$c = {"bullets":"__bullets__bullets__cW0U2"};
+
+var styles$d = {"bulletElement":"__bullet__bulletElement__1OQ67","level-2":"__bullet__level-2__2xtuk","level-3":"__bullet__level-3__3zm8A","boxCircle":"__bullet__boxCircle__2C1_e","level-1":"__bullet__level-1__34DvD","notification":"__bullet__notification__OHyf5","textContainer":"__bullet__textContainer__3DxYi","active":"__bullet__active__1eHUK"};
+
+var BulletElement = function BulletElement(_ref) {
+  var count = _ref.count,
+      typeList = _ref.typeList,
+      props = _objectWithoutPropertiesLoose(_ref, ["count", "text", "typeList", "icon", "variant", "active", "number", "index"]);
+
+  var numberList = count + 1;
+  var defaultPrefix = typeList === 'order' ? numberList : typeList === 'unorder' ? /*#__PURE__*/React.createElement("div", {
+    className: styles$d.boxCircle
+  }, " ") : '';
+  console.log(props);
+  console.log(typeList);
+  console.log(defaultPrefix);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    id: numberList,
+    className: styles$d.bulletElement
+  }, defaultPrefix, /*#__PURE__*/React.createElement("p", null, "hellou 1")));
+};
+
+BulletElement.defaultProps = {
+  level: 1,
+  open: false,
+  sublevel: []
+};
+
+var Bullets = function Bullets(_ref) {
+  var items = _ref.items,
+      typeList = _ref.typeList;
+  var typeOfBullet = typeList ? typeList : '';
+  return /*#__PURE__*/React.createElement("div", {
+    className: [styles$c.bullets].join(' ')
+  }, typeOfBullet === 'order' ? items.map(function (element, index) {
+    return /*#__PURE__*/React.createElement(BulletElement, _extends({
+      key: index,
+      count: index,
+      typeList: typeOfBullet
+    }, element));
+  }) : typeOfBullet === 'unorder' ? items.map(function (element, index) {
+    return /*#__PURE__*/React.createElement(BulletElement, _extends({
+      key: index
+    }, element, {
+      typeList: typeOfBullet
+    }));
+  }) : typeOfBullet === 'unorder' ? items.map(function (element, index) {
+    return /*#__PURE__*/React.createElement(BulletElement, _extends({
+      key: index
+    }, element));
+  }) : '');
+};
+
+Bullets.propTypes = {
+  items: propTypes.array.isRequired
+};
+
+exports.Bullets = Bullets;
 exports.Button = Button;
 exports.Card = Card;
 exports.Checkbox = Checkbox;
