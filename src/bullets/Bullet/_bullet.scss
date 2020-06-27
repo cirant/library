@@ -1,0 +1,61 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+%child{
+  padding-left: nth(nth($spacers, 4), 2) * 2 + nth(nth($spacers, 3), 2);
+  font-size: 14px;
+}
+
+.boxCircle {
+  margin: 0;
+  padding: 0;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.bulletElement {
+
+  display:flex;
+
+
+  &.level-1{
+    color: $neutral-50;
+    .notification{
+      display: flex;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      margin-left: nth(nth($spacers, 2), 2);
+      background-color: $primary;
+    }
+  }
+
+  &.level-2{
+    @extend %child;
+    color: $neutral-40;
+  }
+
+  &.level-3{
+    @extend %child;
+    color: $neutral-30;
+  }
+
+  .textContainer{
+    align-items: center;
+    display: flex;
+
+    i{
+      margin-right: nth(nth($spacers, 3), 2);
+    }
+  }
+
+  &.active{ color: $primary; }
+
+  &:hover{
+    background-color: $neutral-10;
+    cursor: pointer;
+  }
+
+}

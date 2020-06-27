@@ -1,0 +1,9 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+
+.bullets{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+// $grid-breakpoints
