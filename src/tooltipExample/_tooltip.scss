@@ -1,0 +1,287 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+@import '../scss/mixins/elevation';
+
+.tooltipContainer {
+
+  position: relative;
+  $width-container: 50%;
+
+  .content {
+    background-color: white;
+    z-index: 1000;
+    opacity: 1;
+    position: relative;
+    padding: nth(nth($spacers, 4), 2);
+    max-width: 256px;
+    border-radius: 4px;
+    height: 100%;
+  }
+
+  @mixin hoverSides($side) {
+    &:hover {
+      .tooltip-#{$side} {
+        opacity: 1;
+      }
+    }
+  }
+
+  %tooltipCommonStyles {
+    display: flex;
+    align-items: center;
+    min-width: 256px;
+    min-height: 56px;
+    position: absolute;
+    background: white;
+    border-radius: 4px;
+    transition: opacity 300ms ease;
+    z-index: 10;
+    opacity: 1;
+    pointer-events: none;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      z-index: 2;
+      @include elevationElementCreator1();
+    }
+
+  }
+
+  @mixin tooltipSides($side,$width-container) {
+    .tooltip-#{$side} {
+      @if $side == right {
+        right: calc(100% - 8px);
+        top: calc(-20% + 10px);
+        @include tooltipBefore("right");
+      }
+      @if $side == left {
+        right: calc(100% - 8px);
+        top: calc(5% + 10px);
+        @include tooltipBefore("left");
+      }
+      @if $side == bottom {
+        top: calc(100% + 24px);
+        left: 50%;
+        transform: translateX(-50%);
+        @include tooltipBefore("bottom");
+      }
+      @if $side == top {
+        bottom: calc(100% + 24px);
+        left: 50%;
+        transform: translateX(-50%);
+        @include tooltipBefore("top");
+      }
+      @extend %tooltipCommonStyles;
+
+    }
+  }
+
+  @mixin tooltipBefore($side){
+    &:before {
+      content: '';
+      opacity: 1;
+      /*transition: opacity 100ms;*/
+      z-index: 15;
+      background-color: white;
+      transform: rotate(45deg);
+
+      @if $side == right {
+        right: calc(100% - 8px);
+        top: calc(5% + 10px);
+      }
+
+      @if $side == bottom {
+        top: calc(-29% + 10px);
+        right: calc(66% - 8px);
+      }
+
+      @if $side == left {
+        right: calc(100% - 8px);
+        top: calc(5% + 10px);
+      }
+
+      @if $side == top {
+        right: calc(57% - 8px);
+        top: calc(88% + 10px);
+      }
+
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      position: absolute;
+      @include elevationElementCreator1();
+    }
+  }
+
+  @include tooltipSides("right",$width-container);
+  @include tooltipSides("bottom",$width-container);
+  @include tooltipSides("top",$width-container);
+
+
+  @include hoverSides('left');
+  @include hoverSides('right');
+  @include hoverSides('top');
+  @include hoverSides('bottom');
+
+
+  /*.tooltip-right{
+    display: flex;
+    align-items: center;
+    min-width: 256px;
+    min-height: 56px;
+    position: absolute;
+    left: calc(100% + 21px);
+    background: white;
+    border-radius: 4px;
+    transition: opacity 300ms ease;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      z-index: 2;
+      @include elevationElementCreator1();
+    }
+
+    &:before{
+      content: '';
+      opacity: 1;
+      /*transition: opacity 100ms;*/
+  /*z-index: 15;
+  background-color: white;
+  transform: rotate(45deg);
+
+  right: calc(100% - 8px);
+  top:calc(5% + 10px);
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: absolute;
+  @include elevationElementCreator1();
+}
+}*/
+
+  /*.tooltip-top {
+    max-width: 256px;
+    position: absolute;
+    bottom: calc(100% + 24px);
+    background: white;
+    border-radius: 4px;
+    padding: nth(nth($spacers, 4), 2);
+    opacity: 0;
+    pointer-events: none;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      /*z-index: -3;*/
+     /* @include elevationElementCreator1();
+    }
+
+    &:before {
+      content: '';
+      opacity: 1;
+      z-index: -1;
+      background-color: white;
+      transform: rotate(45deg);
+      top: calc(100% - 8px);
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      position: absolute;
+      @include elevationElementCreator1();
+    }
+  }*/
+
+  /*.tooltip-bottom {
+    max-width: 256px;
+    position: absolute;
+    top: calc(100% + 24px);
+    background: white;
+    border-radius: 4px;
+    padding: nth(nth($spacers, 4), 2);
+    opacity: 0;
+    pointer-events: none;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      z-index: -3;
+      @include elevationElementCreator1();
+    }
+
+    &:before {
+      content: '';
+      opacity: 1;
+      z-index: -1;
+      background-color: white;
+      transform: rotate(45deg);
+      bottom: calc(100% - 8px);
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      position: absolute;
+      @include elevationElementCreator1();
+    }
+  }*/
+
+  .tooltip-left {
+    max-width: 256px;
+    position: absolute;
+    right: calc(100% + 24px);
+    background: white;
+    border-radius: 4px;
+    padding: nth(nth($spacers, 4), 2);
+    opacity: 0;
+    pointer-events: none;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      z-index: -3;
+      @include elevationElementCreator1();
+    }
+
+    &:before {
+      content: '';
+      opacity: 1;
+      z-index: -1;
+      background-color: white;
+      transform: rotate(45deg);
+      left: calc(100% - 8px);
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      position: absolute;
+      @include elevationElementCreator1();
+    }
+  }
+}

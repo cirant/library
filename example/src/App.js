@@ -18,7 +18,8 @@ import {
   InputChip,
   Loading,
   ProgressBar,
-  Bullets
+  Bullets,
+  Tooltip
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -439,27 +440,183 @@ const App = () => {
       </div>
     </div>
 
-    <div className="container my-4">
-      <h1 className="mb-4">Tooltip</h1>
 
-      <div className="d-flex">
-        <Tooltip content="este es el content">
-          <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)} />
-        </Tooltip>
+    <div className="container my-4">
+      <h1>Tooltip</h1>
+      {inputText}
+      <Tooltip
+        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        eventListener="hover"
+        placement="bottom">
+        <Input
+          maxLength="105"
+          label="esto es un label multi validations"
+          value={inputText}
+          suffix={inputSuffix}
+          assistText={[
+            {
+              text: 'error mesaje',
+              type: 'error'
+            },
+            {
+              text: 'assist mesaje',
+              type: 'assist'
+            },
+            {
+              text: 'success mesaje',
+              type: 'success'
+            }
+          ]}
+          onChange={({ target: { value } }) => setInputText(value)}
+        />
+      </Tooltip>
+    </div>
+
+    <div className="container my-4">
+      {inputText}
+      <Tooltip
+        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        eventListener="mouseClick"
+        placement="top">
+        <Input
+          maxLength="105"
+          label="esto es un label multi validations"
+          value={inputText}
+          suffix={inputSuffix}
+          assistText={[
+            {
+              text: 'error mesaje',
+              type: 'error'
+            },
+            {
+              text: 'assist mesaje',
+              type: 'assist'
+            },
+            {
+              text: 'success mesaje',
+              type: 'success'
+            }
+          ]}
+          onChange={({ target: { value } }) => setInputText(value)}
+        />
+      </Tooltip>
+    </div>
+
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-12">
+          <Tooltip
+            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            eventListener="mouseClick"
+            placement="right-end">
+            <TitleSection label="Title Section" prefix="write"/>
+          </Tooltip>
+        </div>
+        <div className="col-lg-6 col-md-12 col-sm-12">
+          <Tooltip
+            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            eventListener="mouseClick"
+            placement="right-end">
+            <TitleSection label="Title Section" prefix="write"/>
+          </Tooltip>
+        </div>
       </div>
     </div>
 
-    <br />
+    <br/>
+    <br/>
 
-    <Bullets typeList="order" items={[
-      {
-        text: 'label first level B',
-      },
-      {
-        text: 'label first level B',
-      }
-    ]}>
-    </Bullets>
+    <div className="container my-4">
+      <h1 className="mb-4">Unorder Bullets</h1>
+      <div className="d-flex">
+        <Bullets typeList="unorder" items={[
+          {
+            text: 'Order Bullet text a',
+            prefixType: 'info',
+            contentType:'success'
+          },
+          {
+            text: 'Order Bullet text a',
+            type: 'success',
+          },
+        ]}>
+        </Bullets>
+
+      </div>
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">Order Bullets</h1>
+      <div className="d-flex">
+        <Bullets typeList="order" items={[
+          {
+            text: 'Order Bullet text a',
+            prefixType: 'error',
+            contentType:'error'
+          },
+          {
+            text: 'Order Bullet text a',
+            type: 'success',
+          },
+        ]}>
+        </Bullets>
+
+      </div>
+    </div>
+
+
+    <div className="container my-4">
+      <h1 className="mb-4">Icon Bullets</h1>
+      <div className="d-flex">
+        <Bullets typeList="icons" items={[
+          {
+            text: 'Order Bullet text a',
+            prefixType: 'info',
+            contentType:'error',
+            icon:'home'
+          },
+          {
+            text: 'Order Bullet text a',
+            type: 'info',
+            icon:'home'
+          },
+        ]}>
+        </Bullets>
+
+      </div>
+    </div>
+
+
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <Bullets typeList="icons" items={[
+            {
+              text: 'Order Bullet text a',
+              prefixType: 'info',
+              contentType:'error',
+              icon:'home'
+            },
+            {
+              text: 'Order Bullet text a',
+              type: 'info',
+              icon:'home'
+            },
+          ]}>
+          </Bullets>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
 
   </>
 }
