@@ -41,7 +41,7 @@ const BulletElement = ({ count, text, typeList, prefixType, contentType, icon, t
     (typeList === 'order') ?
       <div className={stylePrefixContainer.join(' ')}>{numberList}.</div> : (typeList === 'unorder') ?
       <div className={stylePrefixContainer.join(' ')}>
-        <div className={styleBoxCircle.join(' ')}></div>
+        <div className={styleBoxCircle.join(' ')}> </div>
       </div> : (typeList === 'icons') ?
         <div className={stylePrefixContainer.join(' ')}><Icon size="1" onClick={() => console.log('test')} name={icon}/>
         </div> : ''

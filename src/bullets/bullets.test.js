@@ -1,47 +1,70 @@
 import React from "react";
-import { render } from '@testing-library/react';
-import Sidebar from '.'
+import { cleanup, render } from '@testing-library/react'
+import Bullets from './index'
 
 
-describe('Sidebar behavior', () => {
+describe('Bullet behavior', () => {
+
+
+  afterEach(() => {
+    cleanup()
+  })
 
   it('should be rendered', () => {
-    const props = [
+    const component = render(<Bullets typeList="order" items={[]} />);
+    expect(component).toBeTruthy();
+  });
+
+  it('should be rendered order list', () => {
+    const component = render(<Bullets typeList="order" items={[
       {
-        text: 'label A',
-        open: true,
-        sublevel: [
-          {
-            text: 'label B',
-            open: true,
-            sublevel: [
-              {
-                text: 'label C',
-              }
-            ]
-          }
-        ]
+        text: 'Order Bullet text a',
+        type: 'info'
       },
       {
-        text: 'label A',
-        open: true,
-        sublevel: [
-          {
-            text: 'label B',
-            open: true,
-            sublevel: [
-              {
-                text: 'label C',
-              }
-            ]
-          }
-        ]
-      }
-    ]
-
-    const component = render(<Sidebar items={props} />);
-    expect(component).toBeTruthy();
-    expect(component.getAllByRole('component').length).toEqual(6);
+        text: 'Order Bullet text b',
+        type: 'info',
+      },
+    ]} />);
+    console.log(component.debug());
+    const orderBulletList = component.getAllByTestId("test-bullet-order");
+    expect(orderBulletList).toBeTruthy();
   });
+
+  it('should be rendered unorder list', () => {
+    const component = render(<Bullets typeList="unorder" items={[
+      {
+        text: 'Order Bullet text a',
+        type: 'info'
+
+      },
+      {
+        text: 'Order Bullet text b',
+        type: 'info',
+      },
+    ]} />);
+    console.log(component.debug());
+    const unorderBulletList = component.getAllByTestId("test-bullet-unorder");
+    expect(unorderBulletList).toBeTruthy();
+  });
+
+  it('should be rendered icons list', () => {
+    const component = render(<Bullets typeList="icons" items={[
+      {
+        text: 'Order Bullet text a',
+        type: 'info'
+
+      },
+      {
+        text: 'Order Bullet text b',
+        type: 'info',
+      },
+    ]} />);
+    console.log(component.debug());
+    const unorderBulletList = component.getAllByTestId("test-bullet-icons");
+    expect(unorderBulletList).toBeTruthy();
+  });
+
+
 
 });
