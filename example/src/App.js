@@ -17,9 +17,8 @@ import {
   TitleSection,
   InputChip,
   Loading,
-  ProgressBar,
   Bullets,
-  Tooltip
+  Tooltip,
   ProgressBar,
   Message
 } from 'library-1';

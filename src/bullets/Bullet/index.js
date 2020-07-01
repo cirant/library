@@ -3,7 +3,7 @@ import styles from './_bullet.scss'
 import Icon from '../../icons'
 import PropTypes from 'prop-types'
 
-const BulletElement = ({ count,disabled, text, typeList, prefixType, contentType, icon, type, variant, active, number, index, ...props }) => {
+const BulletElement = ({ count,disabled, text, typeList, prefixType, contentType, icon, type, index, ...props }) => {
 
   let numberList = count + 1
 
@@ -64,6 +64,7 @@ BulletElement.defaultProps = {
 }
 
 BulletElement.propTypes = {
+  disable: PropTypes.bool,
   text: PropTypes.string.isRequired,
   prefixType: function(props) {
     if ((props['type'] !== undefined) && (props['prefixType'] !== undefined)) {
