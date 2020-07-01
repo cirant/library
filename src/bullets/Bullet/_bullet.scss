@@ -1,0 +1,119 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+%child{
+  padding-left: nth(nth($spacers, 4), 2) * 2 + nth(nth($spacers, 3), 2);
+  font-size: 14px;
+}
+
+@mixin statusColorCreator($color) {
+  color: $color;
+}
+
+@mixin statusBackgroundColorCreator($color) {
+  background-color: $color;
+}
+
+.error{
+  @include statusColorCreator($danger-40);
+}
+
+.warning{
+  @include statusColorCreator($warning-40);
+}
+
+.success{
+  @include statusColorCreator($success-40);
+}
+
+.info{
+  @include statusColorCreator($info-40);
+}
+
+
+
+.boxCircle {
+  margin: 0;
+  padding: 0;
+  height: 7px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: black;
+
+  &.error{
+    @include statusBackgroundColorCreator($danger-40);
+  }
+
+  &.warning{
+    @include statusBackgroundColorCreator($warning-40);
+  }
+
+  &.success{
+    @include statusBackgroundColorCreator($success-40);
+  }
+
+  &.info{
+    @include statusBackgroundColorCreator($info-40);
+  }
+
+}
+
+.bulletElement {
+
+  display:flex;
+
+  &.disabled{
+    color: $neutral-20;
+  }
+
+  .prefixContainer{
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .prefixItem{
+      height: 16px;
+      width: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .textContainer{
+    align-items: center;
+    display: flex;
+    padding-left: nth(nth($spacers, 3), 2);
+  }
+
+  &.active{ color: $primary; }
+
+  &:hover{
+    background-color: $neutral-10;
+    cursor: pointer;
+  }
+
+}
+
+.bulletElement {
+
+  .textContainer{
+    align-items: center;
+    display: flex;
+
+    i{
+      margin-right: nth(nth($spacers, 3), 2);
+    }
+  }
+
+  &.active{ color: $primary; }
+
+  &:hover{
+    background-color: $neutral-10;
+    cursor: pointer;
+  }
+
+}

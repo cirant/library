@@ -16,7 +16,9 @@ import Switch from './switch';
 import Loading from './loading';
 import TitleSection from './title';
 import InputChip from './input/chips';
-import ProgressBar from './progressbar';
+import ProgressBar from './progressbar'
+import Bullets from './bullets'
+import Tooltip from './tooltip';
 import Message from './message';
 import InputSearch from './input/search';
 import InputSelect from './input/select';
@@ -41,6 +43,8 @@ export {
   InputChip,
   Loading,
   ProgressBar,
+  Bullets,
+  Tooltip,
   Message,
   InputSearch,
   InputSelect

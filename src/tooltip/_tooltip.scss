@@ -1,0 +1,159 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+@import '../scss/mixins/elevation';
+
+
+.fadeInFromNone{
+  animation: fadeInFromNone 0.5s forwards;
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block !important;
+    opacity: 0 !important;
+  }
+
+  100% {
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
+
+.containerTooltip {
+
+  position: relative;
+  height: auto;
+  border: 1px dashed red;
+
+  .box {
+    border-radius: 4px;
+    min-width: 256px;
+    opacity: 0;
+    transition: all 150ms linear;
+    color: #212529;
+    text-align: left;
+    @include elevationElementCreator1();
+
+    &[data-placement="right"] {
+      .arrow {
+        right: 97%;
+        bottom: 46%;
+      }
+    }
+
+    &[data-placement="right-end"] {
+      .arrow {
+        right: 97%;
+        bottom: 10%;
+      }
+    }
+
+    &[data-placement="right-start"] {
+      .arrow {
+        right: 97%;
+        top: 20%;
+      }
+    }
+
+    &[data-placement="left-start"] {
+      .arrow {
+        left: 97%;
+        top: 20%;
+      }
+    }
+
+    &[data-placement="left"] {
+      .arrow {
+        left: 97%;
+        bottom: 46%;
+      }
+    }
+
+    &[data-placement="left-end"] {
+      .arrow {
+        left: 97%;
+        bottom: 10%;
+      }
+    }
+
+    &[data-placement="top"] {
+      .arrow {
+        left: 48%;
+      }
+    }
+
+    &[data-placement="top-start"] {
+      .arrow {
+        left: 20%;
+      }
+    }
+
+    &[data-placement="top-end"] {
+      .arrow {
+        left: 70%;
+      }
+    }
+
+    &[data-placement="bottom"] {
+      .arrow {
+        top: 0%;
+        left: 48%;
+      }
+    }
+
+    &[data-placement="bottom-start"] {
+      .arrow {
+        top: 0%;
+        left: 10%;
+      }
+    }
+
+    &[data-placement="bottom-end"] {
+      .arrow {
+        top: 0%;
+        left: 70%;
+      }
+    }
+
+    .box[data-placement="right-start"] {
+      .arrow {
+        right: 97%;
+        bottom: 70%;
+      }
+    }
+
+    .content {
+      background-color: white;
+      z-index: 1000;
+      opacity: 1;
+      position: relative;
+      padding: nth(nth($spacers, 4), 2);
+      max-width: 256px;
+      border-radius: 4px;
+      height: 100%;
+    }
+
+    .arrow {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      margin-top: -8px;
+      background-color: white;
+      transform: rotate(45deg);
+      box-shadow: 0 1px 2px 0 rgba(31, 30, 30, 0.35);
+    }
+
+  }
+
+}
+
+
+
+
+
+

@@ -21,7 +21,6 @@
     "prebuild": "gulp",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
-    "preinstall": "touch test.js",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
@@ -33,7 +32,7 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -80,6 +79,7 @@
   ],
   "dependencies": {
     "@storybook/addon-knobs": "^5.3.19",
+    "@tippyjs/react": "^4.0.5",
     "babel-plugin-react-docgen": "^4.1.0",
     "lodash": "^4.17.15",
     "react-test-renderer": "^16.13.1"
