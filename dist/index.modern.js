@@ -1501,31 +1501,54 @@ Header.propTypes = {
   })
 };
 
-var inputStyles = {"input":"__input__input__1uZsF","suffixContainer":"__input__suffixContainer__2zhrL","prefixContainer":"__input__prefixContainer__1GbCQ","inputContainer":"__input__inputContainer__2lUSM","error":"__input__error__1s8q6","success":"__input__success__UYGJi","disabled":"__input__disabled__1OvLQ","inputLabel":"__input__inputLabel__q2gh-","hasPrefix":"__input__hasPrefix__3N5pB","hasSuffix":"__input__hasSuffix__1KIfx","inputHelper":"__input__inputHelper__3IoKh","successText":"__input__successText__1FylX","errorText":"__input__errorText__1-t8w"};
+var inputStyles = {"inputContainer":"__input__inputContainer__2lUSM","error":"__input__error__1s8q6","success":"__input__success__UYGJi","disabled":"__input__disabled__1OvLQ","inputLabel":"__input__inputLabel__q2gh-","inputHelper":"__input__inputHelper__3IoKh","successText":"__input__successText__1FylX","errorText":"__input__errorText__1-t8w"};
+
+var inputStyles$1 = {"input":"__core__input__3kii5","suffixContainer":"__core__suffixContainer__2MCdF","prefixContainer":"__core__prefixContainer__3U2NA","disabled":"__core__disabled__2fAZb","hasPrefix":"__core__hasPrefix__XciEy","hasSuffix":"__core__hasSuffix__3N4XX"};
+
+const InputCore = ({
+  prefix,
+  suffix,
+  variant,
+  ...props
+}) => {
+  let inputStyle = [inputStyles$1.input];
+
+  if (prefix) {
+    inputStyle = inputStyle.concat(inputStyles$1.hasPrefix);
+  }
+
+  if (suffix) {
+    inputStyle = inputStyle.concat(inputStyles$1.hasSuffix);
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: inputStyle.join(' ')
+  }, prefix && /*#__PURE__*/React.createElement("div", {
+    className: inputStyles$1.prefixContainer
+  }, prefix), variant && variant === 'textarea' ? /*#__PURE__*/React.createElement("textarea", props) : /*#__PURE__*/React.createElement("input", props), suffix && /*#__PURE__*/React.createElement("div", {
+    className: inputStyles$1.suffixContainer
+  }, suffix));
+};
+
+InputCore.propTypes = {
+  maxLength: propTypes.string,
+  suffix: propTypes.oneOfType([propTypes.string, propTypes.element]),
+  prefix: propTypes.oneOfType([propTypes.string, propTypes.element]),
+  variant: propTypes.string,
+  disabled: propTypes.bool
+};
 
 const Input = ({
   label,
   assistText,
   error,
   success,
-  suffix,
-  prefix,
-  variant,
   ...props
 }) => {
   const {
     maxLength
   } = props;
-  let inputStyle = [inputStyles.input];
   let validateStyle = [];
-
-  if (prefix) {
-    inputStyle = inputStyle.concat(inputStyles.hasPrefix);
-  }
-
-  if (suffix) {
-    inputStyle = inputStyle.concat(inputStyles.hasSuffix);
-  }
 
   if (error === true) {
     validateStyle = validateStyle.concat(inputStyles.error);
@@ -1558,13 +1581,7 @@ const Input = ({
     className: [inputStyles.inputContainer, validateStyle].join(' ')
   }, label && /*#__PURE__*/React.createElement("span", {
     className: inputStyles.inputLabel
-  }, " ", label, " "), /*#__PURE__*/React.createElement("div", {
-    className: inputStyle.join(' ')
-  }, prefix && /*#__PURE__*/React.createElement("div", {
-    className: inputStyles.prefixContainer
-  }, prefix), variant && variant === 'textarea' ? /*#__PURE__*/React.createElement("textarea", props) : /*#__PURE__*/React.createElement("input", props), suffix && /*#__PURE__*/React.createElement("div", {
-    className: inputStyles.suffixContainer
-  }, suffix)), /*#__PURE__*/React.createElement("div", {
+  }, " ", label, " "), /*#__PURE__*/React.createElement(InputCore, props), /*#__PURE__*/React.createElement("div", {
     className: [inputStyles.inputHelper].join(' ')
   }, /*#__PURE__*/React.createElement("div", null, Array.isArray(assistText) && assistText.length > 0 ? assistText.map((el, i) => /*#__PURE__*/React.createElement("div", {
     key: `${el.text}-${i}`
@@ -2007,5 +2024,59 @@ Message.propTypes = {
   action: propTypes.element
 };
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
+var styles$d = {"inputLabel":"__search__inputLabel__13ZQ9","inputRow":"__search__inputRow__3Bpsc","crossIcon":"__search__crossIcon__3SFyS","filterIcon":"__search__filterIcon__2WUK6","inputConteiner":"__search__inputConteiner__dxBJC","disabled":"__search__disabled__qZaL1"};
+
+const InputSearch = ({
+  label,
+  filterAction,
+  clearAction,
+  ...props
+}) => {
+  let inputContainerClases = [styles$d.inputConteiner];
+
+  if (props.disabled) {
+    inputContainerClases = inputContainerClases.concat(styles$d.disabled);
+  }
+
+  const prefix = /*#__PURE__*/React.createElement(Icon, {
+    role: "search-icon",
+    name: "line-search",
+    size: 1
+  });
+  const suffix = /*#__PURE__*/React.createElement(Icon, {
+    role: "cross-icon",
+    onClick: clearAction,
+    className: styles$d.crossIcon,
+    name: "cross",
+    size: 1
+  });
+  return /*#__PURE__*/React.createElement("div", {
+    className: inputContainerClases.join(' ').trim()
+  }, label && /*#__PURE__*/React.createElement("span", {
+    className: styles$d.inputLabel
+  }, " ", label, " "), /*#__PURE__*/React.createElement("div", {
+    className: styles$d.inputRow
+  }, /*#__PURE__*/React.createElement(InputCore, Object.assign({}, props, {
+    prefix: prefix,
+    suffix: suffix
+  })), /*#__PURE__*/React.createElement(Icon, {
+    role: "filter-icon",
+    onClick: filterAction,
+    name: "line-filter",
+    size: 1,
+    className: styles$d.filterIcon
+  })));
+};
+
+InputSearch.defaultProps = {
+  filterAction: () => null,
+  clearAction: () => null
+};
+InputSearch.propTypes = {
+  label: propTypes.string,
+  filterAction: propTypes.func,
+  clearAction: propTypes.func
+};
+
+export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, InputSearch, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
 //# sourceMappingURL=index.modern.js.map

@@ -1,29 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import inputStyles from './_input.scss';
+import InputCore from './core';
 
 const Input = ({
   label,
   assistText,
   error,
   success,
-  suffix,
-  prefix,
-  variant,
+  // suffix,
+  // prefix,
+  // variant,
   ...props }) => {
 
   const { maxLength } = props;
 
-  let inputStyle = [inputStyles.input];
   let validateStyle = [];
-
-  if (prefix) {
-    inputStyle = inputStyle.concat(inputStyles.hasPrefix);
-  }
-
-  if (suffix) {
-    inputStyle = inputStyle.concat(inputStyles.hasSuffix);
-  }
 
   if (error === true) {
     validateStyle = validateStyle.concat(inputStyles.error);
@@ -51,21 +43,7 @@ const Input = ({
       label && <span className={inputStyles.inputLabel}> {label} </span>
     }
 
-    <div className={inputStyle.join(' ')}>
-      {
-        prefix && <div className={inputStyles.prefixContainer}>{prefix}</div>
-      }
-
-      {
-        variant && variant === 'textarea' ?
-          <textarea {...props} ></textarea> :
-          <input {...props} />
-      }
-
-      {
-        suffix && <div className={inputStyles.suffixContainer}>{suffix}</div>
-      }
-    </div>
+    <InputCore {...props} />
 
     <div className={[inputStyles.inputHelper].join(' ')}>
       <div>

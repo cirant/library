@@ -10,6 +10,7 @@ import {
   HeaderItem,
   Header,
   Input,
+  InputSearch,
   Radio,
   Separator,
   Sidebar,
@@ -337,6 +338,33 @@ const App = () => {
         <InputChip value="action" onClose={() => alert('clicked')} disabled />
         <InputChip value="action" variant onClose={() => alert('clicked')} />
         <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
+      </div>
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">input search</h1>
+
+      <div className="d-flex">
+        <InputSearch
+          maxLength="105"
+          label="esto es un label"
+          assistText="esto es un texto tal vez muy largo a ver que pasaria"
+          error
+          value={inputText}
+          prefix={inputPrefix}
+          suffix={inputSuffix}
+          onChange={({ target: { value } }) => setInputText(value)} />
+
+        <InputSearch
+          maxLength="105"
+          placeholder="hola mundo"
+          label="esto es un label"
+          assistText="esto es un texto tal vez muy largo a ver que pasaria"
+          error
+          value={inputText}
+          prefix={inputPrefix}
+          suffix={inputSuffix}
+          onChange={({ target: { value } }) => setInputText(value)} disabled />
       </div>
     </div>
 
