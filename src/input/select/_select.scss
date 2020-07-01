@@ -2,8 +2,6 @@
 @import '../../scss/variables';
 @import '../../scss/mixins/elevation';
 
-$disableColor: $neutral-20;
-
 @mixin statusCreator($color) {
   input { border-color: $color; }
 }

@@ -8,9 +8,6 @@ const Input = ({
   assistText,
   error,
   success,
-  // suffix,
-  // prefix,
-  // variant,
   ...props }) => {
 
   const { maxLength } = props;
