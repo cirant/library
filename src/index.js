@@ -19,6 +19,7 @@ import InputChip from './input/chips';
 import ProgressBar from './progressbar';
 import Message from './message';
 import InputSearch from './input/search';
+import InputSelect from './input/select';
 
 export {
   Button,
@@ -41,5 +42,6 @@ export {
   Loading,
   ProgressBar,
   Message,
-  InputSearch
+  InputSearch,
+  InputSelect
 };
