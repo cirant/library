@@ -1,0 +1,118 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+$disableColor: $neutral-20;
+
+@mixin statusCreator($color) {
+  input { border-color: $color; }
+}
+
+%containerIconFix{
+  position: absolute;
+  top: 1px;
+  display: flex;
+  height: calc(100% - 2px);
+  background: white;
+  align-items: center;
+}
+
+.inputContainer{
+  width: 100%;
+  
+  &.disabled{
+    @include statusCreator($disableColor);
+    pointer-events: none;
+    .inputLabel, .optionRow, .suffixContainer{
+      color: $disableColor;
+    }
+  }
+}
+
+.optionContainer{
+  background-color: white;
+  @include elevationElementCreator(2);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+
+  .optionRow:hover{
+    background-color: $neutral-10;
+    cursor: pointer;
+  }
+}
+.bellowContainer{
+  position: relative;
+}
+
+.optionRow{
+  outline: none;
+  display: flex;
+  padding: nth(nth($spacers, 3), 2) nth(nth($spacers, 5), 2);
+  align-items: center;
+
+  &.disabled{
+    color: $neutral-30;
+  }
+
+  .prefixContainer{
+    display: inline-flex;
+    margin-right: nth(nth($spacers, 3), 2);
+    justify-content: center;
+  }
+}
+
+.input{
+  width: 100%;
+  position: relative;
+
+  &.disabled{
+    color: $disableColor;
+  }
+
+  .suffixContainer{
+    @extend %containerIconFix;
+    right: nth(nth($spacers, 5), 2);
+    max-width: 20px;
+    color: $info-40;
+    pointer-events: none;
+  }
+
+  .currentElement{
+    border-radius: 2px;
+    width: 100%;
+    border: 1px solid $neutral-40;
+    cursor: pointer;
+
+    .optionRow{
+      height: 48px;
+      padding-right: nth(nth($spacers, 5), 2) + 1.25rem;
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow: ellipsis;
+      display: inherit;
+      line-height: 31px;  
+    }
+
+    &:disabled{
+      border-color: $disableColor;
+      background-color: white;
+    }
+  }
+}
+
+.inputLabel{
+  font-weight: bold;
+  font-size: 16px;
+  font-family: inherit;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.inputHelper{
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  color: $neutral-40;
+}

@@ -1591,7 +1591,8 @@
   .__input__input__1uZsF.__input__hasSuffix__1KIfx input, .__input__input__1uZsF.__input__hasSuffix__1KIfx textarea {
     padding-right: 2.25rem; }
   .__input__input__1uZsF input {
-    height: 48px; }
+    height: 48px;
+    outline: none; }
   .__input__input__1uZsF input, .__input__input__1uZsF textarea {
     border-radius: 2px;
     width: 100%;
@@ -2473,3 +2474,86 @@
   .__message__message__3g_Jc p {
     font-size: 14px;
     line-height: 24px; }
+
+.__select__input__3SDeG .__select__suffixContainer__1RIWf {
+  position: absolute;
+  top: 1px;
+  display: flex;
+  height: calc(100% - 2px);
+  background: white;
+  align-items: center; }
+
+.__select__inputContainer__3ZeLa {
+  width: 100%; }
+  .__select__inputContainer__3ZeLa.__select__disabled__tQrqh {
+    pointer-events: none; }
+    .__select__inputContainer__3ZeLa.__select__disabled__tQrqh input {
+      border-color: #D5D0D5; }
+    .__select__inputContainer__3ZeLa.__select__disabled__tQrqh .__select__inputLabel__30ukr, .__select__inputContainer__3ZeLa.__select__disabled__tQrqh .__select__optionRow__3k3jO, .__select__inputContainer__3ZeLa.__select__disabled__tQrqh .__select__suffixContainer__1RIWf {
+      color: #D5D0D5; }
+
+.__select__optionContainer__Do9PN {
+  background-color: white;
+  box-shadow: 0 4px 6px 0 rgba(31, 30, 30, 0.35);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%; }
+  .__select__optionContainer__Do9PN .__select__optionRow__3k3jO:hover {
+    background-color: #F6F3F5;
+    cursor: pointer; }
+
+.__select__bellowContainer__2-1yB {
+  position: relative; }
+
+.__select__optionRow__3k3jO {
+  outline: none;
+  display: flex;
+  padding: 0.5rem 1rem;
+  align-items: center; }
+  .__select__optionRow__3k3jO.__select__disabled__tQrqh {
+    color: #9C9A9F; }
+  .__select__optionRow__3k3jO .__select__prefixContainer__15505 {
+    display: inline-flex;
+    margin-right: 0.5rem;
+    justify-content: center; }
+
+.__select__input__3SDeG {
+  width: 100%;
+  position: relative; }
+  .__select__input__3SDeG.__select__disabled__tQrqh {
+    color: #D5D0D5; }
+  .__select__input__3SDeG .__select__suffixContainer__1RIWf {
+    right: 1rem;
+    max-width: 20px;
+    color: #007DB7;
+    pointer-events: none; }
+  .__select__input__3SDeG .__select__currentElement__1ZRzS {
+    border-radius: 2px;
+    width: 100%;
+    border: 1px solid #646569;
+    cursor: pointer; }
+    .__select__input__3SDeG .__select__currentElement__1ZRzS .__select__optionRow__3k3jO {
+      height: 48px;
+      padding-right: 2.25rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: inherit;
+      line-height: 31px; }
+    .__select__input__3SDeG .__select__currentElement__1ZRzS:disabled {
+      border-color: #D5D0D5;
+      background-color: white; }
+
+.__select__inputLabel__30ukr {
+  font-weight: bold;
+  font-size: 16px;
+  font-family: inherit;
+  margin-bottom: 8px;
+  display: block; }
+
+.__select__inputHelper__1F3qg {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  color: #646569; }

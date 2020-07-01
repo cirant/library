@@ -18,7 +18,8 @@ import {
   InputChip,
   Loading,
   ProgressBar,
-  Message
+  Message,
+  InputSelect
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -327,6 +328,23 @@ const App = () => {
         variant='textarea'
         onChange={({ target: { value } }) => setInputText(value)}
       />
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">input select</h1>
+
+      <div className="d-flex">
+        <InputSelect
+          maxLength="105"
+          label="esto es un label"
+          assistText="esto es un texto tal vez muy largo a ver que pasaria"
+          error
+          value={inputText}
+          prefix={inputPrefix}
+          suffix={inputSuffix}
+          onChange={({ target: { value } }) => setInputText(value)}
+        />
+      </div>
     </div>
 
     <div className="container my-4">

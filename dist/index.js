@@ -1,6 +1,7 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault(require('react'));
+var React = require('react');
+var React__default = _interopDefault(React);
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -1137,7 +1138,7 @@ var Icon = function Icon(_ref) {
     renderStyles = [].concat(renderStyles).concat(sizeSelected);
   }
 
-  return /*#__PURE__*/React.createElement("i", _extends({}, props, {
+  return /*#__PURE__*/React__default.createElement("i", _extends({}, props, {
     className: renderStyles.join(' '),
     "data-size": sizeWith
   }));
@@ -1166,13 +1167,13 @@ var Button = function Button(_ref) {
 
   var btnVariant = variant !== '' ? "-" + variant : '';
   var btnStyles = [styles.btn, styles["btn-" + color + btnVariant] || ''];
-  return /*#__PURE__*/React.createElement("button", _extends({}, props, {
+  return /*#__PURE__*/React__default.createElement("button", _extends({}, props, {
     className: btnStyles.join(' '),
     disabled: disabled
-  }), prefix && /*#__PURE__*/React.createElement(Icon, {
+  }), prefix && /*#__PURE__*/React__default.createElement(Icon, {
     className: styles.prefix,
     name: prefix
-  }), variant !== 'text' ? children : !prefix && !suffix ? /*#__PURE__*/React.createElement("span", null, children) : children, suffix && /*#__PURE__*/React.createElement(Icon, {
+  }), variant !== 'text' ? children : !prefix && !suffix ? /*#__PURE__*/React__default.createElement("span", null, children) : children, suffix && /*#__PURE__*/React__default.createElement(Icon, {
     className: styles.suffix,
     name: suffix
   }));
@@ -1231,7 +1232,7 @@ var Grid = function Grid(_ref) {
     styles = styles.concat(gridStyles["col-xl-" + xl]);
   }
 
-  return React.createElement(variant, _extends({}, props, {
+  return React__default.createElement(variant, _extends({}, props, {
     className: styles.concat(props.className || '').join(' ')
   }), children);
 };
@@ -1270,7 +1271,7 @@ var Card = function Card(_ref) {
     cardStules = cardStules.concat(styles$1.selected);
   }
 
-  return /*#__PURE__*/React.createElement("div", _extends({}, props, {
+  return /*#__PURE__*/React__default.createElement("div", _extends({}, props, {
     className: cardStules.concat(props.className).join(' ')
   }), children);
 };
@@ -1297,9 +1298,9 @@ var Checkbox = function Checkbox(_ref) {
   var color = disabled ? "#9C9A9F" : checked ? "#007DB7" : "#646569";
   var disabledClass = disabled ? styles$2.disabled : '';
   var checkedClass = checked ? styles$2.checked : styles$2.unchecked;
-  return /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/React__default.createElement("label", {
     className: [styles$2.checkbox].concat(disabledClass).concat(checkedClass).join(' ')
-  }, /*#__PURE__*/React.createElement("input", _extends({
+  }, /*#__PURE__*/React__default.createElement("input", _extends({
     "data-testid": "checkbox",
     disabled: disabled,
     type: "checkbox",
@@ -1308,60 +1309,60 @@ var Checkbox = function Checkbox(_ref) {
       var target = _ref2.target;
       return onChange(target.checked);
     } : null
-  }, props)), variant ? /*#__PURE__*/React.createElement("svg", {
+  }, props)), variant ? /*#__PURE__*/React__default.createElement("svg", {
     width: "24px",
     height: "24px",
     viewBox: "0 0 24 24"
-  }, checked ? /*#__PURE__*/React.createElement("g", {
+  }, checked ? /*#__PURE__*/React__default.createElement("g", {
     "data-testid": "checked-variant-active",
     stroke: "none",
     strokeWidth: "1",
     fill: "none",
     fillRule: "evenodd"
-  }, /*#__PURE__*/React.createElement("g", {
+  }, /*#__PURE__*/React__default.createElement("g", {
     transform: "translate(-2031.000000, -2448.000000)",
     fill: color
-  }, /*#__PURE__*/React.createElement("path", {
+  }, /*#__PURE__*/React__default.createElement("path", {
     d: "M2052.33333,2448 L2033.66667,2448 C2032.2,2448 2031,2449.2 2031,2450.66667 L2031,2469.33333 C2031,2470.8 2032.2,2472 2033.66667,2472 L2052.33333,2472 C2053.8,2472 2055,2470.8 2055,2469.33333 L2055,2450.66667 C2055,2449.2 2053.8,2448 2052.33333,2448 Z M2048.14286,2461 L2037.85714,2461 C2037.38571,2461 2037,2460.55 2037,2460 C2037,2459.45 2037.38571,2459 2037.85714,2459 L2048.14286,2459 C2048.61429,2459 2049,2459.45 2049,2460 C2049,2460.55 2048.61429,2461 2048.14286,2461 Z",
     id: "color_checkbox"
-  }))) : /*#__PURE__*/React.createElement("g", {
+  }))) : /*#__PURE__*/React__default.createElement("g", {
     "data-testid": "checked-variant-inactive",
     stroke: "none",
     strokeWidth: "1",
     fill: "none",
     fillRule: "evenodd"
-  }, /*#__PURE__*/React.createElement("g", {
+  }, /*#__PURE__*/React__default.createElement("g", {
     transform: "translate(-2079.000000, -2448.000000)",
     fill: color
-  }, /*#__PURE__*/React.createElement("path", {
+  }, /*#__PURE__*/React__default.createElement("path", {
     d: "M2100,2470 L2082,2470 C2081.45,2470 2081,2469.55 2081,2469 L2081,2451 C2081,2450.45 2081.45,2450 2082,2450 L2100,2450 C2100.55,2450 2101,2450.45 2101,2451 L2101,2469 C2101,2469.55 2100.55,2470 2100,2470 Z M2101,2448 L2081,2448 C2079.9,2448 2079,2448.9 2079,2450 L2079,2470 C2079,2471.1 2079.9,2472 2081,2472 L2101,2472 C2102.1,2472 2103,2471.1 2103,2470 L2103,2450 C2103,2448.9 2102.1,2448 2101,2448 Z",
     id: "checkbox_disabled"
-  })))) : /*#__PURE__*/React.createElement("svg", {
+  })))) : /*#__PURE__*/React__default.createElement("svg", {
     width: "24px",
     height: "24px",
     viewBox: "0 0 24 24"
-  }, checked ? /*#__PURE__*/React.createElement("g", {
+  }, checked ? /*#__PURE__*/React__default.createElement("g", {
     "data-testid": "checked-active",
     stroke: "none",
     strokeWidth: "1",
     fill: "none",
     fillRule: "evenodd"
-  }, /*#__PURE__*/React.createElement("g", {
+  }, /*#__PURE__*/React__default.createElement("g", {
     transform: "translate(-1993.000000, -2448.000000)",
     fill: color
-  }, /*#__PURE__*/React.createElement("path", {
+  }, /*#__PURE__*/React__default.createElement("path", {
     d: "M2014.33333,2448 L1995.66667,2448 C1994.2,2448 1993,2449.2 1993,2450.66667 L1993,2469.33333 C1993,2470.8 1994.2,2472 1995.66667,2472 L2014.33333,2472 C2015.8,2472 2017,2470.8 2017,2469.33333 L2017,2450.66667 C2017,2449.2 2015.8,2448 2014.33333,2448 Z M2003.43221,2465.6338 C2002.95822,2466.12207 2002.19256,2466.12207 2001.71857,2465.6338 L1997.35549,2461.13928 C1996.8815,2460.65102 1996.8815,2459.86228 1997.35549,2459.37402 C1997.82947,2458.88576 1998.59514,2458.88576 1999.06912,2459.37402 L2002.56931,2462.97966 L2010.93088,2454.3662 C2011.40486,2453.87793 2012.17053,2453.87793 2012.64451,2454.3662 C2013.1185,2454.85446 2013.1185,2455.64319 2012.64451,2456.13146 L2003.43221,2465.6338 Z",
     id: "color_checkbox"
-  }))) : /*#__PURE__*/React.createElement("g", {
+  }))) : /*#__PURE__*/React__default.createElement("g", {
     "data-testid": "checked-inactive",
     stroke: "none",
     strokeWidth: "1",
     fill: "none",
     fillRule: "evenodd"
-  }, /*#__PURE__*/React.createElement("g", {
+  }, /*#__PURE__*/React__default.createElement("g", {
     transform: "translate(-2079.000000, -2448.000000)",
     fill: color
-  }, /*#__PURE__*/React.createElement("path", {
+  }, /*#__PURE__*/React__default.createElement("path", {
     d: "M2100,2470 L2082,2470 C2081.45,2470 2081,2469.55 2081,2469 L2081,2451 C2081,2450.45 2081.45,2450 2082,2450 L2100,2450 C2100.55,2450 2101,2450.45 2101,2451 L2101,2469 C2101,2469.55 2100.55,2470 2100,2470 Z M2101,2448 L2081,2448 C2079.9,2448 2079,2448.9 2079,2450 L2079,2470 C2079,2471.1 2079.9,2472 2081,2472 L2101,2472 C2102.1,2472 2103,2471.1 2103,2470 L2103,2450 C2103,2448.9 2102.1,2448 2101,2448 Z",
     id: "checkbox_disabled"
   })))));
@@ -1382,53 +1383,53 @@ Checkbox.propTypes = {
 };
 
 var Logo = function Logo(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({}, props, {
+  return /*#__PURE__*/React__default.createElement("svg", _extends({}, props, {
     width: "170px",
     height: "30px",
     viewBox: "0 0 170 30"
-  }), /*#__PURE__*/React.createElement("g", {
+  }), /*#__PURE__*/React__default.createElement("g", {
     stroke: "none",
     strokeWidth: "1",
     fill: "none",
     fillRule: "evenodd"
-  }, /*#__PURE__*/React.createElement("g", {
+  }, /*#__PURE__*/React__default.createElement("g", {
     id: "03.Organismo/header/desktop/desktop",
     transform: "translate(-92.000000, -21.000000)",
     fill: "#FFFFFF"
-  }, /*#__PURE__*/React.createElement("g", {
+  }, /*#__PURE__*/React__default.createElement("g", {
     id: "01.Atomo/brand/Marca",
     transform: "translate(92.000000, 21.000000)"
-  }, /*#__PURE__*/React.createElement("g", {
+  }, /*#__PURE__*/React__default.createElement("g", {
     id: "Coopeuch",
     transform: "translate(0.000000, -0.000000)"
-  }, /*#__PURE__*/React.createElement("path", {
+  }, /*#__PURE__*/React__default.createElement("path", {
     d: "M28.6382169,12.9940002 C20.1501254,13.3029497 13.3021331,20.1505911 12.994058,28.6382475 C12.9815926,28.9641137 13.2433673,29.2356688 13.5701406,29.2356688 L25.7925292,29.2356688 C27.6944031,29.2356688 29.2356688,27.6944821 29.2356688,25.7927057 L29.2356688,13.5709435 C29.2356688,13.244187 28.9649901,12.9824256 28.6382169,12.9940002",
     fillRule: "nonzero"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__default.createElement("path", {
     d: "M25.836663,0 L10.835155,0 C4.85107652,0 0,4.85107651 0,10.8351549 L0,25.836663 C0,27.7141588 1.52238893,29.2356688 3.39900578,29.2356688 L5.42592777,29.2356688 C5.73356987,29.2356688 5.98232049,28.9877972 5.98407844,28.681034 C6.27589896,16.2944839 16.2988788,6.27326202 28.6854289,5.98407844 C28.9904341,5.97968355 29.2356688,5.73181192 29.2356688,5.42680674 L29.2356688,3.39988476 C29.2356688,1.52238893 27.7141588,0 25.836663,0",
     fillRule: "nonzero"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__default.createElement("path", {
     d: "M44.522656,17.9815831 C43.3793182,17.9815831 42.4418518,17.6085099 41.7093734,16.8909284 C40.976895,16.1439164 40.5960769,15.196951 40.5960769,14.0768659 C40.5960769,11.7804317 42.2660217,10.143584 44.522656,10.143584 C45.7755563,10.143584 46.8641129,10.668137 47.5285566,11.5311392 C47.7476816,11.8167869 48.1426368,11.9068092 48.4571872,11.7267646 L50.5052994,10.5521467 C50.8578432,10.3495965 50.9594536,9.89688828 50.7306094,9.56536378 C49.4229278,7.66797076 47.1185807,6.49681529 44.5518138,6.49681529 C42.3543785,6.49681529 40.50772,7.21526248 39.0127219,8.67899044 C37.547765,10.143584 36.8152866,11.9232556 36.8152866,14.0768659 C36.8152866,16.2296107 37.547765,18.0101479 39.0127219,19.4747414 C40.50772,20.9384693 42.3543785,21.656051 44.5518138,21.656051 C47.11593,21.656051 49.3928864,20.4658523 50.7615343,18.5675936 C51.0018649,18.234338 50.899371,17.7695114 50.5371078,17.5669612 L48.4828107,16.4174457 C48.1700274,16.2417291 47.7803736,16.332617 47.5621322,16.6139367 C46.8976885,17.4743421 45.8038305,17.9815831 44.522656,17.9815831",
     fillRule: "nonzero"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__default.createElement("path", {
     d: "M110.606752,6.49681529 C108.348956,6.49681529 106.472174,7.21439688 105.035636,8.67899042 C103.599098,10.1141536 102.866242,11.9232556 102.866242,14.0760003 C102.866242,16.2581755 103.599098,18.0672775 105.064809,19.5024406 C106.531404,20.9384694 108.466531,21.656051 110.900248,21.656051 C113.503697,21.656051 115.529879,20.7714088 116.956693,19.0263612 C117.142338,18.7995742 117.076036,18.4619906 116.818786,18.31657 L114.772271,17.1601297 C114.487615,16.9991283 114.122514,17.032021 113.886479,17.2570767 C113.167768,17.9443624 112.180314,18.2966612 110.958594,18.2966612 C108.700797,18.2966612 107.322605,17.4068254 106.824015,15.5977234 L116.484625,15.5977234 C117.335055,15.5977234 118.024594,14.9234218 118.025478,14.0907156 L118.025478,14.0760003 C118.025478,11.9232556 117.321795,10.1427184 115.914429,8.67899042 C114.536237,7.21439688 112.747857,6.49681529 110.606752,6.49681529 Z M106.76567,12.7265315 C107.205914,10.8897304 108.584106,9.82677471 110.606752,9.82677471 C112.33767,9.82677471 113.803381,10.7746057 114.243625,12.7265315 L106.76567,12.7265315 Z",
     fillRule: "nonzero"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__default.createElement("path", {
     d: "M132.736423,14.080019 C132.736423,15.2283916 132.363978,16.1750594 131.619088,16.9209189 C130.874197,17.6667784 129.956514,18.0397082 128.839178,18.0397082 C127.721843,18.0397082 126.804159,17.6667784 126.059269,16.9209189 C125.343028,16.1750594 124.970583,15.2283916 124.970583,14.080019 L124.970583,7.0956544 C124.970583,6.76485855 124.702888,6.49681529 124.372522,6.49681529 L121.963267,6.49681529 C121.581869,6.49681529 121.273885,6.80609597 121.273885,7.18709391 L121.273885,14.080019 C121.273885,16.2037464 121.990126,18.0110212 123.451257,19.4749498 C124.913284,20.9379819 126.71821,21.656051 128.839178,21.656051 C130.960146,21.656051 132.765073,20.9379819 134.227099,19.4749498 C135.688231,18.0110212 136.433121,16.2037464 136.433121,14.080019 L136.433121,7.18709391 C136.433121,6.80609597 136.124242,6.49681529 135.743739,6.49681529 L133.425805,6.49681529 C133.045302,6.49681529 132.736423,6.80609597 132.736423,7.18709391 L132.736423,14.080019 Z",
     fillRule: "nonzero"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__default.createElement("path", {
     d: "M166.345208,7.12629803 L166.345208,12.0525357 C164.115784,12.4507799 161.795905,12.4336512 159.578359,12.0011494 L159.578359,7.12629803 C159.578359,6.77858375 159.277753,6.49681529 158.906791,6.49681529 L156.595135,6.49681529 C156.224174,6.49681529 155.923567,6.77858375 155.923567,7.12629803 L155.923567,19.9437656 C155.923567,20.2914799 156.224174,20.5732484 156.595135,20.5732484 L158.906791,20.5732484 C159.277753,20.5732484 159.578359,20.2914799 159.578359,19.9437656 L159.578359,15.5253963 C160.737842,15.7112436 161.914685,15.8157291 163.101579,15.8157291 C164.191621,15.8157291 165.274353,15.727516 166.345208,15.5699311 L166.345208,19.9437656 C166.345208,20.2914799 166.645814,20.5732484 167.016776,20.5732484 L169.328432,20.5732484 C169.699393,20.5732484 170,20.2914799 170,19.9437656 L170,7.12629803 C170,6.77858375 169.699393,6.49681529 169.328432,6.49681529 L167.016776,6.49681529 C166.645814,6.49681529 166.345208,6.77858375 166.345208,7.12629803",
     fillRule: "nonzero"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__default.createElement("path", {
     d: "M101.597919,10.3484647 C101.138388,8.14409397 99.1415334,6.49681529 96.6570845,6.49681529 L89.4185946,6.49681529 C89.0713155,6.49681529 88.7898089,6.77279017 88.7898089,7.11218786 L88.7898089,19.9578759 C88.7898089,20.2981306 89.0713155,20.5732484 89.4185946,20.5732484 L91.7346658,20.5732484 C92.0828219,20.5732484 92.3643285,20.2981306 92.3643285,19.9578759 L92.3643285,17.9652001 L92.3643285,16.8835842 L96.2221086,16.8835842 C98.6241226,16.8835842 100.817418,15.4111468 101.545301,13.1733505 C101.87241,12.1671564 101.835578,11.2175285 101.597919,10.3484647 M95.8239653,13.8058643 L92.2827705,13.8058643 L92.2827705,9.4314053 L95.8239653,9.4314053 C97.0596126,9.4314053 98.0619864,10.4101734 98.0619864,11.6186348 C98.0619864,12.8270963 97.0596126,13.8058643 95.8239653,13.8058643",
     fillRule: "nonzero"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__default.createElement("path", {
     d: "M60.6229027,6.49681529 C58.5017934,6.49681529 56.6969065,7.24382724 55.2350259,8.70755522 C53.7735772,10.1712832 53.0573248,11.9518204 53.0573248,14.0760003 C53.0573248,16.201046 53.7735772,18.0101479 55.2350259,19.4738758 C56.6969065,20.9384693 58.5017934,21.656051 60.6229027,21.656051 C62.7431481,21.656051 64.548899,20.9384693 66.0099156,19.4738758 C67.4717963,18.0101479 68.2165605,16.201046 68.2165605,14.0760003 C68.2165605,11.9518204 67.4717963,10.1712832 66.0099156,8.70755522 C64.548899,7.24382724 62.7431481,6.49681529 60.6229027,6.49681529 M63.4023768,16.9186275 C62.6576125,17.6656395 61.7400491,18.0378471 60.6229027,18.0378471 C59.5048924,18.0378471 58.588193,17.6656395 57.8434287,16.9186275 C57.1263124,16.1724812 56.7539302,15.2246502 56.7539302,14.0760003 C56.7539302,12.928216 57.1263124,11.9803851 57.8434287,11.2342387 C58.588193,10.4880924 59.5048924,10.1141536 60.6229027,10.1141536 C61.7400491,10.1141536 62.6576125,10.4880924 63.4023768,11.2342387 C64.147141,11.9803851 64.5203871,12.928216 64.5203871,14.0760003 C64.5203871,15.2246502 64.147141,16.1724812 63.4023768,16.9186275",
     fillRule: "nonzero"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__default.createElement("path", {
     d: "M77.9475271,6.49681529 C75.8272214,6.49681529 74.021419,7.24382724 72.5594967,8.70755522 C71.0984384,10.1712832 70.3821656,11.9518204 70.3821656,14.0760003 C70.3821656,16.201046 71.0984384,18.0101479 72.5594967,19.4738758 C74.021419,20.9384693 75.8272214,21.656051 77.9475271,21.656051 C80.0678329,21.656051 81.8736352,20.9384693 83.3346935,19.4738758 C84.7966158,18.0101479 85.5414013,16.201046 85.5414013,14.0760003 C85.5414013,11.9518204 84.7966158,10.1712832 83.3346935,8.70755522 C81.8736352,7.24382724 80.0678329,6.49681529 77.9475271,6.49681529 M80.7270803,16.9186275 C79.9822948,17.6656395 79.0647053,18.0378471 77.9475271,18.0378471 C76.8294849,18.0378471 75.9127594,17.6656395 75.1679739,16.9186275 C74.4517011,16.1724812 74.0784443,15.2246502 74.0784443,14.0760003 C74.0784443,12.928216 74.4517011,11.9803851 75.1679739,11.2342387 C75.9127594,10.4880924 76.8294849,10.1141536 77.9475271,10.1141536 C79.0647053,10.1141536 79.9822948,10.4880924 80.7270803,11.2342387 C81.4718658,11.9803851 81.8451226,12.928216 81.8451226,14.0760003 C81.8451226,15.2246502 81.4718658,16.1724812 80.7270803,16.9186275",
     fillRule: "nonzero"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__default.createElement("path", {
     d: "M146.306095,17.9813733 C145.162758,17.9813733 144.225291,17.6082788 143.492813,16.8897906 C142.760334,16.1436016 142.379516,15.1957166 142.379516,14.0764331 C142.379516,11.7798678 144.049461,10.1429266 146.306095,10.1429266 C147.558996,10.1429266 148.647552,10.6675095 149.311996,11.5305611 C149.531121,11.816225 149.926076,11.9062525 150.240627,11.7261976 L152.288739,10.5515126 C152.641283,10.3489509 152.742893,9.89621678 152.514049,9.56467343 C151.206367,7.66717199 148.90202,6.49681529 146.335253,6.49681529 C144.136934,6.49681529 142.29116,7.21443785 140.796161,8.67824939 C139.331205,10.1429266 138.598726,11.9226998 138.598726,14.0764331 C138.598726,16.2293008 139.331205,18.0099397 140.796161,19.4746168 C142.29116,20.9384284 144.136934,21.656051 146.335253,21.656051 C148.898486,21.656051 151.176326,20.4657843 152.544974,18.568283 C152.785304,18.2341426 152.68281,17.7692894 152.320547,17.5667276 L150.26625,16.4162809 C149.953467,16.2414199 149.563813,16.3314473 149.345572,16.6136487 C148.681128,17.4741033 147.58727,17.9813733 146.306095,17.9813733",
     fillRule: "nonzero"
   }))))));
@@ -1441,9 +1442,9 @@ var HeaderItem = function HeaderItem(_ref) {
       children = _ref.children,
       props = _objectWithoutPropertiesLoose(_ref, ["icon", "children"]);
 
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React__default.createElement("div", _extends({
     className: headerItemStyles.headerItem
-  }, props), icon && /*#__PURE__*/React.createElement(Icon, {
+  }, props), icon && /*#__PURE__*/React__default.createElement(Icon, {
     name: icon
   }), children);
 };
@@ -1471,17 +1472,17 @@ var HeaderProfileItem = function HeaderProfileItem(_ref) {
   var circlerContent = name.split(' ').reduce(function (acc, text) {
     return acc.concat(text[0]);
   }, []).join('').toUpperCase();
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React__default.createElement("div", _extends({
     className: "" + headerStyle.profileItemContainer
-  }, props), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, props), /*#__PURE__*/React__default.createElement("div", null, /*#__PURE__*/React__default.createElement("div", {
     className: headerStyle.circleAvatar
-  }, circlerContent)), /*#__PURE__*/React.createElement("div", {
+  }, circlerContent)), /*#__PURE__*/React__default.createElement("div", {
     className: headerStyle.profileBox
-  }, /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React__default.createElement("span", {
     className: headerStyle.profileBoxUsername
-  }, name), /*#__PURE__*/React.createElement("p", {
+  }, name), /*#__PURE__*/React__default.createElement("p", {
     className: headerStyle.date
-  }, /*#__PURE__*/React.createElement("small", null, "\xDAltimo acceso ", date.toLocaleDateString('es-ES', options), " - ", date.getHours() + ":" + date.getMinutes(), " hrs "))), /*#__PURE__*/React.createElement(Icon, {
+  }, /*#__PURE__*/React__default.createElement("small", null, "\xDAltimo acceso ", date.toLocaleDateString('es-ES', options), " - ", date.getHours() + ":" + date.getMinutes(), " hrs "))), /*#__PURE__*/React__default.createElement(Icon, {
     name: "arrow-right",
     className: "px-1"
   }));
@@ -1504,29 +1505,29 @@ var Header = function Header(_ref) {
       props = _objectWithoutPropertiesLoose(_ref, ["children", "logo", "logOut", "userData"]);
 
   var headerStyleContainer = [Styles.header].concat(props.className).join(' ');
-  return /*#__PURE__*/React.createElement(Grid, {
+  return /*#__PURE__*/React__default.createElement(Grid, {
     row: true,
     className: headerStyleContainer
-  }, /*#__PURE__*/React.createElement(Grid, {
+  }, /*#__PURE__*/React__default.createElement(Grid, {
     col: 7,
     xl: 8,
     className: Styles.headerOptionsContainer
-  }, /*#__PURE__*/React.createElement(Grid, {
+  }, /*#__PURE__*/React__default.createElement(Grid, {
     row: true,
     className: Styles.headerLeftArea
-  }, logo && /*#__PURE__*/React.createElement(Grid, {
+  }, logo && /*#__PURE__*/React__default.createElement(Grid, {
     col: 3,
     xl: 4,
     className: Styles.headerLogoContainer
-  }, logo), children)), /*#__PURE__*/React.createElement(Grid, {
+  }, logo), children)), /*#__PURE__*/React__default.createElement(Grid, {
     col: 3,
     lg: 4,
     xl: 3,
     className: Styles.profileItemContainer
-  }, /*#__PURE__*/React.createElement(HeaderProfileItem, {
+  }, /*#__PURE__*/React__default.createElement(HeaderProfileItem, {
     name: userData.name,
     date: userData.date
-  })), logOut && /*#__PURE__*/React.createElement(Grid, {
+  })), logOut && /*#__PURE__*/React__default.createElement(Grid, {
     col: 1,
     className: Styles.flex
   }, logOut));
@@ -1584,37 +1585,37 @@ var Input = function Input(_ref) {
   var getHelperText = function getHelperText(element) {
     switch (element.type) {
       case 'success':
-        return /*#__PURE__*/React.createElement("div", null, successSvg, " ", /*#__PURE__*/React.createElement("span", {
+        return /*#__PURE__*/React__default.createElement("div", null, successSvg, " ", /*#__PURE__*/React__default.createElement("span", {
           className: inputStyles.successText
         }, element.text));
 
       case 'error':
-        return /*#__PURE__*/React.createElement("div", null, errorSvg, " ", /*#__PURE__*/React.createElement("span", {
+        return /*#__PURE__*/React__default.createElement("div", null, errorSvg, " ", /*#__PURE__*/React__default.createElement("span", {
           className: inputStyles.errorText
         }, element.text));
 
       default:
-        return /*#__PURE__*/React.createElement("div", null, " ", element.text);
+        return /*#__PURE__*/React__default.createElement("div", null, " ", element.text);
     }
   };
 
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     className: [inputStyles.inputContainer, validateStyle].join(' ')
-  }, label && /*#__PURE__*/React.createElement("span", {
+  }, label && /*#__PURE__*/React__default.createElement("span", {
     className: inputStyles.inputLabel
-  }, " ", label, " "), /*#__PURE__*/React.createElement("div", {
+  }, " ", label, " "), /*#__PURE__*/React__default.createElement("div", {
     className: inputStyle.join(' ')
-  }, prefix && /*#__PURE__*/React.createElement("div", {
+  }, prefix && /*#__PURE__*/React__default.createElement("div", {
     className: inputStyles.prefixContainer
-  }, prefix), variant && variant === 'textarea' ? /*#__PURE__*/React.createElement("textarea", props) : /*#__PURE__*/React.createElement("input", props), suffix && /*#__PURE__*/React.createElement("div", {
+  }, prefix), variant && variant === 'textarea' ? /*#__PURE__*/React__default.createElement("textarea", props) : /*#__PURE__*/React__default.createElement("input", props), suffix && /*#__PURE__*/React__default.createElement("div", {
     className: inputStyles.suffixContainer
-  }, suffix)), /*#__PURE__*/React.createElement("div", {
+  }, suffix)), /*#__PURE__*/React__default.createElement("div", {
     className: [inputStyles.inputHelper].join(' ')
-  }, /*#__PURE__*/React.createElement("div", null, Array.isArray(assistText) && assistText.length > 0 ? assistText.map(function (el, i) {
-    return /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React__default.createElement("div", null, Array.isArray(assistText) && assistText.length > 0 ? assistText.map(function (el, i) {
+    return /*#__PURE__*/React__default.createElement("div", {
       key: el.text + "-" + i
     }, getHelperText(el));
-  }) : assistText), maxLength && /*#__PURE__*/React.createElement("div", null, Number(maxLength) - props.value.length + "/" + maxLength)));
+  }) : assistText), maxLength && /*#__PURE__*/React__default.createElement("div", null, Number(maxLength) - props.value.length + "/" + maxLength)));
 };
 
 Input.defaultProps = {
@@ -1638,43 +1639,43 @@ Input.propTypes = {
   variant: propTypes.string,
   disabled: propTypes.bool
 };
-var errorSvg = /*#__PURE__*/React.createElement("svg", {
+var errorSvg = /*#__PURE__*/React__default.createElement("svg", {
   width: "10px",
   height: "10px",
   "data-testid": "errorIcon"
-}, /*#__PURE__*/React.createElement("g", {
+}, /*#__PURE__*/React__default.createElement("g", {
   stroke: "none",
   strokeWidth: "1",
   fill: "none",
   fillRule: "evenodd"
-}, /*#__PURE__*/React.createElement("g", {
+}, /*#__PURE__*/React__default.createElement("g", {
   transform: "translate(-1186.000000, -1849.000000)",
   fill: "#1F1E1E"
-}, /*#__PURE__*/React.createElement("g", {
+}, /*#__PURE__*/React__default.createElement("g", {
   transform: "translate(1183.000000, 1754.000000)"
-}, /*#__PURE__*/React.createElement("g", {
+}, /*#__PURE__*/React__default.createElement("g", {
   transform: "translate(0.000000, 92.000000)"
-}, /*#__PURE__*/React.createElement("path", {
+}, /*#__PURE__*/React__default.createElement("path", {
   d: "M12.2,3.80666667 C11.94,3.54666667 11.52,3.54666667 11.26,3.80666667 L8,7.06 L4.74,3.8 C4.48,3.54 4.06,3.54 3.8,3.8 C3.54,4.06 3.54,4.48 3.8,4.74 L7.06,8 L3.8,11.26 C3.54,11.52 3.54,11.94 3.8,12.2 C4.06,12.46 4.48,12.46 4.74,12.2 L8,8.94 L11.26,12.2 C11.52,12.46 11.94,12.46 12.2,12.2 C12.46,11.94 12.46,11.52 12.2,11.26 L8.94,8 L12.2,4.74 C12.4533333,4.48666667 12.4533333,4.06 12.2,3.80666667 Z",
   id: "color-icono"
 }))))));
-var successSvg = /*#__PURE__*/React.createElement("svg", {
+var successSvg = /*#__PURE__*/React__default.createElement("svg", {
   width: "12px",
   height: "9px",
   "data-testid": "successIcon"
-}, /*#__PURE__*/React.createElement("g", {
+}, /*#__PURE__*/React__default.createElement("g", {
   stroke: "none",
   strokeWidth: "1",
   fill: "none",
   fillRule: "evenodd"
-}, /*#__PURE__*/React.createElement("g", {
+}, /*#__PURE__*/React__default.createElement("g", {
   transform: "translate(-1100.000000, -1816.000000)",
   fill: "#1F1E1E"
-}, /*#__PURE__*/React.createElement("g", {
+}, /*#__PURE__*/React__default.createElement("g", {
   transform: "translate(1098.000000, 1720.000000)"
-}, /*#__PURE__*/React.createElement("g", {
+}, /*#__PURE__*/React__default.createElement("g", {
   transform: "translate(0.000000, 92.000000)"
-}, /*#__PURE__*/React.createElement("path", {
+}, /*#__PURE__*/React__default.createElement("path", {
   d: "M6,10.8 L3.66666667,8.46666667 C3.40666667,8.20666667 2.99333333,8.20666667 2.73333333,8.46666667 C2.47333333,8.72666667 2.47333333,9.14 2.73333333,9.4 L5.52666667,12.1933333 C5.78666667,12.4533333 6.20666667,12.4533333 6.46666667,12.1933333 L13.5333333,5.13333333 C13.7933333,4.87333333 13.7933333,4.46 13.5333333,4.2 C13.2733333,3.94 12.86,3.94 12.6,4.2 L6,10.8 Z",
   id: "color-icono"
 }))))));
@@ -1689,9 +1690,9 @@ var Radio = function Radio(_ref) {
 
   var disabledClass = disabled ? styles$3.disabled : '';
   var checkedClass = checked ? styles$3.checked : styles$3.unchecked;
-  return /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/React__default.createElement("label", {
     className: [styles$3.radioContainer, disabledClass].concat(checkedClass).join(' ')
-  }, /*#__PURE__*/React.createElement("input", _extends({
+  }, /*#__PURE__*/React__default.createElement("input", _extends({
     "data-testid": "radio",
     disabled: disabled,
     type: "radio",
@@ -1700,7 +1701,7 @@ var Radio = function Radio(_ref) {
       var target = _ref2.target;
       return onChange(target.checked);
     } : null
-  }, props)), /*#__PURE__*/React.createElement("div", {
+  }, props)), /*#__PURE__*/React__default.createElement("div", {
     className: [styles$3.radio, checkedClass, disabledClass].join(' ')
   }));
 };
@@ -1725,7 +1726,7 @@ var Separator = function Separator(_ref) {
   var direction = vertical ? 'vertical' : 'horizontal';
   var separatorClases = [styles$4.separator];
   separatorClases = separatorClases.concat(styles$4[direction]);
-  return /*#__PURE__*/React.createElement("hr", {
+  return /*#__PURE__*/React__default.createElement("hr", {
     className: separatorClases.join(' '),
     "data-direction": direction
   });
@@ -1750,7 +1751,7 @@ var SidebarElement = function SidebarElement(_ref) {
       open = _ref.open,
       props = _objectWithoutPropertiesLoose(_ref, ["text", "icon", "sublevel", "level", "notification", "active", "open"]);
 
-  var defaultIcon = !icon && level === 3 ? /*#__PURE__*/React.createElement(Icon, {
+  var defaultIcon = !icon && level === 3 ? /*#__PURE__*/React__default.createElement(Icon, {
     name: "arrow-right",
     size: "1"
   }) : icon;
@@ -1760,17 +1761,17 @@ var SidebarElement = function SidebarElement(_ref) {
     containerClasses = containerClasses.concat(styles$5.active);
   }
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement("div", _extends({
     role: "component",
     "data-status": active ? 'active' : '',
     className: containerClasses.join(' ')
-  }, props), /*#__PURE__*/React.createElement("div", {
+  }, props), /*#__PURE__*/React__default.createElement("div", {
     className: [styles$5.textContainer].join(' ')
-  }, defaultIcon, text), notification === true && /*#__PURE__*/React.createElement("span", {
+  }, defaultIcon, text), notification === true && /*#__PURE__*/React__default.createElement("span", {
     role: "notification",
     className: [styles$5.notification].join(' ')
   })), open && sublevel.map(function (child, index) {
-    return /*#__PURE__*/React.createElement(SidebarElement, _extends({
+    return /*#__PURE__*/React__default.createElement(SidebarElement, _extends({
       key: index,
       level: level + 1
     }, child));
@@ -1803,10 +1804,10 @@ var styles$6 = {"sidebar":"__sidebar__sidebar__cwV8q"};
 
 var Sidebar = function Sidebar(_ref) {
   var items = _ref.items;
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     className: [styles$6.sidebar].join(' ')
   }, items.map(function (element, index) {
-    return /*#__PURE__*/React.createElement(SidebarElement, _extends({
+    return /*#__PURE__*/React__default.createElement(SidebarElement, _extends({
       key: index
     }, element));
   }));
@@ -1830,12 +1831,12 @@ var Switch = function Switch(_ref) {
     switchClass = switchClass.concat(styles$7.active);
   }
 
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React__default.createElement("div", _extends({
     "data-status": status ? 'on' : 'off',
     className: containerClass.join(' ')
-  }, props), /*#__PURE__*/React.createElement("div", {
+  }, props), /*#__PURE__*/React__default.createElement("div", {
     className: switchClass.join(' ')
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React__default.createElement("div", {
     className: styles$7.circle
   })));
 };
@@ -1856,15 +1857,15 @@ var Loading = function Loading(_ref) {
   var dark = _ref.dark;
   var styleArr = [styles$8.loadingContainer, dark ? styles$8.dark : null];
   var theme = dark ? 'dark' : 'light';
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     className: styleArr.join(' '),
     "data-theme": theme
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React__default.createElement("div", {
     className: styles$8.circleMain
-  }), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React__default.createElement("div", {
     className: styles$8.circlesContainer
   }, [styles$8.circle_1, styles$8.circle_2].map(function (el, i) {
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React__default.createElement("div", {
       key: i,
       className: [styles$8.circle, el].join(' ')
     });
@@ -1890,12 +1891,12 @@ var TitleSection = function TitleSection(_ref) {
       props = _objectWithoutPropertiesLoose(_ref, ["label", "prefix"]);
 
   var containerClass = [styles$9.titleContainer];
-  return /*#__PURE__*/React.createElement("div", _extends({}, props, {
+  return /*#__PURE__*/React__default.createElement("div", _extends({}, props, {
     className: containerClass.join(' ')
-  }), prefix && /*#__PURE__*/React.createElement(Icon, {
+  }), prefix && /*#__PURE__*/React__default.createElement(Icon, {
     className: styles$9.suffix,
     name: prefix
-  }, " "), " ", /*#__PURE__*/React.createElement("div", {
+  }, " "), " ", /*#__PURE__*/React__default.createElement("div", {
     "data-testid": "title-section-label"
   }, label));
 };
@@ -1917,7 +1918,7 @@ var InputChip = function InputChip(_ref) {
       disabled = _ref.disabled,
       props = _objectWithoutPropertiesLoose(_ref, ["value", "onClose", "variant", "disabled"]);
 
-  var mainRef = React.createRef(null);
+  var mainRef = React__default.createRef(null);
 
   var onPress = function onPress() {
     mainRef.current.className = classesComponent.concat(styles$a.pressed).join(' ');
@@ -1928,11 +1929,11 @@ var InputChip = function InputChip(_ref) {
   };
 
   var classesComponent = [styles$a.chip, disabled ? styles$a.disabled : null, variant ? styles$a.variant : null];
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement("div", _extends({
     ref: mainRef
   }, props, {
     className: classesComponent.join(' ')
-  }), value, /*#__PURE__*/React.createElement(Icon, {
+  }), value, /*#__PURE__*/React__default.createElement(Icon, {
     onMouseDown: onPress,
     onClick: onClose,
     onMouseUp: mouseUp,
@@ -1965,30 +1966,30 @@ var ProgressBar = function ProgressBar(_ref) {
   var alignment = assistText && percent ? styles$b.between : styles$b[helperAlign];
   var direction = reverse ? styles$b.reverse : null;
   var bellowClasses = [styles$b.bellowContent, alignment, direction];
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     className: styles$b.progressBar
-  }, !Array.isArray(label) ? /*#__PURE__*/React.createElement("div", {
+  }, !Array.isArray(label) ? /*#__PURE__*/React__default.createElement("div", {
     className: styles$b.simpleLabel
-  }, label) : /*#__PURE__*/React.createElement("div", {
+  }, label) : /*#__PURE__*/React__default.createElement("div", {
     className: styles$b.multiHeader
   }, label.map(function (el, i) {
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React__default.createElement("div", {
       key: i
-    }, /*#__PURE__*/React.createElement("label", {
+    }, /*#__PURE__*/React__default.createElement("label", {
       className: styles$b.multiHeaderLabel
-    }, el.label), /*#__PURE__*/React.createElement("div", null, el.text));
-  })), /*#__PURE__*/React.createElement("div", {
+    }, el.label), /*#__PURE__*/React__default.createElement("div", null, el.text));
+  })), /*#__PURE__*/React__default.createElement("div", {
     className: styles$b.barContainer
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React__default.createElement("div", {
     className: styles$b.bar,
     "data-progress": progress,
     style: {
       width: progress + "%"
     }
-  })), assistText || percent ? /*#__PURE__*/React.createElement("div", {
+  })), assistText || percent ? /*#__PURE__*/React__default.createElement("div", {
     className: bellowClasses.join(' ').trim(),
     role: "helper"
-  }, assistText, percent && /*#__PURE__*/React.createElement("div", {
+  }, assistText, percent && /*#__PURE__*/React__default.createElement("div", {
     className: Number(progress) === 100 ? styles$b.full : null
   }, progress + "%")) : null);
 };
@@ -2039,15 +2040,15 @@ var Message = function Message(_ref) {
     }
   };
 
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     className: messageClasses.join(' ').trim(),
     role: "message"
-  }, /*#__PURE__*/React.createElement(Icon, {
+  }, /*#__PURE__*/React__default.createElement(Icon, {
     name: getIcon(),
     className: styles$c.prefix
-  }), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React__default.createElement("div", {
     className: styles$c.textContainer
-  }, title && /*#__PURE__*/React.createElement("div", null, " ", title, " "), description && /*#__PURE__*/React.createElement("p", null, " ", description, " ")), /*#__PURE__*/React.createElement("div", {
+  }, title && /*#__PURE__*/React__default.createElement("div", null, " ", title, " "), description && /*#__PURE__*/React__default.createElement("p", null, " ", description, " ")), /*#__PURE__*/React__default.createElement("div", {
     className: styles$c.actionContainer
   }, action));
 };
@@ -2062,6 +2063,116 @@ Message.propTypes = {
   action: propTypes.element
 };
 
+var inputStyles$1 = {"input":"__select__input__3SDeG","suffixContainer":"__select__suffixContainer__1RIWf","inputContainer":"__select__inputContainer__3ZeLa","disabled":"__select__disabled__tQrqh","inputLabel":"__select__inputLabel__30ukr","optionRow":"__select__optionRow__3k3jO","optionContainer":"__select__optionContainer__Do9PN","bellowContainer":"__select__bellowContainer__2-1yB","prefixContainer":"__select__prefixContainer__15505","currentElement":"__select__currentElement__1ZRzS","inputHelper":"__select__inputHelper__1F3qg"};
+
+var InputSelect = function InputSelect(_ref) {
+  var label = _ref.label,
+      assistText = _ref.assistText,
+      options = _ref.options,
+      current = _ref.current,
+      onSelected = _ref.onSelected,
+      props = _objectWithoutPropertiesLoose(_ref, ["label", "assistText", "options", "current", "onSelected"]);
+
+  var _useState = React.useState(false),
+      optionOpen = _useState[0],
+      setOptionOpen = _useState[1];
+
+  var inputStyle = [inputStyles$1.input, inputStyles$1.hasSuffix];
+  var validateStyle = [];
+
+  if (props.disabled) {
+    validateStyle = validateStyle.concat(inputStyles$1.disabled);
+  }
+
+  var handlerOpen = function handlerOpen() {
+    if (optionOpen || props.disabled) return;
+    setOptionOpen(true);
+
+    var globalClick = function globalClick() {
+      setOptionOpen(false);
+      setTimeout(function () {
+        return document.removeEventListener('click', globalClick);
+      }, 10);
+    };
+
+    document.addEventListener('click', globalClick);
+  };
+
+  var getRow = function getRow(el, key) {
+    try {
+      var action = key === 'selected' ? null : function () {
+        return onSelected(el.value);
+      };
+      var isDisabled = el.disabled && el.disabled === true ? inputStyles$1.disabled : '';
+      return /*#__PURE__*/React__default.createElement("div", {
+        key: key,
+        className: [inputStyles$1.optionRow, isDisabled].join(' ').trim(),
+        onClick: action
+      }, el.prefix && /*#__PURE__*/React__default.createElement("div", {
+        className: inputStyles$1.prefixContainer
+      }, " ", /*#__PURE__*/React__default.createElement(Icon, {
+        size: 1,
+        name: el.prefix
+      })), el.text);
+    } catch (e) {
+      return /*#__PURE__*/React__default.createElement("div", {
+        role: "empty",
+        className: inputStyles$1.optionRow
+      });
+    }
+  };
+
+  return /*#__PURE__*/React__default.createElement("div", {
+    role: "select",
+    className: [inputStyles$1.inputContainer, validateStyle].join(' ')
+  }, optionOpen, label && /*#__PURE__*/React__default.createElement("span", {
+    className: inputStyles$1.inputLabel
+  }, " ", label, " "), /*#__PURE__*/React__default.createElement("div", {
+    className: inputStyle.join(' ')
+  }, /*#__PURE__*/React__default.createElement("div", {
+    role: "dropdown",
+    className: inputStyles$1.currentElement,
+    onClick: handlerOpen
+  }, getRow(options.find(function (ob) {
+    return ob.value === current;
+  }), 'selected')), /*#__PURE__*/React__default.createElement("div", {
+    className: inputStyles$1.suffixContainer
+  }, " ", /*#__PURE__*/React__default.createElement(Icon, {
+    size: 1,
+    name: optionOpen ? "arrow-up" : "arrow-down"
+  }), " ")), /*#__PURE__*/React__default.createElement("div", {
+    className: inputStyles$1.bellowContainer
+  }, optionOpen && /*#__PURE__*/React__default.createElement("div", {
+    className: inputStyles$1.optionContainer
+  }, options.filter(function (el) {
+    return el.disabled !== true;
+  }).map(getRow)), /*#__PURE__*/React__default.createElement("div", {
+    className: [inputStyles$1.inputHelper].join(' ')
+  }, assistText)));
+};
+
+InputSelect.defaultProps = {
+  onSelected: function onSelected() {
+    return null;
+  },
+  current: '',
+  disabled: false,
+  options: []
+};
+InputSelect.propTypes = {
+  onSelected: propTypes.func,
+  label: propTypes.string,
+  current: propTypes.string,
+  assistText: propTypes.string,
+  disabled: propTypes.bool,
+  options: propTypes.arrayOf(propTypes.shape({
+    prefix: propTypes.string,
+    text: propTypes.string,
+    value: propTypes.string.isRequired,
+    disabled: propTypes.bool
+  })).isRequired
+};
+
 exports.Button = Button;
 exports.Card = Card;
 exports.Checkbox = Checkbox;
@@ -2072,6 +2183,7 @@ exports.HeaderProfileItem = HeaderProfileItem;
 exports.Icon = Icon;
 exports.Input = Input;
 exports.InputChip = InputChip;
+exports.InputSelect = InputSelect;
 exports.Loading = Loading;
 exports.Logo = Logo;
 exports.Message = Message;

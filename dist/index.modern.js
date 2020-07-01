@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -2007,5 +2007,102 @@ Message.propTypes = {
   action: propTypes.element
 };
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
+var inputStyles$1 = {"input":"__select__input__3SDeG","suffixContainer":"__select__suffixContainer__1RIWf","inputContainer":"__select__inputContainer__3ZeLa","disabled":"__select__disabled__tQrqh","inputLabel":"__select__inputLabel__30ukr","optionRow":"__select__optionRow__3k3jO","optionContainer":"__select__optionContainer__Do9PN","bellowContainer":"__select__bellowContainer__2-1yB","prefixContainer":"__select__prefixContainer__15505","currentElement":"__select__currentElement__1ZRzS","inputHelper":"__select__inputHelper__1F3qg"};
+
+const InputSelect = ({
+  label,
+  assistText,
+  options,
+  current,
+  onSelected,
+  ...props
+}) => {
+  const [optionOpen, setOptionOpen] = useState(false);
+  let inputStyle = [inputStyles$1.input, inputStyles$1.hasSuffix];
+  let validateStyle = [];
+
+  if (props.disabled) {
+    validateStyle = validateStyle.concat(inputStyles$1.disabled);
+  }
+
+  const handlerOpen = () => {
+    if (optionOpen || props.disabled) return;
+    setOptionOpen(true);
+
+    const globalClick = () => {
+      setOptionOpen(false);
+      setTimeout(() => document.removeEventListener('click', globalClick), 10);
+    };
+
+    document.addEventListener('click', globalClick);
+  };
+
+  const getRow = (el, key) => {
+    try {
+      const action = key === 'selected' ? null : () => onSelected(el.value);
+      const isDisabled = el.disabled && el.disabled === true ? inputStyles$1.disabled : '';
+      return /*#__PURE__*/React.createElement("div", {
+        key: key,
+        className: [inputStyles$1.optionRow, isDisabled].join(' ').trim(),
+        onClick: action
+      }, el.prefix && /*#__PURE__*/React.createElement("div", {
+        className: inputStyles$1.prefixContainer
+      }, " ", /*#__PURE__*/React.createElement(Icon, {
+        size: 1,
+        name: el.prefix
+      })), el.text);
+    } catch (e) {
+      return /*#__PURE__*/React.createElement("div", {
+        role: "empty",
+        className: inputStyles$1.optionRow
+      });
+    }
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    role: "select",
+    className: [inputStyles$1.inputContainer, validateStyle].join(' ')
+  }, optionOpen, label && /*#__PURE__*/React.createElement("span", {
+    className: inputStyles$1.inputLabel
+  }, " ", label, " "), /*#__PURE__*/React.createElement("div", {
+    className: inputStyle.join(' ')
+  }, /*#__PURE__*/React.createElement("div", {
+    role: "dropdown",
+    className: inputStyles$1.currentElement,
+    onClick: handlerOpen
+  }, getRow(options.find(ob => ob.value === current), 'selected')), /*#__PURE__*/React.createElement("div", {
+    className: inputStyles$1.suffixContainer
+  }, " ", /*#__PURE__*/React.createElement(Icon, {
+    size: 1,
+    name: optionOpen ? "arrow-up" : "arrow-down"
+  }), " ")), /*#__PURE__*/React.createElement("div", {
+    className: inputStyles$1.bellowContainer
+  }, optionOpen && /*#__PURE__*/React.createElement("div", {
+    className: inputStyles$1.optionContainer
+  }, options.filter(el => el.disabled !== true).map(getRow)), /*#__PURE__*/React.createElement("div", {
+    className: [inputStyles$1.inputHelper].join(' ')
+  }, assistText)));
+};
+
+InputSelect.defaultProps = {
+  onSelected: () => null,
+  current: '',
+  disabled: false,
+  options: []
+};
+InputSelect.propTypes = {
+  onSelected: propTypes.func,
+  label: propTypes.string,
+  current: propTypes.string,
+  assistText: propTypes.string,
+  disabled: propTypes.bool,
+  options: propTypes.arrayOf(propTypes.shape({
+    prefix: propTypes.string,
+    text: propTypes.string,
+    value: propTypes.string.isRequired,
+    disabled: propTypes.bool
+  })).isRequired
+};
+
+export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, InputSelect, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection };
 //# sourceMappingURL=index.modern.js.map

@@ -18,6 +18,7 @@ import TitleSection from './title';
 import InputChip from './input/chips';
 import ProgressBar from './progressbar';
 import Message from './message';
+import InputSelect from './input/select';
 
 export {
   Button,
@@ -39,5 +40,6 @@ export {
   InputChip,
   Loading,
   ProgressBar,
-  Message
+  Message,
+  InputSelect
 };
