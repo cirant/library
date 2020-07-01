@@ -19,7 +19,6 @@ import InputChip from './input/chips';
 import ProgressBar from './progressbar'
 import Bullets from './bullets'
 import Tooltip from './tooltip';
-import ProgressBar from './progressbar';
 import Message from './message';
 
 export {
@@ -43,5 +42,6 @@ export {
   Loading,
   ProgressBar,
   Bullets,
-  Tooltip
+  Tooltip,
+  Message
 };
