@@ -34,6 +34,8 @@ InputSearch.defaultProps = {
 
 InputSearch.propTypes = {
   label: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
   filterAction: PropTypes.func,
   clearAction: PropTypes.func
 };
