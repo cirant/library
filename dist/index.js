@@ -2,7 +2,6 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var React = require('react');
 var React__default = _interopDefault(React);
-var Tippy = _interopDefault(require('@tippyjs/react'));
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -2015,233 +2014,7 @@ ProgressBar.propTypes = {
   helperAlign: propTypes.oneOf(['start', 'between', 'end'])
 };
 
-var styles$c = {"error":"__bullet__error__17A9A","warning":"__bullet__warning__1o0c4","success":"__bullet__success__8m-fm","info":"__bullet__info__1CoXU","boxCircle":"__bullet__boxCircle__2C1_e","bulletElement":"__bullet__bulletElement__1OQ67","disabled":"__bullet__disabled__2hJYv","prefixContainer":"__bullet__prefixContainer__2vm2y","prefixItem":"__bullet__prefixItem__3BrA8","textContainer":"__bullet__textContainer__3DxYi","active":"__bullet__active__1eHUK"};
-
-var BulletElement = function BulletElement(_ref) {
-  var count = _ref.count,
-      disabled = _ref.disabled,
-      text = _ref.text,
-      typeList = _ref.typeList,
-      prefixType = _ref.prefixType,
-      contentType = _ref.contentType,
-      icon = _ref.icon,
-      type = _ref.type,
-      props = _objectWithoutPropertiesLoose(_ref, ["count", "disabled", "text", "typeList", "prefixType", "contentType", "icon", "type", "index"]);
-
-  var numberList = count + 1;
-  var styleContainer = [styles$c.bulletElement];
-  var stylePrefixContainer = [styles$c.prefixContainer];
-  var styleBoxCircle = [styles$c.boxCircle];
-  var styleTextContainer = [styles$c.textContainer];
-
-  var setStyles = function setStyles(typeParam, typeListParam, prefixParam, contentParam) {
-    if (disabled !== undefined && disabled === true) {
-      styleContainer = styleContainer.concat(styles$c.disabled);
-      return;
-    }
-
-    var styleTypeContainer = [styles$c["" + typeParam]];
-
-    if (type !== undefined && type !== '') {
-      styleContainer = styleContainer.concat(styleTypeContainer);
-
-      if (typeList !== undefined) {
-        styleBoxCircle = styleBoxCircle.concat(styleTypeContainer);
-        return;
-      }
-    } else if (prefixType !== undefined || contentType !== undefined) {
-      var stylePrefix = [styles$c["" + prefixParam]];
-      var styleContent = [styles$c["" + contentParam]];
-      styleBoxCircle = [styles$c.boxCircle, styles$c["" + prefixParam]];
-
-      if (prefixType !== undefined) {
-        if (typeListParam !== 'unorder') {
-          stylePrefixContainer = stylePrefixContainer.concat(stylePrefix);
-        }
-      }
-
-      if (contentType !== undefined) {
-        styleTextContainer = styleTextContainer.concat(styleContent);
-      }
-    }
-  };
-
-  setStyles(type, typeList, prefixType, contentType);
-  var defaultPrefix = typeList === 'order' ? /*#__PURE__*/React__default.createElement("div", {
-    "data-testid": "test-prefix-bullet-order",
-    className: stylePrefixContainer.join(' ')
-  }, numberList, ".") : typeList === 'unorder' ? /*#__PURE__*/React__default.createElement("div", {
-    "data-testid": "test-prefix-bullet-unorder",
-    className: stylePrefixContainer.join(' ')
-  }, /*#__PURE__*/React__default.createElement("div", {
-    "data-testid": "test-prefix-bullet",
-    className: styleBoxCircle.join(' ')
-  }, " ")) : typeList === 'icons' ? /*#__PURE__*/React__default.createElement("div", {
-    "data-testid": "test-prefix-bullet-icons",
-    className: stylePrefixContainer.join(' ')
-  }, /*#__PURE__*/React__default.createElement(Icon, {
-    size: "1",
-    name: icon
-  })) : '';
-  return /*#__PURE__*/React__default.createElement("div", {
-    "data-testid": "test-bullet-" + typeList,
-    className: styleContainer.join(' ')
-  }, defaultPrefix, /*#__PURE__*/React__default.createElement("p", {
-    "data-testid": "test-bullet-content",
-    className: styleTextContainer.join(' ')
-  }, text));
-};
-BulletElement.defaultProps = {
-  icon: 'check'
-};
-BulletElement.propTypes = {
-  disable: propTypes.bool,
-  text: propTypes.string.isRequired,
-  prefixType: function prefixType(props) {
-    if (props['type'] !== undefined && props['prefixType'] !== undefined) {
-      return new Error('If prefixType prop it is defined not define type');
-    }
-  },
-  type: function type(props) {
-    if (props['prefixType'] !== undefined && props['type'] !== undefined) {
-      return new Error('If prefixType2 prop it is defined not define type');
-    }
-
-    if (props['contentType'] !== undefined && props['type'] !== undefined) {
-      return new Error('If contentType prop it is defined not define type');
-    }
-  }
-};
-
-var Bullets = function Bullets(_ref) {
-  var items = _ref.items,
-      typeList = _ref.typeList;
-  var typeOfBullet = typeList ? typeList : '';
-  var itemsBullets = items ? items : [];
-  return /*#__PURE__*/React__default.createElement("div", null, typeOfBullet === 'order' ? itemsBullets.map(function (element, index) {
-    return /*#__PURE__*/React__default.createElement(BulletElement, _extends({
-      key: index,
-      count: index,
-      typeList: typeOfBullet
-    }, element));
-  }) : typeOfBullet === 'unorder' ? itemsBullets.map(function (element, index) {
-    return /*#__PURE__*/React__default.createElement(BulletElement, _extends({
-      key: index
-    }, element, {
-      typeList: typeOfBullet
-    }));
-  }) : typeOfBullet === 'icons' ? itemsBullets.map(function (element, index) {
-    return /*#__PURE__*/React__default.createElement(BulletElement, _extends({
-      key: index
-    }, element, {
-      typeList: typeOfBullet
-    }));
-  }) : '');
-};
-
-Bullets.defaults = {
-  typeList: 'order',
-  items: [{}]
-};
-Bullets.propTypes = {
-  typeList: propTypes.string.isRequired,
-  items: propTypes.array.isRequired
-};
-
-var styles$d = {"fadeInFromNone":"__tooltip__fadeInFromNone__QneFP","containerTooltip":"__tooltip__containerTooltip__2kFow","box":"__tooltip__box__3hy_8","arrow":"__tooltip__arrow__T5dKc","content":"__tooltip__content__2N_0M"};
-
-var Tooltip = function Tooltip(_ref) {
-  var children = _ref.children,
-      content = _ref.content,
-      placement = _ref.placement,
-      eventListener = _ref.eventListener,
-      props = _objectWithoutPropertiesLoose(_ref, ["children", "content", "placement", "eventListener"]);
-
-  var refBoxTooltip = React.createRef();
-  var refContainerTooltip = React.createRef();
-  var refContainerTippy = React.createRef();
-
-  var _useState = React.useState(false),
-      visible = _useState[0],
-      setVisible = _useState[1];
-
-  var setOpacity = function setOpacity(event) {
-    if (eventListener === 'hover') {
-      if (event === 'leave') {
-        setVisible(false);
-        refBoxTooltip.current.style.opacity = 0;
-      }
-
-      if (event === 'enter') {
-        setVisible(true);
-        refBoxTooltip.current.style.opacity = 1;
-      }
-    }
-
-    if (eventListener === 'mouseClick') {
-      console.log('click');
-
-      if (visible) {
-        refBoxTooltip.current.style.opacity = 0;
-        setVisible(false);
-      } else {
-        refBoxTooltip.current.style.opacity = 1;
-        setVisible(true);
-      }
-    }
-  };
-
-  return /*#__PURE__*/React__default.createElement("div", _extends({}, props, {
-    "data-testid": "test-container",
-    visible: visible.toString(),
-    className: styles$d.containerTooltip,
-    ref: refContainerTooltip,
-    onClick: function onClick() {
-      return eventListener === 'mouseClick' ? setOpacity('mouseClick') : false;
-    },
-    onMouseEnter: function onMouseEnter(e) {
-      return eventListener === 'hover' ? setOpacity('enter') : false;
-    },
-    onMouseLeave: function onMouseLeave() {
-      return eventListener === 'hover' ? setOpacity('leave') : false;
-    }
-  }), /*#__PURE__*/React__default.createElement(Tippy, {
-    offset: [0, 20],
-    arrow: true,
-    appendTo: "parent",
-    placement: placement,
-    visible: true,
-    animation: false,
-    render: function render(attrs) {
-      return /*#__PURE__*/React__default.createElement("div", _extends({
-        "data-testid": "test-box",
-        ref: refBoxTooltip,
-        className: styles$d.box,
-        tabIndex: "-1"
-      }, attrs), /*#__PURE__*/React__default.createElement("div", {
-        "data-testid": "test-box-content",
-        ref: refContainerTippy,
-        className: styles$d.content
-      }, /*#__PURE__*/React__default.createElement("p", null, " ", content)), /*#__PURE__*/React__default.createElement("div", {
-        "data-testid": "test-box-arrow",
-        id: "arrow",
-        className: styles$d.arrow
-      }, " "));
-    }
-  }, /*#__PURE__*/React__default.createElement("span", null, children)));
-};
-Tooltip.defaultProps = {
-  content: 'Text for tooltip',
-  placement: 'top',
-  eventListener: 'hover'
-};
-Tooltip.propTypes = {
-  placement: propTypes.oneOf(['top', 'bottom', 'right', 'right-end', 'left']),
-  eventListener: propTypes.oneOf(['mouseClick', 'hover']),
-  content: propTypes.string.isRequired
-};
-
-var styles$e = {"message":"__message__message__3g_Jc","prefix":"__message__prefix__3hi6e","textContainer":"__message__textContainer__10WAf","actionContainer":"__message__actionContainer__3_FT8","error":"__message__error__hllCz","success":"__message__success__2_19H","info":"__message__info__2aIvC","warning":"__message__warning__2x3Y6"};
+var styles$c = {"message":"__message__message__3g_Jc","prefix":"__message__prefix__3hi6e","textContainer":"__message__textContainer__10WAf","actionContainer":"__message__actionContainer__3_FT8","error":"__message__error__hllCz","success":"__message__success__2_19H","info":"__message__info__2aIvC","warning":"__message__warning__2x3Y6"};
 
 var Message = function Message(_ref) {
   var title = _ref.title,
@@ -2249,7 +2022,7 @@ var Message = function Message(_ref) {
       type = _ref.type,
       className = _ref.className,
       description = _ref.description;
-  var messageClasses = [styles$e.message, styles$e[type], className];
+  var messageClasses = [styles$c.message, styles$c[type], className];
 
   var getIcon = function getIcon() {
     switch (type) {
@@ -2272,11 +2045,11 @@ var Message = function Message(_ref) {
     role: "message"
   }, /*#__PURE__*/React__default.createElement(Icon, {
     name: getIcon(),
-    className: styles$e.prefix
+    className: styles$c.prefix
   }), /*#__PURE__*/React__default.createElement("div", {
-    className: styles$e.textContainer
+    className: styles$c.textContainer
   }, title && /*#__PURE__*/React__default.createElement("div", null, " ", title, " "), description && /*#__PURE__*/React__default.createElement("p", null, " ", description, " ")), /*#__PURE__*/React__default.createElement("div", {
-    className: styles$e.actionContainer
+    className: styles$c.actionContainer
   }, action));
 };
 
@@ -2290,7 +2063,116 @@ Message.propTypes = {
   action: propTypes.element
 };
 
-exports.Bullets = Bullets;
+var inputStyles$1 = {"input":"__select__input__3SDeG","suffixContainer":"__select__suffixContainer__1RIWf","inputContainer":"__select__inputContainer__3ZeLa","disabled":"__select__disabled__tQrqh","inputLabel":"__select__inputLabel__30ukr","optionRow":"__select__optionRow__3k3jO","optionContainer":"__select__optionContainer__Do9PN","bellowContainer":"__select__bellowContainer__2-1yB","prefixContainer":"__select__prefixContainer__15505","currentElement":"__select__currentElement__1ZRzS","inputHelper":"__select__inputHelper__1F3qg"};
+
+var InputSelect = function InputSelect(_ref) {
+  var label = _ref.label,
+      assistText = _ref.assistText,
+      options = _ref.options,
+      current = _ref.current,
+      onSelected = _ref.onSelected,
+      props = _objectWithoutPropertiesLoose(_ref, ["label", "assistText", "options", "current", "onSelected"]);
+
+  var _useState = React.useState(false),
+      optionOpen = _useState[0],
+      setOptionOpen = _useState[1];
+
+  var inputStyle = [inputStyles$1.input, inputStyles$1.hasSuffix];
+  var validateStyle = [];
+
+  if (props.disabled) {
+    validateStyle = validateStyle.concat(inputStyles$1.disabled);
+  }
+
+  var handlerOpen = function handlerOpen() {
+    if (optionOpen || props.disabled) return;
+    setOptionOpen(true);
+
+    var globalClick = function globalClick() {
+      setOptionOpen(false);
+      setTimeout(function () {
+        return document.removeEventListener('click', globalClick);
+      }, 10);
+    };
+
+    document.addEventListener('click', globalClick);
+  };
+
+  var getRow = function getRow(el, key) {
+    try {
+      var action = key === 'selected' ? null : function () {
+        return onSelected(el.value);
+      };
+      var isDisabled = el.disabled && el.disabled === true ? inputStyles$1.disabled : '';
+      return /*#__PURE__*/React__default.createElement("div", {
+        key: key,
+        className: [inputStyles$1.optionRow, isDisabled].join(' ').trim(),
+        onClick: action
+      }, el.prefix && /*#__PURE__*/React__default.createElement("div", {
+        className: inputStyles$1.prefixContainer
+      }, " ", /*#__PURE__*/React__default.createElement(Icon, {
+        size: 1,
+        name: el.prefix
+      })), el.text);
+    } catch (e) {
+      return /*#__PURE__*/React__default.createElement("div", {
+        role: "empty",
+        className: inputStyles$1.optionRow
+      });
+    }
+  };
+
+  return /*#__PURE__*/React__default.createElement("div", {
+    role: "select",
+    className: [inputStyles$1.inputContainer, validateStyle].join(' ')
+  }, optionOpen, label && /*#__PURE__*/React__default.createElement("span", {
+    className: inputStyles$1.inputLabel
+  }, " ", label, " "), /*#__PURE__*/React__default.createElement("div", {
+    className: inputStyle.join(' ')
+  }, /*#__PURE__*/React__default.createElement("div", {
+    role: "dropdown",
+    className: inputStyles$1.currentElement,
+    onClick: handlerOpen
+  }, getRow(options.find(function (ob) {
+    return ob.value === current;
+  }), 'selected')), /*#__PURE__*/React__default.createElement("div", {
+    className: inputStyles$1.suffixContainer
+  }, " ", /*#__PURE__*/React__default.createElement(Icon, {
+    size: 1,
+    name: optionOpen ? "arrow-up" : "arrow-down"
+  }), " ")), /*#__PURE__*/React__default.createElement("div", {
+    className: inputStyles$1.bellowContainer
+  }, optionOpen && /*#__PURE__*/React__default.createElement("div", {
+    className: inputStyles$1.optionContainer
+  }, options.filter(function (el) {
+    return el.disabled !== true;
+  }).map(getRow)), /*#__PURE__*/React__default.createElement("div", {
+    className: [inputStyles$1.inputHelper].join(' ')
+  }, assistText)));
+};
+
+InputSelect.defaultProps = {
+  onSelected: function onSelected() {
+    return null;
+  },
+  current: '',
+  disabled: false,
+  options: []
+};
+InputSelect.propTypes = {
+  onSelected: propTypes.func,
+  label: propTypes.string,
+  current: propTypes.string,
+  assistText: propTypes.string,
+  disabled: propTypes.bool,
+  options: propTypes.arrayOf(propTypes.shape({
+    prefix: propTypes.string,
+    text: propTypes.string,
+    value: propTypes.string.isRequired,
+    disabled: propTypes.bool
+  })).isRequired
+};
+
 exports.Button = Button;
 exports.Card = Card;
 exports.Checkbox = Checkbox;
@@ -2301,6 +2183,7 @@ exports.HeaderProfileItem = HeaderProfileItem;
 exports.Icon = Icon;
 exports.Input = Input;
 exports.InputChip = InputChip;
+exports.InputSelect = InputSelect;
 exports.Loading = Loading;
 exports.Logo = Logo;
 exports.Message = Message;
@@ -2311,5 +2194,4 @@ exports.Sidebar = Sidebar;
 exports.SidebarElement = SidebarElement;
 exports.Switch = Switch;
 exports.TitleSection = TitleSection;
-exports.Tooltip = Tooltip;
 //# sourceMappingURL=index.js.map
