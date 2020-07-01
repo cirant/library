@@ -555,7 +555,7 @@ const App = () => {
             contentType:'error'
           },
           {
-            text: 'Order Bullet text a',
+            text: 'Order Bullet text b',
             type: 'success',
           },
         ]}>

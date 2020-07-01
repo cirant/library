@@ -3,7 +3,7 @@ import styles from './_bullet.scss'
 import Icon from '../../icons'
 import PropTypes from 'prop-types'
 
-const BulletElement = ({ count, text, typeList, prefixType, contentType, icon, type, variant, active, number, index, ...props }) => {
+const BulletElement = ({ count,disabled, text, typeList, prefixType, contentType, icon, type, variant, active, number, index, ...props }) => {
 
   let numberList = count + 1
 
@@ -13,11 +13,16 @@ const BulletElement = ({ count, text, typeList, prefixType, contentType, icon, t
   let styleTextContainer = [styles.textContainer]
 
   const setStyles = (typeParam, typeListParam, prefixParam, contentParam) => {
+    if(disabled !== undefined && disabled === true){
+      styleContainer = styleContainer.concat(styles.disabled);
+      return;
+    }
     const styleTypeContainer = [styles[`${typeParam}`]]
-    if (type !== undefined) {
+    if (type !== undefined && type !== '') {
       styleContainer = styleContainer.concat(styleTypeContainer)
       if (typeList !== undefined) {
         styleBoxCircle = styleBoxCircle.concat(styleTypeContainer)
+        return;
       }
     } else if (prefixType !== undefined || contentType !== undefined) {
       const stylePrefix = [styles[`${prefixParam}`]]
@@ -38,27 +43,25 @@ const BulletElement = ({ count, text, typeList, prefixType, contentType, icon, t
   setStyles(type, typeList, prefixType, contentType)
 
   const defaultPrefix = (
-    (typeList === 'order') ?
-      <div className={stylePrefixContainer.join(' ')}>{numberList}.</div> : (typeList === 'unorder') ?
-      <div className={stylePrefixContainer.join(' ')}>
-        <div className={styleBoxCircle.join(' ')}> </div>
-      </div> : (typeList === 'icons') ?
-        <div className={stylePrefixContainer.join(' ')}><Icon size="1" onClick={() => console.log('test')} name={icon}/>
+    (typeList === 'order') ? <div data-testid="test-prefix-bullet-order" className={stylePrefixContainer.join(' ')}>{numberList}.</div> : (typeList === 'unorder') ?
+      <div data-testid="test-prefix-bullet-unorder" className={stylePrefixContainer.join(' ')}><div data-testid="test-prefix-bullet" className={styleBoxCircle.join(' ')}> </div>
+      </div> : (typeList === 'icons') ? <div data-testid="test-prefix-bullet-icons" className={stylePrefixContainer.join(' ')}><Icon size="1" name={icon}/>
         </div> : ''
   )
 
   return (
-    <React.Fragment>
-      <div data-testid={`test-bullet-${typeList}`} className={styleContainer.join(' ')}>
+    <div data-testid={`test-bullet-${typeList}`} className={styleContainer.join(' ')}>
         {defaultPrefix}
-        <p className={styleTextContainer.join(' ')}>{text}</p>
-      </div>
-    </React.Fragment>
+        <p data-testid='test-bullet-content' className={styleTextContainer.join(' ')}>{text}</p>
+    </div>
   )
 }
 
 export default BulletElement
 
+BulletElement.defaultProps = {
+  icon: 'check'
+}
 
 BulletElement.propTypes = {
   text: PropTypes.string.isRequired,

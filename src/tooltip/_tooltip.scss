@@ -53,6 +53,20 @@
       }
     }
 
+    &[data-placement="right-start"] {
+      .arrow {
+        right: 97%;
+        top: 20%;
+      }
+    }
+
+    &[data-placement="left-start"] {
+      .arrow {
+        left: 97%;
+        top: 20%;
+      }
+    }
+
     &[data-placement="left"] {
       .arrow {
         left: 97%;
@@ -73,10 +87,36 @@
       }
     }
 
+    &[data-placement="top-start"] {
+      .arrow {
+        left: 20%;
+      }
+    }
+
+    &[data-placement="top-end"] {
+      .arrow {
+        left: 70%;
+      }
+    }
+
     &[data-placement="bottom"] {
       .arrow {
         top: 0%;
         left: 48%;
+      }
+    }
+
+    &[data-placement="bottom-start"] {
+      .arrow {
+        top: 0%;
+        left: 10%;
+      }
+    }
+
+    &[data-placement="bottom-end"] {
+      .arrow {
+        top: 0%;
+        left: 70%;
       }
     }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { withInfo } from '@storybook/addon-info'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import {Tooltip2} from '../../dist'
+import {Tooltip} from '../../dist'
 import {TitleSection} from '../../dist'
 import { select, text, withKnobs } from '@storybook/addon-knobs'
 
@@ -61,9 +61,9 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 }
 
 export default {
-  title: 'Tooltip2',
+  title: 'Tooltip',
   decorators: [withInfo,withKnobs],
-  component: Tooltip2,
+  component: Tooltip,
   parameters: {
     info: {
       inline: true,
@@ -101,13 +101,13 @@ export default {
 
 
 
-export const element = () => <Tooltip2
+export const element = () => <Tooltip
     content={text('content','')}
     eventListener={select('eventListener',['hover','mouseClick'])}
     placement={select('placement',['top','bottom','left','right'])}
     >
     <TitleSection label="Title Section" prefix="write"></TitleSection>
-  </Tooltip2>
+  </Tooltip>
 
 
 element.story = {

@@ -62,11 +62,9 @@
 .bulletElement {
 
   display:flex;
-  justify-content: center;
-  align-items: center;
 
-  .disabled{
-
+  &.disabled{
+    color: $neutral-20;
   }
 
 
@@ -104,31 +102,6 @@
 }
 
 .bulletElement {
-
-  display:flex;
-
-
-  &.level-1{
-    color: $neutral-50;
-    .notification{
-      display: flex;
-      width: 8px;
-      height: 8px;
-      border-radius: 100%;
-      margin-left: nth(nth($spacers, 2), 2);
-      background-color: $primary;
-    }
-  }
-
-  &.level-2{
-    @extend %child;
-    color: $neutral-40;
-  }
-
-  &.level-3{
-    @extend %child;
-    color: $neutral-30;
-  }
 
   .textContainer{
     align-items: center;

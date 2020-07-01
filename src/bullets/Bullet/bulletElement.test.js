@@ -1,31 +1,35 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import SidebarElement from '.'
+import { render, cleanup } from '@testing-library/react'
 import BulletElement from '.'
 
 
 describe('Bullet behavior', () => {
 
-  it('should be render order lisst', () => {
+  afterEach(() => {
+    cleanup();
+  })
+
+  it('should be render order list', () => {
     const props = {
       typeList: 'order',
       key: 1,
       text: 'Order Bullet text a',
     }
     const component = render(<BulletElement  {...props} />)
-    const orderlist = component.getAllByTestId(`test-bullet-${props.typeList}`);
-    expect(orderlist).toBeTruthy()
+    const orderList = component.getAllByTestId(`test-bullet-${props.typeList}`);
+    expect(orderList).toBeTruthy()
   })
 
   it('should be render unorderlist', () => {
     const props = {
-      typeList: 'order',
+      typeList: 'unorder',
       key: 1,
       text: 'Order Bullet text a',
+      disabled: true
     }
     const component = render(<BulletElement  {...props} />)
-    const unorderlist = component.getAllByTestId(`test-bullet-${props.typeList}`);
-    expect(unorderlist).toBeTruthy()
+    const unOrderList = component.getAllByTestId(`test-bullet-${props.typeList}`);
+    expect(unOrderList).toBeTruthy()
   })
 
   it('should be render iconslist', () => {
@@ -35,21 +39,73 @@ describe('Bullet behavior', () => {
       text: 'Order Bullet text a',
 
     }
-    const component = render(<BulletElement  {...props} />)
-    const unorderlist = component.getAllByTestId(`test-bullet-${props.typeList}`);
-    expect(unorderlist).toBeTruthy()
+    const component = render(<BulletElement tpyeList="icons"  {...props} />)
+    const iconList = component.getAllByTestId(`test-bullet-${props.typeList}`);
+    expect(iconList).toBeTruthy()
   })
 
-  it('should be rendered active', () => {
+  it('should prefix bullet must render when it is a order list', () => {
     const props = {
-      text: 'label A',
-      active: true
+      typeList: 'order',
+      count: 0,
+      text: 'Order Bullet text a',
     }
-
-    const component = render(<SidebarElement {...props} />)
-    expect(component).toBeTruthy()
-    expect(component.container.querySelector('[data-status="active"]')).toBeTruthy()
+    const component = render(<BulletElement tpyeList={`${props.typeList}`} {...props} />)
+    const prefixContainer = component.getAllByTestId(`test-prefix-bullet-${props.typeList}`);
+    expect(prefixContainer).toBeTruthy();
   })
+
+  it('should prefix bullet must render its a unorder list', () => {
+    const props = {
+      typeList: 'unorder',
+      text: 'Order Bullet text a',
+      type: 'warning'
+    }
+    const component = render(<BulletElement tpyeList={`${props.typeList}`} {...props} />)
+    const prefixContainer = component.getAllByTestId(`test-prefix-bullet-${props.typeList}`);
+    console.log(prefixContainer);
+    expect(prefixContainer).toBeTruthy();
+  })
+
+  it('should prefix bullet must render its a icons list', () => {
+    const props = {
+      typeList: 'icons',
+      text: 'Icon Bullet text a',
+      prefixType: 'info',
+      contentType: 'info',
+      icon: 'line-write',
+    }
+    const component = render(<BulletElement tpyeList={`${props.typeList}`} {...props} />)
+    const prefixContainer = component.getAllByTestId(`test-prefix-bullet-${props.typeList}`);
+    expect(prefixContainer).toBeTruthy();
+  })
+
+  it('should order list contain number', () => {
+    const props = {
+      typeList: 'order',
+      count: 0,
+      text: 'Order Bullet text a',
+    }
+    const component = render(<BulletElement tpyeList="order"  {...props} />)
+    const prefixContainer = component.getByTestId("test-bullet-order").closest('div').className.match(/bulletElement/);
+    expect(prefixContainer).toBeTruthy();
+  })
+
+  it('should order list contain text', () => {
+    const props = {
+      typeList: 'order',
+      count: 0,
+      text: 'Order Bullet text a',
+    }
+    const component = render(<BulletElement tpyeList="order"  {...props} />)
+    const p = component.container.querySelector("p")
+    const text = p.innerHTML;
+    expect(component.getByText(/Order Bullet text a/)).toBeTruthy();
+    console.log(p.innerHTML);
+    expect(text).toBe(props.text)
+  })
+
+
 
 
 })

@@ -3,7 +3,7 @@ import styles from './_tooltip.scss'
 import Tippy from '@tippyjs/react'
 import PropTypes from 'prop-types'
 
-const Tooltip2 = ({ children, content, placement, eventListener, ...props }) => {
+const Tooltip = ({ children, content, placement, eventListener, ...props }) => {
 
   const refBoxTooltip = createRef()
   const refContainerTooltip = createRef()
@@ -15,9 +15,11 @@ const Tooltip2 = ({ children, content, placement, eventListener, ...props }) => 
 
     if (eventListener === 'hover') {
       if (event === 'leave') {
+        setVisible(false);
         refBoxTooltip.current.style.opacity = 0
       }
       if (event === 'enter') {
+        setVisible(true);
         refBoxTooltip.current.style.opacity = 1
       }
     }
@@ -38,12 +40,11 @@ const Tooltip2 = ({ children, content, placement, eventListener, ...props }) => 
   return (
     <div
       {...props}
-      className={styles.containerTooltip} ref={refContainerTooltip}
-      onClick={() => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false}
-      onMouseEnter={(e) => eventListener === 'hover' ? setOpacity('enter', e) : false}
+      data-testid="test-container" visible={visible.toString()} className={styles.containerTooltip} ref={refContainerTooltip}
+      onClick={() => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false} onMouseEnter={(e) => eventListener === 'hover' ? setOpacity('enter', e) : false}
       onMouseLeave={() => eventListener === 'hover' ? setOpacity('leave') : false}>
       <Tippy
-        offset={[0, 15]}
+        offset={[0, 20]}
         arrow={true} appendTo="parent"
         placement={placement} visible={true}
         animation={false}
@@ -70,18 +71,16 @@ const Tooltip2 = ({ children, content, placement, eventListener, ...props }) => 
 
 }
 
-export default Tooltip2
+export default Tooltip
 
-Tooltip2.defaultProps = {
+Tooltip.defaultProps = {
   content: 'Text for tooltip',
   placement: 'top',
   eventListener: 'hover',
 }
 
-Tooltip2.propTypes = {
-  placement: PropTypes.oneOf(['top','bottom','right','right-end','left']).isRequired,
-  eventListener: PropTypes.oneOf(['mouseClick','hover']).isRequired,
+Tooltip.propTypes = {
+  placement: PropTypes.oneOf(['top','bottom','right','right-end','left']),
+  eventListener: PropTypes.oneOf(['mouseClick','hover']),
   content: PropTypes.string.isRequired
 }
-
-

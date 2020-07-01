@@ -1,89 +1,166 @@
 import React from 'react'
 import { screen } from '@testing-library/dom'
-import {cleanup, render } from '@testing-library/react'
+import ReactDOM from 'react-dom'
+import { act, cleanup, fireEvent, render } from '@testing-library/react'
 import TestRenderer from 'react-test-renderer'
 import TitleSection from './index'
 import Icon from '../icons'
 import IconListModel from '../icons/models/icon-list.model'
-import Tooltip2 from './index'
+import Tooltip from './index'
 
 
-describe('Tooltip testss', () => {
+describe('Tooltip test', () => {
 
+  let container
   let component
 
   beforeEach(() => {
     component = render(
-      <Tooltip2
+      <Tooltip
         content="label"
         eventListener="mouseClick"
         placement="right-end">
         <TitleSection className="test" prefix="write" label="Title Section"/>
-      </Tooltip2>
+      </Tooltip>
     )
+    container = document.createElement('div')
+    document.body.appendChild(container)
   })
 
   afterEach(() => {
-    cleanup();
+    cleanup()
   })
 
   test('should be rendered', () => {
     expect(component).toBeTruthy()
   })
 
-  test('should render content of tooltip', () => {
+  test('should render box of the tooltip', () => {
     expect(component.getByText(/label/)).toBeTruthy()
   })
 
-  test('should component contain tooltip box', () => {
-    const example = screen.getByTestId('test-box');
-    console.log(example);
-    expect(example).toBeTruthy()
+  test('should component contain tooltip', () => {
+    act(() => {
+      ReactDOM.render(<Tooltip
+        content="label"
+        eventListener="mouseClick"
+        placement="right-end">
+        <TitleSection className="test" prefix="write" label="Title Section"/>
+      </Tooltip>, container)
+    })
+    let componentRender = container.querySelector('div[data-testid="test-box"]')
+    console.log(componentRender)
+    expect(componentRender).toBeTruthy()
   })
 
-  test('should component contain default props prefix and label', () => {
-
-    const testRenderer = TestRenderer.create(<TitleSection/>)
-    const testInstance = testRenderer.root
-
-    expect(testInstance.props.prefix).toBeTruthy()
-    expect(testInstance.props.label).toBe('')
-
+  test('should component contain p tooltip', () => {
+    act(() => {
+      ReactDOM.render(<Tooltip
+        content="label"
+        eventListener="mouseClick"
+        placement="right-end">
+        <TitleSection className="test" prefix="write" label="Title Section"/>
+      </Tooltip>, container)
+    })
+    let componentRender = container.querySelector('p')
+    console.log(componentRender)
+    expect(componentRender).toBeTruthy()
   })
 
-  test('should component contain icon component', () => {
-
-    const testRenderer = TestRenderer.create(<TitleSection prefix="write" label="Title Section"/>)
-    const testInstance = testRenderer.root
-
-    expect(testInstance.findByType(Icon)).toBeTruthy()
-
+  test('should component contain content tooltip', () => {
+    act(() => {
+      ReactDOM.render(<Tooltip
+        content="label"
+        eventListener="mouseClick"
+        placement="right-end">
+        <TitleSection className="test" prefix="write" label="Title Section"/>
+      </Tooltip>, container)
+    })
+    let componentRender = container.querySelector('div[data-testid="test-box-content"]')
+    console.log(componentRender)
+    expect(componentRender).toBeTruthy()
   })
 
-  test('should component contain expect label', () => {
-
-    const expectLabel = 'Text'
-
-    const component = render(<TitleSection label="Text" prefix="write"/>)
-
-    const findTest = component.queryAllByText(expectLabel)
-
-    expect(findTest.length > 0).toBeTruthy()
-
+  test('should component contain content arrow tooltip', () => {
+    act(() => {
+      ReactDOM.render(<Tooltip
+        content="label"
+        eventListener="mouseClick"
+        placement="right-end">
+        <TitleSection className="test" prefix="write" label="Title Section"/>
+      </Tooltip>, container)
+    })
+    let componentRender = container.querySelector('div[data-testid="test-box-arrow"]')
+    console.log(componentRender)
+    expect(componentRender).toBeTruthy()
   })
 
-  test('should component have a valid icon', () => {
-
-    const testRenderer = TestRenderer.create(<TitleSection prefix="write" label="Title Section"/>)
-    const testInstance = testRenderer.root
-
-    const iconName = testInstance.props.prefix
-
-    const findValue = IconListModel.iconList.find(data => iconName == data)
-
-    expect(testInstance.props.prefix).toBe(findValue)
-
+  test('should set visibility true when mouseClick event it is called', () => {
+    act(() => {
+      ReactDOM.render(
+        <Tooltip
+          content="label"
+          eventListener="mouseClick"
+          placement="right-end">
+          <TitleSection className="test" prefix="write" label="Title Section"/>
+        </Tooltip>, container)
+    })
+    let componentRender = container.querySelector('div[data-testid="test-container"]')
+    fireEvent.click(componentRender)
+    let componenetVisibility = container.querySelector('div[visible="true"]')
+    expect(componenetVisibility).toBeTruthy()
   })
+
+  test('should set visibility false when mouseClick called twice', () => {
+    act(() => {
+      ReactDOM.render(
+        <Tooltip
+          content="label"
+          eventListener="mouseClick"
+          placement="right-end">
+          <TitleSection className="test" prefix="write" label="Title Section"/>
+        </Tooltip>, container)
+    })
+    let componentRender = container.querySelector('div[data-testid="test-container"]')
+    fireEvent.click(componentRender)
+    fireEvent.click(componentRender)
+    let componenetVisibility = container.querySelector('div[visible="false"]')
+    expect(componenetVisibility).toBeTruthy()
+  })
+
+  test('should set visibility true when mouse enter container', () => {
+    act(() => {
+      ReactDOM.render(
+        <Tooltip
+          content="label"
+          eventListener="hover"
+          placement="top">
+          <TitleSection className="test" prefix="write" label="Title Section"/>
+        </Tooltip>, container)
+    })
+    let componentRender = container.querySelector('div[data-testid="test-container"]')
+    fireEvent.mouseEnter(componentRender);
+    let componenetVisibility = container.querySelector('div[visible="false"]')
+    expect(componenetVisibility).toBeTruthy()
+  })
+
+  test('should set visibility false when mouse enter and leave container', () => {
+    act(() => {
+      ReactDOM.render(
+        <Tooltip
+          content="label"
+          eventListener="hover"
+          placement="top">
+          <TitleSection className="test" prefix="write" label="Title Section"/>
+        </Tooltip>, container)
+    })
+    let componentRender = container.querySelector('div[data-testid="test-container"]')
+    fireEvent.mouseEnter(componentRender);
+    fireEvent.mouseLeave(componentRender);
+    let componenetVisibility = container.querySelector('div[visible="false"]')
+    expect(componenetVisibility).toBeTruthy()
+  })
+
 
 
 })
