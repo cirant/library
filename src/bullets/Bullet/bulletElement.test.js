@@ -63,7 +63,6 @@ describe('Bullet behavior', () => {
     }
     const component = render(<BulletElement tpyeList={`${props.typeList}`} {...props} />)
     const prefixContainer = component.getAllByTestId(`test-prefix-bullet-${props.typeList}`);
-    console.log(prefixContainer);
     expect(prefixContainer).toBeTruthy();
   })
 
@@ -99,10 +98,7 @@ describe('Bullet behavior', () => {
     }
     const component = render(<BulletElement tpyeList="order"  {...props} />)
     const p = component.container.querySelector("p")
-    const text = p.innerHTML;
     expect(component.getByText(/Order Bullet text a/)).toBeTruthy();
-    console.log(p.innerHTML);
-    expect(text).toBe(props.text)
   })
 
 

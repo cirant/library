@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const BulletElement = ({ count,disabled, text, typeList, prefixType, contentType, icon, type, index, ...props }) => {
 
-  let numberList = count + 1
+  const numberList = count + 1
 
   let styleContainer = [styles.bulletElement]
   let stylePrefixContainer = [styles.prefixContainer]
@@ -29,8 +29,7 @@ const BulletElement = ({ count,disabled, text, typeList, prefixType, contentType
       const styleContent = [styles[`${contentParam}`]]
       styleBoxCircle = [styles.boxCircle, styles[`${prefixParam}`]]
       if (prefixType !== undefined) {
-        if (typeListParam === 'unorder') {
-        } else {
+        if (typeListParam !== 'unorder') {
           stylePrefixContainer = stylePrefixContainer.concat(stylePrefix)
         }
       }

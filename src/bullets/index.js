@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './_bullets.scss'
 import BulletElement from './Bullet'
 
 const Bullets = ({ items, typeList }) => {
@@ -9,7 +8,7 @@ const Bullets = ({ items, typeList }) => {
   const itemsBullets = items ? items : [];
 
   return (
-    <div className={[styles.bullets].join(' ')}>
+    <div>
       {
         (typeOfBullet === 'order') ? itemsBullets.map((element, index) => <BulletElement key={index} count={index} typeList={typeOfBullet} {...element} />) :
           (typeOfBullet === 'unorder') ? itemsBullets.map((element, index) => <BulletElement  key={index} {...element} typeList={typeOfBullet}/>) :
