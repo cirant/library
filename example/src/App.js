@@ -20,6 +20,8 @@ import {
   ProgressBar,
   Bullets,
   Tooltip
+  ProgressBar,
+  Message
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -442,6 +444,18 @@ const App = () => {
 
 
     <div className="container my-4">
+      <h1 className="mb-4">Messages</h1>
+
+      <div className="d-flex flex-column">
+        <Message type="success" title="this is a success message" action={<Button variant="text" suffix="arrow-right" > ir a action </Button>} />
+        <Message type="error" title="this is an error message" description="bajada" />
+        <Message type="warning" title="this is a warning message" />
+        <Message type="info" title="this is an info message" action={<Button variant="text" > ir a action </Button>} />
+      </div>
+    </div>
+
+
+    <div className="container my-4">
       <h1>Tooltip</h1>
       {inputText}
       <Tooltip
@@ -616,7 +630,6 @@ const App = () => {
     <br/>
     <br/>
     <br/>
-
 
   </>
 }

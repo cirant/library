@@ -1,0 +1,66 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+
+@mixin colorsCreator($bgColor, $textColor){
+  color: $textColor;
+  background-color: $bgColor;
+
+  .actionContainer button{
+    color: $textColor;
+  }
+}
+
+.message{
+  border-radius: 4px;
+  padding-left: nth(nth($spacers, 7), 2);
+  padding-top: nth(nth($spacers, 3), 2);
+  padding-bottom: nth(nth($spacers, 3), 2);
+  padding-right: 187px;
+  display: flex;
+  position: relative;
+  min-height: 48px;
+
+  .prefix{
+    padding-top: nth(nth($spacers, 2), 2);
+    padding-right: nth(nth($spacers, 4), 2);
+  }
+
+  .textContainer{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center; 
+  }
+
+  .actionContainer{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    button{
+      white-space: nowrap;
+      // min-height: 0px;
+    }
+  }
+
+  &.error{
+    @include colorsCreator($danger-05, $danger-50);
+  }
+
+  &.success{
+    @include colorsCreator($success-05, $success-50);
+  }
+
+  &.info{
+    @include colorsCreator($info-05, $info-50);
+  }
+
+  &.warning{
+    @include colorsCreator($warning-05, $warning-50);
+  }
+
+  p{
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

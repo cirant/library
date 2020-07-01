@@ -55,7 +55,7 @@ $disableColor: $neutral-20;
 .btn{
   border: none;
   border-radius: 4px;
-  padding: 8px 24px;
+  padding: nth(nth($spacers,3), 2) nth(nth($spacers,6), 2);
   min-height: 48px;
   font-weight: 500;
   cursor: pointer;
