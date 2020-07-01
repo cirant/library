@@ -1,0 +1,272 @@
+$mainAnimationMinSize: 24px;
+$mainAnimationMidSize: 36px;
+$mainAnimationMaxSize: 64px;
+
+@keyframes circleMain {
+  0% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  }
+
+
+  10% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  } 
+
+  15% {
+    width: $mainAnimationMidSize;
+    left: calc(50% - (#{$mainAnimationMidSize}/2));
+    height: $mainAnimationMidSize;
+    top: calc(50% - (#{$mainAnimationMidSize}/2));
+  }  
+
+  20% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  }   
+  // ================ vvvv =========================
+  24% {
+    width: $mainAnimationMaxSize;
+    left: calc(50% - (#{$mainAnimationMaxSize}/2));
+    height: $mainAnimationMaxSize;
+    top: calc(50% - (#{$mainAnimationMaxSize}/2));
+  }
+  26% {
+    width: $mainAnimationMaxSize;
+    left: calc(50% - (#{$mainAnimationMaxSize}/2));
+    height: $mainAnimationMaxSize;
+    top: calc(50% - (#{$mainAnimationMaxSize}/2));
+  }
+  // ================ ^^^^ =========================  
+  30% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  } 
+  35% {
+    width: $mainAnimationMidSize;
+    left: calc(50% - (#{$mainAnimationMidSize}/2));
+    height: $mainAnimationMidSize;
+    top: calc(50% - (#{$mainAnimationMidSize}/2));
+  }
+  40% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  }
+
+
+
+
+
+  60% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  } 
+
+  65% {
+    width: $mainAnimationMidSize;
+    left: calc(50% - (#{$mainAnimationMidSize}/2));
+    height: $mainAnimationMidSize;
+    top: calc(50% - (#{$mainAnimationMidSize}/2));
+  }  
+
+  70% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  } 
+  // ================ vvvv =========================
+  74% {
+    width: $mainAnimationMaxSize;
+    left: calc(50% - (#{$mainAnimationMaxSize}/2));
+    height: $mainAnimationMaxSize;
+    top: calc(50% - (#{$mainAnimationMaxSize}/2));
+  }
+  76% {
+    width: $mainAnimationMaxSize;
+    left: calc(50% - (#{$mainAnimationMaxSize}/2));
+    height: $mainAnimationMaxSize;
+    top: calc(50% - (#{$mainAnimationMaxSize}/2));
+  }
+  // ================ ^^^^ =========================
+  80% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  } 
+  85% {
+    width: $mainAnimationMidSize;
+    left: calc(50% - (#{$mainAnimationMidSize}/2));
+    height: $mainAnimationMidSize;
+    top: calc(50% - (#{$mainAnimationMidSize}/2));
+  }
+  90% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  }
+
+
+  100% {
+    width: $mainAnimationMinSize;
+    left: calc(50% - (#{$mainAnimationMinSize}/2));
+    height: $mainAnimationMinSize;
+    top: calc(50% - (#{$mainAnimationMinSize}/2));
+  }
+}
+
+@keyframes circleMainBorder {
+
+  8% {  border-radius: 100%; }
+
+  10% { border-radius: 100% 100% 100% 10%; } 
+
+  15% { border-radius: 100% 100% 100% 100%; }  
+
+  20% { border-radius: 100% 100% 100% 10%; }
+  23% { border-radius: 100% 100% 100% 100%; }
+  25% { border-radius: 100% 100% 100% 100%; } 
+  
+  27% { border-radius: 100% 100% 100% 100%; } 
+  35% { border-radius: 100% 0% 100% 100%; } 
+  38% { border-radius: 100% 70% 100% 100%; } 
+  40% { border-radius: 100% 0% 100% 100%; } 
+  45% { border-radius: 100% 10% 100% 100%; } 
+  
+  50% { border-radius: 100% 100% 100% 100%; } 
+
+  55% { border-radius: 100% 0% 100% 100%; } 
+  65% { border-radius: 100% 100% 100% 100%; } 
+  69% { border-radius: 100% 0% 100% 100%; } 
+  72% { border-radius: 100% 100% 100% 100%; } 
+
+  80% { border-radius: 100% 100% 100% 100%; }
+  85% { border-radius: 100% 100% 100% 0%; }
+  86% { border-radius: 100% 100% 100% 100%; }
+  90% { border-radius: 100% 100% 100% 0%; }
+  100% { border-radius: 100% 100% 100% 100%; }
+
+}
+
+@keyframes beforeCircle1 {
+  8%{ border-radius: 100%; }
+  10%{ border-radius: 100% 30% 100% 100%; }
+  12%{ border-radius: 100%; }
+  30%{ border-radius: 100% 100% 100% 30%; }
+  35%{ border-radius: 100% 100% 100% 0%; }
+  40%{ border-radius: 100% 100% 100% 100%; }
+
+  50%{ border-radius: 100% 100% 100% 100%; }
+
+  65%{ border-radius: 100% 100% 100% 100%; }
+  70%{ border-radius: 100% 100% 100% 0%; }
+  75%{ border-radius: 100% 100% 100% 100%; }
+
+  90%{ border-radius: 100% 0% 100% 100%; }
+  100%{ border-radius: 100%; }
+}
+
+@keyframes beforeCircle2 {
+  16%{ border-radius: 100%; }
+  21%{ border-radius: 100% 30% 100% 100%; }
+  23%{ border-radius: 100%; }
+
+
+  30%{ border-radius: 100% 100% 100% 100%; }
+  45%{ border-radius: 100% 100% 100% 30%; }
+  50%{ border-radius: 100% 100% 100% 100%; }
+
+  58%{ border-radius: 100% 100% 100% 30%; }
+  60%{ border-radius: 100% 100% 100% 100%; }
+
+  85%{ border-radius: 100% 30% 100% 100%; }
+  87%{ border-radius: 100%; }
+}
+
+@keyframes container{
+  0% {
+    left: 0%;
+  }
+
+  10% {
+    left: calc(3%);
+    width: $circleContainerWith;
+  }
+
+  16% {
+    left: calc(15%);
+  }
+
+  20% {
+    left: calc(20%);
+  }
+
+  // ================ vvvv =========================
+  24% {
+    left: calc(50% - #{$circleContainerHalf});
+  }
+  26% {
+    left: calc(50% - #{$circleContainerHalf});
+  }
+  // ================ ^^^^ =========================  
+
+  30%{
+    left: calc(50% - 18px);
+  }
+
+  50% {
+    left: calc(100% - #{$circleContainerWith}); //  ============
+  }
+
+  60% {
+    left: calc(20% + #{$circleContainerWith} - 8px);
+  }
+
+  66% {
+    left: calc(15% + #{$circleContainerWith} - 8px);
+  }
+
+  70% {
+    left: calc(3% + #{$circleContainerWith} - 8px);
+    width: $circleContainerWith;
+  }
+
+  72% {
+    left: calc(2% + #{$circleContainerWith} - 8px);
+    width: $circleContainerWith;
+  }
+
+  // ================ vvvv =========================
+  74% {
+    left: calc(50% - #{$circleContainerHalf});
+  }
+  76% {
+    left: calc(50% - #{$circleContainerHalf});
+  }
+  // ================ ^^^^ =========================
+  
+  80% {
+    left: calc(50% - #{$circleContainerHalf} - 8px);
+  }
+  
+  100% {
+    left: 0%;
+  }
+}
+
+

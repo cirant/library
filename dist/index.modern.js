@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { createRef, useState } from 'react';
+import Tippy from '@tippyjs/react';
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -1077,7 +1078,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 });
 
-var icons = {"size-1":"__coopeuch-icon__size-1__E20oA","size-2":"__coopeuch-icon__size-2__1LAUs","size-3":"__coopeuch-icon__size-3__3tmzu","size-4":"__coopeuch-icon__size-4__f8f2b","size-5":"__coopeuch-icon__size-5__3WQf-","size-6":"__coopeuch-icon__size-6__325my","size-7":"__coopeuch-icon__size-7__vbJDw","size-8":"__coopeuch-icon__size-8__HfeIC","icon-line-alarm":"__coopeuch-icon__icon-line-alarm__2RIcO","icon-line-alert":"__coopeuch-icon__icon-line-alert__3KOrG","icon-line-app-notification":"__coopeuch-icon__icon-line-app-notification__RJ0_m","icon-line-block":"__coopeuch-icon__icon-line-block__1g4pS","icon-line-bookmark":"__coopeuch-icon__icon-line-bookmark__2GpnG","icon-line-bug":"__coopeuch-icon__icon-line-bug__3AZWC","icon-line-check-double":"__coopeuch-icon__icon-line-check-double__3wnRC","icon-line-check":"__coopeuch-icon__icon-line-check__18ly6","icon-line-cloud-disable":"__coopeuch-icon__icon-line-cloud-disable__1ysM1","icon-line-cloud-download":"__coopeuch-icon__icon-line-cloud-download__1Da4J","icon-line-cloud-upload":"__coopeuch-icon__icon-line-cloud-upload__1x9gk","icon-line-cloud":"__coopeuch-icon__icon-line-cloud__2BF9r","icon-line-cogwheel":"__coopeuch-icon__icon-line-cogwheel__4L5xo","icon-line-copy":"__coopeuch-icon__icon-line-copy__2UUan","icon-line-cross":"__coopeuch-icon__icon-line-cross__3h620","icon-line-cut":"__coopeuch-icon__icon-line-cut__3nbjj","icon-line-dashboard":"__coopeuch-icon__icon-line-dashboard__3-F1c","icon-line-down":"__coopeuch-icon__icon-line-down__1BtUm","icon-line-download-queue":"__coopeuch-icon__icon-line-download-queue__1Bzeq","icon-line-download":"__coopeuch-icon__icon-line-download__1ya1g","icon-line-draft":"__coopeuch-icon__icon-line-draft__2zcb0","icon-line-exit-fullscreen":"__coopeuch-icon__icon-line-exit-fullscreen__3-iPg","icon-line-eye-close":"__coopeuch-icon__icon-line-eye-close__iKLUO","icon-line-eye-open":"__coopeuch-icon__icon-line-eye-open__X00tw","icon-line-female-user":"__coopeuch-icon__icon-line-female-user__28nK6","icon-line-file":"__coopeuch-icon__icon-line-file__12bYG","icon-line-filter":"__coopeuch-icon__icon-line-filter__2qj3b","icon-line-flag":"__coopeuch-icon__icon-line-flag__1wEMk","icon-line-fullscreen":"__coopeuch-icon__icon-line-fullscreen__30nA4","icon-line-heart":"__coopeuch-icon__icon-line-heart__2xUV8","icon-line-help":"__coopeuch-icon__icon-line-help__17kCM","icon-line-home":"__coopeuch-icon__icon-line-home__GFJAK","icon-line-information":"__coopeuch-icon__icon-line-information__2TJyw","icon-line-left":"__coopeuch-icon__icon-line-left__3u1Le","icon-line-lifebuoy":"__coopeuch-icon__icon-line-lifebuoy__2Rcxc","icon-line-list":"__coopeuch-icon__icon-line-list__2mHVG","icon-line-loading":"__coopeuch-icon__icon-line-loading__1LR3j","icon-line-lock":"__coopeuch-icon__icon-line-lock__2JH2p","icon-line-login":"__coopeuch-icon__icon-line-login__O6oaf","icon-line-logout":"__coopeuch-icon__icon-line-logout__gJ9V9","icon-line-menu-burger":"__coopeuch-icon__icon-line-menu-burger__19B15","icon-line-menu-dots":"__coopeuch-icon__icon-line-menu-dots__2RBwG","icon-line-microphone-disable":"__coopeuch-icon__icon-line-microphone-disable__3rb1K","icon-line-microphone":"__coopeuch-icon__icon-line-microphone__3vYJg","icon-line-minus":"__coopeuch-icon__icon-line-minus__2oxpx","icon-line-note":"__coopeuch-icon__icon-line-note__2PhOj","icon-line-notification-disable":"__coopeuch-icon__icon-line-notification-disable__o2GP1","icon-line-notification":"__coopeuch-icon__icon-line-notification__z7NJH","icon-line-paste":"__coopeuch-icon__icon-line-paste__ur2CY","icon-line-plus":"__coopeuch-icon__icon-line-plus__1ycj4","icon-line-power-sign":"__coopeuch-icon__icon-line-power-sign__20soH","icon-line-print":"__coopeuch-icon__icon-line-print__2FWOI","icon-line-puzzle":"__coopeuch-icon__icon-line-puzzle__2f5ID","icon-line-refresh":"__coopeuch-icon__icon-line-refresh__1j7oR","icon-line-reply-all":"__coopeuch-icon__icon-line-reply-all__1Umhx","icon-line-reply":"__coopeuch-icon__icon-line-reply__2XD0m","icon-line-right":"__coopeuch-icon__icon-line-right__2rqJI","icon-line-save":"__coopeuch-icon__icon-line-save__3VoE0","icon-line-screenshot":"__coopeuch-icon__icon-line-screenshot__R7-Gr","icon-line-search-check":"__coopeuch-icon__icon-line-search-check__3CN2k","icon-line-search-cross":"__coopeuch-icon__icon-line-search-cross__1BCb2","icon-line-search-minus":"__coopeuch-icon__icon-line-search-minus__2qNnr","icon-line-search-plus":"__coopeuch-icon__icon-line-search-plus__2j5Ww","icon-line-search":"__coopeuch-icon__icon-line-search__3fI_D","icon-line-share":"__coopeuch-icon__icon-line-share__1yWG4","icon-line-shield":"__coopeuch-icon__icon-line-shield__MoEtt","icon-line-snooze":"__coopeuch-icon__icon-line-snooze__1UARO","icon-line-star":"__coopeuch-icon__icon-line-star__2bbq2","icon-line-stars":"__coopeuch-icon__icon-line-stars__62pAb","icon-line-sync":"__coopeuch-icon__icon-line-sync__2whw7","icon-line-task":"__coopeuch-icon__icon-line-task__3w3Ha","icon-line-time":"__coopeuch-icon__icon-line-time__1YMzG","icon-line-trash-empty":"__coopeuch-icon__icon-line-trash-empty__3iI-C","icon-line-trash-full":"__coopeuch-icon__icon-line-trash-full__24vII","icon-line-trash":"__coopeuch-icon__icon-line-trash__2jR7w","icon-line-umbrella":"__coopeuch-icon__icon-line-umbrella__3EW_O","icon-line-unlock":"__coopeuch-icon__icon-line-unlock__1neIQ","icon-line-up":"__coopeuch-icon__icon-line-up__Z4C7v","icon-line-upload-queue":"__coopeuch-icon__icon-line-upload-queue__290Df","icon-line-upload":"__coopeuch-icon__icon-line-upload__2yyds","icon-line-user":"__coopeuch-icon__icon-line-user__1TgpF","icon-line-verification-fail":"__coopeuch-icon__icon-line-verification-fail__1R5fL","icon-line-verification":"__coopeuch-icon__icon-line-verification__9ButY","icon-line-wrench":"__coopeuch-icon__icon-line-wrench__1EXlz","icon-line-write":"__coopeuch-icon__icon-line-write__3NGI7","icon-arrow-down":"__coopeuch-icon__icon-arrow-down__2VkIL","icon-arrow-left":"__coopeuch-icon__icon-arrow-left__36it-","icon-arrow-right":"__coopeuch-icon__icon-arrow-right__3fBJt","icon-arrow-up":"__coopeuch-icon__icon-arrow-up__gcIuu","icon-alarm1":"__coopeuch-icon__icon-alarm1__2uq-r","icon-alert1":"__coopeuch-icon__icon-alert1__v3xRs","icon-app-notification1":"__coopeuch-icon__icon-app-notification1__2GJcD","icon-block":"__coopeuch-icon__icon-block__2FJt0","icon-bookmark":"__coopeuch-icon__icon-bookmark__2Gg_H","icon-bug":"__coopeuch-icon__icon-bug__1oFzp","icon-check-double":"__coopeuch-icon__icon-check-double__2pvnG","icon-check":"__coopeuch-icon__icon-check__Wb2XK","icon-cloud-disable":"__coopeuch-icon__icon-cloud-disable__j_7gN","icon-cloud-download":"__coopeuch-icon__icon-cloud-download__1dzy1","icon-cloud-upload":"__coopeuch-icon__icon-cloud-upload__2jnFK","icon-cloud":"__coopeuch-icon__icon-cloud__XL8Xi","icon-cogwheel":"__coopeuch-icon__icon-cogwheel__3mCNb","icon-copy":"__coopeuch-icon__icon-copy__1fOSF","icon-cross":"__coopeuch-icon__icon-cross__10QIh","icon-cut":"__coopeuch-icon__icon-cut__3fs14","icon-dashboard":"__coopeuch-icon__icon-dashboard__QRta1","icon-down":"__coopeuch-icon__icon-down__HXmn3","icon-download-queue":"__coopeuch-icon__icon-download-queue__3ICli","icon-download":"__coopeuch-icon__icon-download__2SdS4","icon-draft":"__coopeuch-icon__icon-draft__P7At8","icon-exit-fullscreen":"__coopeuch-icon__icon-exit-fullscreen__Mh01S","icon-eye-close":"__coopeuch-icon__icon-eye-close__1KjPQ","icon-eye-open":"__coopeuch-icon__icon-eye-open__3ATsw","icon-female-user":"__coopeuch-icon__icon-female-user__2Dfx_","icon-file":"__coopeuch-icon__icon-file__3bdqj","icon-filter":"__coopeuch-icon__icon-filter__295_z","icon-flag":"__coopeuch-icon__icon-flag__1TXC1","icon-fullscreen":"__coopeuch-icon__icon-fullscreen__FIx0R","icon-heart":"__coopeuch-icon__icon-heart__2g-zt","icon-help":"__coopeuch-icon__icon-help__1qlUa","icon-home":"__coopeuch-icon__icon-home__2JGHi","icon-information":"__coopeuch-icon__icon-information__2iZcp","icon-left":"__coopeuch-icon__icon-left__1WSQ-","icon-lifebuoy":"__coopeuch-icon__icon-lifebuoy__1SMNH","icon-list":"__coopeuch-icon__icon-list__ZRgfq","icon-loading":"__coopeuch-icon__icon-loading__3CMbC","icon-lock":"__coopeuch-icon__icon-lock__163V5","icon-login":"__coopeuch-icon__icon-login__2ii93","icon-logout":"__coopeuch-icon__icon-logout__1Z960","icon-menu-burger":"__coopeuch-icon__icon-menu-burger__2boVJ","icon-menu-dots":"__coopeuch-icon__icon-menu-dots__Li-Ov","icon-microphone-disable":"__coopeuch-icon__icon-microphone-disable__1bA0I","icon-microphone":"__coopeuch-icon__icon-microphone__TfNxZ","icon-minus":"__coopeuch-icon__icon-minus__2QDQO","icon-note":"__coopeuch-icon__icon-note__38j6H","icon-notification-disable":"__coopeuch-icon__icon-notification-disable__K1T2z","icon-notification":"__coopeuch-icon__icon-notification__2Ra63","icon-paste":"__coopeuch-icon__icon-paste__51DLi","icon-plus":"__coopeuch-icon__icon-plus__1HBpS","icon-power-sign":"__coopeuch-icon__icon-power-sign__1mx6V","icon-print":"__coopeuch-icon__icon-print__1GulE","icon-puzzle":"__coopeuch-icon__icon-puzzle__2lbdS","icon-refresh":"__coopeuch-icon__icon-refresh__Lubaw","icon-reply-all":"__coopeuch-icon__icon-reply-all__3KEs9","icon-reply":"__coopeuch-icon__icon-reply__8CChY","icon-right":"__coopeuch-icon__icon-right__xteAB","icon-save":"__coopeuch-icon__icon-save__2bqpv","icon-screenshot":"__coopeuch-icon__icon-screenshot__3SlDa","icon-search-alt":"__coopeuch-icon__icon-search-alt__1TlAn","icon-search-check":"__coopeuch-icon__icon-search-check__2TIsj","icon-search-cross":"__coopeuch-icon__icon-search-cross__2NZWr","icon-search-minus":"__coopeuch-icon__icon-search-minus__3c04X","icon-search-plus":"__coopeuch-icon__icon-search-plus__3deTb","icon-share":"__coopeuch-icon__icon-share__3rHQW","icon-shield":"__coopeuch-icon__icon-shield__2HTIc","icon-snooze":"__coopeuch-icon__icon-snooze__1H3-p","icon-star":"__coopeuch-icon__icon-star__ot_K-","icon-stars":"__coopeuch-icon__icon-stars__3n6WS","icon-sync":"__coopeuch-icon__icon-sync__g4AKq","icon-task":"__coopeuch-icon__icon-task__2iDpn","icon-time":"__coopeuch-icon__icon-time__rVrZO","icon-trash-empty":"__coopeuch-icon__icon-trash-empty__2rUqI","icon-trash-full":"__coopeuch-icon__icon-trash-full__2M4JD","icon-trash":"__coopeuch-icon__icon-trash__H5UfA","icon-umbrella":"__coopeuch-icon__icon-umbrella__1MSD1","icon-unlock":"__coopeuch-icon__icon-unlock__5VZLW","icon-up":"__coopeuch-icon__icon-up__1tEMX","icon-upload-queue":"__coopeuch-icon__icon-upload-queue__2EQnt","icon-upload":"__coopeuch-icon__icon-upload__MTrj9","icon-user":"__coopeuch-icon__icon-user__2cuT3","icon-verification-fail":"__coopeuch-icon__icon-verification-fail__3CYbD","icon-verification":"__coopeuch-icon__icon-verification__3hYBR","icon-wrench":"__coopeuch-icon__icon-wrench__2swwf","icon-write":"__coopeuch-icon__icon-write__2oNry"};
+var icons = {"size-1":"__coopeuch-icon__size-1__E20oA","size-2":"__coopeuch-icon__size-2__1LAUs","size-3":"__coopeuch-icon__size-3__3tmzu","size-4":"__coopeuch-icon__size-4__f8f2b","size-5":"__coopeuch-icon__size-5__3WQf-","size-6":"__coopeuch-icon__size-6__325my","size-7":"__coopeuch-icon__size-7__vbJDw","size-8":"__coopeuch-icon__size-8__HfeIC","icon-alert":"__coopeuch-icon__icon-alert__1sBsM","icon-line-alarm":"__coopeuch-icon__icon-line-alarm__2RIcO","icon-line-alert":"__coopeuch-icon__icon-line-alert__3KOrG","icon-line-app-notification":"__coopeuch-icon__icon-line-app-notification__RJ0_m","icon-line-block":"__coopeuch-icon__icon-line-block__1g4pS","icon-line-bookmark":"__coopeuch-icon__icon-line-bookmark__2GpnG","icon-line-bug":"__coopeuch-icon__icon-line-bug__3AZWC","icon-line-check-double":"__coopeuch-icon__icon-line-check-double__3wnRC","icon-line-check":"__coopeuch-icon__icon-line-check__18ly6","icon-line-cloud-disable":"__coopeuch-icon__icon-line-cloud-disable__1ysM1","icon-line-cloud-download":"__coopeuch-icon__icon-line-cloud-download__1Da4J","icon-line-cloud-upload":"__coopeuch-icon__icon-line-cloud-upload__1x9gk","icon-line-cloud":"__coopeuch-icon__icon-line-cloud__2BF9r","icon-line-cogwheel":"__coopeuch-icon__icon-line-cogwheel__4L5xo","icon-line-copy":"__coopeuch-icon__icon-line-copy__2UUan","icon-line-cross":"__coopeuch-icon__icon-line-cross__3h620","icon-line-cut":"__coopeuch-icon__icon-line-cut__3nbjj","icon-line-dashboard":"__coopeuch-icon__icon-line-dashboard__3-F1c","icon-line-down":"__coopeuch-icon__icon-line-down__1BtUm","icon-line-download-queue":"__coopeuch-icon__icon-line-download-queue__1Bzeq","icon-line-download":"__coopeuch-icon__icon-line-download__1ya1g","icon-line-draft":"__coopeuch-icon__icon-line-draft__2zcb0","icon-line-exit-fullscreen":"__coopeuch-icon__icon-line-exit-fullscreen__3-iPg","icon-line-eye-close":"__coopeuch-icon__icon-line-eye-close__iKLUO","icon-line-eye-open":"__coopeuch-icon__icon-line-eye-open__X00tw","icon-line-female-user":"__coopeuch-icon__icon-line-female-user__28nK6","icon-line-file":"__coopeuch-icon__icon-line-file__12bYG","icon-line-filter":"__coopeuch-icon__icon-line-filter__2qj3b","icon-line-flag":"__coopeuch-icon__icon-line-flag__1wEMk","icon-line-fullscreen":"__coopeuch-icon__icon-line-fullscreen__30nA4","icon-line-heart":"__coopeuch-icon__icon-line-heart__2xUV8","icon-line-help":"__coopeuch-icon__icon-line-help__17kCM","icon-line-home":"__coopeuch-icon__icon-line-home__GFJAK","icon-line-information":"__coopeuch-icon__icon-line-information__2TJyw","icon-line-left":"__coopeuch-icon__icon-line-left__3u1Le","icon-line-lifebuoy":"__coopeuch-icon__icon-line-lifebuoy__2Rcxc","icon-line-list":"__coopeuch-icon__icon-line-list__2mHVG","icon-line-loading":"__coopeuch-icon__icon-line-loading__1LR3j","icon-line-lock":"__coopeuch-icon__icon-line-lock__2JH2p","icon-line-login":"__coopeuch-icon__icon-line-login__O6oaf","icon-line-logout":"__coopeuch-icon__icon-line-logout__gJ9V9","icon-line-menu-burger":"__coopeuch-icon__icon-line-menu-burger__19B15","icon-line-menu-dots":"__coopeuch-icon__icon-line-menu-dots__2RBwG","icon-line-microphone-disable":"__coopeuch-icon__icon-line-microphone-disable__3rb1K","icon-line-microphone":"__coopeuch-icon__icon-line-microphone__3vYJg","icon-line-minus":"__coopeuch-icon__icon-line-minus__2oxpx","icon-line-note":"__coopeuch-icon__icon-line-note__2PhOj","icon-line-notification-disable":"__coopeuch-icon__icon-line-notification-disable__o2GP1","icon-line-notification":"__coopeuch-icon__icon-line-notification__z7NJH","icon-line-paste":"__coopeuch-icon__icon-line-paste__ur2CY","icon-line-plus":"__coopeuch-icon__icon-line-plus__1ycj4","icon-line-power-sign":"__coopeuch-icon__icon-line-power-sign__20soH","icon-line-print":"__coopeuch-icon__icon-line-print__2FWOI","icon-line-puzzle":"__coopeuch-icon__icon-line-puzzle__2f5ID","icon-line-refresh":"__coopeuch-icon__icon-line-refresh__1j7oR","icon-line-reply-all":"__coopeuch-icon__icon-line-reply-all__1Umhx","icon-line-reply":"__coopeuch-icon__icon-line-reply__2XD0m","icon-line-right":"__coopeuch-icon__icon-line-right__2rqJI","icon-line-save":"__coopeuch-icon__icon-line-save__3VoE0","icon-line-screenshot":"__coopeuch-icon__icon-line-screenshot__R7-Gr","icon-line-search-check":"__coopeuch-icon__icon-line-search-check__3CN2k","icon-line-search-cross":"__coopeuch-icon__icon-line-search-cross__1BCb2","icon-line-search-minus":"__coopeuch-icon__icon-line-search-minus__2qNnr","icon-line-search-plus":"__coopeuch-icon__icon-line-search-plus__2j5Ww","icon-line-search":"__coopeuch-icon__icon-line-search__3fI_D","icon-line-share":"__coopeuch-icon__icon-line-share__1yWG4","icon-line-shield":"__coopeuch-icon__icon-line-shield__MoEtt","icon-line-snooze":"__coopeuch-icon__icon-line-snooze__1UARO","icon-line-star":"__coopeuch-icon__icon-line-star__2bbq2","icon-line-stars":"__coopeuch-icon__icon-line-stars__62pAb","icon-line-sync":"__coopeuch-icon__icon-line-sync__2whw7","icon-line-task":"__coopeuch-icon__icon-line-task__3w3Ha","icon-line-time":"__coopeuch-icon__icon-line-time__1YMzG","icon-line-trash-empty":"__coopeuch-icon__icon-line-trash-empty__3iI-C","icon-line-trash-full":"__coopeuch-icon__icon-line-trash-full__24vII","icon-line-trash":"__coopeuch-icon__icon-line-trash__2jR7w","icon-line-umbrella":"__coopeuch-icon__icon-line-umbrella__3EW_O","icon-line-unlock":"__coopeuch-icon__icon-line-unlock__1neIQ","icon-line-up":"__coopeuch-icon__icon-line-up__Z4C7v","icon-line-upload-queue":"__coopeuch-icon__icon-line-upload-queue__290Df","icon-line-upload":"__coopeuch-icon__icon-line-upload__2yyds","icon-line-user":"__coopeuch-icon__icon-line-user__1TgpF","icon-line-verification-fail":"__coopeuch-icon__icon-line-verification-fail__1R5fL","icon-line-verification":"__coopeuch-icon__icon-line-verification__9ButY","icon-line-wrench":"__coopeuch-icon__icon-line-wrench__1EXlz","icon-line-write":"__coopeuch-icon__icon-line-write__3NGI7","icon-arrow-down":"__coopeuch-icon__icon-arrow-down__2VkIL","icon-arrow-left":"__coopeuch-icon__icon-arrow-left__36it-","icon-arrow-right":"__coopeuch-icon__icon-arrow-right__3fBJt","icon-arrow-up":"__coopeuch-icon__icon-arrow-up__gcIuu","icon-alarm1":"__coopeuch-icon__icon-alarm1__2uq-r","icon-alert1":"__coopeuch-icon__icon-alert1__v3xRs","icon-app-notification1":"__coopeuch-icon__icon-app-notification1__2GJcD","icon-block":"__coopeuch-icon__icon-block__2FJt0","icon-bookmark":"__coopeuch-icon__icon-bookmark__2Gg_H","icon-bug":"__coopeuch-icon__icon-bug__1oFzp","icon-check-double":"__coopeuch-icon__icon-check-double__2pvnG","icon-check":"__coopeuch-icon__icon-check__Wb2XK","icon-cloud-disable":"__coopeuch-icon__icon-cloud-disable__j_7gN","icon-cloud-download":"__coopeuch-icon__icon-cloud-download__1dzy1","icon-cloud-upload":"__coopeuch-icon__icon-cloud-upload__2jnFK","icon-cloud":"__coopeuch-icon__icon-cloud__XL8Xi","icon-cogwheel":"__coopeuch-icon__icon-cogwheel__3mCNb","icon-copy":"__coopeuch-icon__icon-copy__1fOSF","icon-cross":"__coopeuch-icon__icon-cross__10QIh","icon-cut":"__coopeuch-icon__icon-cut__3fs14","icon-dashboard":"__coopeuch-icon__icon-dashboard__QRta1","icon-down":"__coopeuch-icon__icon-down__HXmn3","icon-download-queue":"__coopeuch-icon__icon-download-queue__3ICli","icon-download":"__coopeuch-icon__icon-download__2SdS4","icon-draft":"__coopeuch-icon__icon-draft__P7At8","icon-exit-fullscreen":"__coopeuch-icon__icon-exit-fullscreen__Mh01S","icon-eye-close":"__coopeuch-icon__icon-eye-close__1KjPQ","icon-eye-open":"__coopeuch-icon__icon-eye-open__3ATsw","icon-female-user":"__coopeuch-icon__icon-female-user__2Dfx_","icon-file":"__coopeuch-icon__icon-file__3bdqj","icon-filter":"__coopeuch-icon__icon-filter__295_z","icon-flag":"__coopeuch-icon__icon-flag__1TXC1","icon-fullscreen":"__coopeuch-icon__icon-fullscreen__FIx0R","icon-heart":"__coopeuch-icon__icon-heart__2g-zt","icon-help":"__coopeuch-icon__icon-help__1qlUa","icon-home":"__coopeuch-icon__icon-home__2JGHi","icon-information":"__coopeuch-icon__icon-information__2iZcp","icon-left":"__coopeuch-icon__icon-left__1WSQ-","icon-lifebuoy":"__coopeuch-icon__icon-lifebuoy__1SMNH","icon-list":"__coopeuch-icon__icon-list__ZRgfq","icon-loading":"__coopeuch-icon__icon-loading__3CMbC","icon-lock":"__coopeuch-icon__icon-lock__163V5","icon-login":"__coopeuch-icon__icon-login__2ii93","icon-logout":"__coopeuch-icon__icon-logout__1Z960","icon-menu-burger":"__coopeuch-icon__icon-menu-burger__2boVJ","icon-menu-dots":"__coopeuch-icon__icon-menu-dots__Li-Ov","icon-microphone-disable":"__coopeuch-icon__icon-microphone-disable__1bA0I","icon-microphone":"__coopeuch-icon__icon-microphone__TfNxZ","icon-minus":"__coopeuch-icon__icon-minus__2QDQO","icon-note":"__coopeuch-icon__icon-note__38j6H","icon-notification-disable":"__coopeuch-icon__icon-notification-disable__K1T2z","icon-notification":"__coopeuch-icon__icon-notification__2Ra63","icon-paste":"__coopeuch-icon__icon-paste__51DLi","icon-plus":"__coopeuch-icon__icon-plus__1HBpS","icon-power-sign":"__coopeuch-icon__icon-power-sign__1mx6V","icon-print":"__coopeuch-icon__icon-print__1GulE","icon-puzzle":"__coopeuch-icon__icon-puzzle__2lbdS","icon-refresh":"__coopeuch-icon__icon-refresh__Lubaw","icon-reply-all":"__coopeuch-icon__icon-reply-all__3KEs9","icon-reply":"__coopeuch-icon__icon-reply__8CChY","icon-right":"__coopeuch-icon__icon-right__xteAB","icon-save":"__coopeuch-icon__icon-save__2bqpv","icon-screenshot":"__coopeuch-icon__icon-screenshot__3SlDa","icon-search-alt":"__coopeuch-icon__icon-search-alt__1TlAn","icon-search-check":"__coopeuch-icon__icon-search-check__2TIsj","icon-search-cross":"__coopeuch-icon__icon-search-cross__2NZWr","icon-search-minus":"__coopeuch-icon__icon-search-minus__3c04X","icon-search-plus":"__coopeuch-icon__icon-search-plus__3deTb","icon-share":"__coopeuch-icon__icon-share__3rHQW","icon-shield":"__coopeuch-icon__icon-shield__2HTIc","icon-snooze":"__coopeuch-icon__icon-snooze__1H3-p","icon-star":"__coopeuch-icon__icon-star__ot_K-","icon-stars":"__coopeuch-icon__icon-stars__3n6WS","icon-sync":"__coopeuch-icon__icon-sync__g4AKq","icon-task":"__coopeuch-icon__icon-task__2iDpn","icon-time":"__coopeuch-icon__icon-time__rVrZO","icon-trash-empty":"__coopeuch-icon__icon-trash-empty__2rUqI","icon-trash-full":"__coopeuch-icon__icon-trash-full__2M4JD","icon-trash":"__coopeuch-icon__icon-trash__H5UfA","icon-umbrella":"__coopeuch-icon__icon-umbrella__1MSD1","icon-unlock":"__coopeuch-icon__icon-unlock__5VZLW","icon-up":"__coopeuch-icon__icon-up__1tEMX","icon-upload-queue":"__coopeuch-icon__icon-upload-queue__2EQnt","icon-upload":"__coopeuch-icon__icon-upload__MTrj9","icon-user":"__coopeuch-icon__icon-user__2cuT3","icon-verification-fail":"__coopeuch-icon__icon-verification-fail__3CYbD","icon-verification":"__coopeuch-icon__icon-verification__3hYBR","icon-wrench":"__coopeuch-icon__icon-wrench__2swwf","icon-write":"__coopeuch-icon__icon-write__2oNry"};
 
 const Icon = ({
   name,
@@ -1797,5 +1798,426 @@ Switch.propTypes = {
   disabled: propTypes.bool
 };
 
-export { Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, Logo, Radio, Separator, Sidebar, SidebarElement, Switch };
+var styles$8 = {"loadingContainer":"__loading__loadingContainer__xbslP","circle_1":"__loading__circle_1__1yHlS","circle_2":"__loading__circle_2__12Wvj","dark":"__loading__dark__l3QX7","circle":"__loading__circle__2KYdR","circleMain":"__loading__circleMain__2RXOO","circlesContainer":"__loading__circlesContainer__gReE6","container":"__loading__container__2BLen","beforeCircle1":"__loading__beforeCircle1__3d9vo","beforeCircle2":"__loading__beforeCircle2__1fVOr","circleMainBorder":"__loading__circleMainBorder__UHFy2"};
+
+const Loading = ({
+  dark
+}) => {
+  const styleArr = [styles$8.loadingContainer, dark ? styles$8.dark : null];
+  const theme = dark ? 'dark' : 'light';
+  return /*#__PURE__*/React.createElement("div", {
+    className: styleArr.join(' '),
+    "data-theme": theme
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$8.circleMain
+  }), /*#__PURE__*/React.createElement("div", {
+    className: styles$8.circlesContainer
+  }, [styles$8.circle_1, styles$8.circle_2].map((el, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: [styles$8.circle, el].join(' ')
+  }))));
+};
+
+Loading.defaultProps = {
+  dark: false
+};
+Loading.propTypes = {
+  dark: propTypes.bool
+};
+
+var styles$9 = {"titleContainer":"__title__titleContainer__Yw0He","suffix":"__title__suffix__3FgDb"};
+
+class IconListModel {}
+IconListModel.iconList = ['line-alarm', 'line-alert', 'line-app-notification', 'line-block', 'line-bookmark', 'line-bug', 'line-check-double', 'line-check', 'line-cloud-disable', 'line-cloud-download', 'line-cloud-upload', 'line-cloud', 'line-cogwheel', 'line-copy', 'line-cross', 'line-cut', 'line-dashboard', 'line-down', 'line-download-queue', 'line-download', 'line-draft', 'line-exit-fullscreen', 'line-eye-close', 'line-eye-open', 'line-female-user', 'line-file', 'line-filter', 'line-flag', 'line-fullscreen', 'line-heart', 'line-help', 'line-home', 'line-information', 'line-left', 'line-lifebuoy', 'line-list', 'line-loading', 'line-lock', 'line-login', 'line-logout', 'line-menu-burger', 'line-menu-dots', 'line-microphone-disable', 'line-microphone', 'line-minus', 'line-note', 'line-notification-disable', 'line-notification', 'line-paste', 'line-plus', 'line-power-sign', 'line-print', 'line-puzzle', 'line-refresh', 'line-reply-all', 'line-reply', 'line-right', 'line-save', 'line-screenshot', 'line-search-check', 'line-search-cross', 'line-search-minus', 'line-search-plus', 'line-search', 'line-share', 'line-shield', 'line-snooze', 'line-star', 'line-stars', 'line-sync', 'line-task', 'line-time', 'line-trash-empty', 'line-trash-full', 'line-trash', 'line-umbrella', 'line-unlock', 'line-up', 'line-upload-queue', 'line-upload', 'line-user', 'line-verification-fail', 'line-verification', 'line-wrench', 'line-write', 'arrow-down', 'arrow-left', 'arrow-right', 'arrow-up', 'alarm1', 'alert1', 'app-notification1', 'block', 'bookmark', 'bug', 'check-double', 'check', 'cloud-disable', 'cloud-download', 'cloud-upload', 'cloud', 'cogwheel', 'copy', 'cross', 'cut', 'dashboard', 'down', 'download-queue', 'download', 'draft', 'exit-fullscreen', 'eye-close', 'eye-open', 'female-user', 'file', 'filter', 'flag', 'fullscreen', 'heart', 'help', 'home', 'information', 'left', 'lifebuoy', 'list', 'loading', 'lock', 'login', 'logout', 'menu-burger', 'menu-dots', 'microphone-disable', 'microphone', 'minus', 'note', 'notification-disable', 'notification', 'paste', 'plus', 'power-sign', 'print', 'puzzle', 'refresh', 'reply-all', 'reply', 'right', 'save', 'screenshot', 'search-alt', 'search-check', 'search-cross', 'search-minus', 'search-plus', 'share', 'shield', 'snooze', 'star', 'stars', 'sync', 'task', 'time', 'trash-empty', 'trash-full', 'trash', 'umbrella', 'unlock', 'up', 'upload-queue', 'upload', 'user', 'verification-fail', 'verification', 'wrench', 'write'];
+
+const TitleSection = ({
+  label,
+  prefix,
+  ...props
+}) => {
+  const containerClass = [styles$9.titleContainer];
+  return /*#__PURE__*/React.createElement("div", Object.assign({}, props, {
+    className: containerClass.join(' ')
+  }), prefix && /*#__PURE__*/React.createElement(Icon, {
+    className: styles$9.suffix,
+    name: prefix
+  }, " "), " ", /*#__PURE__*/React.createElement("div", {
+    "data-testid": "title-section-label"
+  }, label));
+};
+TitleSection.defaultProps = {
+  label: '',
+  prefix: 'line-file'
+};
+TitleSection.propTypes = {
+  prefix: propTypes.oneOf(IconListModel.iconList).isRequired,
+  label: propTypes.string.isRequired
+};
+
+var styles$a = {"chip":"__chips__chip__UA-fa","pressed":"__chips__pressed__Qi9F4","disabled":"__chips__disabled__1agHb","variant":"__chips__variant__32Cyg"};
+
+const InputChip = ({
+  value,
+  onClose,
+  variant,
+  disabled,
+  ...props
+}) => {
+  const mainRef = React.createRef(null);
+
+  const onPress = () => {
+    mainRef.current.className = classesComponent.concat(styles$a.pressed).join(' ');
+  };
+
+  const mouseUp = () => {
+    mainRef.current.className = classesComponent.join(' ');
+  };
+
+  const classesComponent = [styles$a.chip, disabled ? styles$a.disabled : null, variant ? styles$a.variant : null];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", Object.assign({
+    ref: mainRef
+  }, props, {
+    className: classesComponent.join(' ')
+  }), value, /*#__PURE__*/React.createElement(Icon, {
+    onMouseDown: onPress,
+    onClick: onClose,
+    onMouseUp: mouseUp,
+    name: "plus",
+    size: "2",
+    role: "closer"
+  })));
+};
+
+InputChip.defaultProps = {
+  variant: false,
+  disabled: false
+};
+InputChip.propTypes = {
+  value: propTypes.string.isRequired,
+  disabled: propTypes.bool,
+  variant: propTypes.bool,
+  onClose: propTypes.func.isRequired
+};
+
+var styles$b = {"progressBar":"__progressbar__progressBar__R0HpQ","simpleLabel":"__progressbar__simpleLabel__1Jsh1","multiHeader":"__progressbar__multiHeader__9q7I_","multiHeaderLabel":"__progressbar__multiHeaderLabel__2mYPG","barContainer":"__progressbar__barContainer__3LHm2","bar":"__progressbar__bar__2T33C","bellowContent":"__progressbar__bellowContent__1lqZ7","between":"__progressbar__between__3muIL","end":"__progressbar__end__1xSRa","reverse":"__progressbar__reverse__kTBcR","full":"__progressbar__full__1WMCD"};
+
+const ProgressBar = ({
+  label,
+  progress,
+  assistText,
+  percent,
+  helperAlign,
+  reverse
+}) => {
+  const alignment = assistText && percent ? styles$b.between : styles$b[helperAlign];
+  const direction = reverse ? styles$b.reverse : null;
+  const bellowClasses = [styles$b.bellowContent, alignment, direction];
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$b.progressBar
+  }, !Array.isArray(label) ? /*#__PURE__*/React.createElement("div", {
+    className: styles$b.simpleLabel
+  }, label) : /*#__PURE__*/React.createElement("div", {
+    className: styles$b.multiHeader
+  }, label.map((el, i) => /*#__PURE__*/React.createElement("div", {
+    key: i
+  }, /*#__PURE__*/React.createElement("label", {
+    className: styles$b.multiHeaderLabel
+  }, el.label), /*#__PURE__*/React.createElement("div", null, el.text)))), /*#__PURE__*/React.createElement("div", {
+    className: styles$b.barContainer
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$b.bar,
+    "data-progress": progress,
+    style: {
+      width: `${progress}%`
+    }
+  })), assistText || percent ? /*#__PURE__*/React.createElement("div", {
+    className: bellowClasses.join(' ').trim(),
+    role: "helper"
+  }, assistText, percent && /*#__PURE__*/React.createElement("div", {
+    className: Number(progress) === 100 ? styles$b.full : null
+  }, `${progress}%`)) : null);
+};
+
+ProgressBar.defaultProps = {
+  label: '',
+  assistText: '',
+  progress: 0,
+  percent: false,
+  helperAlign: 'start',
+  reverse: false
+};
+ProgressBar.propTypes = {
+  label: propTypes.oneOfType([propTypes.string, propTypes.arrayOf(propTypes.shape({
+    label: propTypes.string,
+    text: propTypes.string
+  }))]),
+  assistText: propTypes.string,
+  progress: propTypes.number,
+  percent: propTypes.bool,
+  reverse: propTypes.bool,
+  helperAlign: propTypes.oneOf(['start', 'between', 'end'])
+};
+
+var styles$c = {"error":"__bullet__error__17A9A","warning":"__bullet__warning__1o0c4","success":"__bullet__success__8m-fm","info":"__bullet__info__1CoXU","boxCircle":"__bullet__boxCircle__2C1_e","bulletElement":"__bullet__bulletElement__1OQ67","disabled":"__bullet__disabled__2hJYv","prefixContainer":"__bullet__prefixContainer__2vm2y","prefixItem":"__bullet__prefixItem__3BrA8","textContainer":"__bullet__textContainer__3DxYi","active":"__bullet__active__1eHUK"};
+
+const BulletElement = ({
+  count,
+  disabled,
+  text,
+  typeList,
+  prefixType,
+  contentType,
+  icon,
+  type,
+  index,
+  ...props
+}) => {
+  const numberList = count + 1;
+  let styleContainer = [styles$c.bulletElement];
+  let stylePrefixContainer = [styles$c.prefixContainer];
+  let styleBoxCircle = [styles$c.boxCircle];
+  let styleTextContainer = [styles$c.textContainer];
+
+  const setStyles = (typeParam, typeListParam, prefixParam, contentParam) => {
+    if (disabled !== undefined && disabled === true) {
+      styleContainer = styleContainer.concat(styles$c.disabled);
+      return;
+    }
+
+    const styleTypeContainer = [styles$c[`${typeParam}`]];
+
+    if (type !== undefined && type !== '') {
+      styleContainer = styleContainer.concat(styleTypeContainer);
+
+      if (typeList !== undefined) {
+        styleBoxCircle = styleBoxCircle.concat(styleTypeContainer);
+        return;
+      }
+    } else if (prefixType !== undefined || contentType !== undefined) {
+      const stylePrefix = [styles$c[`${prefixParam}`]];
+      const styleContent = [styles$c[`${contentParam}`]];
+      styleBoxCircle = [styles$c.boxCircle, styles$c[`${prefixParam}`]];
+
+      if (prefixType !== undefined) {
+        if (typeListParam !== 'unorder') {
+          stylePrefixContainer = stylePrefixContainer.concat(stylePrefix);
+        }
+      }
+
+      if (contentType !== undefined) {
+        styleTextContainer = styleTextContainer.concat(styleContent);
+      }
+    }
+  };
+
+  setStyles(type, typeList, prefixType, contentType);
+  const defaultPrefix = typeList === 'order' ? /*#__PURE__*/React.createElement("div", {
+    "data-testid": "test-prefix-bullet-order",
+    className: stylePrefixContainer.join(' ')
+  }, numberList, ".") : typeList === 'unorder' ? /*#__PURE__*/React.createElement("div", {
+    "data-testid": "test-prefix-bullet-unorder",
+    className: stylePrefixContainer.join(' ')
+  }, /*#__PURE__*/React.createElement("div", {
+    "data-testid": "test-prefix-bullet",
+    className: styleBoxCircle.join(' ')
+  }, " ")) : typeList === 'icons' ? /*#__PURE__*/React.createElement("div", {
+    "data-testid": "test-prefix-bullet-icons",
+    className: stylePrefixContainer.join(' ')
+  }, /*#__PURE__*/React.createElement(Icon, {
+    size: "1",
+    name: icon
+  })) : '';
+  return /*#__PURE__*/React.createElement("div", {
+    "data-testid": `test-bullet-${typeList}`,
+    className: styleContainer.join(' ')
+  }, defaultPrefix, /*#__PURE__*/React.createElement("p", {
+    "data-testid": "test-bullet-content",
+    className: styleTextContainer.join(' ')
+  }, text));
+};
+BulletElement.defaultProps = {
+  icon: 'check'
+};
+BulletElement.propTypes = {
+  disable: propTypes.bool,
+  text: propTypes.string.isRequired,
+  prefixType: function (props) {
+    if (props['type'] !== undefined && props['prefixType'] !== undefined) {
+      return new Error('If prefixType prop it is defined not define type');
+    }
+  },
+  type: function (props) {
+    if (props['prefixType'] !== undefined && props['type'] !== undefined) {
+      return new Error('If prefixType2 prop it is defined not define type');
+    }
+
+    if (props['contentType'] !== undefined && props['type'] !== undefined) {
+      return new Error('If contentType prop it is defined not define type');
+    }
+  }
+};
+
+const Bullets = ({
+  items,
+  typeList
+}) => {
+  const typeOfBullet = typeList ? typeList : '';
+  const itemsBullets = items ? items : [];
+  return /*#__PURE__*/React.createElement("div", null, typeOfBullet === 'order' ? itemsBullets.map((element, index) => /*#__PURE__*/React.createElement(BulletElement, Object.assign({
+    key: index,
+    count: index,
+    typeList: typeOfBullet
+  }, element))) : typeOfBullet === 'unorder' ? itemsBullets.map((element, index) => /*#__PURE__*/React.createElement(BulletElement, Object.assign({
+    key: index
+  }, element, {
+    typeList: typeOfBullet
+  }))) : typeOfBullet === 'icons' ? itemsBullets.map((element, index) => /*#__PURE__*/React.createElement(BulletElement, Object.assign({
+    key: index
+  }, element, {
+    typeList: typeOfBullet
+  }))) : '');
+};
+
+Bullets.defaults = {
+  typeList: 'order',
+  items: [{}]
+};
+Bullets.propTypes = {
+  typeList: propTypes.string.isRequired,
+  items: propTypes.array.isRequired
+};
+
+var styles$d = {"fadeInFromNone":"__tooltip__fadeInFromNone__QneFP","containerTooltip":"__tooltip__containerTooltip__2kFow","box":"__tooltip__box__3hy_8","arrow":"__tooltip__arrow__T5dKc","content":"__tooltip__content__2N_0M"};
+
+const Tooltip = ({
+  children,
+  content,
+  placement,
+  eventListener,
+  ...props
+}) => {
+  const refBoxTooltip = createRef();
+  const refContainerTooltip = createRef();
+  const refContainerTippy = createRef();
+  const [visible, setVisible] = useState(false);
+
+  const setOpacity = event => {
+    if (eventListener === 'hover') {
+      if (event === 'leave') {
+        setVisible(false);
+        refBoxTooltip.current.style.opacity = 0;
+      }
+
+      if (event === 'enter') {
+        setVisible(true);
+        refBoxTooltip.current.style.opacity = 1;
+      }
+    }
+
+    if (eventListener === 'mouseClick') {
+      console.log('click');
+
+      if (visible) {
+        refBoxTooltip.current.style.opacity = 0;
+        setVisible(false);
+      } else {
+        refBoxTooltip.current.style.opacity = 1;
+        setVisible(true);
+      }
+    }
+  };
+
+  return /*#__PURE__*/React.createElement("div", Object.assign({}, props, {
+    "data-testid": "test-container",
+    visible: visible.toString(),
+    className: styles$d.containerTooltip,
+    ref: refContainerTooltip,
+    onClick: () => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false,
+    onMouseEnter: e => eventListener === 'hover' ? setOpacity('enter') : false,
+    onMouseLeave: () => eventListener === 'hover' ? setOpacity('leave') : false
+  }), /*#__PURE__*/React.createElement(Tippy, {
+    offset: [0, 20],
+    arrow: true,
+    appendTo: "parent",
+    placement: placement,
+    visible: true,
+    animation: false,
+    render: attrs => /*#__PURE__*/React.createElement("div", Object.assign({
+      "data-testid": "test-box",
+      ref: refBoxTooltip,
+      className: styles$d.box,
+      tabIndex: "-1"
+    }, attrs), /*#__PURE__*/React.createElement("div", {
+      "data-testid": "test-box-content",
+      ref: refContainerTippy,
+      className: styles$d.content
+    }, /*#__PURE__*/React.createElement("p", null, " ", content)), /*#__PURE__*/React.createElement("div", {
+      "data-testid": "test-box-arrow",
+      id: "arrow",
+      className: styles$d.arrow
+    }, " "))
+  }, /*#__PURE__*/React.createElement("span", null, children)));
+};
+Tooltip.defaultProps = {
+  content: 'Text for tooltip',
+  placement: 'top',
+  eventListener: 'hover'
+};
+Tooltip.propTypes = {
+  placement: propTypes.oneOf(['top', 'bottom', 'right', 'right-end', 'left']),
+  eventListener: propTypes.oneOf(['mouseClick', 'hover']),
+  content: propTypes.string.isRequired
+};
+
+var styles$e = {"message":"__message__message__3g_Jc","prefix":"__message__prefix__3hi6e","textContainer":"__message__textContainer__10WAf","actionContainer":"__message__actionContainer__3_FT8","error":"__message__error__hllCz","success":"__message__success__2_19H","info":"__message__info__2aIvC","warning":"__message__warning__2x3Y6"};
+
+const Message = ({
+  title,
+  action,
+  type,
+  className,
+  description
+}) => {
+  const messageClasses = [styles$e.message, styles$e[type], className];
+
+  const getIcon = () => {
+    switch (type) {
+      case 'success':
+        return 'check';
+
+      case 'info':
+        return 'information';
+
+      case 'error':
+        return 'cross';
+
+      case 'warning':
+        return 'alert';
+    }
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: messageClasses.join(' ').trim(),
+    role: "message"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: getIcon(),
+    className: styles$e.prefix
+  }), /*#__PURE__*/React.createElement("div", {
+    className: styles$e.textContainer
+  }, title && /*#__PURE__*/React.createElement("div", null, " ", title, " "), description && /*#__PURE__*/React.createElement("p", null, " ", description, " ")), /*#__PURE__*/React.createElement("div", {
+    className: styles$e.actionContainer
+  }, action));
+};
+
+Message.defaultProps = {
+  type: 'info'
+};
+Message.propTypes = {
+  type: propTypes.oneOf(['error', 'success', 'info', 'warning']).isRequired,
+  title: propTypes.string,
+  description: propTypes.string,
+  action: propTypes.element
+};
+
+export { Bullets, Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection, Tooltip };
 //# sourceMappingURL=index.modern.js.map

@@ -13,8 +13,14 @@ import {
   Radio,
   Separator,
   Sidebar,
-  SidebarElement,
-  Switch
+  Switch,
+  TitleSection,
+  InputChip,
+  Loading,
+  Bullets,
+  Tooltip,
+  ProgressBar,
+  Message
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -325,6 +331,17 @@ const App = () => {
       />
     </div>
 
+    <div className="container my-4">
+      <h1 className="mb-4">input chip</h1>
+
+      <div className="d-flex">
+        <InputChip value="action" onClose={() => alert('clicked')} />
+        <InputChip value="action" onClose={() => alert('clicked')} disabled />
+        <InputChip value="action" variant onClose={() => alert('clicked')} />
+        <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
+      </div>
+    </div>
+
     <div className="container">
       <div className="row">
         <div className="col-lg-3 col-md-4">
@@ -372,6 +389,246 @@ const App = () => {
       </div>
     </div>
 
+    <div className="container my-4">
+      <h1 className="mb-4">Loading</h1>
+
+      <div className="d-flex">
+        <Loading />
+      </div>
+    </div>
+
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-12">
+          <TitleSection label="Title Section" prefix="write" />
+        </div>
+      </div>
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">Progress bar</h1>
+
+      <div className="d-flex">
+        <div className="container">
+          <ProgressBar assistText="un texto de asistencia" progress={25} />
+          <ProgressBar assistText="un texto de asistencia" progress={25} percent />
+          <ProgressBar progress={50} percent helperAlign="end" />
+          <ProgressBar assistText="un texto de asistencia" helperAlign="start" progress={75} />
+        </div>
+        <div className="container">
+          <ProgressBar assistText="un texto de asistencia" label={
+            [
+              {
+                label: "label",
+                text: "$2.000.000"
+              },
+              {
+                label: "label",
+                text: "$10.000.000"
+              }
+            ]
+          } progress={75} />
+          <ProgressBar assistText="un texto de asistencia" label={
+            [
+              {
+                label: "label",
+                text: "$2.000.000"
+              }
+            ]
+          } progress={75} />
+          <ProgressBar assistText="un texto de asistencia" percent progress={100} />
+        </div>
+      </div>
+    </div>
+
+
+    <div className="container my-4">
+      <h1 className="mb-4">Messages</h1>
+
+      <div className="d-flex flex-column">
+        <Message type="success" title="this is a success message" action={<Button variant="text" suffix="arrow-right" > ir a action </Button>} />
+        <Message type="error" title="this is an error message" description="bajada" />
+        <Message type="warning" title="this is a warning message" />
+        <Message type="info" title="this is an info message" action={<Button variant="text" > ir a action </Button>} />
+      </div>
+    </div>
+
+
+    <div className="container my-4">
+      <h1>Tooltip</h1>
+      {inputText}
+      <Tooltip
+        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        eventListener="hover"
+        placement="bottom">
+        <Input
+          maxLength="105"
+          label="esto es un label multi validations"
+          value={inputText}
+          suffix={inputSuffix}
+          assistText={[
+            {
+              text: 'error mesaje',
+              type: 'error'
+            },
+            {
+              text: 'assist mesaje',
+              type: 'assist'
+            },
+            {
+              text: 'success mesaje',
+              type: 'success'
+            }
+          ]}
+          onChange={({ target: { value } }) => setInputText(value)}
+        />
+      </Tooltip>
+    </div>
+
+    <div className="container my-4">
+      {inputText}
+      <Tooltip
+        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        eventListener="mouseClick"
+        placement="top">
+        <Input
+          maxLength="105"
+          label="esto es un label multi validations"
+          value={inputText}
+          suffix={inputSuffix}
+          assistText={[
+            {
+              text: 'error mesaje',
+              type: 'error'
+            },
+            {
+              text: 'assist mesaje',
+              type: 'assist'
+            },
+            {
+              text: 'success mesaje',
+              type: 'success'
+            }
+          ]}
+          onChange={({ target: { value } }) => setInputText(value)}
+        />
+      </Tooltip>
+    </div>
+
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-12">
+          <Tooltip
+            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            eventListener="mouseClick"
+            placement="right-end">
+            <TitleSection label="Title Section" prefix="write"/>
+          </Tooltip>
+        </div>
+        <div className="col-lg-6 col-md-12 col-sm-12">
+          <Tooltip
+            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            eventListener="mouseClick"
+            placement="right-end">
+            <TitleSection label="Title Section" prefix="write"/>
+          </Tooltip>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div className="container my-4">
+      <h1 className="mb-4">Unorder Bullets</h1>
+      <div className="d-flex">
+        <Bullets typeList="unorder" items={[
+          {
+            text: 'Order Bullet text a',
+            prefixType: 'info',
+            contentType:'success'
+          },
+          {
+            text: 'Order Bullet text a',
+            type: 'success',
+          },
+        ]}>
+        </Bullets>
+
+      </div>
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">Order Bullets</h1>
+      <div className="d-flex">
+        <Bullets typeList="order" items={[
+          {
+            text: 'Order Bullet text a',
+            prefixType: 'error',
+            contentType:'error'
+          },
+          {
+            text: 'Order Bullet text b',
+            type: 'success',
+          },
+        ]}>
+        </Bullets>
+
+      </div>
+    </div>
+
+
+    <div className="container my-4">
+      <h1 className="mb-4">Icon Bullets</h1>
+      <div className="d-flex">
+        <Bullets typeList="icons" items={[
+          {
+            text: 'Order Bullet text a',
+            prefixType: 'info',
+            contentType:'error',
+            icon:'home'
+          },
+          {
+            text: 'Order Bullet text a',
+            type: 'info',
+            icon:'home'
+          },
+        ]}>
+        </Bullets>
+
+      </div>
+    </div>
+
+
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <Bullets typeList="icons" items={[
+            {
+              text: 'Order Bullet text a',
+              prefixType: 'info',
+              contentType:'error',
+              icon:'home'
+            },
+            {
+              text: 'Order Bullet text a',
+              type: 'info',
+              icon:'home'
+            },
+          ]}>
+          </Bullets>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
   </>
 }

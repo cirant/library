@@ -8,6 +8,11 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|scss|less)$": "identity-obj-proxy"
+    }
+  },
   "engines": {
     "node": ">=10"
   },
@@ -16,7 +21,6 @@
     "prebuild": "gulp",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
-    "preinstall": "touch test.js",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
@@ -28,7 +32,7 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -39,6 +43,7 @@
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "@storybook/theming": "^5.3.19",
     "@testing-library/react": "^10.3.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.3",
@@ -74,6 +79,9 @@
   ],
   "dependencies": {
     "@storybook/addon-knobs": "^5.3.19",
-    "babel-plugin-react-docgen": "^4.1.0"
+    "@tippyjs/react": "^4.0.5",
+    "babel-plugin-react-docgen": "^4.1.0",
+    "lodash": "^4.17.15",
+    "react-test-renderer": "^16.13.1"
   }
 }

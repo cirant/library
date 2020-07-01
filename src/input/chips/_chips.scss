@@ -1,0 +1,57 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+
+.chip{
+  background-color: $info-40;
+  @include elevationElementCreator(1);
+  color: white;
+  cursor: default;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: nth(nth($spacers, 2), 2);
+  padding-left: nth(nth($spacers, 4), 2);
+  display: inline-flex;
+  align-items: center;
+
+  &.pressed {
+    background-color: $info-50;
+    box-shadow: none;
+  }
+
+  &.disabled{
+    background-color: $neutral-20;
+    color: white;
+    pointer-events: none;
+    box-shadow: none;
+
+    &:hover, &:active{ background-color: $neutral-20; }
+
+    &.variant{
+      border-color: $neutral-20;
+      color: $neutral-20;
+  
+      &:hover, &:active{ border-color: $neutral-20; color: $neutral-20 }
+    }
+  }
+
+  &.variant{
+    background-color: white;
+    border: 1px solid $info-40;
+    color: $info-40;
+
+    &.pressed {
+      border-color: $info-50;
+      background-color: white;
+      box-shadow: none;
+    }
+  }
+
+  i{
+    padding-left: nth(nth($spacers, 3), 2);
+    cursor: pointer;
+    &:before{ transform: rotate(45deg); }
+  }
+
+}

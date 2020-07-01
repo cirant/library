@@ -89,7 +89,7 @@ export default {
         import { Card } from 'library';
         ~~~
 
-        the basicest component form is: 
+        the basicest component form is:
 
         ~~~js
         <Card> some text </Card>

@@ -13,6 +13,13 @@ import Separator from './separator';
 import Sidebar from './sidebar';
 import SidebarElement from './sidebar/sidebarElement';
 import Switch from './switch';
+import Loading from './loading';
+import TitleSection from './title';
+import InputChip from './input/chips';
+import ProgressBar from './progressbar'
+import Bullets from './bullets'
+import Tooltip from './tooltip';
+import Message from './message';
 
 export {
   Button,
@@ -29,5 +36,12 @@ export {
   Separator,
   Sidebar,
   SidebarElement,
-  Switch
+  Switch,
+  TitleSection,
+  InputChip,
+  Loading,
+  ProgressBar,
+  Bullets,
+  Tooltip,
+  Message
 };

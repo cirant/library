@@ -1,0 +1,60 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+
+.progressBar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+
+  .simpleLabel{
+    font-weight: 700;
+  }
+
+  .multiHeader{
+    display: flex;
+    justify-content: space-between;
+    & > div:last-child{
+      text-align: right;
+    }
+    & > div:first-child{
+      text-align: left;
+    }
+
+    .multiHeaderLabel{
+      margin: 0px;
+      font-size: 14px;
+      color: $neutral-40
+    }
+  }
+
+  .barContainer{
+    position: relative;
+    height: 8px;
+    border-radius: 8px;
+    background-color: $neutral-10;
+    overflow: hidden;
+
+    .bar{
+      background-color: $info-40;
+      border-radius: 8px;
+      min-width: 8px;
+      height: 100%;
+    }
+  }
+
+  .bellowContent{
+
+    &.between{ justify-content: space-between; }
+    &.end{ justify-content: flex-end; }
+    &.reverse{ flex-direction: row-reverse; }
+
+    .full{
+      color: $info-40
+    }
+    
+    display: flex;
+    font-size: 14px;
+    color: $neutral-40
+  }
+}

@@ -26,6 +26,9 @@ $availableFonts: (16, 20,24,32,40,48,56,64);
     }
   }
   
+.icon-alert:before {
+  content: "\e9ae";
+}
 .icon-line-alarm:before {
   content: "\e959";
 }
