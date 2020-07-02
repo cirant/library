@@ -22,6 +22,7 @@ import Tooltip from './tooltip';
 import Message from './message';
 import InputSearch from './input/search';
 import InputSelect from './input/select';
+import InputPhone from './input/phone';
 
 export {
   Button,
@@ -34,6 +35,7 @@ export {
   HeaderProfileItem,
   Header,
   Input,
+  InputPhone,
   Radio,
   Separator,
   Sidebar,
