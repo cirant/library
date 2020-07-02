@@ -20,6 +20,7 @@ import ProgressBar from './progressbar'
 import Bullets from './bullets'
 import Tooltip from './tooltip';
 import Message from './message';
+import Stamp from './stamp';
 import InputSearch from './input/search';
 import InputSelect from './input/select';
 
@@ -47,5 +48,6 @@ export {
   Tooltip,
   Message,
   InputSearch,
-  InputSelect
+  InputSelect,
+  Stamp
 };
