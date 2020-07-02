@@ -23,6 +23,7 @@ import Message from './message';
 import Stamp from './stamp';
 import InputSearch from './input/search';
 import InputSelect from './input/select';
+import InputPhone from './input/phone';
 
 export {
   Button,
@@ -35,6 +36,7 @@ export {
   HeaderProfileItem,
   Header,
   Input,
+  InputPhone,
   Radio,
   Separator,
   Sidebar,
