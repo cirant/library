@@ -29,7 +29,4 @@ yarn-error.log*
 .idea
 
 #ignore dist
-dist/index.css
-dist/index.js
-dist/index.modern.js
-dist/index.js.map
+dist/index.*
