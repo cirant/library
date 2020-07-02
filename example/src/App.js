@@ -762,8 +762,6 @@ const App = () => {
       </div>
     </div>
 
-
-
     <br/>
 
     <div className="container">
