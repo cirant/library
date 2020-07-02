@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   max-height: 68px;
-  padding: 4px 8px;
+  padding:  nth(nth($spacers, 2), 2) nth(nth($spacers, 3), 2);
   align-items: center;
   color: $primary-20;
 
