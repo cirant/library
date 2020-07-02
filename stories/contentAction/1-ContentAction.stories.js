@@ -98,7 +98,7 @@ export default {
         ~~~js
         <ContentAction
           label="Imprimir"
-          onClick={()=> console.log('acción')}
+          onClick={()=> functionExample()}
           icon="line-print">
          </ContentAction>
         ~~~
