@@ -11,6 +11,7 @@ import {
   Header,
   Input,
   InputSearch,
+  InputPhone,
   Radio,
   Separator,
   Sidebar,
@@ -22,8 +23,7 @@ import {
   Tooltip,
   ProgressBar,
   Message,
-  InputSelect,
-  ContentAction
+  InputSelect
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -33,6 +33,8 @@ const App = () => {
   const [secondChecked, setSecondCheckbox] = useState(false);
   const [switchStatus, setSwitchStatus] = useState(false);
   const [inputText, setInputText] = useState('');
+  const [inputPhoneCode, setInputPhoneCode] = useState('56');
+  const [inputPhone, setInputPhone] = useState('');
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
@@ -335,6 +337,86 @@ const App = () => {
     </div>
 
     <div className="container my-4">
+
+      <h1 className="mb-4">input InputPhone</h1>
+      <InputPhone
+        maxLength="105"
+        value={inputPhone}
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
+        label="esto es un label multi validations"
+        suffix={inputSuffix}
+        assistText={[
+          {
+            text: 'error mesaje',
+            type: 'error'
+          },
+          {
+            text: 'assist mesaje',
+            type: 'assist'
+          },
+          {
+            text: 'success mesaje',
+            type: 'success'
+          }
+        ]}
+        onChange={({ target: { value } }) => setInputPhone(value)}
+      />
+
+      <InputPhone
+        maxLength="105"
+        label="esto es un label"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        error
+        value={inputPhone}
+        prefix={inputPrefix}
+        suffix={inputSuffix}
+        onChange={({ target: { value } }) => setInputPhone(value)}
+      />
+
+      <InputPhone
+        maxLength="105"
+        label="esto es un label"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        value={inputPhone}
+        type="password"
+        success
+        prefix={inputPrefixText}
+        suffix={inputSuffix}
+        onChange={({ target: { value } }) => setInputPhone(value)}
+      />
+
+      <InputPhone
+        maxLength="105"
+        label="esto es un label"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        value={inputPhone}
+        type="password"
+        disabled
+        onChange={({ target: { value } }) => setInputPhone(value)}
+      />
+
+      <InputPhone
+        maxLength="105"
+        label="esto es un label de un text area"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        value={inputPhone}
+        variant='textarea'
+        onChange={({ target: { value } }) => setInputPhone(value)}
+      />
+
+      <InputPhone
+        maxLength="105"
+        label="esto es un label de un text area"
+        assistText="esto es un texto tal vez muy largo a ver que pasaria"
+        value={inputPhone}
+        disabled
+        variant='textarea'
+        onChange={({ target: { value } }) => setInputPhone(value)}
+      />
+    </div>
+
+    <div className="container my-4">
       <h1 className="mb-4">input select</h1>
 
       <div className="d-flex">
@@ -569,7 +651,7 @@ const App = () => {
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
             placement="right-end">
-            <TitleSection label="Title Section" prefix="write"/>
+            <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
         <div className="col-lg-6 col-md-12 col-sm-12">
@@ -577,14 +659,14 @@ const App = () => {
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
             placement="right-end">
-            <TitleSection label="Title Section" prefix="write"/>
+            <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container my-4">
       <h1 className="mb-4">Unorder Bullets</h1>
@@ -593,7 +675,7 @@ const App = () => {
           {
             text: 'Order Bullet text a',
             prefixType: 'info',
-            contentType:'success'
+            contentType: 'success'
           },
           {
             text: 'Order Bullet text a',
@@ -612,7 +694,7 @@ const App = () => {
           {
             text: 'Order Bullet text a',
             prefixType: 'error',
-            contentType:'error'
+            contentType: 'error'
           },
           {
             text: 'Order Bullet text b',
@@ -632,13 +714,13 @@ const App = () => {
           {
             text: 'Order Bullet text a',
             prefixType: 'info',
-            contentType:'error',
-            icon:'home'
+            contentType: 'error',
+            icon: 'home'
           },
           {
             text: 'Order Bullet text a',
             type: 'info',
-            icon:'home'
+            icon: 'home'
           },
         ]}>
         </Bullets>
@@ -654,13 +736,13 @@ const App = () => {
             {
               text: 'Order Bullet text a',
               prefixType: 'info',
-              contentType:'error',
-              icon:'home'
+              contentType: 'error',
+              icon: 'home'
             },
             {
               text: 'Order Bullet text a',
               type: 'info',
-              icon:'home'
+              icon: 'home'
             },
           ]}>
           </Bullets>
@@ -669,26 +751,22 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
-
     <div className="container">
-      <h1> Content Action</h1>
+      <h1 className="mb-4">Stamp</h1>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
-          <ContentAction label="Imprimir" onClick={()=> console.log('acción')} icon="line-print"></ContentAction>
-          <ContentAction label="Email" onClick={()=> console.log('acción')} icon="line-print" disabled></ContentAction>
-          <ContentAction label="Descargar" onClick={()=> console.log('acción')} icon="line-download"></ContentAction>
+          <Stamp></Stamp>
         </div>
       </div>
     </div>
 
 
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
   </>
 }

@@ -20,9 +20,11 @@ import ProgressBar from './progressbar'
 import Bullets from './bullets'
 import Tooltip from './tooltip';
 import Message from './message';
+import Stamp from './stamp';
 import InputSearch from './input/search';
 import InputSelect from './input/select';
 import ContentAction from './contentAction';
+import InputPhone from './input/phone';
 
 export {
   Button,
@@ -35,6 +37,7 @@ export {
   HeaderProfileItem,
   Header,
   Input,
+  InputPhone,
   Radio,
   Separator,
   Sidebar,
@@ -49,5 +52,6 @@ export {
   Message,
   InputSearch,
   InputSelect,
+  Stamp,
   ContentAction
 };
