@@ -28,9 +28,5 @@ yarn-error.log*
 .DS_Store
 .idea
 
-#ignore dist for conflict files
-dist/index.js
-dist/index.css
-dist/index.js.map
-dist/index.modern.js
-dist/css/custom.css
+#ignore dist
+dist/index.*

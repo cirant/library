@@ -33,7 +33,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -48,12 +48,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -64,39 +64,39 @@ const colors = ['primary', 'secondary']
 
 export const BulletList = () => (
   <Bullets
-    typeList={select('typeList',['unorder','order','icons'],'order','Bullet config')}
+    typeList={select('typeList', ['unorder', 'order', 'icons'], 'order', 'Bullet config')}
     items={[
       {
-        text:  text('Item 1', 'Order Bullet text a', 'Bullet text config'),
-        prefixType: select('Item 1', ['info','error','warning','success'], '','Bullet prefix config'),
-        contentType: select('Item 1', ['info','error','warning','success'], '','Bullet contentType config'),
-        icon:select('Item 1', list, 'check','Bullet icon config'),
-        disabled: boolean('Item 1',false,'Bullet disabled config'),
-        type:select('Item 1', ['info','error','warning','success'], '','Bullet type config'),
+        text: text('Item 1', 'Order Bullet text a', 'Bullet text config'),
+        prefixType: select('Item 1', ['info', 'error', 'warning', 'success'], '', 'Bullet prefix config'),
+        contentType: select('Item 1', ['info', 'error', 'warning', 'success'], '', 'Bullet contentType config'),
+        icon: select('Item 1', list, 'line-check', 'Bullet icon config'),
+        disabled: boolean('Item 1', false, 'Bullet disabled config'),
+        type: select('Item 1', ['info', 'error', 'warning', 'success'], '', 'Bullet type config'),
       },
       {
         text: text('Item 2', 'Order Bullet text b', 'Bullet text config'),
-        prefixType: select('Item 2', ['info','error','warning','success'], '','Bullet prefix config'),
-        contentType: select('Item 2', ['info','error','warning','success'], '','Bullet contentType config'),
-        icon:select('Item 2', list, 'check','Bullet icon config'),
-        disabled: boolean('Item 2',false,'Bullet disabled config'),
-        type:select('Item 2', ['info','error','warning','success'], '','Bullet type config'),
+        prefixType: select('Item 2', ['info', 'error', 'warning', 'success'], '', 'Bullet prefix config'),
+        contentType: select('Item 2', ['info', 'error', 'warning', 'success'], '', 'Bullet contentType config'),
+        icon: select('Item 2', list, 'line-check', 'Bullet icon config'),
+        disabled: boolean('Item 2', false, 'Bullet disabled config'),
+        type: select('Item 2', ['info', 'error', 'warning', 'success'], '', 'Bullet type config'),
       },
       {
         text: text('Item 3', 'Order Bullet text c', 'Bullet text config'),
-        prefixType: select('Item 3', ['info','error','warning','success'], '','Bullet prefix config'),
-        contentType: select('Item 3', ['info','error','warning','success'], '','Bullet contentType config'),
-        icon:select('Item 3', list, 'check','Bullet icon config'),
-        disabled: boolean('Item 3',false,'Bullet disabled config'),
-        type:select('Item 3', ['info','error','warning','success'], '','Bullet type config'),
+        prefixType: select('Item 3', ['info', 'error', 'warning', 'success'], '', 'Bullet prefix config'),
+        contentType: select('Item 3', ['info', 'error', 'warning', 'success'], '', 'Bullet contentType config'),
+        icon: select('Item 3', list, 'line-check', 'Bullet icon config'),
+        disabled: boolean('Item 3', false, 'Bullet disabled config'),
+        type: select('Item 3', ['info', 'error', 'warning', 'success'], '', 'Bullet type config'),
       },
       {
         text: text('Item 4', 'Order Bullet text a', 'Bullet text config'),
-        prefixType: select('Item 4', ['info','error','warning','success'], '','Bullet prefix config'),
-        contentType: select('Item 4', ['info','error','warning','success'], '','Bullet contentType config'),
-        icon:select('Item 4', list, 'check','Bullet icon config'),
-        disabled: boolean('Item 4',false,'Bullet disabled config'),
-        type:select('Item 4', ['info','error','warning','success'], '','Bullet type config'),
+        prefixType: select('Item 4', ['info', 'error', 'warning', 'success'], '', 'Bullet prefix config'),
+        contentType: select('Item 4', ['info', 'error', 'warning', 'success'], '', 'Bullet contentType config'),
+        icon: select('Item 4', list, 'line-check', 'Bullet icon config'),
+        disabled: boolean('Item 4', false, 'Bullet disabled config'),
+        type: select('Item 4', ['info', 'error', 'warning', 'success'], '', 'Bullet type config'),
       }
     ]}>
   </Bullets>
@@ -104,7 +104,7 @@ export const BulletList = () => (
 
 export default {
   title: 'Bullets',
-  decorators: [ withInfo],
+  decorators: [withInfo],
   component: Bullets,
   parameters: {
     info: {
@@ -115,7 +115,7 @@ export default {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'start',
-          alignSelf:'start',
+          alignSelf: 'start',
           padding: '0px 40px 0px',
         }
       },

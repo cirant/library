@@ -1,4 +1,5 @@
 export default [
+  'alert',
   'line-alarm',
   'line-alert',
   'line-app-notification',
