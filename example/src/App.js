@@ -669,6 +669,15 @@ const App = () => {
       </div>
     </div>
 
+    <div className="container">
+      <h1 className="mb-4">Stamp</h1>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <Stamp></Stamp>
+        </div>
+      </div>
+    </div>
+
 
 
     <br/>
