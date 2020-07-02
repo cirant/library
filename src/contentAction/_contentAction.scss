@@ -1,0 +1,50 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+@import '../scss/mixins/elevation';
+
+.contentAction{
+
+  display: flex;
+  flex-direction: column;
+  max-height: 68px;
+  padding: 4px 8px;
+  align-items: center;
+  color: $primary-20;
+
+  &.disabled{
+    color:$neutral-30;
+  }
+
+  &:hover{
+    &:not(.disabled) {
+      .label {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &:active{
+    &:not(.disabled) {
+      .label {
+        text-decoration: underline;
+      }
+      color: $primary-30;
+    }
+  }
+
+  &:target{
+    &:not(.disabled) {
+      .label {
+        text-decoration: underline;
+      }
+
+      color: $primary-30;
+    }
+  }
+
+
+}
+
+
+
+

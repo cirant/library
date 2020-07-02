@@ -22,6 +22,10 @@ import Tooltip from './tooltip';
 import Message from './message';
 import InputSearch from './input/search';
 import InputSelect from './input/select';
+import Voucher from './voucher';
+import Stamp from './stamp';
+import ContentAction from './contentAction';
+import VoucherDataResume from './voucher/VoucherDataResume';
 
 export {
   Button,
@@ -47,5 +51,9 @@ export {
   Tooltip,
   Message,
   InputSearch,
-  InputSelect
+  InputSelect,
+  Voucher,
+  Stamp,
+  VoucherDataResume,
+  ContentAction
 };

@@ -25,7 +25,6 @@ const Tooltip = ({ children, content, placement, eventListener, ...props }) => {
     }
 
     if (eventListener === 'mouseClick') {
-      console.log('click')
       if (visible) {
         refBoxTooltip.current.style.opacity = 0
         setVisible(false)

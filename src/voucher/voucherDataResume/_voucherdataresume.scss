@@ -1,0 +1,19 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+.dataResumeContainer{
+  display: block;
+  position: static;
+  background-color:#233459;
+  color:white;
+  font-family: Ubuntu;
+  padding: 24px;
+  width: 100%;
+  border: 1px solid black;
+
+  h2{
+    color: white;
+  }
+}
+
