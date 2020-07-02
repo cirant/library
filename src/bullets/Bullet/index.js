@@ -3,7 +3,7 @@ import styles from './_bullet.scss'
 import Icon from '../../icons'
 import PropTypes from 'prop-types'
 
-const BulletElement = ({ count,disabled, text, typeList, prefixType, contentType, icon, type, index, ...props }) => {
+const BulletElement = ({ count, disabled, text, typeList, prefixType, contentType, icon, type, index, ...props }) => {
 
   const numberList = count + 1
 
@@ -12,17 +12,35 @@ const BulletElement = ({ count,disabled, text, typeList, prefixType, contentType
   let styleBoxCircle = [styles.boxCircle]
   let styleTextContainer = [styles.textContainer]
 
+  if (typeList == 'icons' && type !== '' && type !== undefined) {
+    switch (type) {
+      case ('info'):
+        icon = 'line-check'
+        break
+      case ('error'):
+        icon = 'line-cross'
+        break
+      case ('warning'):
+        icon = 'line-alert'
+        break
+      case ('success'):
+        icon = 'line-check'
+        break
+    }
+  }
+
+
   const setStyles = (typeParam, typeListParam, prefixParam, contentParam) => {
-    if(disabled !== undefined && disabled === true){
-      styleContainer = styleContainer.concat(styles.disabled);
-      return;
+    if (disabled !== undefined && disabled === true) {
+      styleContainer = styleContainer.concat(styles.disabled)
+      return
     }
     const styleTypeContainer = [styles[`${typeParam}`]]
     if (type !== undefined && type !== '') {
       styleContainer = styleContainer.concat(styleTypeContainer)
       if (typeList !== undefined) {
         styleBoxCircle = styleBoxCircle.concat(styleTypeContainer)
-        return;
+        return
       }
     } else if (prefixType !== undefined || contentType !== undefined) {
       const stylePrefix = [styles[`${prefixParam}`]]
@@ -42,16 +60,20 @@ const BulletElement = ({ count,disabled, text, typeList, prefixType, contentType
   setStyles(type, typeList, prefixType, contentType)
 
   const defaultPrefix = (
-    (typeList === 'order') ? <div data-testid="test-prefix-bullet-order" className={stylePrefixContainer.join(' ')}>{numberList}.</div> : (typeList === 'unorder') ?
-      <div data-testid="test-prefix-bullet-unorder" className={stylePrefixContainer.join(' ')}><div data-testid="test-prefix-bullet" className={styleBoxCircle.join(' ')}> </div>
-      </div> : (typeList === 'icons') ? <div data-testid="test-prefix-bullet-icons" className={stylePrefixContainer.join(' ')}><Icon size="1" name={icon}/>
-        </div> : ''
+    (typeList === 'order') ? <div data-testid="test-prefix-bullet-order"
+      className={stylePrefixContainer.join(' ')}>{numberList}.</div> : (typeList === 'unorder') ?
+        <div data-testid="test-prefix-bullet-unorder" className={stylePrefixContainer.join(' ')}>
+          <div data-testid="test-prefix-bullet" className={styleBoxCircle.join(' ')}></div>
+        </div> : (typeList === 'icons') ?
+          <div data-testid="test-prefix-bullet-icons" className={stylePrefixContainer.join(' ')}><Icon size="1"
+            name={icon} />
+          </div> : ''
   )
 
   return (
     <div data-testid={`test-bullet-${typeList}`} className={styleContainer.join(' ')}>
-        {defaultPrefix}
-        <p data-testid='test-bullet-content' className={styleTextContainer.join(' ')}>{text}</p>
+      {defaultPrefix}
+      <p data-testid='test-bullet-content' className={styleTextContainer.join(' ')}>{text}</p>
     </div>
   )
 }
@@ -59,18 +81,18 @@ const BulletElement = ({ count,disabled, text, typeList, prefixType, contentType
 export default BulletElement
 
 BulletElement.defaultProps = {
-  icon: 'check'
+  icon: 'line-check'
 }
 
 BulletElement.propTypes = {
   disable: PropTypes.bool,
   text: PropTypes.string.isRequired,
-  prefixType: function(props) {
+  prefixType: function (props) {
     if ((props['type'] !== undefined) && (props['prefixType'] !== undefined)) {
       return new Error('If prefixType prop it is defined not define type')
     }
   },
-  type: function(props) {
+  type: function (props) {
     if ((props['prefixType'] !== undefined) && (props['type'] !== undefined)) {
       return new Error('If prefixType2 prop it is defined not define type')
     }

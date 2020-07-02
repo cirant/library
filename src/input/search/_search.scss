@@ -1,0 +1,41 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.inputLabel{
+  font-weight: bold;
+  font-size: 16px;
+  font-family: inherit;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.inputRow{
+  display: flex;
+  align-items: center;
+
+  input:disabled{
+    box-shadow: none;
+    color: $disableColor;
+  }
+
+  .crossIcon{
+    color: $neutral-40;
+  }
+
+  .filterIcon{
+    padding: 0px nth(nth($spacers, 4), 2)
+  }
+}
+
+.inputConteiner{
+  width: 100%;
+
+  &.disabled{
+    .inputRow{
+      pointer-events: none;
+    }
+    .inputLabel, i{
+      color: $disableColor;
+    }
+  }
+}

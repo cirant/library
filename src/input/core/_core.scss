@@ -1,0 +1,76 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+%containerIconFix{
+  position: absolute;
+  top: 1px;
+  display: flex;
+  height: calc(100% - 2px);
+  background: white;
+  align-items: center;
+}
+
+.input{
+  width: 100%;
+  position: relative;
+
+  &.disabled{
+    color: $disableColor;
+  }
+
+  .suffixContainer{
+    @extend %containerIconFix;
+    right: nth(nth($spacers, 5), 2);
+    max-width: 20px;
+    color: $info-40;
+  }
+
+  .prefixContainer{
+    @extend %containerIconFix;
+    left: nth(nth($spacers, 5), 2);
+    width: 16px;
+    justify-content: center;
+  }
+
+  textarea{
+    display: flex;
+  }
+
+  &.hasPrefix{
+    input,textarea{
+      padding-left: nth(nth($spacers, 5), 2) + nth(nth($spacers, 5), 2) + nth(nth($spacers, 4), 2);
+    }
+  }
+
+  &.hasSuffix{
+    input,textarea{
+      padding-right: nth(nth($spacers, 5), 2) + 1.25rem;
+    }
+  }
+
+  input{
+    height: 48px;
+    outline: none;
+  }
+
+  input,textarea{
+    border-radius: 2px;
+    width: 100%;
+    border: 1px solid $neutral-40;
+    padding: nth(nth($spacers, 3), 2) nth(nth($spacers, 5), 2);
+
+    &:focus{
+      border-color: $info-40;
+    }
+  
+    &:hover{
+      @include elevationElementCreator(1);
+    }
+
+    &:disabled{
+      border-color: $disableColor;
+      background-color: white;
+    }
+  }
+}
