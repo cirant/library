@@ -30,6 +30,6 @@ ContentAction.defaultProps = {
 
 ContentAction.propTypes = {
   icon: PropTypes.oneOf(IconListModel.iconList).isRequired,
-  label: PropTypes.string.isRequired,
+  : PropTypes.string.isRequired,
   disabled: PropTypes.bool
 };

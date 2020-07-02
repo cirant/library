@@ -13,7 +13,7 @@ const propsDescriptions = {
     propType: 'string',
     description: 'Add a text to the component link'
   },
-  prefix: {
+  icon: {
     propType: 'string',
     description: 'Add an icon to the component'
   },
