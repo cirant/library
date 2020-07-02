@@ -748,7 +748,15 @@ const App = () => {
 
                   </VoucherDataResume>
                 </div>
-                <div className="col-lg-12 col-md-12 col-sm-12 nopadding d-flex align-items-start">
+                <div className="col-lg-6 col-md-12 col-sm-12 nopadding d-flex align-items-start">
+                  <VoucherDataResume
+                    label="Valor cuota"
+                    number={45000}
+                  >
+
+                  </VoucherDataResume>
+                </div>
+                <div className="col-lg-6 col-md-12 col-sm-12 nopadding d-flex align-items-start">
                   <VoucherDataResume
                     label="Valor cuota"
                     number={45000}
