@@ -23,7 +23,8 @@ import {
   Tooltip,
   ProgressBar,
   Message,
-  InputSelect
+  InputSelect,
+  Stamp
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
