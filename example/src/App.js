@@ -22,7 +22,8 @@ import {
   Tooltip,
   ProgressBar,
   Message,
-  InputSelect
+  InputSelect,
+  ContentAction
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -665,6 +666,17 @@ const App = () => {
           </Bullets>
         </div>
 
+      </div>
+    </div>
+
+    <div className="container">
+      <h1> Content Action</h1>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <ContentAction label="Imprimir" onClick={()=> console.log('acción')} icon="line-print"></ContentAction>
+          <ContentAction label="Email" onClick={()=> console.log('acción')} icon="line-print" disabled></ContentAction>
+          <ContentAction label="Descargar" onClick={()=> console.log('acción')} icon="line-download"></ContentAction>
+        </div>
       </div>
     </div>
 

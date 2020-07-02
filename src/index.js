@@ -22,6 +22,7 @@ import Tooltip from './tooltip';
 import Message from './message';
 import InputSearch from './input/search';
 import InputSelect from './input/select';
+import ContentAction from './contentAction';
 
 export {
   Button,
@@ -47,5 +48,6 @@ export {
   Tooltip,
   Message,
   InputSearch,
-  InputSelect
+  InputSelect,
+  ContentAction
 };
