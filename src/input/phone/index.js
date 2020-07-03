@@ -97,8 +97,23 @@ InputPhone.defaultProps = {
 
 InputPhone.propTypes = {
   label: PropTypes.string,
-  code: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  code: (props) => {
+    if (props.code === undefined)
+      return new Error('Failed prop type: The prop `code` is marked as required in `InputPhone`, but its value is `undefined`');
+
+    const validCodes = countries.map((c) => c.CODE);
+    if (!validCodes.find((arr) => props.code == arr))
+      return new Error(`Invalid \`code\` value it must be valid code area.
+       code ${props.code} isn't into [${validCodes.join(', ')}]
+      `);
+  },
+  value: (props) => {
+    if (props.value === undefined)
+      return new Error('Failed prop type: The prop `value` is marked as required in `InputPhone`, but its value is `undefined`');
+
+    if (isNaN(props.value))
+      return new Error('Invalid prop `value` it must be either `string` or `number`');
+  },
   assistText: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string,
