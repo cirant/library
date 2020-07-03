@@ -71,6 +71,7 @@
     &:disabled{
       border-color: $disableColor;
       background-color: white;
+      box-shadow: none;
     }
   }
 }

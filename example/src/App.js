@@ -12,6 +12,7 @@ import {
   Input,
   InputSearch,
   InputPhone,
+  InputCounter,
   Radio,
   Separator,
   Sidebar,
@@ -35,8 +36,9 @@ const App = () => {
   const [secondChecked, setSecondCheckbox] = useState(false);
   const [switchStatus, setSwitchStatus] = useState(false);
   const [inputText, setInputText] = useState('');
-  const [inputPhoneCode, setInputPhoneCode] = useState('56');
+  const [inputPhoneCode, setInputPhoneCode] = useState(56);
   const [inputPhone, setInputPhone] = useState('');
+  const [inputCounter, setInputCounter] = useState(1);
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
@@ -398,24 +400,6 @@ const App = () => {
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
-      <InputPhone
-        maxLength="105"
-        label="esto es un label de un text area"
-        assistText="esto es un texto tal vez muy largo a ver que pasaria"
-        value={inputPhone}
-        variant='textarea'
-        onChange={({ target: { value } }) => setInputPhone(value)}
-      />
-
-      <InputPhone
-        maxLength="105"
-        label="esto es un label de un text area"
-        assistText="esto es un texto tal vez muy largo a ver que pasaria"
-        value={inputPhone}
-        disabled
-        variant='textarea'
-        onChange={({ target: { value } }) => setInputPhone(value)}
-      />
     </div>
 
     <div className="container my-4">
@@ -426,6 +410,23 @@ const App = () => {
           maxLength="105"
           label="esto es un label"
           assistText="esto es un texto tal vez muy largo a ver que pasaria"
+          options={[
+            {
+              disabled: true,
+              prefix: 'line-user',
+              text: 'placeholder',
+              value: ''
+            },
+            {
+              prefix: 'line-user',
+              text: 'option 1',
+              value: 'option 1'
+            },
+            {
+              text: 'option 2',
+              value: 'option 2'
+            }
+          ]}
           error
           value={inputText}
           prefix={inputPrefix}
@@ -445,6 +446,16 @@ const App = () => {
         <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
       </div>
     </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">input counter</h1>
+
+      <div className="d-flex">
+        <InputCounter value={inputCounter} onChange={(_val) => setInputCounter(_val)} />
+        <InputCounter value={inputCounter} onChange={(_val) => setInputCounter(_val)} disabled />
+      </div>
+    </div>
+
 
     <div className="container my-4">
       <h1 className="mb-4">input search</h1>
@@ -762,23 +773,23 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
+    <br />
 
     <div className="container">
       <h1> Content Action</h1>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
-          <ContentAction label="Imprimir" onClick={()=> console.log('acción')} icon="line-print"></ContentAction>
-          <ContentAction label="Email" onClick={()=> console.log('acción')} icon="line-print" disabled></ContentAction>
-          <ContentAction label="Descargar" onClick={()=> console.log('acción')} icon="line-download"></ContentAction>
+          <ContentAction label="Imprimir" onClick={() => console.log('acción')} icon="line-print"></ContentAction>
+          <ContentAction label="Email" onClick={() => console.log('acción')} icon="line-print" disabled></ContentAction>
+          <ContentAction label="Descargar" onClick={() => console.log('acción')} icon="line-download"></ContentAction>
         </div>
       </div>
     </div>
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
 
   </>
 }

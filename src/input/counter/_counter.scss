@@ -1,0 +1,31 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.container{
+  display: flex;
+  align-items: center;
+
+  &.disabled i{
+    color: $disableColor;
+    pointer-events: none;
+  }
+
+  input{
+    max-width: 89px;
+    text-align: center;
+    padding: nth(nth($spacers, 3), 2) nth(nth($spacers, 2), 2);
+  }
+  
+  i{
+    color: $info-40;
+    cursor: pointer;
+  }
+}
+
+.minusIcon{
+  padding-right: nth(nth($spacers, 3), 2);
+}
+
+.plusIcon{
+  padding-left: nth(nth($spacers, 3), 2);
+}
