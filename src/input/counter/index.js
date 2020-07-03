@@ -20,7 +20,7 @@ const InputCounter = ({ onChange, ...props }) => (
 )
 
 InputCounter.defaultProps = {
-  label: 'un label',
+  label: '',
 };
 
 InputCounter.propTypes = {
