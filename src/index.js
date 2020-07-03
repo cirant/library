@@ -25,6 +25,11 @@ import InputSearch from './input/search';
 import InputSelect from './input/select';
 import ContentAction from './contentAction';
 import InputPhone from './input/phone';
+import Voucher from './voucher';
+import VoucherDataResume from './voucher/voucherDataResume';
+import VoucherResumeContainer from './voucher/voucherResumeContainer';
+import VoucherData from './voucher/voucherData';
+import VoucherTitle from './voucher/voucherTitle';
 
 export {
   Button,
@@ -53,5 +58,10 @@ export {
   InputSearch,
   InputSelect,
   Stamp,
-  ContentAction
+  ContentAction,
+  Voucher,
+  VoucherDataResume,
+  VoucherResumeContainer,
+  VoucherTitle,
+  VoucherData
 };

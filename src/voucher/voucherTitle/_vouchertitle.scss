@@ -1,0 +1,55 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+.voucherTitle {
+
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -17px;
+  margin-right: -17px;
+
+  padding: 0 nth(nth($spacers, 6), 2);
+
+  .prefix {
+    flex: 1;
+    padding: nth(nth($spacers, 6), 2) 0;
+    align-self: center;
+   /* @media  only screen and (max-width: 563px)
+    and (min-device-width: 0px)
+    {
+      flex-basis: 100% !important;
+
+    }*/
+  }
+
+  .suffix {
+    display: flex;
+    flex-flow: row wrap;
+    align-self: center;
+    flex: 1;
+
+    /*@media  only screen and (max-width: 563px)
+    and (min-device-width: 0px)
+    {
+      flex-basis: 100% !important;
+
+    }*/
+
+    .rowitem{
+      display: flex;
+      flex-flow: row wrap;
+      flex: 1;
+
+    }
+
+    .item{
+      flex: 1;
+    }
+
+  }
+
+
+
+}
+

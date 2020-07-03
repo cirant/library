@@ -1,0 +1,12 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+.voucherResumeContainer{
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+
