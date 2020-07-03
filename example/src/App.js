@@ -373,6 +373,8 @@ const App = () => {
         value={inputPhone}
         prefix={inputPrefix}
         suffix={inputSuffix}
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
@@ -381,10 +383,9 @@ const App = () => {
         label="esto es un label"
         assistText="esto es un texto tal vez muy largo a ver que pasaria"
         value={inputPhone}
-        type="password"
         success
-        prefix={inputPrefixText}
-        suffix={inputSuffix}
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
@@ -393,29 +394,12 @@ const App = () => {
         label="esto es un label"
         assistText="esto es un texto tal vez muy largo a ver que pasaria"
         value={inputPhone}
-        type="password"
         disabled
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
-      <InputPhone
-        maxLength="105"
-        label="esto es un label de un text area"
-        assistText="esto es un texto tal vez muy largo a ver que pasaria"
-        value={inputPhone}
-        variant='textarea'
-        onChange={({ target: { value } }) => setInputPhone(value)}
-      />
-
-      <InputPhone
-        maxLength="105"
-        label="esto es un label de un text area"
-        assistText="esto es un texto tal vez muy largo a ver que pasaria"
-        value={inputPhone}
-        disabled
-        variant='textarea'
-        onChange={({ target: { value } }) => setInputPhone(value)}
-      />
     </div>
 
     <div className="container my-4">
@@ -453,8 +437,6 @@ const App = () => {
         <InputSearch
           maxLength="105"
           label="esto es un label"
-          assistText="esto es un texto tal vez muy largo a ver que pasaria"
-          error
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
@@ -464,8 +446,6 @@ const App = () => {
           maxLength="105"
           placeholder="hola mundo"
           label="esto es un label"
-          assistText="esto es un texto tal vez muy largo a ver que pasaria"
-          error
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
@@ -762,23 +742,23 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
+    <br />
 
     <div className="container">
       <h1> Content Action</h1>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
-          <ContentAction label="Imprimir" onClick={()=> console.log('acción')} icon="line-print"></ContentAction>
-          <ContentAction label="Email" onClick={()=> console.log('acción')} icon="line-print" disabled></ContentAction>
-          <ContentAction label="Descargar" onClick={()=> console.log('acción')} icon="line-download"></ContentAction>
+          <ContentAction label="Imprimir" onClick={() => console.log('acción')} icon="line-print"></ContentAction>
+          <ContentAction label="Email" onClick={() => console.log('acción')} icon="line-print" disabled></ContentAction>
+          <ContentAction label="Descargar" onClick={() => console.log('acción')} icon="line-download"></ContentAction>
         </div>
       </div>
     </div>
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
 
   </>
 }
