@@ -25,7 +25,6 @@ const Tooltip = ({ children, content, placement, eventListener, ...props }) => {
     }
 
     if (eventListener === 'mouseClick') {
-      console.log('click')
       if (visible) {
         refBoxTooltip.current.style.opacity = 0
         setVisible(false)
@@ -80,7 +79,7 @@ Tooltip.defaultProps = {
 }
 
 Tooltip.propTypes = {
-  placement: PropTypes.oneOf(['top','bottom','right','right-end','left']),
-  eventListener: PropTypes.oneOf(['mouseClick','hover']),
+  placement: PropTypes.oneOf(['top', 'bottom', 'right', 'right-end', 'left']),
+  eventListener: PropTypes.oneOf(['mouseClick', 'hover']),
   content: PropTypes.string.isRequired
 }
