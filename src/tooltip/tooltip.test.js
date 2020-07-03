@@ -20,7 +20,7 @@ describe('Tooltip test', () => {
         content="label"
         eventListener="mouseClick"
         placement="right-end">
-        <TitleSection className="test" prefix="write" label="Title Section"/>
+        <TitleSection className="test" prefix="write" label="Title Section" />
       </Tooltip>
     )
     container = document.createElement('div')
@@ -45,11 +45,10 @@ describe('Tooltip test', () => {
         content="label"
         eventListener="mouseClick"
         placement="right-end">
-        <TitleSection className="test" prefix="write" label="Title Section"/>
+        <TitleSection className="test" prefix="write" label="Title Section" />
       </Tooltip>, container)
     })
     let componentRender = container.querySelector('div[data-testid="test-box"]')
-    console.log(componentRender)
     expect(componentRender).toBeTruthy()
   })
 
@@ -59,11 +58,10 @@ describe('Tooltip test', () => {
         content="label"
         eventListener="mouseClick"
         placement="right-end">
-        <TitleSection className="test" prefix="write" label="Title Section"/>
+        <TitleSection className="test" prefix="write" label="Title Section" />
       </Tooltip>, container)
     })
     let componentRender = container.querySelector('p')
-    console.log(componentRender)
     expect(componentRender).toBeTruthy()
   })
 
@@ -73,11 +71,10 @@ describe('Tooltip test', () => {
         content="label"
         eventListener="mouseClick"
         placement="right-end">
-        <TitleSection className="test" prefix="write" label="Title Section"/>
+        <TitleSection className="test" prefix="write" label="Title Section" />
       </Tooltip>, container)
     })
     let componentRender = container.querySelector('div[data-testid="test-box-content"]')
-    console.log(componentRender)
     expect(componentRender).toBeTruthy()
   })
 
@@ -87,11 +84,10 @@ describe('Tooltip test', () => {
         content="label"
         eventListener="mouseClick"
         placement="right-end">
-        <TitleSection className="test" prefix="write" label="Title Section"/>
+        <TitleSection className="test" prefix="write" label="Title Section" />
       </Tooltip>, container)
     })
     let componentRender = container.querySelector('div[data-testid="test-box-arrow"]')
-    console.log(componentRender)
     expect(componentRender).toBeTruthy()
   })
 
@@ -102,7 +98,7 @@ describe('Tooltip test', () => {
           content="label"
           eventListener="mouseClick"
           placement="right-end">
-          <TitleSection className="test" prefix="write" label="Title Section"/>
+          <TitleSection className="test" prefix="write" label="Title Section" />
         </Tooltip>, container)
     })
     let componentRender = container.querySelector('div[data-testid="test-container"]')
@@ -118,7 +114,7 @@ describe('Tooltip test', () => {
           content="label"
           eventListener="mouseClick"
           placement="right-end">
-          <TitleSection className="test" prefix="write" label="Title Section"/>
+          <TitleSection className="test" prefix="write" label="Title Section" />
         </Tooltip>, container)
     })
     let componentRender = container.querySelector('div[data-testid="test-container"]')
@@ -135,7 +131,7 @@ describe('Tooltip test', () => {
           content="label"
           eventListener="hover"
           placement="top">
-          <TitleSection className="test" prefix="write" label="Title Section"/>
+          <TitleSection className="test" prefix="write" label="Title Section" />
         </Tooltip>, container)
     })
     let componentRender = container.querySelector('div[data-testid="test-container"]')
@@ -151,7 +147,7 @@ describe('Tooltip test', () => {
           content="label"
           eventListener="hover"
           placement="top">
-          <TitleSection className="test" prefix="write" label="Title Section"/>
+          <TitleSection className="test" prefix="write" label="Title Section" />
         </Tooltip>, container)
     })
     let componentRender = container.querySelector('div[data-testid="test-container"]')

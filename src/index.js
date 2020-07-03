@@ -20,7 +20,15 @@ import ProgressBar from './progressbar'
 import Bullets from './bullets'
 import Tooltip from './tooltip';
 import Message from './message';
+<<<<<<< HEAD
 import InputRange from './input/range';
+=======
+import Stamp from './stamp';
+import InputSearch from './input/search';
+import InputSelect from './input/select';
+import ContentAction from './contentAction';
+import InputPhone from './input/phone';
+>>>>>>> 34b8b3e37fcd29e1dfe43f49c95137eb2e228b37
 
 export {
   Button,
@@ -33,6 +41,7 @@ export {
   HeaderProfileItem,
   Header,
   Input,
+  InputPhone,
   Radio,
   Separator,
   Sidebar,
@@ -45,5 +54,9 @@ export {
   Bullets,
   Tooltip,
   Message,
-  InputRange
+  InputRange,
+  InputSearch,
+  InputSelect,
+  Stamp,
+  ContentAction
 };

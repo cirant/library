@@ -1,0 +1,96 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+@mixin statusCreator($color) {
+  input, textarea { border-color: $color; }
+}
+
+.inputPhoneRow{
+  position: relative;
+
+  input{
+    padding-left: calc(#{nth(nth($spacers, 7), 2)} + 47px);
+  }
+
+  .suggestion{
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    background-color: white;
+    z-index: 3;
+    @include elevationElementCreator(2);
+
+    .area{
+      display: flex;
+      padding: nth(nth($spacers, 3), 2) nth(nth($spacers, 5), 2);
+
+      .code{
+        padding-right: nth(nth($spacers, 5), 2);
+      }
+      &:hover{
+        background-color: $neutral-10;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .countryCode{
+    position: absolute;
+    left: nth(nth($spacers, 5), 2);
+    top: calc(50% - 12px);
+    z-index: 2;
+    cursor: pointer;
+    width: 48px;
+
+    i{
+      padding-left: nth(nth($spacers, 2), 2);
+    }
+  }
+}
+
+.inputContainer{
+  
+  &.error{
+    @include statusCreator($danger-40);
+  }
+  
+  &.success{
+    @include statusCreator($success-40);
+  }
+
+  &.disabled{
+    @include statusCreator($disableColor);
+    pointer-events: none;
+    .inputLabel, .countryCode{
+      color: $disableColor;
+    }
+  }
+}
+
+.inputLabel{
+  font-weight: bold;
+  font-size: 16px;
+  font-family: inherit;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.inputHelper{
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  color: $neutral-40;
+
+  .successText{
+    color: $success-40;
+  }
+  .errorText{
+    color: $danger-40;
+  }
+
+  i{
+    margin-right: nth(nth($spacers, 3), 2);
+  }
+}

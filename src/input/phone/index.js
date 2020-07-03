@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import inputStyles from './_input.scss';
-import InputCore from './core';
+import inputStyles from './_phone.scss';
+import InputCore from '../core';
+import { Icon } from '../../';
+import countries from './_contiesList';
 
-const Input = ({
+const InputPhone = ({
   label,
   assistText,
   error,
   success,
+  onCodeChange,
+  code,
   ...props }) => {
 
-  const { maxLength } = props;
-
+  const [open, setOpen] = useState(false);
   let validateStyle = [];
 
   if (error === true) {
@@ -22,6 +25,19 @@ const Input = ({
 
   if (props.disabled) {
     validateStyle = validateStyle.concat(inputStyles.disabled)
+  }
+
+  const handlerOpen = () => {
+    if (open || props.disabled) return;
+
+    setOpen(true);
+
+    const globalClick = () => {
+      setOpen(false);
+      setTimeout(() => document.removeEventListener('click', globalClick), 10)
+    };
+
+    document.addEventListener('click', globalClick)
   }
 
   const getHelperText = (element) => {
@@ -40,7 +56,27 @@ const Input = ({
       label && <span className={inputStyles.inputLabel}> {label} </span>
     }
 
-    <InputCore {...props} />
+    <div className={inputStyles.inputPhoneRow}>
+      <div className={inputStyles.countryCode} onClick={handlerOpen}>
+        {`+${code}`}
+        <Icon name={open ? "arrow-up" : "arrow-down"} size={1} />
+      </div>
+
+      <InputCore {...props} prefix="" suffix="" variant="text" onlyNumber />
+
+      {
+        open && <div className={inputStyles.suggestion}>
+          {
+            countries.map(el => (
+              <div role="region" key={el.CODE} className={inputStyles.area} onClick={() => onCodeChange(el.CODE)}>
+                <div className={inputStyles.code}>+{el.CODE}</div> {el.AREA}
+              </div>
+            ))
+          }
+        </div>
+      }
+
+    </div>
 
     <div className={[inputStyles.inputHelper].join(' ')}>
       <div>
@@ -50,21 +86,19 @@ const Input = ({
           </div>) : assistText
         }
       </div>
-      {
-        maxLength && <div>{`${Number(maxLength) - props.value.length}/${maxLength}`}</div>
-      }
     </div>
 
   </div>
 }
 
-Input.defaultProps = {
-  onChange: /* istanbul ignore next */ () => null,
-  type: 'text',
+InputPhone.defaultProps = {
+  code: '56'
 };
 
-Input.propTypes = {
+InputPhone.propTypes = {
   label: PropTypes.string,
+  code: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
   assistText: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string,
@@ -72,20 +106,11 @@ Input.propTypes = {
     })),
     PropTypes.string
   ]),
-  maxLength: PropTypes.string,
-  type: PropTypes.oneOf(['text', 'password', 'range']),
   error: PropTypes.bool,
   success: PropTypes.bool,
-  suffix: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element
-  ]),
-  prefix: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element
-  ]),
-  variant: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
+  onCodeChange: PropTypes.func.isRequired
 };
 
 const errorSvg = <svg width="10px" height="10px" data-testid="errorIcon">
@@ -113,4 +138,4 @@ const successSvg = <svg width="12px" height="9px" data-testid="successIcon" >
 </svg>;
 
 
-export default Input;
+export default InputPhone;
