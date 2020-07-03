@@ -376,6 +376,8 @@ const App = () => {
         value={inputPhone}
         prefix={inputPrefix}
         suffix={inputSuffix}
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
@@ -384,10 +386,9 @@ const App = () => {
         label="esto es un label"
         assistText="esto es un texto tal vez muy largo a ver que pasaria"
         value={inputPhone}
-        type="password"
         success
-        prefix={inputPrefixText}
-        suffix={inputSuffix}
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
@@ -396,8 +397,9 @@ const App = () => {
         label="esto es un label"
         assistText="esto es un texto tal vez muy largo a ver que pasaria"
         value={inputPhone}
-        type="password"
         disabled
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
@@ -475,8 +477,6 @@ const App = () => {
         <InputSearch
           maxLength="105"
           label="esto es un label"
-          assistText="esto es un texto tal vez muy largo a ver que pasaria"
-          error
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
@@ -486,8 +486,6 @@ const App = () => {
           maxLength="105"
           placeholder="hola mundo"
           label="esto es un label"
-          assistText="esto es un texto tal vez muy largo a ver que pasaria"
-          error
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
