@@ -12,9 +12,9 @@ const InputCounter = ({ onChange, ...props }) => (
       styles.container,
       props.disabled === true ? styles.disabled : ''
     ].join(' ').trim()}>
-      <Icon name="minus" size={4} className={styles.minusIcon} onClick={() => onChange(Number(props.value) - 1)} />
+      <Icon name="minus" role="minus-btn" size={4} className={styles.minusIcon} onClick={() => onChange(Number(props.value) - 1)} />
       <InputCore {...props} onChange={({ target: { value } }) => onChange(value)} onlyNumber prefix="" suffix="" />
-      <Icon name="plus" size={4} className={styles.plusIcon} onClick={() => onChange(Number(props.value) + 1)} />
+      <Icon name="plus" role="plus-btn" size={4} className={styles.plusIcon} onClick={() => onChange(Number(props.value) + 1)} />
     </div>
   </div>
 )
