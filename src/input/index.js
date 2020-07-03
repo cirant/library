@@ -98,7 +98,7 @@ Input.propTypes = {
     PropTypes.string
   ]),
   maxLength: PropTypes.string,
-  type: PropTypes.oneOf(['text', 'password']),
+  type: PropTypes.oneOf(['text', 'password', 'range']),
   error: PropTypes.bool,
   success: PropTypes.bool,
   suffix: PropTypes.oneOfType([

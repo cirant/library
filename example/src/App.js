@@ -20,7 +20,8 @@ import {
   Bullets,
   Tooltip,
   ProgressBar,
-  Message
+  Message,
+  InputRange
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -340,6 +341,19 @@ const App = () => {
         <InputChip value="action" variant onClose={() => alert('clicked')} />
         <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
       </div>
+    </div>
+
+    <div className="container my-4">
+        <h1 className="mb-4">input range</h1>
+        
+          <InputRange 
+            placeholder="TextPlaceholder" 
+            label="Text Label"
+            min="0"
+            max="100"
+            step="1"
+          />
+
     </div>
 
     <div className="container">

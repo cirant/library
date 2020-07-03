@@ -1632,7 +1632,7 @@ Input.propTypes = {
     type: propTypes.oneOf(['success', 'assist', 'error'])
   })), propTypes.string]),
   maxLength: propTypes.string,
-  type: propTypes.oneOf(['text', 'password']),
+  type: propTypes.oneOf(['text', 'password', 'range']),
   error: propTypes.bool,
   success: propTypes.bool,
   suffix: propTypes.oneOfType([propTypes.string, propTypes.element]),
@@ -2290,6 +2290,35 @@ Message.propTypes = {
   action: propTypes.element
 };
 
+var InputRange = function InputRange(_ref) {
+  var props = _extends({}, _ref);
+
+  var _useState = React.useState(0),
+      range = _useState[0],
+      setRange = _useState[1];
+
+  var change = function change(e) {
+    setRange(Number(e.target.value));
+  };
+
+  return /*#__PURE__*/React__default.createElement(React.Fragment, null, /*#__PURE__*/React__default.createElement("div", {
+    className: "d-flex"
+  }, /*#__PURE__*/React__default.createElement(Input, {
+    label: props.label,
+    type: "text",
+    placeholder: props.placeholder,
+    value: range
+  })), /*#__PURE__*/React__default.createElement("div", {
+    className: "d-flex"
+  }, /*#__PURE__*/React__default.createElement(Input, {
+    type: "range",
+    min: props.min,
+    max: props.max,
+    step: props.step,
+    onChange: change
+  })));
+};
+
 exports.Bullets = Bullets;
 exports.Button = Button;
 exports.Card = Card;
@@ -2301,6 +2330,7 @@ exports.HeaderProfileItem = HeaderProfileItem;
 exports.Icon = Icon;
 exports.Input = Input;
 exports.InputChip = InputChip;
+exports.InputRange = InputRange;
 exports.Loading = Loading;
 exports.Logo = Logo;
 exports.Message = Message;

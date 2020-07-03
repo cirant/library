@@ -20,6 +20,7 @@ import ProgressBar from './progressbar'
 import Bullets from './bullets'
 import Tooltip from './tooltip';
 import Message from './message';
+import InputRange from './input/range';
 
 export {
   Button,
@@ -43,5 +44,6 @@ export {
   ProgressBar,
   Bullets,
   Tooltip,
-  Message
+  Message,
+  InputRange
 };

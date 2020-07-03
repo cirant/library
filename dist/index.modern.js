@@ -1,4 +1,4 @@
-import React, { createRef, useState } from 'react';
+import React, { createRef, useState, Fragment as Fragment$1 } from 'react';
 import Tippy from '@tippyjs/react';
 
 function createCommonjsModule(fn, module) {
@@ -1583,7 +1583,7 @@ Input.propTypes = {
     type: propTypes.oneOf(['success', 'assist', 'error'])
   })), propTypes.string]),
   maxLength: propTypes.string,
-  type: propTypes.oneOf(['text', 'password']),
+  type: propTypes.oneOf(['text', 'password', 'range']),
   error: propTypes.bool,
   success: propTypes.bool,
   suffix: propTypes.oneOfType([propTypes.string, propTypes.element]),
@@ -2219,5 +2219,31 @@ Message.propTypes = {
   action: propTypes.element
 };
 
-export { Bullets, Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection, Tooltip };
+const InputRange = ({ ...props
+}) => {
+  const [range, setRange] = useState(0);
+
+  const change = e => {
+    setRange(Number(e.target.value));
+  };
+
+  return /*#__PURE__*/React.createElement(Fragment$1, null, /*#__PURE__*/React.createElement("div", {
+    className: "d-flex"
+  }, /*#__PURE__*/React.createElement(Input, {
+    label: props.label,
+    type: "text",
+    placeholder: props.placeholder,
+    value: range
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "d-flex"
+  }, /*#__PURE__*/React.createElement(Input, {
+    type: "range",
+    min: props.min,
+    max: props.max,
+    step: props.step,
+    onChange: change
+  })));
+};
+
+export { Bullets, Button, Card, Checkbox, Grid, Header, HeaderItem, HeaderProfileItem, Icon, Input, InputChip, InputRange, Loading, Logo, Message, ProgressBar, Radio, Separator, Sidebar, SidebarElement, Switch, TitleSection, Tooltip };
 //# sourceMappingURL=index.modern.js.map
