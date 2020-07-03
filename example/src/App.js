@@ -26,7 +26,8 @@ import {
   Message,
   InputSelect,
   Stamp,
-  ContentAction
+  ContentAction,
+  InputSecurity
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -446,6 +447,16 @@ const App = () => {
         <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
       </div>
     </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">input Security</h1>
+
+      <div className="d-flex flex-column">
+        <InputSecurity value="action" onClose={() => alert('clicked')} />
+        <InputSecurity value="action" onClose={() => alert('clicked')} disabled />
+      </div>
+    </div>
+
 
     <div className="container my-4">
       <h1 className="mb-4">input counter</h1>

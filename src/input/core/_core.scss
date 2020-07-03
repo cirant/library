@@ -17,6 +17,8 @@
 
   &.disabled{
     color: $disableColor;
+    pointer-events: none;
+    i{color: $disableColor;}
   }
 
   .suffixContainer{
