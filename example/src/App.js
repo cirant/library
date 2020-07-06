@@ -933,7 +933,7 @@ const App = () => {
               },
             ]}>
             </VoucherColumnData>
-            <VoucherFooter breakColumn={3} items={{
+            <VoucherFooter breakColumn={5} items={{
               title:'Label titulo de sección',
               typeList: 'unorder',
               bullets: [
