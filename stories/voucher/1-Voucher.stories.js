@@ -1,32 +1,30 @@
 import React from 'react'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { select } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
+import '../codeStyles.css'
 import '../../dist/index.css'
-import Voucher from '../../dist'
-import VoucherData from '../../dist'
-import VoucherColumnData from '../../dist'
-import VoucherFooter from '../../dist'
-import VoucherResumeContainer from '../../dist'
-import VoucherTitle from '../../dist'
+import { Voucher } from '../../dist'
 
 const propsDescriptions = {
-  stampdirection: {
+  width: {
     propType: 'string',
-    description: 'position of the stamp in the card'
+    description: 'Add width to the svg'
   },
-  children: {
-    propType: 'node',
-    description: 'many nodes who are part of the voucher componenet'
+  height: {
+    propType: 'string',
+    description: 'Add height to the svg'
   }
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
+
   const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-      console.log(defaultValue)
 
       return (
         <tr key={property}>
@@ -58,17 +56,13 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-const colors = ['primary', 'secondary']
-
-export const VoucherComponent = () => (
-  <Voucher stampdirection="bottom">
-
-  </Voucher>
+export const voucherComponent = () => (
+  <Voucher style={{ height: 400 }} stampdirection={select('stampdirection', ['top', 'bottom'], 'bottom')}/>
 )
 
 export default {
   title: 'Voucher',
-  decorators: [withInfo],
+  decorators: [withKnobs, withInfo],
   component: Voucher,
   parameters: {
     info: {
@@ -76,20 +70,21 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px'
+          padding: '0px 40px 0px',
+          margin: '10px 0'
         }
       },
       text: `
         include into your project to be able to use the component styles
         ~~~js
         import 'library/dist/index.css';
-        import { Voucher, VoucherTitle, VoucherResumeContainer, VoucherData, VoucherColumnData, VoucherFooter } from 'library';
+        import { Voucher } from 'library';
         ~~~
 
-        A way to generate this component is:
+        the basicest component form is:
 
         ~~~js
-
+        <Voucher> </Voucher>
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
