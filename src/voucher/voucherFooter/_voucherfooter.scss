@@ -1,0 +1,82 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+.voucherColumnDataContainer {
+
+  padding-top: nth(nth($spacers, 6), 2);
+
+  .voucherFooterContentContainer{
+    display: flex;
+
+    @media  only screen and (max-width: 563px)
+    and (min-device-width: 0px)
+    {
+      flex-direction: column;
+
+    }
+  }
+
+
+  @media  only screen and (max-width: 563px)
+  and (min-device-width: 0px)
+  {
+    .voucherColumnDataSection:first-child{
+      padding-top: nth(nth($spacers, 6), 2) !important;
+      padding-bottom: 0;
+    }
+    .voucherColumnDataSection:last-child{
+      padding-top: 0 !important;
+      padding-bottom: 0;
+    }
+
+  }
+
+
+  .voucherColumnDataSection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: nth(nth($spacers, 6), 2) 0;
+
+
+    .itemColumn{
+      flex: 1;
+      box-sizing: border-box;
+
+      .itemColumnContent{
+        padding-top: 24px;
+      }
+
+    }
+
+    .borderSectionBottom{
+      position: absolute;
+      border-top: 1px solid;
+      width: 80%;
+      bottom: 0%;
+      height: 1px;
+      border-color: #D8D8D8;
+    }
+
+  }
+
+  .voucherColumnDataSection:first-child{
+    .borderSectionTop{
+      position: absolute;
+      border-top: 1px solid;
+      width: 80%;
+      top: 0%;
+      height: 1px;
+      border-color: #D8D8D8;
+    }
+  }
+
+}
+
+.__bullet__bulletElement__1OQ67{
+  padding-bottom: 8px !important;
+}
+
+

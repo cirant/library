@@ -2,13 +2,13 @@
 @import '../scss/variables';
 @import '../scss/mixins/elevation';
 
-.voucherContainer{
+.voucherContainer {
 
   width: 100%;
   background-color: $neutral-10;
   font-family: $font-family-sans-serif;
 
-  .card{
+  .card {
     position: relative;
     margin: 0;
     padding-top: 0;
@@ -16,27 +16,25 @@
     background: white;
   }
 
-  .cardContainer{
-
+  .cardContainer {
     height: 100%;
     width: 100%;
     padding: nth(nth($spacers, 6), 2) nth(nth($spacers, 6), 2);
+    padding-bottom: 200px;
 
-    .stamp{
+    .stamp {
       z-index: 1;
       position: absolute;
 
-        &.top {
-          top: 24px;
-          right: 24px;
-        }
+      &.top {
+        top: 24px;
+        right: 24px;
+      }
 
-        &.bottom {
-          bottom: 24px;
-          right: 24px;
-        }
-
-
+      &.bottom {
+        bottom: 24px;
+        right: 24px;
+      }
 
     }
 

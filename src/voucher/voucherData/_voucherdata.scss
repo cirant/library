@@ -7,6 +7,9 @@
   display: flex;
   flex-direction: column;
 
+  .voucherDataSection:last-child{
+    padding-bottom: nth(nth($spacers, 6), 2);
+  }
 
 
   .voucherDataSection {

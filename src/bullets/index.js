@@ -5,14 +5,30 @@ import BulletElement from './Bullet'
 const Bullets = ({ items, typeList }) => {
 
   const typeOfBullet = typeList ? typeList : ''
-  const itemsBullets = items ? items : [];
+  const itemsBullets = items ? items : []
 
   return (
     <div>
       {
-        (typeOfBullet === 'order') ? itemsBullets.map((element, index) => <BulletElement key={index} count={index} typeList={typeOfBullet} {...element} />) :
-          (typeOfBullet === 'unorder') ? itemsBullets.map((element, index) => <BulletElement  key={index} {...element} typeList={typeOfBullet}/>) :
-            (typeOfBullet === 'icons') ? itemsBullets.map((element, index) => <BulletElement key={index} {...element} typeList={typeOfBullet}/>) : ''
+        (typeOfBullet === 'order') ? itemsBullets.map(
+          (element, index) => {
+            return (
+              <BulletElement key={index} count={index} typeList={typeOfBullet} {...element} />
+            )
+          }
+          ) :
+          (typeOfBullet === 'unorder') ? itemsBullets.map(
+            (element, index) => {
+              return (
+                  <BulletElement key={index} {...element} typeList={typeOfBullet}/>
+              )
+            }) :
+            (typeOfBullet === 'icons') ? itemsBullets.map(
+              (element, index) => {
+                return (
+                  <BulletElement key={index} {...element} typeList={typeOfBullet}/>
+                )
+              }) : ''
       }
     </div>
   )

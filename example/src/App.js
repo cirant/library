@@ -30,7 +30,9 @@ import {
   VoucherDataResume,
   VoucherResumeContainer,
   VoucherTitle,
-  VoucherData
+  VoucherData,
+  VoucherColumnData,
+  VoucherFooter
 } from 'library-1'
 import 'library-1/dist/index.css'
 import 'library-1/dist/css/custom.css'
@@ -864,9 +866,132 @@ const App = () => {
             ]}
             >
             </VoucherResumeContainer>
-            <VoucherData>
-
+            <VoucherData items={[
+              {
+                title:'Label titulo de sección',
+                items: [
+                  {
+                    label:'Deudas:',
+                    content: '300.000'
+                  },
+                  {
+                    label:'Label Titulo:',
+                    content: 'Label Contenido'
+                  },
+                  {
+                    label:'Label Titulo:',
+                    content: 'Label Contenido'
+                  },
+                ]
+              },
+              {
+                title:'Label titulo de sección 2',
+                items: [
+                  {
+                    label:'Deudas:',
+                    content: '300.000'
+                  },
+                  {
+                    label:'Label Titulo:',
+                    content: 'Label Contenido'
+                  },
+                  {
+                    label:'Label Titulo:',
+                    content: 'Label Contenido'
+                  },
+                ]
+              }
+            ]}>
             </VoucherData>
+            <VoucherColumnData items={[
+              {
+                title:'Label title',
+                content:'Label content'
+              },
+              {
+                title:'Label title',
+                content:'Label content'
+              },
+              {
+                title:'Label title',
+                content:'Label content'
+              },
+              {
+                title:'Label title',
+                content:'Label content'
+              },
+              {
+                title:'Label title',
+                content:'Label content'
+              },
+              {
+                title:'Label title',
+                content:'Label content'
+              },
+              {
+                title:'Label title',
+                content:'Label content'
+              },
+            ]}>
+            </VoucherColumnData>
+            <VoucherFooter breakColumn={3} items={{
+              title:'Label titulo de sección',
+              typeList: 'unorder',
+              bullets: [
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                },
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                },
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                },
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                },
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                },
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                },
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                },
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                },
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                },
+                {
+                  text: 'Order Bullet text a',
+                  prefixType: 'info',
+                  contentType: 'success'
+                }
+              ]
+            }}>
+
+            </VoucherFooter>
           </Voucher>
         </div>
       </div>
