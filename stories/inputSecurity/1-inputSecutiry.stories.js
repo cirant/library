@@ -7,11 +7,6 @@ import { InputSecurity } from '../../dist';
 import '../codeStyles.css';
 import '../../dist/index.css';
 
-
-
-
-
-
 const propsDescriptions = {
   label: {
     propType: 'string',

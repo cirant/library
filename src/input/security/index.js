@@ -30,7 +30,7 @@ const InputSecurity = ({
     <InputCore {...props}
       type={inputType}
       prefix={<Icon name="line-lock" />}
-      suffix={<Icon onClick={onSecurityClick} name={suffix} role="show" />} />
+      suffix={<Icon onClick={onSecurityClick} name={suffix} role="show" className={styles.pointer} />} />
     <div role="progressBar" className={progressBar}> </div>
     <div className={styles.inputHelper}>{`Nivel de seguridad: ${levels[strength] || ''}.`}</div>
   </div>

@@ -41,6 +41,9 @@ const App = () => {
   const [inputPhone, setInputPhone] = useState('');
   const [inputCounter, setInputCounter] = useState(1);
 
+  const [inputSecurity, setInputSecurity] = useState('');
+  const [showSecurity, setInputShowSecurity] = useState(true);
+
   const handleCheckbox = (value) => {
     setCheckbox(value)
   }
@@ -454,8 +457,8 @@ const App = () => {
       <h1 className="mb-4">input Security</h1>
 
       <div className="d-flex flex-column">
-        <InputSecurity value="action" onClose={() => alert('clicked')} />
-        <InputSecurity value="action" onClose={() => alert('clicked')} disabled />
+        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} />
+        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
       </div>
     </div>
 
