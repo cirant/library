@@ -8,28 +8,31 @@ const VoucherDataResume = ({ label, content, number, currency, flex, ...props })
   const refContainer = createRef()
 
   useEffect(() => {
+    /* istanbul ignore else */
     if (flex) {
       refContainer.current.style.flex = flex
     }
   }, [])
 
-  if (content !== undefined || number !== undefined) {
-    if (currency) {
-      content = currencyFormat(number)
-    } else if (number) {
-      content = numberFormat(number)
+  const contentFormatet = () => {
+    /* istanbul ignore else */
+    if (content !== '' || number !== undefined) {
+      if (currency) {
+        return currencyFormat(number)
+      } else if (number) {
+        return numberFormat(number)
+      }
     }
+    return content
   }
 
   return (
     <div {...props} ref={refContainer} className={styles.dataResumeContainer}>
-      <p className="note">{label}</p>
-      <h2>{content}</h2>
+      {label && <p className="note">{label}</p>}
+      <h2>{contentFormatet()}</h2>
     </div>
   )
 }
-
-export default VoucherDataResume
 
 VoucherDataResume.defaultProps = {
   label: '',
@@ -45,3 +48,4 @@ VoucherDataResume.prototype = {
   currency: PropTypes.bool
 }
 
+export default VoucherDataResume

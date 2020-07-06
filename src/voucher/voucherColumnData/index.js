@@ -15,13 +15,13 @@ const VoucherColumnData = ({ items, ...props }) => {
       {
         newItems.map((items, index) => {
           return (
-            <div className={containerClass.join(' ')}>
+            <div className={containerClass.join(' ')} key={index}>
               <div className={styles.voucherColumnDataSection}>
                 {index == 0 && <div className={styles.borderSectionTop}></div>}
                 {
-                  items.map(item => {
+                  items.map((item, pos) => {
                     return (
-                      <div className={styles.itemColumn}>
+                      <div className={styles.itemColumn} key={pos}>
                         <p className="note">{item.title}</p>
                         <p className={styles.itemColumnContent}>{item.content}</p>
                       </div>

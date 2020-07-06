@@ -1,13 +1,9 @@
 import React from "react";
 import { render } from '@testing-library/react';
-// import TestRenderer from 'react-test-renderer';
-// import TitleSection from "./index";
-// // import Icon from "../icons";
-// import IconListModel from "../icons/models/icon-list.model";
 import VoucherData from './';
 
 
-describe('Voucher tests', () => {
+describe('VoucherData tests', () => {
 
   test('Should render component', () => {
     const component = render(<VoucherData items={[]} />);
@@ -19,16 +15,16 @@ describe('Voucher tests', () => {
       {
         title: 'Label 1',
         items: [
-          { label: 'Deudas:', content: '300.000' },
-          { label: 'Label Titulo:', content: 'Label Contenido' }
+          { label: 'Item lavel 1:', content: 'item content 1' },
+          { label: 'Item lavel 2:', content: 'item content 2' }
         ]
       },
       {
         title: 'Label 2',
         items: [
-          { label: 'Deudas:', content: '300.000' },
-          { label: 'Label Titulo:', content: 'Label Contenido' },
-          { label: 'Label Titulo:', content: 'Label Contenido' },
+          { label: 'Item lavel 3:', content: 'item content 3' },
+          { label: 'Item lavel 4:', content: 'item content 4' },
+          { label: 'Item lavel 5:', content: 'item content 5' }
         ]
       }
     ]
@@ -36,11 +32,19 @@ describe('Voucher tests', () => {
     expect(component).toBeTruthy();
     expect(component.getAllByRole('voucherSection').length).toEqual(2);
     expect(component.getByText(/Label 1/)).toBeTruthy();
+    expect(component.getByText(/Item lavel 1/)).toBeTruthy();
+    expect(component.getByText(/item content 1/)).toBeTruthy();
+    expect(component.getByText(/Item lavel 2/)).toBeTruthy();
+    expect(component.getByText(/item content 2/)).toBeTruthy();
 
     expect(component.getByText(/Label 2/)).toBeTruthy();
+    expect(component.getByText(/Item lavel 3/)).toBeTruthy();
+    expect(component.getByText(/item content 3/)).toBeTruthy();
+    expect(component.getByText(/Item lavel 4/)).toBeTruthy();
+    expect(component.getByText(/item content 4/)).toBeTruthy();
+    expect(component.getByText(/Item lavel 5/)).toBeTruthy();
+    expect(component.getByText(/item content 5/)).toBeTruthy();
     expect(component.getAllByRole('voucherSectionItem').length).toEqual(5);
-    // console.log('voucherSection ', component.getAllByRole('voucherSectionItem').length)
-    // component.debug();
   });
 
 });

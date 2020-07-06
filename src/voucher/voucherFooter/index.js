@@ -22,16 +22,13 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
           {
             breakColumn && (
               <React.Fragment>
-                <div className={styles.voucherFooterSection}>
-
-                  <Bullets typeList={items.typeList} items={newItems[0]}/>
-
-                </div>
-                <div className={styles.voucherFooterSection}>
-
-                  <Bullets typeList={items.typeList} items={newItems[1]}/>
-
-                </div>
+                {
+                  newItems.map((newItem, key) => (
+                    <div className={styles.voucherFooterSection} key={`newItem-${key}`}>
+                      <Bullets typeList={items.typeList} items={newItem} />
+                    </div>
+                  ))
+                }
               </React.Fragment>
             )
           }
@@ -39,7 +36,7 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
             breakColumn == null && (
               <div className={styles.voucherFooterSection}>
 
-                <Bullets typeList={items.typeList} items={items.bullets}/>
+                <Bullets typeList={items.typeList} items={items.bullets} />
 
               </div>
             )
