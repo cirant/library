@@ -11,6 +11,7 @@
     height: $custom-range-track-height;
     width: $custom-range-track-width;
     display: block;
+    cursor: $custom-range-track-cursor;
   
     &:hover {
         outline: none;
@@ -50,7 +51,6 @@
   }
   
   input[type=range]::-webkit-slider-runnable-track {
-    cursor: $custom-range-track-cursor;
     width: $custom-range-track-width;
     background-color: $custom-range-track-bg;
     height: $custom-range-track-height;
@@ -61,13 +61,15 @@
   }
   
   input[type=range]::-moz-range-track {
-    background-color: $red;
-    height: 2px;
+    width: $custom-range-track-width;
+    background-color: $custom-range-track-bg;
+    height: $custom-range-track-height;
   }
   
   input[type=range]::-ms-track {
-    background-color: $red;
-    height: 2px;
+    width: $custom-range-track-width;
+    background-color: $custom-range-track-bg;
+    height: $custom-range-track-height;
   }
 
   .rangeValue{
@@ -77,7 +79,6 @@
       top: -28px;
       z-index: 1;
       position: absolute;
-      display: block;
       font-size: 0.75rem;
       transform: scale(1) translateY(-10px);
       left: 50%;
