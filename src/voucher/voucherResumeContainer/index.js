@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './_voucherresumecontainer.scss'
 import VoucherDataResume from '../voucherDataResume'
 import PropTypes from 'prop-types'
+
 const VoucherResumeContainer = ({  items, ...props }) => {
 
   return (
