@@ -16,12 +16,6 @@
     flex: 1;
     padding: nth(nth($spacers, 6), 2) 0;
     align-self: center;
-   /* @media  only screen and (max-width: 563px)
-    and (min-device-width: 0px)
-    {
-      flex-basis: 100% !important;
-
-    }*/
   }
 
   .suffix {
@@ -29,14 +23,7 @@
     flex-flow: row wrap;
     align-self: center;
     flex: 1;
-
-    /*@media  only screen and (max-width: 563px)
-    and (min-device-width: 0px)
-    {
-      flex-basis: 100% !important;
-
-    }*/
-
+    
     .rowitem{
       display: flex;
       flex-flow: row wrap;
