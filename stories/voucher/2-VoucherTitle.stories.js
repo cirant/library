@@ -1,20 +1,23 @@
 import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs/react'
-import { select } from '@storybook/addon-knobs'
+import { number, select, text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import { Voucher } from '../../dist'
+import { VoucherTitle } from '../../dist'
+import list from '../icons/list'
+import { action } from '@storybook/addon-actions'
 
 const propsDescriptions = {
-  width: {
+  title: {
     propType: 'string',
-    description: 'Add width to the svg'
+    description: 'Add a text to the title'
   },
-  height: {
-    propType: 'string',
-    description: 'Add height to the svg'
+  items: {
+    propType: 'array',
+    description: 'Array of items, this items are button but with according configuration for the title'
   }
+
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
@@ -56,14 +59,34 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const voucherComponent = () => (
-  <Voucher style={{ height: 400 }} stampdirection={select('stampdirection', ['top', 'bottom'], 'bottom')}/>
+export const voucherTitle = () => (
+  <VoucherTitle
+    title={'Type some text'}
+    items={[
+      [
+        {
+          label: text('Label', 'Plazo', 'I Item'),
+          icon: select('icon', list, 'line-write', 'I Item'),
+          action: action('clicked Item 1'),
+          flex: number('flex', 1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'I Item')
+        },
+        {
+          label: text('Label', 'Descargar', 'II Item'),
+          icon: select('icon', list, 'line-download', 'II Item'),
+          action: action('clicked Item 2'),
+          flex: number('flex', 1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'II Item')
+        }
+
+      ]
+    ]}
+  >
+  </VoucherTitle>
 )
 
 export default {
   title: 'Voucher',
   decorators: [withKnobs, withInfo],
-  component: Voucher,
+  component: VoucherTitle,
   parameters: {
     info: {
       inline: true,
@@ -78,13 +101,13 @@ export default {
         include into your project to be able to use the component styles
         ~~~js
         import 'library/dist/index.css';
-        import { Voucher } from 'library';
+        import { VoucherTitle } from 'library';
         ~~~
 
         the basicest component form is:
 
         ~~~js
-        <Voucher> </Voucher>
+        <VoucherTitle> </VoucherTitle>
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source

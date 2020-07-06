@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 const Voucher = ({ children, stampdirection, ...props }) => {
 
-  let cardContainer = [styles.cardContainer, styles.card]
+  let cardContainer = [styles.cardContainer, styles.card  ]
   let svgContainer = [styles.stamp]
 
   if(stampdirection == 'top'){
