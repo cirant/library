@@ -3,7 +3,6 @@ import styles from './_voucher.scss'
 import Card from '../card'
 import Stamp from '../stamp'
 import PropTypes from 'prop-types'
-import VoucherDataResume from './voucherDataResume'
 
 const Voucher = ({ children, stampdirection, ...props }) => {
 
@@ -37,7 +36,6 @@ Voucher.defaultProps = {
 
 Voucher.prototype = {
   stampPosition: PropTypes.string,
-  children: PropTypes.node.isRequired
 };
 
 export default Voucher

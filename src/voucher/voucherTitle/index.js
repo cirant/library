@@ -3,7 +3,6 @@ import styles from './_vouchertitle.scss'
 import Button from '../../buttons'
 import PropTypes from 'prop-types'
 
-
 const VoucherTitle = ({ title, items, flex, ...props }) => {
 
   const containerClass = [styles.voucherTitle]

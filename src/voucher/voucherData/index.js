@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './_voucherdata.scss'
 import PropTypes from 'prop-types'
-import VoucherDataResume from '../voucherDataResume'
 
 const VoucherData = ({ items, ...props }) => {
 

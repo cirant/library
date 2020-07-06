@@ -29,15 +29,6 @@ const VoucherDataResume = ({ label, content, number, currency, flex, ...props })
   )
 }
 
-VoucherDataResume.defaultProps = {
-  stampPosition: 'bottom'
-}
-
-VoucherDataResume.prototype = {
-  stampPosition: PropTypes.string,
-  children: PropTypes.node.isRequired
-}
-
 export default VoucherDataResume
 
 VoucherDataResume.defaultProps = {
