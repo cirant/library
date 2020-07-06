@@ -1,35 +1,40 @@
 import React, {Fragment, useState} from 'react';
-import styles from './_range.scss';
+import PropTypes from 'prop-types';
 import { Input } from '../../';
+import { Bar } from '../../';
 
-const InputRange = ({...props}) => {
-    
-    const [range, setRange] = useState(0);
-    const change = (e) => {
-        setRange(Number(e.target.value));
-    }
-    
+const InputRange = ({placeholder, label, min, max, step, onChange, value, ...props}) => {
     return (
         <Fragment>
-            <div className="d-flex">
-                <Input 
-                    label={props.label} 
-                    type="text" 
-                    placeholder={props.placeholder}
-                    value={range}
-                />
-            </div>
-            <div className="d-flex">
-                <Input 
-                    type="range" 
-                    min={props.min} 
-                    max={props.max} 
-                    step={props.step}
-                    onChange={change}
-                />
-            </div>
+            <Input 
+                label={label} 
+                type="text" 
+                placeholder={placeholder}
+                value={value}
+            />
+            <Bar
+                type="range" 
+                min={min} 
+                max={max}
+                step={step}
+                value={value}
+                onChange={onChange}
+            />
         </Fragment>
      );
 }
+
+InputRange.defaultProps = {
+    onChange: /* istanbul ignore next */ () => null,
+};
+
+InputRange.propTypes = {
+    placeholder: PropTypes.string,
+    label: PropTypes.string,
+    min: PropTypes.string,
+    max: PropTypes.string,
+    value: PropTypes.string,
+    onChange: PropTypes.func
+};
  
 export default InputRange;

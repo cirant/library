@@ -38,6 +38,7 @@ const App = () => {
   const [inputText, setInputText] = useState('');
   const [inputPhoneCode, setInputPhoneCode] = useState('56');
   const [inputPhone, setInputPhone] = useState('');
+  const [range, setRange] = useState(200);
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
@@ -451,11 +452,13 @@ const App = () => {
         <h1 className="mb-4">input range</h1>
         
           <InputRange 
-            placeholder="TextPlaceholder" 
+            placeholder="Text Placeholder"
             label="Text Label"
-            min="0"
-            max="100"
+            min="200"
+            max="800"
             step="1"
+            onChange={(e) => setRange(e.target.value)}
+            value={range}
           />
 
       <h1 className="mb-4">input search</h1>

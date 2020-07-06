@@ -21,6 +21,7 @@ import Bullets from './bullets'
 import Tooltip from './tooltip';
 import Message from './message';
 import InputRange from './input/range';
+import Bar from './input/bar';
 import Stamp from './stamp';
 import InputSearch from './input/search';
 import InputSelect from './input/select';
@@ -52,6 +53,7 @@ export {
   Tooltip,
   Message,
   InputRange,
+  Bar,
   InputSearch,
   InputSelect,
   Stamp,
