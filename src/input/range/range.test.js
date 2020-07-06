@@ -24,9 +24,4 @@ describe('InputRange behavior', () => {
         expect(component.getByText(/200/)).toBeTruthy();
     });
 
-    it('should be rendered with label', () => {
-        const component = render(<InputRange label="Label Text" />);
-        expect(component.getByText(/Label Text/)).toBeTruthy();
-    });
-
 });
