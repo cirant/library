@@ -1,9 +1,10 @@
-import React, { createRef } from 'react'
+import React from 'react'
 import styles from './_vouchercolumndata.scss'
 import { listToMatrix } from '../../utils/arrayUtils'
+import PropTypes from 'prop-types'
 
 
-const VoucherColumnData = ({ children, items, ...props }) => {
+const VoucherColumnData = ({ items, ...props }) => {
 
   const containerClass = [styles.voucherColumnDataContainer]
 
@@ -18,13 +19,13 @@ const VoucherColumnData = ({ children, items, ...props }) => {
               <div className={styles.voucherColumnDataSection}>
                 {index == 0 && <div className={styles.borderSectionTop}></div>}
                 {
-                  items.map( item => {
+                  items.map(item => {
                     return (
-                    <div className={styles.itemColumn}>
-                      <p className="note">{item.title}</p>
-                      <p className={styles.itemColumnContent}>{item.content}</p>
-                    </div>
-                    );
+                      <div className={styles.itemColumn}>
+                        <p className="note">{item.title}</p>
+                        <p className={styles.itemColumnContent}>{item.content}</p>
+                      </div>
+                    )
                   })
                 }
                 <div className={styles.borderSectionBottom}></div>
@@ -42,3 +43,12 @@ const VoucherColumnData = ({ children, items, ...props }) => {
 
 
 export default VoucherColumnData
+
+VoucherColumnData.defaultProps = {
+  items: []
+}
+
+VoucherColumnData.prototype = {
+  items: PropTypes.array
+}
+

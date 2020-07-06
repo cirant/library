@@ -2,24 +2,20 @@
 @import '../../scss/variables';
 @import '../../scss/mixins/elevation';
 
-.dataResumeContainer{
-  background-color:#233459;
-  color:white;
+.dataResumeContainer {
+  background-color: #233459;
+  color: white;
   font-family: Ubuntu;
   flex: 1;
   padding: 24px;
   text-wrap: normal;
   box-sizing: border-box;
 
-
-
-  h2{
+  h2 {
     color: white;
   }
 
-  @media  only screen and (max-width: 563px)
-  and (min-device-width: 0px)
-  {
+  @media only screen and (max-width: 563px) and (min-device-width: 0px) {
     flex-basis: 100% !important;
 
   }

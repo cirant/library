@@ -2,6 +2,7 @@ import React, { createRef } from 'react'
 import styles from './_voucherfooter.scss'
 import { listToMatrix } from '../../utils/arrayUtils'
 import Bullets from '../../bullets'
+import PropTypes from 'prop-types'
 
 
 const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
@@ -13,22 +14,20 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
     newItems = listToMatrix(items.bullets, breakColumn)
   }
 
-  const refContainer = createRef()
-
   return (
     <React.Fragment>
-      <div className={containerClass.join(' ')}>
+      <div {...props} className={containerClass.join(' ')}>
         <h4>{items.title}</h4>
         <div className={styles.voucherFooterContentContainer}>
           {
             breakColumn && (
               <React.Fragment>
-                <div className={styles.voucherColumnDataSection}>
+                <div className={styles.voucherFooterSection}>
 
                   <Bullets typeList={items.typeList} items={newItems[0]}/>
 
                 </div>
-                <div className={styles.voucherColumnDataSection}>
+                <div className={styles.voucherFooterSection}>
 
                   <Bullets typeList={items.typeList} items={newItems[1]}/>
 
@@ -38,7 +37,7 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
           }
           {
             breakColumn == null && (
-              <div className={styles.voucherColumnDataSection}>
+              <div className={styles.voucherFooterSection}>
 
                 <Bullets typeList={items.typeList} items={items.bullets}/>
 
@@ -53,5 +52,14 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
 
 }
 
-
 export default VoucherFooter
+
+VoucherFooter.defaultProps = {
+  items: [],
+}
+
+VoucherFooter.prototype = {
+  items: PropTypes.array,
+  breakColumn: PropTypes.number,
+}
+

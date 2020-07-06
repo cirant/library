@@ -1,18 +1,12 @@
-import React, { createRef } from 'react'
+import React from 'react'
 import styles from './_voucherdata.scss'
+import PropTypes from 'prop-types'
+import VoucherDataResume from '../voucherDataResume'
 
-
-const VoucherData = ({ children, items, ...props }) => {
-
-  const containerClass = [styles.voucherDataContainer]
-
-  console.log('hereeee')
-  console.log(items.length)
-
-  const refContainer = createRef()
+const VoucherData = ({ items, ...props }) => {
 
   return (
-    <div className={styles.voucherDataContainer}>
+    <div {...props} className={styles.voucherDataContainer}>
       {
         items.map((section, key) => {
           return (
@@ -43,8 +37,14 @@ const VoucherData = ({ children, items, ...props }) => {
     </div>
   )
 
-
 }
 
-
 export default VoucherData
+
+VoucherData.defaultProps = {
+  items: []
+}
+
+VoucherData.prototype = {
+  items: PropTypes.array
+}
