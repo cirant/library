@@ -6,52 +6,36 @@
 
   padding-top: nth(nth($spacers, 6), 2);
 
-  .voucherFooterContentContainer{
+  .voucherFooterContentContainer {
     display: flex;
 
-    @media  only screen and (max-width: 563px)
-    and (min-device-width: 0px)
-    {
+    @media only screen and (max-width: 563px) and (min-device-width: 0px) {
       flex-direction: column;
 
     }
   }
 
 
-  @media  only screen and (max-width: 563px)
-  and (min-device-width: 0px)
-  {
-    .voucherColumnDataSection:first-child{
+  @media only screen and (max-width: 563px) and (min-device-width: 0px) {
+    .voucherFooterSection:first-child {
       padding-top: nth(nth($spacers, 6), 2) !important;
       padding-bottom: 0;
     }
-    .voucherColumnDataSection:last-child{
+    .voucherFooterSection:last-child {
       padding-top: 0 !important;
       padding-bottom: 0;
     }
 
   }
 
-
-  .voucherColumnDataSection {
+  .voucherFooterSection {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     padding: nth(nth($spacers, 6), 2) 0;
 
-
-    .itemColumn{
-      flex: 1;
-      box-sizing: border-box;
-
-      .itemColumnContent{
-        padding-top: 24px;
-      }
-
-    }
-
-    .borderSectionBottom{
+    .borderSectionBottom {
       position: absolute;
       border-top: 1px solid;
       width: 80%;
@@ -62,8 +46,8 @@
 
   }
 
-  .voucherColumnDataSection:first-child{
-    .borderSectionTop{
+  .voucherFooterSection:first-child {
+    .borderSectionTop {
       position: absolute;
       border-top: 1px solid;
       width: 80%;
@@ -75,7 +59,7 @@
 
 }
 
-.__bullet__bulletElement__1OQ67{
+.__bullet__bulletElement__1OQ67 {
   padding-bottom: 8px !important;
 }
 

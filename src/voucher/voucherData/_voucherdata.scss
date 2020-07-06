@@ -7,32 +7,32 @@
   display: flex;
   flex-direction: column;
 
-  .voucherDataSection:last-child{
+  .voucherDataSection:last-child {
     padding-bottom: nth(nth($spacers, 6), 2);
   }
-
 
   .voucherDataSection {
     padding-top: nth(nth($spacers, 6), 2);
     flex-flow: column wrap;
 
-    .titleSection{
+    .titleSection {
       padding-bottom: nth(nth($spacers, 6), 2);
       flex: 1;
     }
 
-    .contentSection{
+    .contentSection {
       flex: 1;
-      .itemSection{
+
+      .itemSection {
         display: flex;
         flex-flow: row wrap;
         padding-bottom: nth(nth($spacers, 5), 2);
 
-        .itemPrefix{
+        .itemPrefix {
           flex: 1;
         }
 
-        .itemSuffix{
+        .itemSuffix {
           flex: 1;
         }
 
@@ -40,9 +40,7 @@
 
     }
 
-
   }
-
 
 }
 

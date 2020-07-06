@@ -1,10 +1,9 @@
 import React, { createRef, useEffect } from 'react'
 import styles from './_voucherdataresume.scss'
-
 import PropTypes from 'prop-types'
 import { currencyFormat, numberFormat } from '../../utils/numberUtils'
 
-const VoucherDataResume = ({ children, label, content, number, currency, flex, ...props }) => {
+const VoucherDataResume = ({ label, content, number, currency, flex, ...props }) => {
 
   const refContainer = createRef()
 
@@ -40,3 +39,18 @@ VoucherDataResume.prototype = {
 }
 
 export default VoucherDataResume
+
+VoucherDataResume.defaultProps = {
+  label: '',
+  content: '',
+  flex: 1
+}
+
+VoucherDataResume.prototype = {
+  label: PropTypes.string,
+  content: PropTypes.string,
+  flex: PropTypes.number,
+  number: PropTypes.number,
+  currency: PropTypes.bool
+}
+

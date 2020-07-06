@@ -1,15 +1,14 @@
-import React, { createRef, useEffect } from 'react'
+import React, { createRef } from 'react'
 import styles from './_vouchertitle.scss'
 import Button from '../../buttons'
-import VoucherDataResume from '../voucherDataResume'
+import PropTypes from 'prop-types'
 
 
-const VoucherTitle = ({ children, title,items,action,flex, ...props }) => {
+const VoucherTitle = ({ title, items, flex, ...props }) => {
 
   const containerClass = [styles.voucherTitle]
 
-  const refContainer = createRef();
-
+  const refContainer = createRef()
 
   return (
     <div {...props} className={containerClass.join(' ')}>
@@ -23,14 +22,15 @@ const VoucherTitle = ({ children, title,items,action,flex, ...props }) => {
               <div {...props} className={styles.rowitem}>
                 {row.map(rowitem => {
                   return (
-                    <div style={rowitem.flex ? {flex:rowitem.flex}: {flex:1}} ref={refContainer} className={styles.item}>
+                    <div style={rowitem.flex ? { flex: rowitem.flex } : { flex: 1 }} ref={refContainer}
+                         className={styles.item}>
                       <Button onClick={rowitem.action} variant="text" ariant="text" color="primary"
                               prefix={rowitem.icon}>{rowitem.label}</Button>
                     </div>
                   )
                 })}
               </div>
-            );
+            )
           })
         }
 
@@ -39,5 +39,15 @@ const VoucherTitle = ({ children, title,items,action,flex, ...props }) => {
   )
 }
 
-
 export default VoucherTitle
+
+VoucherTitle.defaultProps = {
+  items: [],
+  title: '',
+}
+
+VoucherTitle.prototype = {
+  items: PropTypes.array,
+  title: PropTypes.string,
+  flex: PropTypes.number
+}

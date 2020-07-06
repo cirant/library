@@ -27,7 +27,6 @@ import {
   TitleSection,
   Tooltip,
   Voucher,
-  VoucherDataResume,
   VoucherResumeContainer,
   VoucherTitle,
   VoucherData,

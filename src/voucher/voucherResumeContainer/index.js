@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './_voucherresumecontainer.scss'
 import VoucherDataResume from '../voucherDataResume'
-const VoucherResumeContainer = ({ children, items, ...props }) => {
-
+import PropTypes from 'prop-types'
+const VoucherResumeContainer = ({  items, ...props }) => {
 
   return (
     <React.Fragment>
@@ -28,3 +28,12 @@ const VoucherResumeContainer = ({ children, items, ...props }) => {
 }
 
 export default VoucherResumeContainer
+
+VoucherResumeContainer.defaultProps = {
+  items: [],
+}
+
+VoucherResumeContainer.prototype = {
+  items: PropTypes.array,
+}
+
