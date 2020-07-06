@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs/react'
 import { withInfo } from '@storybook/addon-info'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import { VoucherData } from '../../dist'
+import { VoucherColumnData } from '../../dist'
 import { text } from '@storybook/addon-knobs'
 
 const propsDescriptions = {
@@ -52,32 +52,27 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const voucherData = () => (
-  <VoucherData items={[
+export const voucherColumnData = () => (
+  <VoucherColumnData items={[
     {
-      title: 'Label titulo de sección',
-      items: [
-        {
-          label: text('Label', 'Deudas', 'I Item'),
-          content: text('Content', '$300.000', 'I Item'),
-        },
-        {
-          label: text('Label', 'Label Titulo:', 'II Item'),
-          content: text('Content', 'Label Contenido', 'II Item'),
-        },
-        {
-          label: text('Label', 'Label Titulo:', 'III Item'),
-          content: text('Content', 'Label Contenido', 'III Item'),
-        }
-      ]
-    }
-  ]}/>
+      title:text('Title', 'Label title', 'I Item'),
+      content:text('Content', 'Label content', 'I Item'),
+    },
+    {
+      title:text('Title', 'Label title', 'II Item'),
+      content:text('Content', 'Label content', 'II Item'),
+    },
+    {
+      title:text('Title', 'Label title', 'III Item'),
+      content:text('Content', 'Label content', 'III Item'),
+    },
+  ]} />
 )
 
 export default {
   title: 'Voucher',
   decorators: [withKnobs, withInfo],
-  component: VoucherData,
+  component: VoucherColumnData,
   parameters: {
     info: {
       inline: true,
@@ -92,13 +87,13 @@ export default {
         include into your project to be able to use the component styles
         ~~~js
         import 'library/dist/index.css';
-        import { VoucherData } from 'library';
+        import { VoucherColumnData } from 'library';
         ~~~
 
         the basicest component form is:
 
         ~~~js
-        <VoucherData> </VoucherData>
+        <VoucherColumnData> </VoucherColumnData>
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
