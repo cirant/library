@@ -26,6 +26,7 @@ import InputSelect from './input/select';
 import ContentAction from './contentAction';
 import InputPhone from './input/phone';
 import InputCounter from './input/counter';
+import InputSecurity from './input/security';
 
 export {
   Button,
@@ -40,6 +41,7 @@ export {
   Input,
   InputPhone,
   InputCounter,
+  InputSecurity,
   Radio,
   Separator,
   Sidebar,

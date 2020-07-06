@@ -26,7 +26,8 @@ import {
   Message,
   InputSelect,
   Stamp,
-  ContentAction
+  ContentAction,
+  InputSecurity
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -39,6 +40,9 @@ const App = () => {
   const [inputPhoneCode, setInputPhoneCode] = useState(56);
   const [inputPhone, setInputPhone] = useState('');
   const [inputCounter, setInputCounter] = useState(1);
+
+  const [inputSecurity, setInputSecurity] = useState('');
+  const [showSecurity, setInputShowSecurity] = useState(true);
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
@@ -448,6 +452,16 @@ const App = () => {
         <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
       </div>
     </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">input Security</h1>
+
+      <div className="d-flex flex-column">
+        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} />
+        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
+      </div>
+    </div>
+
 
     <div className="container my-4">
       <h1 className="mb-4">input counter</h1>
