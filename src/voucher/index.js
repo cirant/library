@@ -32,7 +32,7 @@ const Voucher = ({ children, stampdirection, ...props }) => {
 }
 
 Voucher.defaultProps = {
-  stampPosition: 'bottom',
+  stampdirection: 'bottom',
 };
 
 Voucher.prototype = {
