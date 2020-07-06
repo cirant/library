@@ -9,7 +9,7 @@ import { VoucherResumeContainer } from '../../dist'
 const propsDescriptions = {
   items: {
     propType: 'array',
-    description: 'Array of items who define the different blue boxes of the resume'
+    description: 'Array of items who define the different blue boxes of the resume. Each box will have a title and a value.'
   }
 
 }
