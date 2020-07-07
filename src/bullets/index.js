@@ -1,14 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import BulletElement from './Bullet'
-import { NumberUtils } from '../utils'
 
 
 const Bullets = ({ items, typeList }) => {
 
   const typeOfBullet = typeList ? typeList : ''
   const itemsBullets = items ? items : []
-  let a = NumberUtils.numberFormat();
 
   const getTypeOfList = (typeOfBullet,element,index) => {
     if(typeOfBullet === 'order'){

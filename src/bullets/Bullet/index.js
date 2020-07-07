@@ -94,7 +94,7 @@ BulletElement.propTypes = {
   },
   type: function (props) {
     if ((props['prefixType'] !== undefined) && (props['type'] !== undefined)) {
-      return new Error('If prefixType2 prop it is defined not define type')
+      return new Error('If prefixType prop it is defined not define type')
     }
     if ((props['contentType'] !== undefined) && (props['type'] !== undefined)) {
       return new Error('If contentType prop it is defined not define type')

@@ -13,16 +13,6 @@ describe('Voucher tests', () => {
     expect(componentTitle).toBeTruthy()
   })
 
-  test('Should contain svg', () => {
-    const componentTitle = render(<Voucher stampdirection='top'/>)
-    expect(componentTitle).toBeTruthy()
-  })
-
-  test('Should contain card componenet', () => {
-    const componentTitle = render(<Voucher stampdirection='top'/>)
-    expect(componentTitle).toBeTruthy()
-  })
-
   test('Should contain stampdirection bottom', () => {
     const componentTitle = render(<Voucher stampdirection='bottom'/>)
     expect(componentTitle.container.querySelector("[data-placement='bottom']")).toBeTruthy()

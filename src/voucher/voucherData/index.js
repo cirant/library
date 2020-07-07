@@ -49,5 +49,8 @@ VoucherData.prototype = {
   items: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     content: PropTypes.string,
+    flex: PropTypes.number,
+    number: PropTypes.number,
+    currency: PropTypes.bool
   }))
 }

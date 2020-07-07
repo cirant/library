@@ -32,7 +32,6 @@ import VoucherResumeContainer from './voucher/voucherResumeContainer';
 import VoucherData from './voucher/voucherData';
 import VoucherFooter from './voucher/voucherFooter';
 import VoucherTitle from './voucher/voucherTitle';
-import BadgeNotification from './badgeNotificaction/';
 
 export {
   Button,
@@ -68,6 +67,5 @@ export {
   VoucherTitle,
   VoucherData,
   VoucherColumnData,
-  VoucherFooter,
-  BadgeNotification
+  VoucherFooter
 };

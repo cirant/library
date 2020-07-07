@@ -36,6 +36,10 @@ VoucherResumeContainer.defaultProps = {
 }
 
 VoucherResumeContainer.prototype = {
-  items: PropTypes.array
+  items: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    prefixType: PropTypes.string,
+    contentType: PropTypes.string,
+  }))),
 }
 
