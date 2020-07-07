@@ -98,7 +98,30 @@ export default {
         the basicest component form is:
 
         ~~~js
-        <VoucherData> </VoucherData>
+        <VoucherData items={[]}> </VoucherData>
+        ~~~
+
+        the object into array should have look like the shown below
+        ~~~js
+        [
+              {
+                title:'Some title Text',
+                items: [
+                  {
+                    label:'Some label:',
+                    content: 'Some content'
+                  },
+                  {
+                    label:'Some label:',
+                    content: 'Some content'
+                  },
+                  {
+                    label:'Some label:',
+                    content: 'Some content'
+                  },
+                ]
+              },
+        ]
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source

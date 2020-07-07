@@ -826,7 +826,7 @@ const App = () => {
                                 label:'Descargar',
                                 icon:'line-download',
                                 action: ()=> console.log('descargar')
-                              },
+                              }
 
                             ],
                           ]}
@@ -856,7 +856,7 @@ const App = () => {
                   number:400000,
                   currency: true,
                   flex:1
-                },
+                }
               ],
             ]} />
             <VoucherData items={[
@@ -874,7 +874,7 @@ const App = () => {
                   {
                     label:'Label Titulo:',
                     content: 'Label Contenido'
-                  },
+                  }
                 ]
               },
             ]} />
@@ -886,7 +886,7 @@ const App = () => {
               {
                 title:'Label title',
                 content:'Label content'
-              },
+              }
             ]}>
             </VoucherColumnData>
             <VoucherFooter breakColumn={5} items={{

@@ -61,7 +61,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const voucherTitle = () => (
   <VoucherTitle
-    title= {text('Label', 'Plazo', 'Voucher Title config')}
+    title={text('Label', 'Plazo', 'Voucher Title config')}
     items={[
       [
         {
@@ -107,7 +107,26 @@ export default {
         the basicest component form is:
 
         ~~~js
-        <VoucherTitle> </VoucherTitle>
+        <VoucherTitle items={[]}> </VoucherTitle>
+        ~~~
+
+        the object into array should have look like the shown below
+        ~~~js
+        {[
+          [
+           {
+             label:'Some text',
+             icon:'line-write',
+             action: ()=> console.log('some function'),
+             flex:1
+           },
+           {
+             label:'Some text',
+             icon:'line-download',
+             action: ()=> console.log('some function')
+           },
+          ],
+        ]}
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source

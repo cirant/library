@@ -35,13 +35,7 @@ Bullets.defaults = {
 }
 
 Bullets.propTypes = {
-  /**
-   * type of bullet list
-   */
   typeList: PropTypes.string.isRequired,
-  /**
-   *  other contetn
-   */
   items: PropTypes.array.isRequired
 }
 

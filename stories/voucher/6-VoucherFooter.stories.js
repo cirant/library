@@ -67,7 +67,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const voucherFooter = () => (
   <VoucherFooter
-    breakColumn= {number('breakColumn', 5, [0,1,2,3,4,5], 'Footer')}
+    breakColumn={number('breakColumn', 5, [0, 1, 2, 3, 4, 5], 'Footer')}
     items={{
       title: text('Title', 'Order Bullet text a', 'Footer'),
       typeList: select('typeList', ['unorder', 'order', 'icons'], 'icons', 'Footer'),
@@ -95,7 +95,7 @@ export const voucherFooter = () => (
           icon: select('icon', list, 'line-check', 'Bullet III'),
           disabled: boolean('disabled', false, 'Bullet III'),
           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet III')
-        },
+        }
       ]
     }}/>
 )
@@ -124,7 +124,30 @@ export default {
         the basicest component form is:
 
         ~~~js
-        <VoucherFooter/>
+        <VoucherFooter items={[]}/>
+        ~~~
+
+        the object into array should have look like the shown below
+        ~~~js
+          [
+                {
+                  contentType: '',
+                  disabled: false,
+                  icon: 'line-check',
+                  prefixType: '',
+                  text: 'Some Text',
+                  type: ''
+                },
+                 {
+                  contentType: '',
+                  disabled: false,
+                  icon: 'line-check',
+                  prefixType: '',
+                  text: 'Some Text',
+                  type: ''
+                }
+          ]
+
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
