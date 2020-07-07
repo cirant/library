@@ -10,7 +10,6 @@
     outline: none;
     height: $custom-range-track-height;
     width: $custom-range-track-width;
-    display: block;
     cursor: $custom-range-track-cursor;
   
     &:hover {
@@ -26,26 +25,27 @@
   }
   
   input[type=range]::-webkit-slider-thumb {
-      background-color: $white;
-      width: $custom-range-thumb-width;
-      height: $custom-range-thumb-height;
-      border-radius: $custom-range-thumb-border-radius;
-      margin-top: -5px;
-      box-shadow: $custom-range-thumb-box-shadow;
+    background-color: $white;
+    width: 20px;
+    height: 20px;
+    border-radius: $custom-range-thumb-border-radius;
+    margin-top: -7px;
+    box-shadow: $custom-range-thumb-box-shadow;
   }
   
   input[type=range]::-moz-range-thumb {
     background-color:$white;
-    width: $custom-range-thumb-width;
-    height: $custom-range-thumb-height;
+    width: 20px;
+    height: 20px;
     border-radius: $custom-range-thumb-border-radius;
     box-shadow: $custom-range-thumb-box-shadow;
+    border: none;
   }
   
   input[type=range]::-ms-thumb {
     background-color:$white;
-    width: $custom-range-thumb-width;
-    height: $custom-range-thumb-height;
+    width: 20px;
+    height: 20px;
     border-radius: $custom-range-thumb-border-radius;
     box-shadow: $custom-range-thumb-box-shadow;
   }
@@ -80,7 +80,7 @@
       z-index: 1;
       position: absolute;
       font-size: 0.75rem;
-      transform: scale(1) translateY(-10px);
+      transform: scale(1) translateY(-1px) translateX(-1px);
       left: 50%;
     }
 

@@ -8,7 +8,7 @@ const Bar = ({min, max, step, value, onChange, ...props}) => {
 
     useEffect(() => {
         handleInput();
-    }, [min, max, value, bubbleVisible]);
+    }, [value, bubbleVisible]);
 
     const handleInput = () => {
         const percentage = Number((value - min) * 100 / (max - min));
