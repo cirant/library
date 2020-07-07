@@ -28,11 +28,10 @@
 
     .borderSectionBottom {
       position: absolute;
-      border-top: 1px solid;
+      border-top: 1px solid #D8D8D8;
       width: 80%;
       bottom: 0%;
       height: 1px;
-      border-color: #D8D8D8;
     }
 
   }
@@ -40,11 +39,10 @@
   .voucherColumnDataSection:first-child{
     .borderSectionTop{
       position: absolute;
-      border-top: 1px solid;
+      border-top: 1px solid #D8D8D8;
       width: 80%;
       top: -24px;
       height: 1px;
-      border-color: #D8D8D8;
     }
   }
 
