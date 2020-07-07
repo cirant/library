@@ -70,7 +70,7 @@ export const voucherFooter = () => (
     breakColumn= {number('breakColumn', 5, [0,1,2,3,4,5], 'Footer')}
     items={{
       title: text('Title', 'Order Bullet text a', 'Footer'),
-      typeList: select('typeList', ['unorder', 'order', 'icons'], 'order', 'Footer'),
+      typeList: select('typeList', ['unorder', 'order', 'icons'], 'unorder', 'Footer'),
       bullets: [
         {
           text: text('text', 'Bullet text a', 'Bullet I'),
@@ -97,7 +97,15 @@ export const voucherFooter = () => (
           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet III')
         },
         {
-          text: text('text', 'Bullet text d', 'Bullet V'),
+          text: text('text', 'Bullet text d', 'Bullet IV'),
+          prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet IV'),
+          contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet IV'),
+          icon: select('icon', list, 'line-check', 'Bullet IV'),
+          disabled: boolean('disabled', false, 'Bullet IV'),
+          type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet IV')
+        },
+        {
+          text: text('text', 'Bullet text e', 'Bullet V'),
           prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet V'),
           contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet V'),
           icon: select('icon', list, 'line-check', 'Bullet V'),
@@ -105,7 +113,7 @@ export const voucherFooter = () => (
           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet V')
         },
         {
-          text: text('text', 'Bullet text e', 'Bullet VI'),
+          text: text('text', 'Bullet text f', 'Bullet VI'),
           prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet VI'),
           contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet VI'),
           icon: select('icon', list, 'line-check', 'Bullet VI'),
@@ -113,7 +121,7 @@ export const voucherFooter = () => (
           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet VI')
         },
         {
-          text: text('text', 'Bullet text f', 'Bullet VII'),
+          text: text('text', 'Bullet text g', 'Bullet VII'),
           prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet VII'),
           contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet VII'),
           icon: select('icon', list, 'line-check', 'Bullet VII'),
@@ -121,7 +129,7 @@ export const voucherFooter = () => (
           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet VII')
         },
         {
-          text: text('text', 'Bullet text g', 'Bullet VIII'),
+          text: text('text', 'Bullet text h', 'Bullet VIII'),
           prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet VIII'),
           contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet VIII'),
           icon: select('icon', list, 'line-check', 'Bullet VIII'),
@@ -129,21 +137,14 @@ export const voucherFooter = () => (
           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet VIII')
         },
         {
-          text: text('text', 'Bullet text h', 'Bullet IX'),
+          text: text('text', 'Bullet text i', 'Bullet IX'),
           prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet IX'),
           contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet IX'),
           icon: select('icon', list, 'line-check', 'Bullet IX'),
           disabled: boolean('disabled', false, 'Bullet IX'),
           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet IX')
         },
-        {
-          text: text('text', 'Bullet text i', 'Bullet X'),
-          prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet X'),
-          contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet X'),
-          icon: select('icon', list, 'line-check', 'Bullet X'),
-          disabled: boolean('disabled', false, 'Bullet X'),
-          type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet X')
-        }
+
       ]
     }}/>
 )
