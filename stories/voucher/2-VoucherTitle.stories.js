@@ -61,7 +61,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const voucherTitle = () => (
   <VoucherTitle
-    title={'Type some text'}
+    title= {text('Label', 'Plazo', 'Voucher Title config')}
     items={[
       [
         {

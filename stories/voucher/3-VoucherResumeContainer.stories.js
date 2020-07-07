@@ -83,8 +83,7 @@ export const voucherResumeContainer = () => (
       }
     ]
   ]}
-  >
-  </VoucherResumeContainer>
+  />
 )
 
 export default {
