@@ -33,12 +33,12 @@ describe('Voucher title tests', () => {
     expect(componentTitle.container.querySelector('h4[data-testid="test-title"]').innerHTML).toBe("Type some text")
   })
 
-  test('should component contain buttons component', () => {
+  test('should component contain 2 buttons component', () => {
 
     const testRenderer = TestRenderer.create(<VoucherTitle title={"Type some text"} items={items}/>);
     const testInstance = testRenderer.root;
 
-    expect(testInstance.findAllByType(Button)).toBeTruthy()
+    expect(testInstance.findAllByType(Button).length).toBe(2);
 
   });
 })
