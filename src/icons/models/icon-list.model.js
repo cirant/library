@@ -1,5 +1,5 @@
 export default class IconListModel {
-  static iconList= [
+  static iconList = [
     'line-alarm',
     'line-alert',
     'line-app-notification',
@@ -85,6 +85,7 @@ export default class IconListModel {
     'line-verification',
     'line-wrench',
     'line-write',
+    'menu-kebab',
     'arrow-down',
     'arrow-left',
     'arrow-right',
@@ -176,4 +177,3 @@ export default class IconListModel {
     'write'
   ];
 }
-
