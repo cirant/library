@@ -812,7 +812,7 @@ const App = () => {
       <h1 className="mb-4">Voucher</h1>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
-          <Voucher stampdirection="top">
+          <Voucher stampdirection="bottom">
             <VoucherTitle title={"Type some text"}
                           items={[
                             [
