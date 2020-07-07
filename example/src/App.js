@@ -28,7 +28,8 @@ import {
   InputSelect,
   Stamp,
   ContentAction,
-  InputSecurity
+  InputSecurity,
+  KebabMenu
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -456,17 +457,17 @@ const App = () => {
     </div>
 
     <div className="container my-4">
-        <h1 className="mb-4">input range</h1>
-        
-          <InputRange 
-            placeholder="Text Placeholder"
-            label="Text Label"
-            min="200"
-            max="800"
-            step="1"
-            onChange={(e) => setRange(e.target.value)}
-            value={range}
-          />
+      <h1 className="mb-4">input range</h1>
+
+      <InputRange
+        placeholder="Text Placeholder"
+        label="Text Label"
+        min="200"
+        max="800"
+        step="1"
+        onChange={(e) => setRange(e.target.value)}
+        value={range}
+      />
     </div>
 
     <div className="container my-4">
@@ -804,7 +805,7 @@ const App = () => {
     <br />
 
     <div className="container">
-      <h1> Content Action</h1>
+      <h1 className="mb-4"> Content Action</h1>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
           <ContentAction label="Imprimir" onClick={() => console.log('acción')} icon="line-print"></ContentAction>
@@ -815,6 +816,28 @@ const App = () => {
     </div>
 
     <br />
+
+    <div className="container">
+      <h1 className="mb-4">kebab menu</h1>
+      <div className="row">
+        <div className="col">
+          <Card className="d-flex justify-content-end">
+            <KebabMenu options={[
+              {
+                icon: 'line-search',
+                text: 'Label Button',
+                action: () => alert('hola mundo')
+              },
+              {
+                icon: 'home',
+                text: 'Label Button 2',
+                action: () => alert('hola mundo 2')
+              }
+            ]} />
+          </Card>
+        </div>
+      </div>
+    </div>
     <br />
     <br />
     <br />
