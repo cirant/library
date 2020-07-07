@@ -5,16 +5,15 @@ import { withInfo } from '@storybook/addon-info'
 import '../codeStyles.css'
 import '../../dist/index.css'
 import { Voucher } from '../../dist'
+import { VoucherTitle } from '../../dist'
+import { VoucherData } from '../../dist'
+import { VoucherColumnData } from '../../dist'
+import { VoucherResumeContainer } from '../../dist'
+import { VoucherFooter } from '../../dist'
+import propsDescriptionsVoucher from './_commonsPropsVoucher';
 
 const propsDescriptions = {
-  width: {
-    propType: 'string',
-    description: 'Add width to the svg'
-  },
-  height: {
-    propType: 'string',
-    description: 'Add height to the svg'
-  }
+  ...propsDescriptionsVoucher
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
@@ -56,9 +55,182 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const voucherComponent = () => (
-  <Voucher style={{ height: 400 }} stampdirection={select('stampdirection', ['top', 'bottom'], 'bottom')}/>
-)
+export const voucherFullComponent = () => (
+  <Voucher stampdirection="bottom">
+    <VoucherTitle title={"Type some text"}
+                  items={[
+                    [
+                      {
+                        label:'Plazo',
+                        icon:'line-write',
+                        action: ()=> console.log('plazo'),
+                        flex:1
+                      },
+                      {
+                        label:'Descargar',
+                        icon:'line-download',
+                        action: ()=> console.log('descargar')
+                      },
+
+                    ],
+                  ]}
+
+    />
+    <VoucherResumeContainer items={[
+      [
+        {
+          label:'Plazo',
+          content:'36 meses',
+          flex:1
+        },
+        {
+          label:'Valor cuota',
+          number:45000,
+          currency: true,
+          flex:1
+        },
+      ],
+      [
+        {
+          label:'Otros costos',
+          number:15000,
+          currency: true,
+          flex:1
+        },
+        {
+          label:'Saldo anterior',
+          number:400000,
+          currency: true,
+          flex:1
+        },
+
+
+      ],
+    ]} />
+    <VoucherData items={[
+      {
+        title:'Label titulo de sección',
+        items: [
+          {
+            label:'Deudas:',
+            content: '300.000'
+          },
+          {
+            label:'Label Titulo:',
+            content: 'Label Contenido'
+          },
+          {
+            label:'Label Titulo:',
+            content: 'Label Contenido'
+          },
+        ]
+      },
+      {
+        title:'Label titulo de sección 2',
+        items: [
+          {
+            label:'Deudas:',
+            content: '300.000'
+          },
+          {
+            label:'Label Titulo:',
+            content: 'Label Contenido'
+          },
+          {
+            label:'Label Titulo:',
+            content: 'Label Contenido'
+          },
+        ]
+      }
+    ]} />
+    <VoucherColumnData items={[
+      {
+        title:'Label title',
+        content:'Label content'
+      },
+      {
+        title:'Label title',
+        content:'Label content'
+      },
+      {
+        title:'Label title',
+        content:'Label content'
+      },
+      {
+        title:'Label title',
+        content:'Label content'
+      },
+      {
+        title:'Label title',
+        content:'Label content'
+      },
+      {
+        title:'Label title',
+        content:'Label content'
+      },
+      {
+        title:'Label title',
+        content:'Label content'
+      },
+    ]}>
+    </VoucherColumnData>
+    <VoucherFooter breakColumn={5} items={{
+      title:'Label titulo de sección',
+      typeList: 'unorder',
+      bullets: [
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        },
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        },
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        },
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        },
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        },
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        },
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        },
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        },
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        },
+        {
+          text: 'Order Bullet text a',
+          prefixType: 'info',
+          contentType: 'success'
+        }
+      ]
+    }} />
+  </Voucher>)
 
 export default {
   title: 'Voucher',

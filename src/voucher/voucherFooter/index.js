@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 
 const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
 
-  const containerClass = [styles.voucherColumnDataContainer]
+  const containerClass = [styles.voucherFooterContainer]
   let newItems
   if (breakColumn) {
     newItems = ArrayUtils.listToMatrix(items.bullets, breakColumn)
@@ -34,13 +34,12 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
           {
             breakColumn == null && (
               <div className={styles.voucherFooterSection}>
-
                 <Bullets typeList={items.typeList} items={items.bullets} />
-
               </div>
             )
           }
         </div>
+        <div className={styles.borderSectionBottom}></div>
       </div>
     </React.Fragment>
   )

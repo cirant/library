@@ -31,10 +31,12 @@ const Voucher = ({ children, stampdirection, ...props }) => {
 }
 
 Voucher.defaultProps = {
+  /** Some description here */
   stampdirection: 'bottom',
 };
 
 Voucher.prototype = {
+  /** Some description here */
   stampdirection: PropTypes.string,
 };
 

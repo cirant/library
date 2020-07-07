@@ -845,8 +845,6 @@ const App = () => {
                   currency: true,
                   flex:1
                 },
-              ],
-              [
                 {
                   label:'Otros costos',
                   number:15000,
@@ -859,8 +857,6 @@ const App = () => {
                   currency: true,
                   flex:1
                 },
-
-
               ],
             ]} />
             <VoucherData items={[
@@ -881,45 +877,8 @@ const App = () => {
                   },
                 ]
               },
-              {
-                title:'Label titulo de sección 2',
-                items: [
-                  {
-                    label:'Deudas:',
-                    content: '300.000'
-                  },
-                  {
-                    label:'Label Titulo:',
-                    content: 'Label Contenido'
-                  },
-                  {
-                    label:'Label Titulo:',
-                    content: 'Label Contenido'
-                  },
-                ]
-              }
             ]} />
             <VoucherColumnData items={[
-              {
-                title:'Label title',
-                content:'Label content'
-              },
-              {
-                title:'Label title',
-                content:'Label content'
-              },
-              {
-                title:'Label title',
-                content:'Label content'
-              },
-              {
-                title:'Label title',
-                content:'Label content'
-              },
-              {
-                title:'Label title',
-                content:'Label content'
-              },
               {
                 title:'Label title',
                 content:'Label content'
@@ -932,58 +891,23 @@ const App = () => {
             </VoucherColumnData>
             <VoucherFooter breakColumn={5} items={{
               title:'Label titulo de sección',
-              typeList: 'unorder',
+              typeList: 'icons',
               bullets: [
                 {
-                  text: 'Order Bullet text a',
+                  text: 'Tipografía / Estilos',
                   prefixType: 'info',
-                  contentType: 'success'
+                  type: 'success'
                 },
                 {
-                  text: 'Order Bullet text a',
+                  text: 'Tipografía / Estilos',
                   prefixType: 'info',
-                  contentType: 'success'
+                  type: 'success'
                 },
                 {
-                  text: 'Order Bullet text a',
+                  text: 'Tipografía / Estilos',
                   prefixType: 'info',
-                  contentType: 'success'
+                  type: 'success'
                 },
-                {
-                  text: 'Order Bullet text a',
-                  prefixType: 'info',
-                  contentType: 'success'
-                },
-                {
-                  text: 'Order Bullet text a',
-                  prefixType: 'info',
-                  contentType: 'success'
-                },
-                {
-                  text: 'Order Bullet text a',
-                  prefixType: 'info',
-                  contentType: 'success'
-                },
-                {
-                  text: 'Order Bullet text a',
-                  prefixType: 'info',
-                  contentType: 'success'
-                },
-                {
-                  text: 'Order Bullet text a',
-                  prefixType: 'info',
-                  contentType: 'success'
-                },
-                {
-                  text: 'Order Bullet text a',
-                  prefixType: 'info',
-                  contentType: 'success'
-                },
-                {
-                  text: 'Order Bullet text a',
-                  prefixType: 'info',
-                  contentType: 'success'
-                }
               ]
             }} />
           </Voucher>

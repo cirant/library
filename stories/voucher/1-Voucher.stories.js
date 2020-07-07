@@ -7,14 +7,10 @@ import '../../dist/index.css'
 import { Voucher } from '../../dist'
 
 const propsDescriptions = {
-  width: {
+  stampdirection: {
     propType: 'string',
-    description: 'Add width to the svg'
+    description: 'Initial position of the stamp component <a href="www.google.cl">hellou </a>'
   },
-  height: {
-    propType: 'string',
-    description: 'Add height to the svg'
-  }
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>

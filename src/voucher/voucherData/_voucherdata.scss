@@ -29,11 +29,11 @@
         padding-bottom: nth(nth($spacers, 5), 2);
 
         .itemPrefix {
-          flex: 1;
+          flex: 3;
         }
 
         .itemSuffix {
-          flex: 2;
+          flex: 7;
         }
 
       }
