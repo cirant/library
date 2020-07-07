@@ -11,14 +11,14 @@ const VoucherTitle = ({ title, items, flex, ...props }) => {
 
   return (
     <div {...props} className={containerClass.join(' ')}>
-      <div className={styles.prefix}>
-        <h4>{title}</h4>
+      <div  className={styles.prefix}>
+        <h4 data-testid='test-title'>{title}</h4>
       </div>
       <div className={styles.suffix}>
         {
           items.map((row,index) => {
             return (
-              <div  key={`row-${index}`} {...props} className={styles.rowitem}>
+              <div key={`row-${index}`} {...props} className={styles.rowitem}>
                 {
                   row.map((rowitem,i) => {
                     return (
