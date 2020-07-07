@@ -3,6 +3,7 @@ import styles from './_vouchercolumndata.scss'
 import PropTypes from 'prop-types'
 import ArrayUtils from '../../utils/arrayUtils'
 
+
 const VoucherColumnData = ({ items, ...props }) => {
 
   const containerClass = [styles.voucherColumnDataContainer]

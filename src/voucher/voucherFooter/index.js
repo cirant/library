@@ -8,7 +8,6 @@ import PropTypes from 'prop-types'
 const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
 
   const containerClass = [styles.voucherColumnDataContainer]
-
   let newItems
   if (breakColumn) {
     newItems = ArrayUtils.listToMatrix(items.bullets, breakColumn)
