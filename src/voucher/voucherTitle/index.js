@@ -48,7 +48,12 @@ VoucherTitle.defaultProps = {
 }
 
 VoucherTitle.prototype = {
-  items: PropTypes.array,
+  items: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.shape({
+    flex: PropTypes.number,
+    action: PropTypes.func,
+    icon: PropTypes.string,
+    label: PropTypes.string,
+  }))),
   title: PropTypes.string,
   flex: PropTypes.number
 }
