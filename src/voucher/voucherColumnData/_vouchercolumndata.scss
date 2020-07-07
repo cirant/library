@@ -20,7 +20,7 @@
       box-sizing: border-box;
 
       .itemColumnContent {
-        padding-top: 24px;
+        padding-top: nth(nth($spacers, 5), 2);
       }
 
     }

@@ -1,6 +1,6 @@
-import React, { createRef } from 'react'
+import React from 'react'
 import styles from './_voucherfooter.scss'
-import { listToMatrix } from '../../utils/arrayUtils'
+import { ArrayUtils } from '../../utils/'
 import Bullets from '../../bullets'
 import PropTypes from 'prop-types'
 
@@ -11,7 +11,7 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
 
   let newItems
   if (breakColumn) {
-    newItems = listToMatrix(items.bullets, breakColumn)
+    newItems = ArrayUtils.listToMatrix(items.bullets, breakColumn)
   }
 
   return (
@@ -23,8 +23,8 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
             breakColumn && (
               <React.Fragment>
                 {
-                  newItems.map((newItem, key) => (
-                    <div className={styles.voucherFooterSection} key={`newItem-${key}`}>
+                  newItems.map((newItem, index) => (
+                    <div className={styles.voucherFooterSection} key={`newitem-${index}`}>
                       <Bullets typeList={items.typeList} items={newItem} />
                     </div>
                   ))
@@ -46,17 +46,24 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
     </React.Fragment>
   )
 
-
 }
 
 export default VoucherFooter
 
 VoucherFooter.defaultProps = {
   items: [],
+  title: 'Default text',
+  typeList: 'unorder',
 }
 
 VoucherFooter.prototype = {
-  items: PropTypes.array,
   breakColumn: PropTypes.number,
+  title: PropTypes.number,
+  typeList: PropTypes.string,
+  bullets: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    prefixType: PropTypes.string,
+    contentType: PropTypes.string,
+  })),
 }
 

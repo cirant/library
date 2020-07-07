@@ -1,34 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import BulletElement from './Bullet'
+import { NumberUtils } from '../utils'
+
 
 const Bullets = ({ items, typeList }) => {
 
   const typeOfBullet = typeList ? typeList : ''
   const itemsBullets = items ? items : []
+  let a = NumberUtils.numberFormat();
+
+  const getTypeOfList = (typeOfBullet,element,index) => {
+    if(typeOfBullet === 'order'){
+      return <BulletElement key={index} count={index} typeList={typeOfBullet} {...element} />;
+    }else if(typeOfBullet === 'unorder' || 'icons'){
+      return <BulletElement key={index} {...element} typeList={typeOfBullet}/>
+    }
+  }
 
   return (
     <div>
       {
-        (typeOfBullet === 'order') ? itemsBullets.map(
+        itemsBullets.map(
           (element, index) => {
-            return (
-              <BulletElement key={index} count={index} typeList={typeOfBullet} {...element} />
-            )
-          }
-          ) :
-          (typeOfBullet === 'unorder') ? itemsBullets.map(
-            (element, index) => {
-              return (
-                  <BulletElement key={index} {...element} typeList={typeOfBullet}/>
-              )
-            }) :
-            (typeOfBullet === 'icons') ? itemsBullets.map(
-              (element, index) => {
-                return (
-                  <BulletElement key={index} {...element} typeList={typeOfBullet}/>
-                )
-              }) : ''
+            return (getTypeOfList(typeOfBullet,element,index))
+          })
       }
     </div>
   )

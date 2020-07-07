@@ -16,18 +16,20 @@ const VoucherTitle = ({ title, items, flex, ...props }) => {
       </div>
       <div className={styles.suffix}>
         {
-          items.map(row => {
+          items.map((row,index) => {
             return (
-              <div {...props} className={styles.rowitem}>
-                {row.map(rowitem => {
-                  return (
-                    <div style={rowitem.flex ? { flex: rowitem.flex } : { flex: 1 }} ref={refContainer}
-                         className={styles.item}>
-                      <Button onClick={rowitem.action} variant="text" ariant="text" color="primary"
-                              prefix={rowitem.icon}>{rowitem.label}</Button>
-                    </div>
-                  )
-                })}
+              <div  key={`row-${index}`} {...props} className={styles.rowitem}>
+                {
+                  row.map((rowitem,i) => {
+                    return (
+                      <div key={`rowitem-${i}`} style={rowitem.flex ? { flex: rowitem.flex } : { flex: 1 }} ref={refContainer}
+                           className={styles.item}>
+                        <Button onClick={rowitem.action} variant="text" ariant="text" color="primary"
+                                prefix={rowitem.icon}>{rowitem.label}</Button>
+                      </div>
+                    )
+                  })
+                }
               </div>
             )
           })
@@ -42,7 +44,7 @@ export default VoucherTitle
 
 VoucherTitle.defaultProps = {
   items: [],
-  title: '',
+  title: ''
 }
 
 VoucherTitle.prototype = {

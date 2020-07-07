@@ -11,16 +11,18 @@ const VoucherResumeContainer = ({ items, ...props }) => {
         items.map((row, index) => {
           return (
             <div {...props} className={styles.voucherResumeContainer} key={`item-${index}`}>
-              {row.map((column, i) => {
-                return (
-                  <VoucherDataResume
-                    key={`row-${i}`}
-                    {...column}
-                  />
-                )
-              })}
+              {
+                row.map((column, i) => {
+                  return (
+                    <VoucherDataResume
+                      key={`row-${i}`}
+                      {...column}
+                    />
+                  )
+                })
+              }
             </div>
-          );
+          )
         })
       }
     </React.Fragment>
@@ -30,10 +32,10 @@ const VoucherResumeContainer = ({ items, ...props }) => {
 export default VoucherResumeContainer
 
 VoucherResumeContainer.defaultProps = {
-  items: [],
+  items: []
 }
 
 VoucherResumeContainer.prototype = {
-  items: PropTypes.array,
+  items: PropTypes.array
 }
 

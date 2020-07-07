@@ -7,17 +7,17 @@ const VoucherData = ({ items, ...props }) => {
   return (
     <div {...props} className={styles.voucherDataContainer}>
       {
-        items.map((section, key) => {
+        items.map((section, index) => {
           return (
-            <div role="voucherSection" className={styles.voucherDataSection} key={key}>
+            <div role="voucherSection" className={styles.voucherDataSection} key={`section-${index}`}>
               <div className={styles.titleSection}>
                 <h4>{section.title}</h4>
               </div>
               <div className={styles.contentSection}>
                 {
-                  section.items.map((sectionContent, key) => {
+                  section.items.map((sectionContent, i) => {
                     return (
-                      <div role="voucherSectionItem" className={styles.itemSection} key={key}>
+                      <div role="voucherSectionItem" className={styles.itemSection} key={`sectioncontent-${i}`}>
                         <div className={styles.itemPrefix}>
                           <p style={{ flex: 1 }}>{sectionContent.label}</p>
                         </div>
@@ -45,5 +45,9 @@ VoucherData.defaultProps = {
 }
 
 VoucherData.prototype = {
-  items: PropTypes.array
+  title: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    content: PropTypes.string,
+  }))
 }

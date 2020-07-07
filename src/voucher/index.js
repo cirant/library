@@ -21,7 +21,7 @@ const Voucher = ({ children, stampdirection, ...props }) => {
   return (
     <div {...props} className={containerClass.join(' ')}>
       <Card border className={cardContainer.join(' ')} >
-        <div id="svg" data-placement={stampdirection} className={svgContainer.join(' ')}>
+        <div data-placement={stampdirection} className={svgContainer.join(' ')}>
           <Stamp></Stamp>
         </div>
         {children}
@@ -35,7 +35,7 @@ Voucher.defaultProps = {
 };
 
 Voucher.prototype = {
-  stampPosition: PropTypes.string,
+  stampdirection: PropTypes.string,
 };
 
 export default Voucher

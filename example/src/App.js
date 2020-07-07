@@ -812,7 +812,7 @@ const App = () => {
       <h1 className="mb-4">Voucher</h1>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
-          <Voucher stampdirection="bottom">
+          <Voucher stampdirection="top">
             <VoucherTitle title={"Type some text"}
                           items={[
                             [
@@ -831,7 +831,7 @@ const App = () => {
                             ],
                           ]}
 
-            ></VoucherTitle>
+            />
             <VoucherResumeContainer items={[
               [
                 {
@@ -862,9 +862,7 @@ const App = () => {
 
 
               ],
-            ]}
-            >
-            </VoucherResumeContainer>
+            ]} />
             <VoucherData items={[
               {
                 title:'Label titulo de sección',
@@ -900,8 +898,7 @@ const App = () => {
                   },
                 ]
               }
-            ]}>
-            </VoucherData>
+            ]} />
             <VoucherColumnData items={[
               {
                 title:'Label title',
@@ -988,9 +985,7 @@ const App = () => {
                   contentType: 'success'
                 }
               ]
-            }}>
-
-            </VoucherFooter>
+            }} />
           </Voucher>
         </div>
       </div>

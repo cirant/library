@@ -2,6 +2,15 @@
 @import '../../scss/variables';
 @import '../../scss/mixins/elevation';
 
+
+%sectionCommons {
+  position: absolute;
+  border-top: 1px solid;
+  width: 80%;
+  height: 1px;
+  border-color: #D8D8D8;
+}
+
 .voucherColumnDataContainer {
 
   padding-top: nth(nth($spacers, 6), 2);
@@ -11,10 +20,8 @@
 
     @media only screen and (max-width: 563px) and (min-device-width: 0px) {
       flex-direction: column;
-
     }
   }
-
 
   @media only screen and (max-width: 563px) and (min-device-width: 0px) {
     .voucherFooterSection:first-child {
@@ -36,24 +43,16 @@
     padding: nth(nth($spacers, 6), 2) 0;
 
     .borderSectionBottom {
-      position: absolute;
-      border-top: 1px solid;
-      width: 80%;
+      @extend %sectionCommons;
       bottom: 0%;
-      height: 1px;
-      border-color: #D8D8D8;
     }
 
   }
 
   .voucherFooterSection:first-child {
     .borderSectionTop {
-      position: absolute;
-      border-top: 1px solid;
-      width: 80%;
+      @extend %sectionCommons;
       top: 0%;
-      height: 1px;
-      border-color: #D8D8D8;
     }
   }
 

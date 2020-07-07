@@ -14,5 +14,5 @@ const listToMatrix  = ((list, elementsPerSubArray) => {
   return matrix;
 });
 
-export {listToMatrix};
+export default {listToMatrix};
 

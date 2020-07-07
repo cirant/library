@@ -1,7 +1,7 @@
 import React, { createRef, useEffect } from 'react'
 import styles from './_voucherdataresume.scss'
 import PropTypes from 'prop-types'
-import { currencyFormat, numberFormat } from '../../utils/numberUtils'
+import { NumberUtils } from '../../utils/'
 
 const VoucherDataResume = ({ label, content, number, currency, flex, ...props }) => {
 
@@ -14,13 +14,13 @@ const VoucherDataResume = ({ label, content, number, currency, flex, ...props })
     }
   }, [])
 
-  const contentFormatet = () => {
+  const contentFormant = () => {
     /* istanbul ignore else */
     if (content !== '' || number !== undefined) {
       if (currency) {
-        return currencyFormat(number)
+        return NumberUtils.currencyFormat(number)
       } else if (number) {
-        return numberFormat(number)
+        return NumberUtils.numberFormat(number)
       }
     }
     return content
@@ -29,7 +29,7 @@ const VoucherDataResume = ({ label, content, number, currency, flex, ...props })
   return (
     <div {...props} ref={refContainer} className={styles.dataResumeContainer}>
       {label && <p className="note">{label}</p>}
-      <h2>{contentFormatet()}</h2>
+      <h2>{contentFormant()}</h2>
     </div>
   )
 }
