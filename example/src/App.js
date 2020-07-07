@@ -24,6 +24,7 @@ import {
   Tooltip,
   ProgressBar,
   Message,
+  InputRange,
   InputSelect,
   Stamp,
   ContentAction,
@@ -39,6 +40,7 @@ const App = () => {
   const [inputText, setInputText] = useState('');
   const [inputPhoneCode, setInputPhoneCode] = useState(56);
   const [inputPhone, setInputPhone] = useState('');
+  const [range, setRange] = useState(200);
   const [inputCounter, setInputCounter] = useState(1);
 
   const [inputSecurity, setInputSecurity] = useState('');
@@ -451,6 +453,20 @@ const App = () => {
         <InputChip value="action" variant onClose={() => alert('clicked')} />
         <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
       </div>
+    </div>
+
+    <div className="container my-4">
+        <h1 className="mb-4">input range</h1>
+        
+          <InputRange 
+            placeholder="Text Placeholder"
+            label="Text Label"
+            min="200"
+            max="800"
+            step="1"
+            onChange={(e) => setRange(e.target.value)}
+            value={range}
+          />
     </div>
 
     <div className="container my-4">
