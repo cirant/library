@@ -31,7 +31,8 @@ import {
   VoucherTitle,
   VoucherData,
   VoucherColumnData,
-  VoucherFooter
+  VoucherFooter,
+  BadgeNotification
 } from 'library-1'
 import 'library-1/dist/index.css'
 import 'library-1/dist/css/custom.css'
@@ -914,6 +915,18 @@ const App = () => {
         </div>
       </div>
     </div>
+
+    <br/>
+
+    <div className="container">
+      <h1 className="mb-4">Stamp</h1>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <BadgeNotification />
+        </div>
+      </div>
+    </div>
+
 
     <br/>
     <br/>
