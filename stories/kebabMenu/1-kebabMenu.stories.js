@@ -9,14 +9,10 @@ import { KebabMenu } from '../../dist';
 import list from '../icons/list'
 
 const propsDescriptions = {
-  width: {
-    propType: 'string',
-    description: 'Add width to the svg'
-  },
-  height: {
-    propType: 'string',
-    description: 'Add height to the svg'
-  },
+  options: {
+    propType: 'array',
+    description: 'An array with the options to be shown'
+  }
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
@@ -103,6 +99,16 @@ export default {
 
         ~~~js
         <KebabMenu options={[]}> </Stamp>
+        ~~~
+
+        the object into array should have look like the shown below
+
+        ~~~js
+        {
+          action: ()=>null, // should be a function that would be triggered on click element,
+          icon: 'line-search',// should be a valid icon name,
+          text: 'some text'// should be an string
+        }
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
