@@ -62,10 +62,6 @@ export const voucherColumnData = () => (
       title:text('Title', 'Label title', 'II Item'),
       content:text('Content', 'Label content', 'II Item'),
     },
-    {
-      title:text('Title', 'Label title', 'III Item'),
-      content:text('Content', 'Label content', 'III Item'),
-    },
   ]} />
 )
 

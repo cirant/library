@@ -66,9 +66,7 @@ export const voucherResumeContainer = () => (
         number: number('Number', 45000, [], 'II Item'),
         currency: boolean('currency', true, 'II Item'),
         flex: number('flex', 1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'II Item')
-      }
-    ],
-    [
+      },
       {
         label: text('Label', 'Otros costos', 'III Item'),
         number: number('Number', 15000, [], 'III Item'),
@@ -81,7 +79,8 @@ export const voucherResumeContainer = () => (
         currency: boolean('currency', true, 'IV Item'),
         flex: number('flex', 1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'IV Item')
       }
-    ]
+    ],
+
   ]}
   />
 )
