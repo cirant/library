@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import {
   Button,
+  BreadCrumb,
   Icon,
   Grid,
   Card,
@@ -467,7 +468,7 @@ const App = () => {
         max="800"
         step="1"
         onChange={(e) => setRange(e.target.value)}
-        value={range}
+        value={range.toString()}
       />
     </div>
 
@@ -558,6 +559,16 @@ const App = () => {
         <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)} />
         <Switch status={true} disabled onClick={() => setSwitchStatus(!switchStatus)} />
         <Switch status={false} disabled onClick={() => setSwitchStatus(!switchStatus)} />
+      </div>
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">BreadCrumb</h1>
+
+      <div className="d-flex">
+        {
+          switchStatus === false && <BreadCrumb />
+        }
       </div>
     </div>
 
@@ -846,7 +857,7 @@ const App = () => {
       <h1 className="mb-4">Badge Notification</h1>
       <div className="row">
         <div className="col">
-            <NotificationBadge content={999}/>
+          <NotificationBadge content={999} />
         </div>
       </div>
     </div>

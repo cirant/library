@@ -31,6 +31,7 @@ import InputCounter from './input/counter';
 import InputSecurity from './input/security';
 import KebabMenu from './kebabMenu/';
 import NotificationBadge from './notificationBadge/';
+import BreadCrumb from './breadcrumb';
 
 export {
   Button,
@@ -65,5 +66,6 @@ export {
   Stamp,
   ContentAction,
   KebabMenu,
-  NotificationBadge
+  NotificationBadge,
+  BreadCrumb
 };
