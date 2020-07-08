@@ -915,6 +915,24 @@ const App = () => {
       </div>
     </div>
 
+    <div className="container">
+      <h1 className="mb-4">Voucher</h1>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <Voucher stampdirection="bottom">
+            <VoucherTitle/>
+            <VoucherResumeContainer />
+            <VoucherData />
+            <VoucherColumnData />
+            <VoucherColumnData />
+            <VoucherFooter/>
+          </Voucher>
+        </div>
+      </div>
+    </div>
+
+
+
     <br/>
 
     <br/>

@@ -1,7 +1,7 @@
 export default {
   stampdirection: {
     propType: 'string',
-    description: 'Initial position of the stamp component'
+    description: 'Initial position of stamp component'
   },
   items: {
     propType: 'array',

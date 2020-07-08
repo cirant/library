@@ -84,8 +84,7 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 63px',
-          margin: '10px 0'
+          padding: '0px 40px',
         }
       },
       text: `

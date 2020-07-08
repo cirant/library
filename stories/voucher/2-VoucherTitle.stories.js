@@ -110,6 +110,7 @@ export default {
         <VoucherTitle items={[]}> </VoucherTitle>
         ~~~
 
+
         the object into array should have look like the shown below
         ~~~js
         {[

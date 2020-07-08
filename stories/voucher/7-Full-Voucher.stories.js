@@ -188,19 +188,122 @@ export default {
         include into your project to be able to use the component styles
         ~~~js
         import 'library/dist/index.css';
-        import { Voucher } from 'library';
+        import { Voucher, VoucherTitle, VoucherResumeContainer, VoucherData, VoucherColumnData, VoucherFooter } from 'library';
         ~~~
 
         the basicest component form is:
-
         ~~~js
         <Voucher>
-            <VoucherTitle/>
-            <VoucherResumeContainer/>
-            <VoucherData/>
-            <VoucherColumnData/>
-            <VoucherFooter/>
+            <VoucherTitle title={''} items={[]} />
+            <VoucherResumeContainer items={[]} />
+            <VoucherData items={[]} />
+            <VoucherColumnData items={[]} />
+            <VoucherFooter bullets={[]} />
          </Voucher>
+        ~~~
+        the object into item in Voucher Title should have look like the shown below. If you need more information please go to the documentation of the history [Voucher Title](/?path=/story/voucher--voucher-title)
+        ~~~js
+          {[
+          [
+           {
+             label:'Some text',
+             icon:'line-write',
+             action: ()=> console.log('some function'),
+             flex:1
+           },
+           {
+             label:'Some text',
+             icon:'line-download',
+             action: ()=> console.log('some function')
+           },
+          ],
+        ]}
+        ~~~
+        the object into item in Voucher Resume Container should have look like the shown below. If you need more information please go to the documentation of the history [Voucher Resume Container](/?path=/story/voucher--voucher-resume-container)
+        ~~~js
+        {[
+              [
+                {
+                  label:'Some text',
+                  content:'Some content',
+                  flex:1
+                },
+                {
+                  label:'Some text',
+                  number:45000,
+                  currency: true,
+                  flex:1
+                },
+                {
+                  label:'Some text',
+                  number:15000,
+                  currency: true,
+                  flex:1
+                },
+                {
+                  label:'Some text',
+                  number:400000,
+                  currency: true,
+                  flex:1
+                },
+              ],
+        ]}
+        ~~~
+        the object into item in Voucher Data should have look like the shown below. If you need more information please go to the documentation of the history [Voucher Data](/?path=/story/voucher--voucher-data)
+        ~~~js
+        [
+              {
+                title:'Some title Text',
+                items: [
+                  {
+                    label:'Some label:',
+                    content: 'Some content'
+                  },
+                  {
+                    label:'Some label:',
+                    content: 'Some content'
+                  },
+                  {
+                    label:'Some label:',
+                    content: 'Some content'
+                  },
+                ]
+              },
+        ]
+        ~~~
+        the object into item in Voucher Column Data should have look like the shown below. If you need more information please go to the documentation of the history [Voucher Column Data](/?path=/story/voucher--voucher-column-data)
+        ~~~js
+        [
+              {
+                title:'Some title',
+                content:'Some content'
+              },
+              {
+                title:'Some title',
+                content:'Some content'
+              }
+        ]
+        ~~~
+        the object into item in Voucher Footer should have look like the shown below. If you need more information please go to the documentation of the histories [Voucher Footer](/?path=/story/voucher--voucher-footer)  and [Bullets](/?path=/story/bullets--bullet-list)
+        ~~~js
+        [
+                {
+                  contentType: '',
+                  disabled: false,
+                  icon: 'line-check',
+                  prefixType: '',
+                  text: 'Some Text',
+                  type: ''
+                },
+                 {
+                  contentType: '',
+                  disabled: false,
+                  icon: 'line-check',
+                  prefixType: '',
+                  text: 'Some Text',
+                  type: ''
+                }
+        ]
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source

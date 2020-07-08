@@ -75,7 +75,7 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 63px',
+          padding: '0px 45px',
           margin: '10px 0'
         }
       },

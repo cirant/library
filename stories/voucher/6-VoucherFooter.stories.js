@@ -14,7 +14,7 @@ const propsDescriptions = {
   },
   title: {
     propType: 'string',
-    description: 'Text who define the text of the section'
+    description: 'Define the title of the section'
   },
   breakColumn: {
     propType: 'number',
@@ -110,7 +110,7 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 63px',
+          padding: '0px 50px',
           margin: '10px 0'
         }
       },

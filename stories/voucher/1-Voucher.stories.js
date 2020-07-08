@@ -9,7 +9,7 @@ import { Voucher } from '../../dist'
 const propsDescriptions = {
   stampdirection: {
     propType: 'string',
-    description: 'Initial position of the stamp component <a href="www.google.cl">hellou </a>'
+    description: 'Initial position of the stamp component'
   },
 }
 

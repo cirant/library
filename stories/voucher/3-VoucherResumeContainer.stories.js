@@ -112,7 +112,7 @@ export default {
         <VoucherResumeContainer items={[]}> </VoucherResumeContainer>
         ~~~
 
-         the object into array should have look like the shown below
+        the object into array should have look like the shown below
         ~~~js
         {[
               [
