@@ -30,6 +30,7 @@ import InputPhone from './input/phone';
 import InputCounter from './input/counter';
 import InputSecurity from './input/security';
 import KebabMenu from './kebabMenu/';
+import NotificationBadge from './notificationBadge/';
 
 export {
   Button,
@@ -63,5 +64,6 @@ export {
   InputSelect,
   Stamp,
   ContentAction,
-  KebabMenu
+  KebabMenu,
+  NotificationBadge
 };
