@@ -2,7 +2,7 @@ import React from 'react';
 import { addParameters } from '@storybook/client-api';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { withInfo } from '@storybook/addon-info';
-import { select, boolean } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { Welcome } from '@storybook/react/demo';
 import { Grid } from '../../dist';

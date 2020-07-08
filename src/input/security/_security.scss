@@ -1,0 +1,47 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+%_commonsBar{
+  height: 4px;
+  border-radius: 4px;
+}
+
+@mixin barBolorCreator($color, $progress) {
+  &:before{
+    background-color: $color;
+    width: $progress;
+  }
+}
+
+.progressBar{
+  overflow: hidden;
+  background-color: $neutral-10;
+  position: relative;
+  width: 100%;
+  @extend %_commonsBar;
+  margin-top: nth(nth($spacers, 3),2);
+  margin-bottom: nth(nth($spacers, 3),2);
+
+  &.low{ @include barBolorCreator($danger-20, 33%); }
+  &.middle{ @include barBolorCreator($warning-10, 66%); }
+  &.high{ @include barBolorCreator($success-20, 100%); }
+
+  &:before{
+    content:'';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    min-width: 5px;
+    background-color: $neutral-20;
+    @extend %_commonsBar;
+  }
+}
+
+.pointer{ cursor: pointer; }
+
+.inputHelper{
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  color: $neutral-40;
+}

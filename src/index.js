@@ -20,6 +20,8 @@ import ProgressBar from './progressbar'
 import Bullets from './bullets'
 import Tooltip from './tooltip';
 import Message from './message';
+import InputRange from './input/range';
+import Bar from './input/bar';
 import Stamp from './stamp';
 import InputSearch from './input/search';
 import InputSelect from './input/select';
@@ -32,6 +34,10 @@ import VoucherResumeContainer from './voucher/voucherResumeContainer';
 import VoucherData from './voucher/voucherData';
 import VoucherFooter from './voucher/voucherFooter';
 import VoucherTitle from './voucher/voucherTitle';
+import InputCounter from './input/counter';
+import InputSecurity from './input/security';
+import KebabMenu from './kebabMenu/';
+import NotificationBadge from './notificationBadge/';
 
 export {
   Button,
@@ -45,6 +51,8 @@ export {
   Header,
   Input,
   InputPhone,
+  InputCounter,
+  InputSecurity,
   Radio,
   Separator,
   Sidebar,
@@ -57,6 +65,8 @@ export {
   Bullets,
   Tooltip,
   Message,
+  InputRange,
+  Bar,
   InputSearch,
   InputSelect,
   Stamp,
@@ -68,4 +78,7 @@ export {
   VoucherData,
   VoucherColumnData,
   VoucherFooter
+  ContentAction,
+  KebabMenu,
+  NotificationBadge
 };
