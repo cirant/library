@@ -41,7 +41,8 @@ const Tooltip = ({ children, content, placement, eventListener, ...props }) => {
       {...props}
       data-testid="test-container" visible={visible.toString()} className={styles.containerTooltip} ref={refContainerTooltip}
       onClick={() => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false} onMouseEnter={(e) => eventListener === 'hover' ? setOpacity('enter', e) : false}
-      onMouseLeave={() => eventListener === 'hover' ? setOpacity('leave') : false}>
+      onMouseLeave={() => {refBoxTooltip.current.style.opacity = 0
+        setVisible(false)} }>
       <Tippy
         offset={[0, 20]}
         arrow={true} appendTo="parent"

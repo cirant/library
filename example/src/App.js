@@ -869,8 +869,9 @@ const App = () => {
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
           <Voucher stampdirection="bottom">
-            <VoucherTitle title={"Type some text"}
-                          items={[
+            <VoucherTitle
+              title={"Type some text"}
+              items={[
                             [
                               {
                                 label:'Plazo',
@@ -949,6 +950,21 @@ const App = () => {
               title:'Label titulo de sección',
               typeList: 'icons',
               bullets: [
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
                 {
                   text: 'Tipografía / Estilos',
                   prefixType: 'info',
