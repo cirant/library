@@ -29,7 +29,8 @@ import {
   Stamp,
   ContentAction,
   InputSecurity,
-  KebabMenu
+  KebabMenu,
+  NotificationBadge
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -838,8 +839,17 @@ const App = () => {
         </div>
       </div>
     </div>
+
     <br />
     <br />
+    <div className="container">
+      <h1 className="mb-4">Badge Notification</h1>
+      <div className="row">
+        <div className="col">
+            <NotificationBadge content={999}/>
+        </div>
+      </div>
+    </div>
     <br />
 
   </>
