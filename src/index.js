@@ -27,6 +27,13 @@ import InputSearch from './input/search';
 import InputSelect from './input/select';
 import ContentAction from './contentAction';
 import InputPhone from './input/phone';
+import Voucher from './voucher';
+import VoucherColumnData from './voucher/voucherColumnData';
+import VoucherDataResume from './voucher/voucherDataResume';
+import VoucherResumeContainer from './voucher/voucherResumeContainer';
+import VoucherData from './voucher/voucherData';
+import VoucherFooter from './voucher/voucherFooter';
+import VoucherTitle from './voucher/voucherTitle';
 import InputCounter from './input/counter';
 import InputSecurity from './input/security';
 import KebabMenu from './kebabMenu/';
@@ -63,6 +70,14 @@ export {
   InputSearch,
   InputSelect,
   Stamp,
+  ContentAction,
+  Voucher,
+  VoucherDataResume,
+  VoucherResumeContainer,
+  VoucherTitle,
+  VoucherData,
+  VoucherColumnData,
+  VoucherFooter
   ContentAction,
   KebabMenu,
   NotificationBadge

@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 
 import {
   Button,
-  Icon,
-  Grid,
   Card,
   Checkbox,
-  Logo,
-  HeaderItem,
+  Grid,
   Header,
+  HeaderItem,
+  Icon,
   Input,
   InputSearch,
+  Logo,
   InputPhone,
   InputCounter,
   Radio,
@@ -18,19 +18,16 @@ import {
   Sidebar,
   Switch,
   TitleSection,
-  InputChip,
-  Loading,
-  Bullets,
   Tooltip,
-  ProgressBar,
-  Message,
-  InputRange,
-  InputSelect,
-  Stamp,
-  ContentAction,
-  InputSecurity,
-  KebabMenu,
-  NotificationBadge
+  Voucher,
+  VoucherResumeContainer,
+  VoucherTitle,
+  VoucherData,
+  VoucherColumnData,
+  VoucherFooter
+} from 'library-1'
+import 'library-1/dist/index.css'
+import 'library-1/dist/css/custom.css';
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -851,6 +848,141 @@ const App = () => {
       </div>
     </div>
     <br />
+    <br/>
+    <br/>
+
+    <div className="container">
+      <h1 className="mb-4">Voucher</h1>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <Voucher stampdirection="bottom">
+            <VoucherTitle title={"Type some text"}
+                          items={[
+                            [
+                              {
+                                label:'Plazo',
+                                icon:'line-write',
+                                action: ()=> console.log('plazo'),
+                                flex:1
+                              },
+                              {
+                                label:'Descargar',
+                                icon:'line-download',
+                                action: ()=> console.log('descargar')
+                              }
+
+                            ],
+                          ]}
+
+            />
+            <VoucherResumeContainer items={[
+              [
+                {
+                  label:'Plazo',
+                  content:'36 meses',
+                  flex:1
+                },
+                {
+                  label:'Valor cuota',
+                  number:45000,
+                  currency: true,
+                  flex:1
+                },
+                {
+                  label:'Otros costos',
+                  number:15000,
+                  currency: true,
+                  flex:1
+                },
+                {
+                  label:'Saldo anterior',
+                  number:400000,
+                  currency: true,
+                  flex:1
+                }
+              ],
+            ]} />
+            <VoucherData items={[
+              {
+                title:'Label titulo de sección',
+                items: [
+                  {
+                    label:'Deudas:',
+                    content: '300.000'
+                  },
+                  {
+                    label:'Label Titulo:',
+                    content: 'Label Contenido'
+                  },
+                  {
+                    label:'Label Titulo:',
+                    content: 'Label Contenido'
+                  }
+                ]
+              },
+            ]} />
+            <VoucherColumnData items={[
+              {
+                title:'Label title',
+                content:'Label content'
+              },
+              {
+                title:'Label title',
+                content:'Label content'
+              }
+            ]}>
+            </VoucherColumnData>
+            <VoucherFooter breakColumn={5} items={{
+              title:'Label titulo de sección',
+              typeList: 'icons',
+              bullets: [
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+              ]
+            }} />
+          </Voucher>
+        </div>
+      </div>
+    </div>
+
+    <div className="container">
+      <h1 className="mb-4">Voucher</h1>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <Voucher stampdirection="bottom">
+            <VoucherTitle/>
+            <VoucherResumeContainer />
+            <VoucherData />
+            <VoucherColumnData />
+            <VoucherColumnData />
+            <VoucherFooter/>
+          </Voucher>
+        </div>
+      </div>
+    </div>
+
+
+
+    <br/>
+
+    <br/>
+    <br/>
+
+    <br/>
+    <br/>
 
   </>
 }
