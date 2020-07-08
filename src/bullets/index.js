@@ -6,7 +6,6 @@ import BulletElement from './Bullet'
 const Bullets = ({ items, typeList }) => {
 
   const typeOfBullet = typeList ? typeList : ''
-  const itemsBullets = items ? items : []
 
   const getTypeOfList = (typeOfBullet,element,index) => {
     if(typeOfBullet === 'order'){
@@ -19,7 +18,7 @@ const Bullets = ({ items, typeList }) => {
   return (
     <div>
       {
-        itemsBullets.map(
+        items.map(
           (element, index) => {
             return (getTypeOfList(typeOfBullet,element,index))
           })
@@ -31,7 +30,7 @@ const Bullets = ({ items, typeList }) => {
 
 Bullets.defaults = {
   typeList: 'order',
-  items: [{}]
+  items: []
 }
 
 Bullets.propTypes = {

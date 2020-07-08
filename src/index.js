@@ -70,14 +70,13 @@ export {
   InputSearch,
   InputSelect,
   Stamp,
-  ContentAction,
   Voucher,
   VoucherDataResume,
   VoucherResumeContainer,
   VoucherTitle,
   VoucherData,
   VoucherColumnData,
-  VoucherFooter
+  VoucherFooter,
   ContentAction,
   KebabMenu,
   NotificationBadge

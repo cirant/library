@@ -57,7 +57,7 @@ const Tooltip = ({ children, content, placement, eventListener, ...props }) => {
               data-testid="test-box-content"
               ref={refContainerTippy}
               className={styles.content}>
-              <p> {content}</p>
+              {content}
             </div>
             {<div data-testid="test-box-arrow" id="arrow" className={styles.arrow}> </div>}
             {/*<div id="arrow" data-popper-arrow className={styles.arrowd}></div>*/}

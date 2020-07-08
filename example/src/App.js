@@ -13,22 +13,33 @@ import {
   Logo,
   InputPhone,
   InputCounter,
+  InputChip,
+  InputRange,
+  InputSecurity,
+  InputSelect,
+  ProgressBar,
   Radio,
+  Loading,
   Separator,
   Sidebar,
   Switch,
   TitleSection,
   Tooltip,
   Voucher,
+  Stamp,
+  Message,
+  Bullets,
   VoucherResumeContainer,
   VoucherTitle,
   VoucherData,
+  KebabMenu,
   VoucherColumnData,
-  VoucherFooter
+  VoucherFooter,
+  ContentAction,
+  NotificationBadge
 } from 'library-1'
 import 'library-1/dist/index.css'
-import 'library-1/dist/css/custom.css';
-} from 'library-1';
+import 'library-1/dist/css/custom.css'
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
 
@@ -44,6 +55,8 @@ const App = () => {
 
   const [inputSecurity, setInputSecurity] = useState('');
   const [showSecurity, setInputShowSecurity] = useState(true);
+
+  const content = (<div><Button variant="text" color="primary" suffix="arrow-right" > lorem </Button></div>);
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
@@ -627,7 +640,7 @@ const App = () => {
       <h1>Tooltip</h1>
       {inputText}
       <Tooltip
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        content={content}
         eventListener="hover"
         placement="bottom">
         <Input
@@ -957,23 +970,6 @@ const App = () => {
         </div>
       </div>
     </div>
-
-    <div className="container">
-      <h1 className="mb-4">Voucher</h1>
-      <div className="row">
-        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
-          <Voucher stampdirection="bottom">
-            <VoucherTitle/>
-            <VoucherResumeContainer />
-            <VoucherData />
-            <VoucherColumnData />
-            <VoucherColumnData />
-            <VoucherFooter/>
-          </Voucher>
-        </div>
-      </div>
-    </div>
-
 
 
     <br/>
