@@ -1,5 +1,6 @@
-import React, { useEffect, useState, createRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Icon from '../icons';
+import Tooltip from '../tooltip';
 import styles from './_breadcrumb.scss';
 
 const chidrenWidthCalculator = ({ childNodes }) => [...childNodes].reduce((acc, current) => acc + current.clientWidth, 0);
@@ -46,21 +47,19 @@ const BreadCrumb = ({ paths, updateScreen, lastWidth, ...props }) => {
       }
     }, []);
 
+
     if (inTooltip.length === (list.length - 1)) {
       listCutted.splice(0, 0, {
         type: 'tooltip',
-        values: inTooltip
+        values: tooltipList
       });
       setList(listCutted);
-    } else if (listCutted.length > 1) {
+    } else if (listCutted.length > 1 && inTooltip.length > 0) {
       listCutted.splice(1, 0, {
         type: 'tooltip',
-        values: inTooltip
+        values: tooltipList
       });
       setList(listCutted);
-    } else {
-      console.log('entrndo aqui');
-
     }
   }
 
@@ -89,15 +88,44 @@ const BreadCrumb = ({ paths, updateScreen, lastWidth, ...props }) => {
   return <div ref={ref} className={styles.breadCrumbContainer}>
 
     {
-      list.map((path, i) => path.type != 'tooltip' ? <div key={path.name.trim()} className={styles.breadCrumbItem} key={`path-${i}`}>{path.name}
+      list.map((path, i) => path.type != 'tooltip' ? <div key={path.name.trim()} className={styles.breadCrumbItem} key={`path-${i}`}>
 
         {
-          (i + 1) < list.length && <Icon name="arrow-right" size={1} />
+          (i + 1) < list.length ? <React.Fragment>
+            <a href={path.route}>
+              {path.name}
+            </a>
+            <Icon name="arrow-right" size={1} />
+          </React.Fragment> : path.name
         }
 
-      </div> : <div key="dots" className={styles.breadCrumbItem}>... <Icon name="arrow-right" size={1} /></div>)
+      </div> :
+        <div key="dots" className={[styles.breadCrumbItem, styles.dotsContainer].join(' ')}>
+          <Tooltip placement="bottom" eventListener="mouseClick" content={<ToolTipContent items={path.values} />}>
+            ...
+          </Tooltip>
+          <Icon name="arrow-right" size={1} />
+        </div>)
     }
   </div>
+}
+
+
+const ToolTipContent = ({ items }) => {
+  console.log('[items]', items);
+
+  return <ul>
+    {
+      items.map((item) => (
+        <li key={item.path} >
+          <a href={item.route}>
+            <Icon name="arrow-right" size={1} />
+            {item.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 }
 
 

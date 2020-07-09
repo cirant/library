@@ -9,6 +9,10 @@
     display: inline-flex;
     align-items: center;
     
+    a{
+      color: $neutral-30;
+    }
+    
     &:last-child{
       color: $primary;
     }
@@ -17,6 +21,18 @@
       color: $neutral-30;
       padding-right: nth(nth($spacers, 3),2);
       padding-left: nth(nth($spacers, 3),2);
+    }
+  }
+
+  .dotsContainer{
+    ul{
+      padding: 0;
+      margin: auto;
+
+      li{
+        display: table;
+        clear: both;
+      }
     }
   }
 }
