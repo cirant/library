@@ -1,35 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './_card.scss';
+import React from 'react'
+import styles from './_cardheader.scss'
 
-const Card = ({ border, animated, children, ...props }) => {
+const CardHeader = ({ imgUrl, option, imgSrcSet, children, ...props }) => {
 
+  let cardHeaderStyle = [styles.cardHeaderContainer]
 
-  let cardStules = [styles.card];
-  cardStules = border ? cardStules.concat(styles.border) : cardStules.concat(styles['elevation-1']);
-
-  if (props.onClick && !border) {
-    cardStules = cardStules.concat(styles.animated);
-  }
-
-  if (props.selected) {
-    cardStules = cardStules.concat(styles.selected);
-  }
-
-  return <div {...props} className={cardStules.concat(props.className).join(' ')}>
-    {children}
-  </div>
+  return (
+    <div {...props} className={cardHeaderStyle.concat(props.className).join(' ')}>
+      <img src={imgUrl} className={styles.imgCard} role="presentation" />
+    </div>
+  )
 }
 
-Card.defaultProps = {
-  border: false,
-  selected: false,
-};
 
-Card.propTypes = {
-  onClick: PropTypes.func,
-  border: PropTypes.bool,
-  selected: PropTypes.bool,
-};
-
-export default Card;
+export default CardHeader
