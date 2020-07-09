@@ -12,6 +12,9 @@
     a{
       color: $neutral-30;
     }
+    [visible="true"]{
+      color: $primary;
+    }
     
     &:last-child{
       color: $primary;
