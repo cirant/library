@@ -565,10 +565,12 @@ const App = () => {
     <div className="container my-4">
       <h1 className="mb-4">BreadCrumb</h1>
 
-      <div className="d-flex">
-        {
-          switchStatus === false && <BreadCrumb />
-        }
+      <div className="row">
+        <div className="col-7">
+          {
+            switchStatus === false && <BreadCrumb />
+          }
+        </div>
       </div>
     </div>
 
