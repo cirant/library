@@ -27,11 +27,17 @@
   .dotsContainer{
     ul{
       padding: 0;
-      margin: auto;
+      list-style: none;
+      margin: -#{nth(nth($spacers, 4),2)};
 
-      li{
-        display: table;
-        clear: both;
+      li > a{
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+        padding: nth(nth($spacers, 4),2);
+        &:hover{
+          background-color: $neutral-10;
+        }
       }
     }
   }
