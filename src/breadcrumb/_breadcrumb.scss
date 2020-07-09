@@ -1,0 +1,38 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+
+.breadCrumbContainer{
+  width: 100%;
+  font-size: 14px;
+  
+  .breadCrumbItem{
+    display: inline-flex;
+    align-items: center;
+    
+    a{
+      color: $neutral-30;
+    }
+    
+    &:last-child{
+      color: $primary;
+    }
+    
+    i{
+      color: $neutral-30;
+      padding-right: nth(nth($spacers, 3),2);
+      padding-left: nth(nth($spacers, 3),2);
+    }
+  }
+
+  .dotsContainer{
+    ul{
+      padding: 0;
+      margin: auto;
+
+      li{
+        display: table;
+        clear: both;
+      }
+    }
+  }
+}
