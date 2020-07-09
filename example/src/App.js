@@ -714,6 +714,7 @@ const App = () => {
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12">
           <Tooltip
+            interactive
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
             placement="right-end">
