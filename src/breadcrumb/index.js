@@ -22,6 +22,8 @@ const getElementToBeSubtracted = (arr, containerWidth, width) => {
 
 const childrenCutter = (html) => {
   const [last, ...aux] = [...html.childNodes].reverse();
+  if (!last) return [];
+
   const lastChildWidth = Math.ceil(last.clientWidth);
   const inTooltip = getElementToBeSubtracted(aux.reverse(), html.clientWidth, lastChildWidth + 50);
   return Array.isArray(inTooltip) ? inTooltip.map(el => el.textContent) : [];
@@ -131,17 +133,15 @@ const ToolTipContent = ({ items }) => {
 const BreadCrumbContainer = (props) => {
   const [contentWidth, setContentWidth] = useState(0);
   return (
-    <React.Fragment>
-      <BreadCrumb key={contentWidth} lastWidth={contentWidth} updateScreen={setContentWidth} {...props} />
-    </React.Fragment>
+    <BreadCrumb key={contentWidth} lastWidth={contentWidth} updateScreen={setContentWidth} {...props} />
   )
 }
 
-BreadCrumb.defaultProps = {
+BreadCrumbContainer.defaultProps = {
   paths: []
 };
 
-BreadCrumb.propTypes = {
+BreadCrumbContainer.propTypes = {
   paths: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,

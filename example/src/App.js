@@ -578,7 +578,32 @@ const App = () => {
       <div className="row">
         <div className="col-7">
           {
-            switchStatus === false && <BreadCrumb />
+            switchStatus === false && <BreadCrumb paths={[
+              {
+                name: 'hola soy una ruta 1',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 2',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 3',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 4',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 5',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 6',
+                route: 'https://www.google.com'
+              }
+            ]} />
           }
         </div>
       </div>
