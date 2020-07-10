@@ -16,7 +16,8 @@
     flex-flow: column wrap;
 
     .titleSection {
-      padding-bottom: nth(nth($spacers, 6), 2);
+      font-weight: 500;
+      padding-bottom: nth(nth($spacers, 7), 2);
       flex: 1;
     }
 
