@@ -97,7 +97,7 @@ describe('Bullet behavior', () => {
       text: 'Order Bullet text a',
     }
     const component = render(<BulletElement tpyeList="order"  {...props} />)
-    const p = component.container.querySelector("p")
+    //const p = component.container.querySelector("p")
     expect(component.getByText(/Order Bullet text a/)).toBeTruthy();
   })
 

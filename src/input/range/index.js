@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import { Input } from '../../';
 import { Bar } from '../../';
@@ -6,15 +6,15 @@ import { Bar } from '../../';
 const InputRange = ({placeholder, label, min, max, step, onChange, value, ...props}) => {
     return (
         <Fragment>
-            <Input 
-                label={label} 
-                type="text" 
+            <Input
+                label={label}
+                type="text"
                 placeholder={placeholder}
                 value={value}
             />
             <Bar
-                type="range" 
-                min={min} 
+                type="range"
+                min={min}
                 max={max}
                 step={step}
                 value={value}
@@ -36,5 +36,5 @@ InputRange.propTypes = {
     value: PropTypes.string,
     onChange: PropTypes.func
 };
- 
+
 export default InputRange;

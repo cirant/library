@@ -1,11 +1,7 @@
 import React from 'react'
-import { screen } from '@testing-library/dom'
 import ReactDOM from 'react-dom'
 import { act, cleanup, fireEvent, render } from '@testing-library/react'
-import TestRenderer from 'react-test-renderer'
 import TitleSection from './index'
-import Icon from '../icons'
-import IconListModel from '../icons/models/icon-list.model'
 import Tooltip from './index'
 
 

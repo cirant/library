@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './_message.scss';
-import { Icon, Button } from '../';
+import { Icon } from '../';
 
 const Message = ({ title, action, type, className, description }) => {
   const messageClasses = [styles.message, styles[type], className];
