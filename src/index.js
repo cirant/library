@@ -79,5 +79,6 @@ export {
   VoucherFooter,
   ContentAction,
   KebabMenu,
-  NotificationBadge
+  NotificationBadge,
+  ContentAction
 };

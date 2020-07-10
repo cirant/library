@@ -17,6 +17,8 @@ import {
   InputRange,
   InputSecurity,
   InputSelect,
+  Stamp,
+  ContentAction,
   ProgressBar,
   Radio,
   Loading,
@@ -40,8 +42,6 @@ import {
 } from 'library-1'
 import 'library-1/dist/index.css'
 import 'library-1/dist/css/custom.css'
-import 'library-1/dist/index.css';
-import 'library-1/dist/css/custom.css';
 
 const App = () => {
   const [checked, setCheckbox] = useState(false);
