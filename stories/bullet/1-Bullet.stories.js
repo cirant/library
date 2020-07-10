@@ -64,39 +64,39 @@ const colors = ['primary', 'secondary']
 
 export const BulletList = () => (
   <Bullets
-    typeList={select('typeList', ['unorder', 'order', 'icons'], 'order', 'Bullet config')}
+    typeList={select('typeList', ['unorder', 'order', 'icons'], 'order', 'Bullets config')}
     items={[
       {
-        text: text('Item 1', 'Order Bullet text a', 'Bullet text config'),
-        prefixType: select('Item 1', ['info', 'error', 'warning', 'success'], '', 'Bullet prefix config'),
-        contentType: select('Item 1', ['info', 'error', 'warning', 'success'], '', 'Bullet contentType config'),
-        icon: select('Item 1', list, 'line-check', 'Bullet icon config'),
-        disabled: boolean('Item 1', false, 'Bullet disabled config'),
-        type: select('Item 1', ['info', 'error', 'warning', 'success'], '', 'Bullet type config'),
+        text: text('text', 'Order Bullet text a', 'Bullet I'),
+        prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
+        contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
+        icon: select('icon', list, 'line-check', 'Bullet I'),
+        disabled: boolean('disabled', false, 'Bullet I'),
+        type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
       },
       {
-        text: text('Item 2', 'Order Bullet text b', 'Bullet text config'),
-        prefixType: select('Item 2', ['info', 'error', 'warning', 'success'], '', 'Bullet prefix config'),
-        contentType: select('Item 2', ['info', 'error', 'warning', 'success'], '', 'Bullet contentType config'),
-        icon: select('Item 2', list, 'line-check', 'Bullet icon config'),
-        disabled: boolean('Item 2', false, 'Bullet disabled config'),
-        type: select('Item 2', ['info', 'error', 'warning', 'success'], '', 'Bullet type config'),
+        text: text('text', 'Order Bullet text b', 'Bullet II'),
+        prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
+        contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
+        icon: select('icon', list, 'line-check', 'Bullet II'),
+        disabled: boolean('disabled', false, 'Bullet II'),
+        type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
       },
       {
-        text: text('Item 3', 'Order Bullet text c', 'Bullet text config'),
-        prefixType: select('Item 3', ['info', 'error', 'warning', 'success'], '', 'Bullet prefix config'),
-        contentType: select('Item 3', ['info', 'error', 'warning', 'success'], '', 'Bullet contentType config'),
-        icon: select('Item 3', list, 'line-check', 'Bullet icon config'),
-        disabled: boolean('Item 3', false, 'Bullet disabled config'),
-        type: select('Item 3', ['info', 'error', 'warning', 'success'], '', 'Bullet type config'),
+        text: text('text', 'Order Bullet text c', 'Bullet III'),
+        prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
+        contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
+        icon: select('icon', list, 'line-check', 'Bullet III'),
+        disabled: boolean('disabled', false, 'Bullet III'),
+        type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
       },
       {
-        text: text('Item 4', 'Order Bullet text a', 'Bullet text config'),
-        prefixType: select('Item 4', ['info', 'error', 'warning', 'success'], '', 'Bullet prefix config'),
-        contentType: select('Item 4', ['info', 'error', 'warning', 'success'], '', 'Bullet contentType config'),
-        icon: select('Item 4', list, 'line-check', 'Bullet icon config'),
-        disabled: boolean('Item 4', false, 'Bullet disabled config'),
-        type: select('Item 4', ['info', 'error', 'warning', 'success'], '', 'Bullet type config'),
+        text: text('text', 'Order Bullet text a', 'Bullet IV'),
+        prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet IV'),
+        contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet IV'),
+        icon: select('icon', list, 'line-check', 'Bullet IV'),
+        disabled: boolean('disabled', false, 'Bullet IV'),
+        type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet IV'),
       }
     ]}>
   </Bullets>
