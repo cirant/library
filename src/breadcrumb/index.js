@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Icon from '../icons';
 import Tooltip from '../tooltip';
 import styles from './_breadcrumb.scss';
@@ -34,7 +35,6 @@ const BreadCrumb = ({ paths, updateScreen, lastWidth, ...props }) => {
   const hideOverflow = () => {
     const { current } = ref;
     const tooltipList = [];
-    console.log('=====> ', current.clientWidth);
 
     updateScreen(current.clientWidth);
 
@@ -82,15 +82,14 @@ const BreadCrumb = ({ paths, updateScreen, lastWidth, ...props }) => {
     resize();
 
     return () => {
-      console.log('desmontando componente')
       window.removeEventListener('resize', resize);
     }
   }, []);
 
-  return <div ref={ref} className={styles.breadCrumbContainer}>
+  return <div ref={ref} className={[styles.breadCrumbContainer, props.className].join(' ').trim()} {...props}>
 
     {
-      list.map((path, i) => path.type != 'tooltip' ? <div key={path.name.trim()} className={styles.breadCrumbItem} key={`path-${i}`}>
+      list.map((path, i) => path.type != 'tooltip' ? <div role="path-shown" className={styles.breadCrumbItem} key={`path-${path.name.trim()}`}>
 
         {
           (i + 1) < list.length ? <React.Fragment>
@@ -103,21 +102,21 @@ const BreadCrumb = ({ paths, updateScreen, lastWidth, ...props }) => {
 
       </div> :
         <div key="dots" className={[styles.breadCrumbItem, styles.dotsContainer].join(' ')}>
-          <Tooltip interactive placement="bottom" eventListener="mouseClick" content={<ToolTipContent items={path.values} />}>
+          <Tooltip interactive="true" placement="bottom" eventListener="mouseClick" content={<ToolTipContent items={path.values} />}>
             ...
           </Tooltip>
           <Icon name="arrow-right" size={1} />
         </div>)
     }
-  </div>
+  </div >
 }
 
 
 const ToolTipContent = ({ items }) => {
   return <ul>
     {
-      items.map((item) => (
-        <li key={item.path} >
+      items.map((item, i) => (
+        <li role="path-in-tooltip" key={`tooltip-${item.path}-${i}`} >
           <a href={item.route}>
             <Icon name="arrow-right" size={1} />
             {item.name}
@@ -139,29 +138,16 @@ const BreadCrumbContainer = (props) => {
 }
 
 BreadCrumb.defaultProps = {
-  paths: [
-    {
-      name: 'hola soy una ruta 1',
-      route: 'https://www.google.com'
-    },
-    {
-      name: 'hola soy una ruta 2',
-      route: 'https://www.google.com'
-    },
-    {
-      name: 'hola soy una ruta 3',
-      route: 'https://www.google.com'
-    },
-    {
-      name: 'hola soy una ruta 4',
-      route: 'https://www.google.com'
-    },
-    {
-      name: 'hola soy una ruta 5',
-      route: 'https://www.google.com'
-    }
-  ]
+  paths: []
 };
 
+BreadCrumb.propTypes = {
+  paths: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      route: PropTypes.string
+    }).isRequired
+  )
+}
 
 export default BreadCrumbContainer;

@@ -27,25 +27,18 @@ describe('Bullet behavior', () => {
       name: 'hola soy una ruta 5',
       route: 'https://www.google.com'
     },
-    {
-      name: 'hola soy una ruta 5',
-      route: 'https://www.google.com'
-    },
-    {
-      name: 'hola soy una ruta 5',
-      route: 'https://www.google.com'
-    }
   ]
 
-  it('should be rendered', () => {
-    global = Object.assign(global, { innerWidth: 1000 });
-    const component = render(<div style={{ maxWidth: "1000px" }}>
-      <Component items={paths} />
-    </div>);
+  it('should be rendered width a width of 1280', () => {
 
+    const component = render(<Component paths={paths} />);
+
+    paths.forEach((el) => {
+      expect(component.getByText(new RegExp(el.name))).toBeTruthy();
+    });
+
+    expect(component.getByText('...')).toBeTruthy();
     expect(component).toBeTruthy();
-    component.debug();
   })
-
 
 })
