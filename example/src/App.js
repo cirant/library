@@ -18,6 +18,8 @@ import {
   InputRange,
   InputSecurity,
   InputSelect,
+  Stamp,
+  ContentAction,
   ProgressBar,
   Radio,
   Loading,
@@ -27,7 +29,6 @@ import {
   TitleSection,
   Tooltip,
   Voucher,
-  Stamp,
   Message,
   Bullets,
   VoucherResumeContainer,
@@ -36,13 +37,10 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  ContentAction,
   NotificationBadge
 } from 'library-1'
 import 'library-1/dist/index.css'
 import 'library-1/dist/css/custom.css'
-import 'library-1/dist/index.css';
-import 'library-1/dist/css/custom.css';
 
 const App = () => {
   const [checked, setCheckbox] = useState(false);
