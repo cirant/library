@@ -29,6 +29,7 @@ import ContentAction from './contentAction';
 import InputPhone from './input/phone';
 import InputCounter from './input/counter';
 import InputSecurity from './input/security';
+import InputDate from './input/date';
 
 export {
   Button,
@@ -61,5 +62,6 @@ export {
   InputSearch,
   InputSelect,
   Stamp,
-  ContentAction
+  ContentAction,
+  InputDate
 };

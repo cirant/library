@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { es } from 'date-fns/locale';
 
 import {
   Button,
@@ -28,10 +29,12 @@ import {
   InputSelect,
   Stamp,
   ContentAction,
-  InputSecurity
+  InputSecurity,
+  InputDate
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
+import 'library-1/src/input/date/_date.css';
 
 const App = () => {
   const [checked, setCheckbox] = useState(false);
@@ -464,9 +467,21 @@ const App = () => {
             min="200"
             max="800"
             step="1"
-            onChange={(e) => setRange(e.target.value)}
+            onChange={(e) => setRange(Number(e.target.value))}
             value={range}
           />
+    </div>
+
+    <div className="container my-4">  
+      <h1 className="mb-4">input date</h1>
+      <InputDate 
+          placeholderLeft="DD/MM/AAAA"
+          placeholderRight="DD/MM/AAAA"
+          format="dd-MM-yyyy"
+          minimumDate={new Date(2020,6,17)}
+          maximumDate={new Date(2020,11,31)}
+          locale={es}
+      />
     </div>
 
     <div className="container my-4">

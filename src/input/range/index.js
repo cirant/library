@@ -33,7 +33,7 @@ InputRange.propTypes = {
     label: PropTypes.string,
     min: PropTypes.string,
     max: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.number,
     onChange: PropTypes.func
 };
  
