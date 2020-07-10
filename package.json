@@ -1,5 +1,5 @@
 {
-  "name": "library-1",
+  "name": "design-system-coopeuch",
   "version": "1.0.0",
   "description": "Made with create-react-library",
   "author": "cirant",
@@ -60,6 +60,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
+    "filemanager-webpack-plugin": "^2.0.5",
     "gh-pages": "^2.2.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",

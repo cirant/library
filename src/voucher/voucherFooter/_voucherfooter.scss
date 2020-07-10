@@ -1,0 +1,70 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+
+%sectionCommons {
+  position: absolute;
+  border-top: 1px solid;
+  width: 80%;
+  height: 1px;
+  border-color: #D8D8D8;
+}
+
+.borderSectionBottom {
+  @extend %sectionCommons;
+  bottom: 0%;
+}
+
+
+
+.voucherFooterContainer {
+
+  padding-top: nth(nth($spacers, 6), 2);
+  position: relative;
+
+
+
+  .voucherFooterContentContainer {
+    display: flex;
+    position: relative;
+
+    @media only screen and (max-width: 563px) and (min-device-width: 0px) {
+      flex-direction: column;
+    }
+
+
+
+  }
+
+  @media only screen and (max-width: 563px) and (min-device-width: 0px) {
+    .voucherFooterSection:first-child {
+      padding-top: nth(nth($spacers, 6), 2) !important;
+      padding-bottom: 0;
+    }
+    .voucherFooterSection:last-child {
+      padding-top: 0 !important;
+      padding-bottom: 0;
+    }
+
+  }
+
+  .voucherFooterSection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: nth(nth($spacers, 6), 2) 0;
+
+
+
+  }
+
+  .voucherFooterSection:first-child {
+    .borderSectionTop {
+      top: 0%;
+    }
+  }
+
+}
+

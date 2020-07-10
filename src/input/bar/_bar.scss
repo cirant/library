@@ -1,0 +1,105 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.rangeWrap{
+  position: relative;
+  margin-top: 20px;
+
+  input[type=range] {
+    margin: 0;
+    outline: none;
+    height: $custom-range-track-height;
+    width: $custom-range-track-width;
+    cursor: $custom-range-track-cursor;
+  
+    &:hover {
+        outline: none;
+        box-shadow: none;
+    }
+  }
+  
+  input[type=range],
+  input[type=range]::-webkit-slider-runnable-track,
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    background-color: $white;
+    width: 20px;
+    height: 20px;
+    border-radius: $custom-range-thumb-border-radius;
+    margin-top: -7px;
+    box-shadow: $custom-range-thumb-box-shadow;
+  }
+  
+  input[type=range]::-moz-range-thumb {
+    background-color:$white;
+    width: 20px;
+    height: 20px;
+    border-radius: $custom-range-thumb-border-radius;
+    box-shadow: $custom-range-thumb-box-shadow;
+    border: none;
+  }
+  
+  input[type=range]::-ms-thumb {
+    background-color:$white;
+    width: 20px;
+    height: 20px;
+    border-radius: $custom-range-thumb-border-radius;
+    box-shadow: $custom-range-thumb-box-shadow;
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track {
+    width: $custom-range-track-width;
+    background-color: $custom-range-track-bg;
+    height: $custom-range-track-height;
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    outline: none;
+  }
+  
+  input[type=range]::-moz-range-track {
+    width: $custom-range-track-width;
+    background-color: $custom-range-track-bg;
+    height: $custom-range-track-height;
+  }
+  
+  input[type=range]::-ms-track {
+    width: $custom-range-track-width;
+    background-color: $custom-range-track-bg;
+    height: $custom-range-track-height;
+  }
+
+  .rangeValue{
+    position: absolute; 
+
+    .bubbleContainer{
+      top: -28px;
+      z-index: 1;
+      position: absolute;
+      font-size: 0.75rem;
+      transform: scale(1) translateY(-1px) translateX(-1px);
+      left: 50%;
+    }
+
+    .bubble{
+      width: 28px;
+      height: 28px;
+      display: flex;
+      transform: rotate(-45deg);
+      align-items: center;
+      border-radius: 50% 50% 50% 0;
+      justify-content: center;
+      background: $info-50;
+      position: absolute;
+      left: -12px;
+    }
+
+    .value{
+      color: $white;
+      transform: rotate(45deg);
+    }
+  }
+}

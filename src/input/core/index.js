@@ -6,6 +6,10 @@ const InputCore = ({ prefix, suffix, variant, onlyNumber, ...props }) => {
 
   let inputStyle = [inputStyles.input];
 
+  if (props.disabled && props.disabled === true) {
+    inputStyle = inputStyle.concat(inputStyles.disabled);
+  }
+
   if (prefix) {
     inputStyle = inputStyle.concat(inputStyles.hasPrefix);
   }

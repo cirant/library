@@ -17,6 +17,8 @@
 
   &.disabled{
     color: $disableColor;
+    pointer-events: none;
+    i{color: $disableColor;}
   }
 
   .suffixContainer{
@@ -71,6 +73,7 @@
     &:disabled{
       border-color: $disableColor;
       background-color: white;
+      box-shadow: none;
     }
   }
 }

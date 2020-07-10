@@ -2,41 +2,61 @@ import React, { useState } from 'react';
 
 import {
   Button,
-  Icon,
-  Grid,
   Card,
   Checkbox,
-  Logo,
-  HeaderItem,
+  Grid,
   Header,
+  HeaderItem,
+  Icon,
   Input,
   InputSearch,
+  Logo,
   InputPhone,
+  InputCounter,
+  InputChip,
+  InputRange,
+  InputSecurity,
+  InputSelect,
+  Stamp,
+  ContentAction,
+  ProgressBar,
   Radio,
+  Loading,
   Separator,
   Sidebar,
   Switch,
   TitleSection,
-  InputChip,
-  Loading,
-  Bullets,
   Tooltip,
-  ProgressBar,
-  Message,
-  InputSelect,
+  Voucher,
   Stamp,
-  ContentAction
-} from 'library-1';
-import 'library-1/dist/index.css';
-import 'library-1/dist/css/custom.css';
+  Message,
+  Bullets,
+  VoucherResumeContainer,
+  VoucherTitle,
+  VoucherData,
+  KebabMenu,
+  VoucherColumnData,
+  VoucherFooter,
+  ContentAction,
+  NotificationBadge
+} from 'library-1'
+import 'library-1/dist/index.css'
+import 'library-1/dist/css/custom.css'
 
 const App = () => {
   const [checked, setCheckbox] = useState(false);
   const [secondChecked, setSecondCheckbox] = useState(false);
   const [switchStatus, setSwitchStatus] = useState(false);
   const [inputText, setInputText] = useState('');
-  const [inputPhoneCode, setInputPhoneCode] = useState('56');
+  const [inputPhoneCode, setInputPhoneCode] = useState(56);
   const [inputPhone, setInputPhone] = useState('');
+  const [range, setRange] = useState(200);
+  const [inputCounter, setInputCounter] = useState(1);
+
+  const [inputSecurity, setInputSecurity] = useState('');
+  const [showSecurity, setInputShowSecurity] = useState(true);
+
+  const content = (<div><Button variant="text" color="primary" suffix="arrow-right" > lorem </Button></div>);
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
@@ -373,6 +393,8 @@ const App = () => {
         value={inputPhone}
         prefix={inputPrefix}
         suffix={inputSuffix}
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
@@ -381,10 +403,9 @@ const App = () => {
         label="esto es un label"
         assistText="esto es un texto tal vez muy largo a ver que pasaria"
         value={inputPhone}
-        type="password"
         success
-        prefix={inputPrefixText}
-        suffix={inputSuffix}
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
@@ -393,29 +414,12 @@ const App = () => {
         label="esto es un label"
         assistText="esto es un texto tal vez muy largo a ver que pasaria"
         value={inputPhone}
-        type="password"
         disabled
+        code={inputPhoneCode}
+        onCodeChange={(_val) => setInputPhoneCode(_val)}
         onChange={({ target: { value } }) => setInputPhone(value)}
       />
 
-      <InputPhone
-        maxLength="105"
-        label="esto es un label de un text area"
-        assistText="esto es un texto tal vez muy largo a ver que pasaria"
-        value={inputPhone}
-        variant='textarea'
-        onChange={({ target: { value } }) => setInputPhone(value)}
-      />
-
-      <InputPhone
-        maxLength="105"
-        label="esto es un label de un text area"
-        assistText="esto es un texto tal vez muy largo a ver que pasaria"
-        value={inputPhone}
-        disabled
-        variant='textarea'
-        onChange={({ target: { value } }) => setInputPhone(value)}
-      />
     </div>
 
     <div className="container my-4">
@@ -426,6 +430,23 @@ const App = () => {
           maxLength="105"
           label="esto es un label"
           assistText="esto es un texto tal vez muy largo a ver que pasaria"
+          options={[
+            {
+              disabled: true,
+              prefix: 'line-user',
+              text: 'placeholder',
+              value: ''
+            },
+            {
+              prefix: 'line-user',
+              text: 'option 1',
+              value: 'option 1'
+            },
+            {
+              text: 'option 2',
+              value: 'option 2'
+            }
+          ]}
           error
           value={inputText}
           prefix={inputPrefix}
@@ -447,14 +468,46 @@ const App = () => {
     </div>
 
     <div className="container my-4">
+      <h1 className="mb-4">input range</h1>
+
+      <InputRange
+        placeholder="Text Placeholder"
+        label="Text Label"
+        min="200"
+        max="800"
+        step="1"
+        onChange={(e) => setRange(e.target.value)}
+        value={range}
+      />
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">input Security</h1>
+
+      <div className="d-flex flex-column">
+        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} />
+        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
+      </div>
+    </div>
+
+
+    <div className="container my-4">
+      <h1 className="mb-4">input counter</h1>
+
+      <div className="d-flex">
+        <InputCounter value={inputCounter} onChange={(_val) => setInputCounter(_val)} />
+        <InputCounter value={inputCounter} onChange={(_val) => setInputCounter(_val)} disabled />
+      </div>
+    </div>
+
+
+    <div className="container my-4">
       <h1 className="mb-4">input search</h1>
 
       <div className="d-flex">
         <InputSearch
           maxLength="105"
           label="esto es un label"
-          assistText="esto es un texto tal vez muy largo a ver que pasaria"
-          error
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
@@ -464,8 +517,6 @@ const App = () => {
           maxLength="105"
           placeholder="hola mundo"
           label="esto es un label"
-          assistText="esto es un texto tal vez muy largo a ver que pasaria"
-          error
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
@@ -589,7 +640,7 @@ const App = () => {
       <h1>Tooltip</h1>
       {inputText}
       <Tooltip
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        content={content}
         eventListener="hover"
         placement="bottom">
         <Input
@@ -762,21 +813,186 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
+    <br />
 
     <div className="container">
-      <h1> Content Action</h1>
+      <h1 className="mb-4"> Content Action</h1>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
-          <ContentAction label="Imprimir" onClick={()=> console.log('acción')} icon="line-print"></ContentAction>
-          <ContentAction label="Email" onClick={()=> console.log('acción')} icon="line-print" disabled></ContentAction>
-          <ContentAction label="Descargar" onClick={()=> console.log('acción')} icon="line-download"></ContentAction>
+          <ContentAction label="Imprimir" onClick={() => console.log('acción')} icon="line-print"></ContentAction>
+          <ContentAction label="Email" onClick={() => console.log('acción')} icon="line-print" disabled></ContentAction>
+          <ContentAction label="Descargar" onClick={() => console.log('acción')} icon="line-download"></ContentAction>
         </div>
       </div>
     </div>
 
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">kebab menu</h1>
+      <div className="row">
+        <div className="col">
+          <Card className="d-flex justify-content-end">
+            <KebabMenu options={[
+              {
+                icon: 'line-search',
+                text: 'Label Button',
+                action: () => alert('hola mundo')
+              },
+              {
+                icon: 'home',
+                text: 'Label Button 2',
+                action: () => alert('hola mundo 2')
+              }
+            ]} />
+          </Card>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <div className="container">
+      <h1 className="mb-4">Badge Notification</h1>
+      <div className="row">
+        <div className="col">
+            <NotificationBadge content={999}/>
+        </div>
+      </div>
+    </div>
+    <br />
     <br/>
     <br/>
+
+    <div className="container">
+      <h1 className="mb-4">Voucher</h1>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <Voucher stampdirection="bottom">
+            <VoucherTitle
+              title={"Type some text"}
+              items={[
+                            [
+                              {
+                                label:'Plazo',
+                                icon:'line-write',
+                                action: ()=> console.log('plazo'),
+                                flex:1
+                              },
+                              {
+                                label:'Descargar',
+                                icon:'line-download',
+                                action: ()=> console.log('descargar')
+                              }
+
+                            ],
+                          ]}
+
+            />
+            <VoucherResumeContainer items={[
+              [
+                {
+                  label:'Plazo',
+                  content:'36 meses',
+                  flex:1
+                },
+                {
+                  label:'Valor cuota',
+                  number:45000,
+                  currency: true,
+                  flex:1
+                },
+                {
+                  label:'Otros costos',
+                  number:15000,
+                  currency: true,
+                  flex:1
+                },
+                {
+                  label:'Saldo anterior',
+                  number:400000,
+                  currency: true,
+                  flex:1
+                }
+              ],
+            ]} />
+            <VoucherData items={[
+              {
+                title:'Label titulo de sección',
+                items: [
+                  {
+                    label:'Deudas:',
+                    content: '300.000'
+                  },
+                  {
+                    label:'Label Titulo:',
+                    content: 'Label Contenido'
+                  },
+                  {
+                    label:'Label Titulo:',
+                    content: 'Label Contenido'
+                  }
+                ]
+              },
+            ]} />
+            <VoucherColumnData items={[
+              {
+                title:'Label title',
+                content:'Label content'
+              },
+              {
+                title:'Label title',
+                content:'Label content'
+              }
+            ]}>
+            </VoucherColumnData>
+            <VoucherFooter breakColumn={5} items={{
+              title:'Label titulo de sección',
+              typeList: 'icons',
+              bullets: [
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+              ]
+            }} />
+          </Voucher>
+        </div>
+      </div>
+    </div>
+
+
+    <br/>
+
+    <br/>
+    <br/>
+
     <br/>
     <br/>
 
