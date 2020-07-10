@@ -4,7 +4,10 @@ import {
   Bullets,
   Button,
   Card,
+  CardActions,
+  CardContent,
   CardHeader,
+  CardImage,
   Checkbox,
   ContentAction,
   Grid,
@@ -37,17 +40,10 @@ import {
   VoucherData,
   VoucherFooter,
   VoucherResumeContainer,
-  VoucherTitle,
-  CardContent,
-  CardActions
+  VoucherTitle
 } from 'library-1'
 import 'library-1/dist/index.css'
 import 'library-1/dist/css/custom.css'
-
-import  imageLowResolution  from './assets/images/photo_low_resolution.jpg';
-import  imageHightResolution  from './assets/images/photo_hight_resolution.jpg';
-import  imageIpad  from './assets/images/photo_ipad.jpg';
-import  imagePhone  from './assets/images/photo_phone.jpg';
 
 
 const App = () => {
@@ -64,6 +60,7 @@ const App = () => {
   const [showSecurity, setInputShowSecurity] = useState(true)
 
   const content = (<div><Button variant="text" color="primary" suffix="arrow-right"> lorem </Button></div>)
+
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
@@ -1020,48 +1017,49 @@ const App = () => {
       </div>
     </div>
 
+    <br/>
+    <br/>
 
     <div className="container">
-      <h1 className="mb-4">col-lg-12</h1>
+      <h1 className="mb-4">Action Card col-lg-5</h1>
       <div className="row">
-        <div className="col-lg-4 col-md-12 col-sm-6">
-          {/*<Card>
-            <CardHeader option={1} imgUrl={imageHightResolution}/>
-            <CardContent title={'Type something'}>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto blanditiis eligendi eum id natus, quidem sapiente sunt vel veniam? Animi culpa dolorum enim excepturi explicabo in iste laborum molestias, nobis?</p>
-            </CardContent>
-            <CardActions buttons={[
-              {
-                color:"primary",
-                children:'Label Button'
-              },
-              {
-                color:"primary",
-                children:'Label Button'
-              }
-            ]} >
-            </CardActions>
-          </Card>*/}
-        </div>
         <div className="col-lg-5 col-md-12 col-sm-6">
           <Card>
-            <CardHeader
-              option={1}
-              imgUrl='/static/media/photo_hight_resolution.01c93c29.jpg'
-            />
+            <CardHeader>
+              <CardImage imgUrl='/static/media/photo_hight_resolution.01c93c29.jpg'/>
+            </CardHeader>
             <CardContent>
               <h6>Type someting</h6>
               <br/>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.</p>
             </CardContent>
+            <CardActions>
+                  <Button style={{width:'100%',display:'flex',justifyContent:'center'}} color='primary'>Button</Button>
+            </CardActions>
+          </Card>
+        </div>
+
+        <br/>
+        <br/>
+
+        <div className="col-lg-5 col-md-12 col-sm-6">
+          <Card>
+            <CardHeader>
+              <CardImage imgUrl='/static/media/photo_hight_resolution.01c93c29.jpg'/>
+            </CardHeader>
+            <CardContent title={'Type something'}
+                         content={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.'}>
+            </CardContent>
             <CardActions buttons={[
               {
-                color:"primary",
-                children:'Label Button'
+                color: 'primary',
+                label: 'Button',
+                onClick: ()=>{console.log('test')}
               },
               {
-                color:"primary",
-                children:'Label Button'
+                color: 'primary',
+                label: 'Button',
+                onClick: ()=>{console.log('test')}
               }
             ]}>
 
@@ -1070,14 +1068,6 @@ const App = () => {
         </div>
       </div>
     </div>
-
-
-
-
-    <br/>
-
-    <br/>
-    <br/>
 
     <br/>
     <br/>

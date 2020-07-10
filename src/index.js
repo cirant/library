@@ -41,6 +41,7 @@ import NotificationBadge from './notificationBadge/';
 import CardHeader from './card/cardHeader'
 import CardContent from './card/cardContent'
 import CardActions from './card/cardAction'
+import CardImage from './card/cardHeader/cardImage'
 
 export {
   Button,
@@ -85,5 +86,6 @@ export {
   NotificationBadge,
   CardHeader,
   CardContent,
-  CardActions
+  CardActions,
+  CardImage
 };
