@@ -29,7 +29,7 @@ const childrenCutter = (html) => {
   return Array.isArray(inTooltip) ? inTooltip.map(el => el.textContent) : [];
 }
 
-const BreadCrumb = ({ paths, updateScreen, lastWidth, ...props }) => {
+const BreadCrumbElement = ({ paths, updateScreen, lastWidth, ...props }) => {
   const [list, setList] = useState(paths);
   const ref = React.useRef(null);
   let timeOut;
@@ -130,18 +130,18 @@ const ToolTipContent = ({ items }) => {
 }
 
 
-const BreadCrumbContainer = (props) => {
+const BreadCrumb = (props) => {
   const [contentWidth, setContentWidth] = useState(0);
   return (
-    <BreadCrumb key={contentWidth} lastWidth={contentWidth} updateScreen={setContentWidth} {...props} />
+    <BreadCrumbElement key={contentWidth} lastWidth={contentWidth} updateScreen={setContentWidth} {...props} />
   )
 }
 
-BreadCrumbContainer.defaultProps = {
+BreadCrumb.defaultProps = {
   paths: []
 };
 
-BreadCrumbContainer.propTypes = {
+BreadCrumb.propTypes = {
   paths: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
@@ -150,4 +150,4 @@ BreadCrumbContainer.propTypes = {
   )
 }
 
-export default BreadCrumbContainer;
+export default BreadCrumb;

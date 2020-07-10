@@ -4,7 +4,7 @@ import Component from './'
 
 
 
-describe('Bullet behavior', () => {
+describe('BreadCrumb behavior', () => {
 
   const paths = [
     {
@@ -29,7 +29,7 @@ describe('Bullet behavior', () => {
     },
   ]
 
-  it('should be rendered width a width of 1280', () => {
+  it('should be rendered', () => {
 
     const component = render(<Component paths={paths} />);
 
