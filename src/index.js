@@ -77,7 +77,6 @@ export {
   VoucherData,
   VoucherColumnData,
   VoucherFooter,
-  ContentAction,
   KebabMenu,
   NotificationBadge,
   ContentAction

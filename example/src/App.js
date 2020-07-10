@@ -17,8 +17,6 @@ import {
   InputRange,
   InputSecurity,
   InputSelect,
-  Stamp,
-  ContentAction,
   ProgressBar,
   Radio,
   Loading,
