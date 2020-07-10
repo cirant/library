@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ee5fc47e.chunk.css",
+    "main.js": "/main.541cb83d0a58aff720b5.bundle.js",
+    "main.css.map": "/static/css/main.ee5fc47e.chunk.css.map",
+    "main.js.map": "/main.541cb83d0a58aff720b5.bundle.js.map",
+    "runtime~main.js": "/runtime~main.541cb83d0a58aff720b5.bundle.js",
+    "runtime~main.js.map": "/runtime~main.541cb83d0a58aff720b5.bundle.js.map",
+    "vendors~main.css": "/static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.js": "/vendors~main.541cb83d0a58aff720b5.bundle.js",
+    "vendors~main.css.map": "/static/css/vendors~main.f8f248a5.chunk.css.map",
+    "vendors~main.js.map": "/vendors~main.541cb83d0a58aff720b5.bundle.js.map",
+    "iframe.html": "/iframe.html",
+    "main.541cb83d0a58aff720b5.bundle.js.LICENSE.txt": "/main.541cb83d0a58aff720b5.bundle.js.LICENSE.txt",
+    "precache-manifest.874a586b71bb91f1cedf7ac133786605.js": "/precache-manifest.874a586b71bb91f1cedf7ac133786605.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/custom.css": "/static/media/ubuntu-regular-webfont.ccf494a6.eot",
+    "vendors~main.541cb83d0a58aff720b5.bundle.js.LICENSE.txt": "/vendors~main.541cb83d0a58aff720b5.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.541cb83d0a58aff720b5.bundle.js",
+    "static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.541cb83d0a58aff720b5.bundle.js",
+    "static/css/main.ee5fc47e.chunk.css",
+    "main.541cb83d0a58aff720b5.bundle.js"
+  ]
+}

@@ -2,6 +2,8 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import Component from './'
 
+
+
 describe('Bullet behavior', () => {
 
   const paths = [
@@ -36,7 +38,11 @@ describe('Bullet behavior', () => {
   ]
 
   it('should be rendered', () => {
-    const component = render(<Component items={paths} />);
+    global = Object.assign(global, { innerWidth: 1000 });
+    const component = render(<div style={{ maxWidth: "1000px" }}>
+      <Component items={paths} />
+    </div>);
+
     expect(component).toBeTruthy();
     component.debug();
   })

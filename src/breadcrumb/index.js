@@ -34,6 +34,8 @@ const BreadCrumb = ({ paths, updateScreen, lastWidth, ...props }) => {
   const hideOverflow = () => {
     const { current } = ref;
     const tooltipList = [];
+    console.log('=====> ', current.clientWidth);
+
     updateScreen(current.clientWidth);
 
     const inTooltip = childrenCutter({ clientWidth: current.clientWidth, childNodes: [...current.childNodes] });
@@ -112,8 +114,6 @@ const BreadCrumb = ({ paths, updateScreen, lastWidth, ...props }) => {
 
 
 const ToolTipContent = ({ items }) => {
-  console.log('[items]', items);
-
   return <ul>
     {
       items.map((item) => (
