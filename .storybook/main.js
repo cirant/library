@@ -6,7 +6,7 @@ module.exports = {
   stories: ['../stories/**/*.stories.js'],
   addons: [
     '@storybook/addon-actions',
-    '@storybook/adgit don-links',
+    '@storybook/addon-links',
     '@storybook/addon-knobs',
     '@storybook/addon-docs',
     '@storybook/addon-viewport/register',
