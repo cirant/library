@@ -3,7 +3,8 @@ import { render, fireEvent } from '@testing-library/react';
 import Component from '.'
 
 
-describe('cardSwitch behavior', () => {
+describe('CardCheckbox behavior', () => {
+
   it('should be rendered', () => {
     const onClick = jest.fn();
     const component = render(<Component onChange={onClick} />)
