@@ -46,5 +46,4 @@ Message.propTypes = {
   action: PropTypes.element
 }
 
-
 export default Message;

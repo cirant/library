@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   padding:  nth(nth($spacers, 5), 2) nth(nth($spacers, 7), 2);
-  background-color: $neutral-10;
+  background-color: $neutral-20;
   font-family: $font-family-sans-serif;
 
   @include elevationElementCreator1();

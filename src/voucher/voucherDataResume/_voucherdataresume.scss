@@ -7,7 +7,7 @@
   color: white;
   font-family: Ubuntu;
   flex: 1;
-  padding: nth(nth($spacers, 6), 2);
+  padding: nth(nth($spacers, 4), 2) nth(nth($spacers, 6), 2);
   text-wrap: normal;
   box-sizing: border-box;
 

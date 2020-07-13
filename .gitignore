@@ -31,5 +31,5 @@ yarn-error.log*
 #ignore dist
 dist/index.*
 
-#ignore dist
+#ignore storybook-static
 storybook-static

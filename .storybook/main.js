@@ -8,6 +8,24 @@ module.exports = {
     '@storybook/addon-viewport/register',
     '@storybook/addon-links/register'
   ],
+  webpackFinal: async (config, { configType }) => {
+    config.plugins.push(
+      new FileManagerPlugin({
+        onEnd: [
+          {
+            copy: [
+              { source: "./storybook-static/static/media/**", destination: "./storybook-static/static/css/static/media" }
+            ],
+            delete: [
+              './storybook-static/static/media',
+            ],
+          },
+        ]
+      })
+    );
+    return config;
+  },
+
   module: {
     rules: [
       {

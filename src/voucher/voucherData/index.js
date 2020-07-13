@@ -11,7 +11,7 @@ const VoucherData = ({ items, ...props }) => {
           return (
             <div role="voucherSection" className={styles.voucherDataSection} key={`section-${index}`}>
               <div className={styles.titleSection}>
-                <h4>{section.title}</h4>
+                <h5>{section.title}</h5>
               </div>
               <div className={styles.contentSection}>
                 {
