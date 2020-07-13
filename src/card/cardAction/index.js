@@ -1,35 +1,40 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './_card.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from './_cardaction.scss'
+import Button from '../../buttons'
 
-const Card = ({ border, animated, children, ...props }) => {
+const CardActions = ({ buttons, children, ...props }) => {
 
+  let cardActionContainer = [styles.cardActionsContainer]
 
-  let cardStules = [styles.card];
-  cardStules = border ? cardStules.concat(styles.border) : cardStules.concat(styles['elevation-1']);
+  return (
+    <div {...props} className={cardActionContainer.concat(props.className).join(' ')}>
+      {
+        buttons && buttons.map((button, index) => {
+          return (
+            <div className={styles.cardActionItem} key={`card-action-item-${index}`}>
+              <Button style={{ width: '90%', justifyContent: 'center' }} {...button}> {button.label} </Button>
+            </div>
+          )
+        })
+      }
+      {children}
+    </div>
+  )
 
-  if (props.onClick && !border) {
-    cardStules = cardStules.concat(styles.animated);
-  }
-
-  if (props.selected) {
-    cardStules = cardStules.concat(styles.selected);
-  }
-
-  return <div {...props} className={cardStules.concat(props.className).join(' ')}>
-    {children}
-  </div>
 }
 
-Card.defaultProps = {
-  border: false,
-  selected: false,
-};
 
-Card.propTypes = {
-  onClick: PropTypes.func,
-  border: PropTypes.bool,
-  selected: PropTypes.bool,
-};
+CardActions.propTypes = {
+  buttons: PropTypes.arrayOf(PropTypes.shape({
+    prefix: PropTypes.string,
+    suffix: PropTypes.string,
+    color: PropTypes.oneOf(['primary', 'secondary']),
+    variant: PropTypes.oneOf(['', 'outline', 'text']),
+    onClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool
+  })),
+  children: PropTypes.node,
+}
 
-export default Card;
+export default CardActions

@@ -4,6 +4,10 @@ import {
   Button,
   BreadCrumb,
   Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardImage,
   Checkbox,
   Grid,
   Header,
@@ -14,11 +18,12 @@ import {
   Logo,
   InputPhone,
   InputCounter,
-  InputChip,
   InputRange,
   InputSecurity,
   InputSelect,
+  InputChip,
   Stamp,
+  ContentAction,
   ProgressBar,
   Radio,
   Loading,
@@ -36,8 +41,7 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  NotificationBadge,
-  ContentAction
+  NotificationBadge
 } from 'library-1'
 import 'library-1/dist/index.css'
 import 'library-1/dist/css/custom.css'
@@ -476,7 +480,7 @@ const App = () => {
         max="800"
         step="1"
         onChange={(e) => setRange(e.target.value)}
-        value={range.toString()}
+        value={range}
       />
     </div>
 
@@ -1024,14 +1028,106 @@ const App = () => {
       </div>
     </div>
 
+    <br/>
+    <br/>
 
-    <br />
+    <div className="container">
+      <h1 className="mb-4">Action Card col-lg-5</h1>
+      <div className="row">
+        <div className="col-lg-5 col-md-12 col-sm-6">
+          <Card>
+            <CardHeader>
+              <CardImage imgUrl='/assets/images/photo_hight_resolution.jpg'/>
+            </CardHeader>
+            <CardContent>
+              <h6>Type someting</h6>
+              <br/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.</p>
+            </CardContent>
+            <CardActions>
+              <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+                      color='primary'>Button</Button>
+            </CardActions>
+          </Card>
+        </div>
 
-    <br />
-    <br />
+        <br/>
+        <br/>
 
-    <br />
-    <br />
+        <div className="col-lg-5 col-md-12 col-sm-6">
+          <Card>
+            <CardHeader>
+              <CardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'}/>
+            </CardHeader>
+            <CardContent title={'Type something'}
+                         content={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.'}>
+            </CardContent>
+            <CardActions buttons={[
+              {
+                color: 'primary',
+                label: 'Button',
+                onClick: () => {
+                  console.log('test')
+                }
+              },
+              {
+                color: 'primary',
+                label: 'Button',
+                onClick: () => {
+                  console.log('test')
+                }
+              }
+            ]}>
+
+            </CardActions>
+          </Card>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div className="container">
+      <h1 className="mb-4">Action Card col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <Card>
+            <CardHeader>
+              <CardImage imgUrl='/assets/images/photo_hight_resolution.jpg'/>
+            </CardHeader>
+            <CardContent title={'type something'} typeList={'unorder'} bullets={[
+              {
+                text: 'Tipografía / Estilos',
+                type: 'success'
+              },
+              {
+                text: 'Tipografía / Estilos',
+                type: 'success'
+              },
+              {
+                text: 'Tipografía / Estilos',
+                type: 'success'
+              }
+            ]
+            }>
+            </CardContent>
+            <CardActions>
+              <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+                      color='primary'>Button</Button>
+            </CardActions>
+          </Card>
+        </div>
+
+        <br/>
+        <br/>
+
+
+      </div>
+    </div>
+
+    <br/>
+    <br/>
 
   </>
 }

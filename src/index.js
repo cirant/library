@@ -38,10 +38,15 @@ import InputCounter from './input/counter';
 import InputSecurity from './input/security';
 import KebabMenu from './kebabMenu/';
 import NotificationBadge from './notificationBadge/';
-import BreadCrumb from './breadcrumb';
+import CardHeader from './card/cardHeader'
+import CardContent from './card/cardContent'
+import CardActions from './card/cardAction'
+import CardImage from './card/cardHeader/cardImage'
+import BreadCrumb from './breadcrumb'
 
 export {
   Button,
+  BreadCrumb,
   Icon,
   Grid,
   Card,
@@ -81,5 +86,8 @@ export {
   ContentAction,
   KebabMenu,
   NotificationBadge,
-  BreadCrumb
+  CardHeader,
+  CardContent,
+  CardActions,
+  CardImage
 };

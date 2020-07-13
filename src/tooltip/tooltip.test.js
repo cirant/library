@@ -1,11 +1,7 @@
 import React from 'react'
-import { screen } from '@testing-library/dom'
 import ReactDOM from 'react-dom'
 import { act, cleanup, fireEvent, render } from '@testing-library/react'
-import TestRenderer from 'react-test-renderer'
 import TitleSection from './index'
-import Icon from '../icons'
-import IconListModel from '../icons/models/icon-list.model'
 import Tooltip from './index'
 
 
@@ -49,19 +45,6 @@ describe('Tooltip test', () => {
       </Tooltip>, container)
     })
     let componentRender = container.querySelector('div[data-testid="test-box"]')
-    expect(componentRender).toBeTruthy()
-  })
-
-  test('should component contain p tooltip', () => {
-    act(() => {
-      ReactDOM.render(<Tooltip
-        content="label"
-        eventListener="mouseClick"
-        placement="right-end">
-        <TitleSection className="test" prefix="write" label="Title Section" />
-      </Tooltip>, container)
-    })
-    let componentRender = container.querySelector('p')
     expect(componentRender).toBeTruthy()
   })
 
