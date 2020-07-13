@@ -12,6 +12,10 @@ const propsDescriptions = {
         propType: 'string',
         description: 'This will show this value above the field'
     },
+    placeholder: {
+      propType: 'string',
+      description: 'Specifies the default value'
+    },
     value: {
         propType: 'string',
         description: 'Specifies the default value'
