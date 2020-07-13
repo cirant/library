@@ -25,7 +25,11 @@
     @extend %containerIconFix;
     right: nth(nth($spacers, 5), 2);
     max-width: 20px;
-    color: $info-40;
+    color: $neutral-50;
+
+    i{
+      color: $neutral-30;
+    }
   }
 
   .prefixContainer{

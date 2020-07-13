@@ -4,6 +4,7 @@
 
 .switchContainer{
   padding: nth(nth($spacers, 3), 2);
+  display: inline-flex;
 
   &.disabled{
     pointer-events: none !important;

@@ -105,7 +105,7 @@ const App = () => {
     <h1 className="mb-4">Icons</h1>
 
     <div className="d-flex align-items-baseline flex-wrap">
-      <Icon className="p-4" name="flag" />
+      <Icon className="p-4" name="flag" size="1" />
       <Icon className="p-4" name="flag" size="2" />
       <Icon className="p-4" name="flag" size="3" />
       <Icon className="p-4" name="flag" size="4" />
