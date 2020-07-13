@@ -91,16 +91,25 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const CardContentWithTitleAndContent = () => <Card
-  onClick={select('function', [true, false], false) ? () => alert('action') : null}
-  selected={boolean('selected', false)}
-  border={boolean('border', false)}>
-  <CardHeader>
-    <CardImage imgUrl={imageFile}/>
-  </CardHeader>
-  <CardContent title={text('Title','Some title')} content={text('Content','Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, aliquid at consequuntur ea eum facere ipsa')}>
-  </CardContent>
-</Card>
+export const CardContentWithTitleAndContent = () => (
+  <div className="container">
+    <div className="row" style={{ justifyContent: 'center' }}>
+      <div className="col-lg-4 col-md-12 col-sm-12 d-flex align-items-start">
+        <Card
+          onClick={select('function', [true, false], false, 'Card Config') ? () => alert('action') : null}
+          selected={boolean('selected', false, 'Card Config')}
+          border={boolean('border', false, 'Card Config')}>
+          <CardHeader>
+            <CardImage imgUrl={imageFile}/>
+          </CardHeader>
+          <CardContent title={text('Title', 'Some title', 'Card Content')}
+                       content={text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, aliquid at consequuntur ea eum facere ipsa', 'Card Content')}>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </div>
+)
 
 
 export default {
@@ -113,8 +122,6 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
-          maxWidth: '30%'
         }
       },
       text: `

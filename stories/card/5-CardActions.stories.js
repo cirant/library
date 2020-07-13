@@ -2,10 +2,11 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs/react'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
-import { Card, CardContent, CardHeader, CardImage } from '../../dist'
+import { Card, CardActions, CardContent, CardHeader, CardImage } from '../../dist'
 import '../codeStyles.css'
 import '../../dist/index.css'
 import imageFile from '../static/photo_hight_resolution.jpg'
+import { action } from '@storybook/addon-actions'
 
 const propsDescriptions = {
   border: {
@@ -91,30 +92,58 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const CardContentWithTitleAndContent = () => <Card
-  onClick={select('function', [true, false], false) ? () => alert('action') : null}
-  selected={boolean('selected', false)}
-  border={boolean('border', false)}>
-  <CardHeader>
-    <CardImage imgUrl={imageFile}/>
-  </CardHeader>
-  <CardContent title={text('Title','Some title')} content={text('Content','Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, aliquid at consequuntur ea eum facere ipsa')}>
-  </CardContent>
-</Card>
+const colors = ['primary', 'secondary']
+
+export const CardWithActions = () => (
+  <div className="container">
+    <div className="row" style={{ justifyContent: 'center' }}>
+      <div className="col-lg-4 col-md-12 col-sm-12 d-flex align-items-start">
+        <Card
+          onClick={select('function', [true, false], false, 'Card Config') ? () => alert('action') : null}
+          selected={boolean('selected', false, 'Card Config')}
+          border={boolean('border', false, 'Card Config')}>
+          <CardHeader>
+            <CardImage imgUrl={imageFile}/>
+          </CardHeader>
+          <CardContent title={text('Title', 'Some title', 'Card Content')}
+                       content={text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, aliquid at consequuntur ea eum facere ipsa', 'Card Content')}>
+          </CardContent>
+          <CardActions buttons={[
+            {
+              color: select('color', colors, 'primary', 'Button I'),
+              disabled: boolean('disabled', false, 'Button I'),
+              prefix: !boolean('prefix Icon', false, 'Button I') ? null : 'home',
+              suffix: !boolean('suffix Icon', false, 'Button I') ? null : 'cloud',
+              onClick: action('clicked', null, 'Button I'),
+              label: text('Label', 'Button', 'Button I')
+            },
+            {
+              color: select('color', colors, 'primary', 'Button II'),
+              disabled: boolean('disabled', false, 'Button II'),
+              prefix: !boolean('prefix Icon', false, 'Button II') ? null : 'home',
+              suffix: !boolean('suffix Icon', false, 'Button II') ? null : 'cloud',
+              onClick: action('clicked', null, 'Button II'),
+              label: text('Label', 'Button', 'Button II')
+            }
+          ]}>
+          </CardActions>
+        </Card>
+      </div>
+    </div>
+  </div>
+)
 
 
 export default {
   title: 'Card',
   decorators: [withKnobs, withInfo],
-  component: [Card, CardHeader, CardImage, CardContent],
+  component: [Card, CardHeader, CardImage, CardContent, CardActions],
   parameters: {
     info: {
       inline: true,
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
-          maxWidth: '30%'
         }
       },
       text: `
@@ -124,7 +153,7 @@ export default {
         import { Card, CardHeader, CardImage, CardContent } from 'library';
         ~~~
 
-        a way to declare the component it is this (the cardHeader container it not mandatory):
+        a way to declare the component it is this (the cardHeader and cardContent containers it not mandatory) if you want to know how more about button component please follow the next link [Button Componenet](/?path=/story/button--normal)
 
         ~~~js
         <Card>
@@ -133,6 +162,19 @@ export default {
             </CardHeader>
              <CardContent title="Some title" content="some content">
             </CardContent>
+            <CardActions buttons={[
+               {
+                color: 'primary',
+                label: 'Button',
+                onClick: () => { console.log('test')}
+               },
+               {
+                color: 'primary',
+                label: 'Button',
+                onClick: () => { console.log('test')}
+               }
+               ]}>
+            </CardActions>
         </Card>
         ~~~
 

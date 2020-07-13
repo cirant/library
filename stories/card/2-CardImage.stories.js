@@ -2,11 +2,11 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs/react'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
-import { Card, CardHeader, CardImage, CardContent } from '../../dist'
+import { Card, CardContent, CardHeader, CardImage } from '../../dist'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import imageFile from '../static/photo_hight_resolution.jpg';
-import imageFile2 from '../static/pencilsphoto.jpg';
+import imageFile from '../static/photo_hight_resolution.jpg'
+import imageFile2 from '../static/pencilsphoto.jpg'
 
 const propsDescriptions = {
   border: {
@@ -32,7 +32,7 @@ const propsDescriptions = {
   alt: {
     propType: 'string',
     description: 'Text that will appear if the image does not exist '
-  },
+  }
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
@@ -74,30 +74,37 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const CardWithHeaderAndImage = () => <Card
-  onClick={select('function', [true, false], false) ? () => alert('action') : null}
-  selected={boolean('selected', false)}
-  border={boolean('border', false)}>
-  <CardHeader>
-    <CardImage imgUrl={select('Image Url',[imageFile,imageFile2],imageFile)}/>
-  </CardHeader>
-  <CardContent title={text('Title','Some title')} content={text('Content','Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam at commodi consequatur')}>
-  </CardContent>
-</Card>
+export const CardWithHeaderAndImage = () => (
+  <div className="container">
+    <div className="row" style={{ justifyContent: 'center' }}>
+      <div className="col-lg-4 col-md-12 col-sm-12 d-flex align-items-start">
+        <Card
+          onClick={select('function', [true, false], false) ? () => alert('action') : null}
+          selected={boolean('selected', false)}
+          border={boolean('border', false)}>
+          <CardHeader>
+            <CardImage imgUrl={select('Image Url', [imageFile, imageFile2], imageFile)}/>
+          </CardHeader>
+          <CardContent title={text('Title', 'Some title')}
+                       content={text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam at commodi consequatur')}>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </div>
+)
 
 
 export default {
   title: 'Card',
   decorators: [withKnobs, withInfo],
-  component: [Card,CardHeader,CardImage,CardContent],
+  component: [Card, CardHeader, CardImage, CardContent],
   parameters: {
     info: {
       inline: true,
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
-          maxWidth: '30%'
         }
       },
       text: `

@@ -1,11 +1,9 @@
 import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs/react'
-import { boolean, select, text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
-import { Card, CardContent, CardHeader, CardImage } from '../../dist'
+import { Button, Card, CardActions, CardContent, CardHeader, CardImage } from '../../dist'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import imageFile from '../static/photo_hight_resolution.jpg'
 import list from '../icons/list'
 
 const propsDescriptions = {
@@ -51,6 +49,8 @@ const propsDescriptions = {
   }
 }
 
+
+let background = 'https://www.w3schools.com/bootstrap4/img_avatar3.png';
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
@@ -90,42 +90,40 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const CardContentWithTitleAndBullets = () => <Card
-  onClick={select('function', [true, false], false,'Card Config') ? () => alert('action') : null}
-  selected={boolean('selected', false,'Card Config')}
-  border={boolean('border', false,'Card Config')}>
-  <CardHeader>
-    <CardImage imgUrl={imageFile}/>
-  </CardHeader>
-  <CardContent title={text('Title', 'Some title','Card Content')} typeList={select('typeList', ['unorder', 'order', 'icons'], 'order', 'Bullets config')} bullets={[
-    {
-      text: text('text', 'Order Bullet text a', 'Bullet I'),
-      prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
-      contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
-      icon: select('icon', list, 'line-check', 'Bullet I'),
-      disabled: boolean('disabled', false, 'Bullet I'),
-      type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
-    },
-    {
-      text: text('text', 'Order Bullet text b', 'Bullet II'),
-      prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
-      contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
-      icon: select('icon', list, 'line-check', 'Bullet II'),
-      disabled: boolean('disabled', false, 'Bullet II'),
-      type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
-    },
-    {
-      text: text('text', 'Order Bullet text c', 'Bullet III'),
-      prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
-      contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
-      icon: select('icon', list, 'line-check', 'Bullet III'),
-      disabled: boolean('disabled', false, 'Bullet III'),
-      type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
-    }
-  ]
-  }>
-  </CardContent>
-</Card>
+export const CardWithOnlyContainers = () => (
+  <div className="container">
+    <div className="row" style={{ justifyContent: 'center' }}>
+      <div className="col-lg-4 col-md-12 col-sm-12 d-flex align-items-start">
+        <Card>
+          <CardHeader>
+            <div style={{
+              backgroundImage: `url(${background})`,
+              backgroundPosition: 'center center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              paddingTop:'60%',
+              width:'100%',
+              height: 400,
+              borderTopLeftRadius: '5px',
+              borderTopRightRadius: '5px'
+            }}>
+
+            </div>
+          </CardHeader>
+          <CardContent>
+            <h6>Type someting</h6>
+            <br/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.</p>
+          </CardContent>
+          <CardActions>
+            <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+                    color='primary'>Button</Button>
+          </CardActions>
+        </Card>
+      </div>
+    </div>
+  </div>
+)
 
 
 export default {
@@ -137,10 +135,7 @@ export default {
       inline: true,
       TableComponent,
       styles: {
-        infoStory: {
-          padding: '0px 40px 0px',
-          maxWidth: '30%'
-        }
+        infoStory: {}
       },
       text: `
         include into your project to be able to use the component styles
@@ -149,27 +144,21 @@ export default {
         import { Card, CardHeader, CardImage, CardContent } from 'library';
         ~~~
 
-        a way to declare the component it is this (the cardHeader container it not mandatory) if you want to know how more about bullets please follow the next link [Bullet Componenet](/?path=/story/bullets--bullet-list)
+        a way to declare the component it is this (container are not mandatory)
 
         ~~~js
-        <Card>
-            <CardHeader>
-                <CardImage imgUrl="someUrl"></CardImage>
-            </CardHeader>
-             <CardContent title={text('Title', 'Some title')} typeList='unorder' bullets={[
-              {
-                text: 'Tipografía / Estilos',
-              },
-              {
-                text: 'Tipografía / Estilos',
-              },
-              {
-                text: 'Tipografía / Estilos',
-              }
-            ]
-            }>
-            </CardContent>
-        </Card>
+        <CardHeader>
+          <CardImage imgUrl='https://www.w3schools.com/bootstrap4/img_avatar3.png'/>
+        </CardHeader>
+        <CardContent>
+          <h6>Type someting</h6>
+          <br/>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.</p>
+        </CardContent>
+        <CardActions>
+          <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+                  color='primary'>Button</Button>
+        </CardActions>
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
