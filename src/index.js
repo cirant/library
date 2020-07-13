@@ -42,9 +42,11 @@ import CardHeader from './card/cardHeader'
 import CardContent from './card/cardContent'
 import CardActions from './card/cardAction'
 import CardImage from './card/cardHeader/cardImage'
+import BreadCrumb from './breadcrumb'
 
 export {
   Button,
+  BreadCrumb,
   Icon,
   Grid,
   Card,

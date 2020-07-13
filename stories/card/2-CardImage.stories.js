@@ -74,7 +74,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const CardContentWithTitleAndContent = () => <Card
+export const CardWithHeaderAndImage = () => <Card
   onClick={select('function', [true, false], false) ? () => alert('action') : null}
   selected={boolean('selected', false)}
   border={boolean('border', false)}>

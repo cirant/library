@@ -1,3 +1,6 @@
+
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+
 module.exports = {
   stories: ['../stories/**/*.stories.js'],
   addons: [
@@ -26,16 +29,4 @@ module.exports = {
     return config;
   },
 
-  module: {
-    rules: [
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
-    ],
-  },
 };
