@@ -1,22 +1,34 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import { es } from 'date-fns/locale';
 import PropTypes from 'prop-types';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 import icons from '../../scss/_coopeuch-icon.scss';
 
-const InputDate = ({format, placeholderLeft, placeholderRight, minimumDate, maximumDate}) => {
-    const [startDate, setStartDate] = useState();
-    const [endDate, setEndDate] = useState();
+const InputDate = ({
+    startDate, 
+    endDate, 
+    format,  
+    minimumDate, 
+    maximumDate,
+    onStartDateChange,
+    onEndDateChange,
+    valueStartDate, 
+    valueEndDate,
+    ...props
+}) => {
+
+    const minDate = minimumDate.split(',');
+    const maxDate = maximumDate.split(',');
     
-    return (  
+    return ( 
         <div className="containerDateRange">   
             <DateRangePicker
                 startDate={startDate}
                 endDate={endDate}
-                onStartDateChange={setStartDate}
-                onEndDateChange={setEndDate}
-                minimumDate={minimumDate}
-                maximumDate={maximumDate}
+                onStartDateChange={onStartDateChange}
+                onEndDateChange={onEndDateChange}
+                minimumDate={minDate ? new Date(minDate[0], minDate[1], minDate[2]) : new Date()}
+                maximumDate={maxDate ? new Date(maxDate[0], maxDate[1], maxDate[2]) : null}
                 format={format}
                 locale={es}
                 >
@@ -26,7 +38,7 @@ const InputDate = ({format, placeholderLeft, placeholderRight, minimumDate, maxi
                             <input
                                 className={'input' + (focus === START_DATE ? ' -focused' : '')}
                                 {...startDateInputProps}
-                                placeholder={placeholderLeft}
+                                placeholder='DD/MM/AAAA'
                             />
                             <div className="container-icon">
                                 <i className={icons['icon-bug']}></i>
@@ -37,7 +49,7 @@ const InputDate = ({format, placeholderLeft, placeholderRight, minimumDate, maxi
                             <input
                                 className={'input' + (focus === END_DATE ? ' -focused' : '')}
                                 {...endDateInputProps}
-                                placeholder={placeholderRight}
+                                placeholder='DD/MM/AAAA'
                             />
                             <div className="container-icon">
                                 <i className={icons['icon-bug']}></i>
@@ -56,10 +68,10 @@ InputDate.defaultProps = {
 
 InputDate.propTypes = {
     format: PropTypes.string.isRequired,
-    placeholderLeft: PropTypes.string,
-    placeholderRight: PropTypes.string,
-    minimumDate: PropTypes.object.isRequired,
-    maximumDate: PropTypes.object,
+    minimumDate: PropTypes.string.isRequired,
+    maximumDate: PropTypes.string,
+    onStartDateChange: PropTypes.func,
+    onEndDateChange: PropTypes.func
 };
  
 export default InputDate;

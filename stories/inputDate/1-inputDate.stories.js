@@ -6,25 +6,29 @@ import { withInfo } from '@storybook/addon-info';
 import { InputDate } from '../../dist';
 import '../codeStyles.css';
 import '../../dist/index.css';
-import { es } from 'date-fns/locale';
+import '../../dist/css/date.css';
 
 const propsDescriptions = {
     format: {
         propType: 'string',
         description: 'This will show this value above the field'
     },
-    value: {
-        propType: 'string',
-        description: 'This will show this into input'
+    minimumDate: {
+      propType: 'string',
+      description: 'Days before minimumDate'
     },
-    placeholderLeft: {
-        propType: 'string',
-        description: 'This will show this value above the field'
+    maximumDate: {
+      propType: 'string',
+      description: 'Days after maximumDate'
     },
-    onChange: {
-        propType: 'function',
-        description: 'This function will return a new value of the input'
-    }
+    onStartDateChange: {
+      propType: 'function',
+      description: 'this is a function which is triggered when the icon is clicked'
+    },
+    onEndDateChange: {
+      propType: 'function',
+      description: 'this is a function which is triggered when the icon is clicked'
+    },
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
@@ -67,9 +71,10 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const inputDate = () => <InputDate
   format={text('value', 'dd/MM/yyyy', 'text')}
-  placeholderLeft={text('placeholderLeft', 'DD/MM/AAAA', 'text')}
-  placeholderRight={text('placeholderRight', 'DD/MM/AAAA', 'text')}
-  minimumDate={new Date(2020,6,14)}
+  minimumDate={text('minimumDate', '', 'text')}
+  maximumDate={text('maximumDate', '', 'text')}
+  onStartDateChange={action('clicked')}
+  onEndDateChange={action('clicked')}
 />;
 
 export default {
@@ -95,7 +100,7 @@ export default {
         the basicest component form is: 
 
         ~~~js
-        <InputDate value={someValue} onChange={()=>null} />
+        <InputDate value={someValue} onStartDateChange={()=>null} onEndDateChange={()=>null} />
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
