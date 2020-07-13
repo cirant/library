@@ -31,10 +31,10 @@ InputRange.defaultProps = {
 InputRange.propTypes = {
     placeholder: PropTypes.string,
     label: PropTypes.string,
-    min: PropTypes.string,
-    max: PropTypes.string,
-    value: PropTypes.number,
-    onChange: PropTypes.func
+    min: PropTypes.string.isRequired,
+    max: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired
 };
  
 export default InputRange;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { es } from 'date-fns/locale';
 
 import {
   Button,
@@ -480,7 +479,6 @@ const App = () => {
           format="dd-MM-yyyy"
           minimumDate={new Date(2020,6,17)}
           maximumDate={new Date(2020,11,31)}
-          locale={es}
       />
     </div>
 

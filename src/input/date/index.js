@@ -1,9 +1,10 @@
 import React, { useState } from 'react'; 
+import { es } from 'date-fns/locale';
 import PropTypes from 'prop-types';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 import icons from '../../scss/_coopeuch-icon.scss';
 
-const InputDate = ({format, placeholderLeft, placeholderRight, minimumDate, maximumDate, locale}) => {
+const InputDate = ({format, placeholderLeft, placeholderRight, minimumDate, maximumDate}) => {
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
     
@@ -17,7 +18,7 @@ const InputDate = ({format, placeholderLeft, placeholderRight, minimumDate, maxi
                 minimumDate={minimumDate}
                 maximumDate={maximumDate}
                 format={format}
-                locale={locale}
+                locale={es}
                 >
                 {({ startDateInputProps, endDateInputProps, focus }) => (
                     <div className="date-range">
@@ -54,12 +55,11 @@ InputDate.defaultProps = {
 };
 
 InputDate.propTypes = {
-    format: PropTypes.string,
+    format: PropTypes.string.isRequired,
     placeholderLeft: PropTypes.string,
     placeholderRight: PropTypes.string,
-    minimumDate: PropTypes.object,
+    minimumDate: PropTypes.object.isRequired,
     maximumDate: PropTypes.object,
-    locale: PropTypes.object
 };
  
 export default InputDate;

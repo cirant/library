@@ -323,6 +323,10 @@
     max-width: 20px;
   }
 
+  .containerDateRange .date-range div .container-icon i{
+    color: #007DB7;
+  }
+
   .containerDateRange .date-range_arrow {
     flex-shrink: 0;
     position: relative;
