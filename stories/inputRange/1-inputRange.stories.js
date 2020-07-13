@@ -14,7 +14,19 @@ const propsDescriptions = {
     },
     value: {
         propType: 'string',
-        description: 'This will show this into input'
+        description: 'Specifies the default value'
+    },
+    min: {
+      propType: 'string',
+      description: 'specifies the minimum value allowed'
+    },
+    max: {
+        propType: 'string',
+        description: 'specifies the maximum value allowed'
+    },
+    step: {
+      propType: 'string',
+      description: 'specifies the legal number intervals'
     },
     onChange: {
         propType: 'function',
@@ -61,7 +73,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   };
 
 export const inputRange = () => <InputRange
-    value={text('value', '0', 'text')}
+    value={text('value', '', 'text')}
     placeholder={text('placeholder', '', 'text')}
     label={text('label', '', 'text')}
     min={text('min', '', 'text')}
