@@ -2,11 +2,11 @@
 @import '../../scss/variables';
 
 .cardContentContainer{
-  padding-top: 16px;
+  padding-top: nth(nth($spacers, 5), 2);
   overflow-wrap: break-word;
 
   .cardHeaderTitle{
-    padding-bottom: 16px;
+    padding-bottom: nth(nth($spacers, 5), 2);
   }
 
 }
