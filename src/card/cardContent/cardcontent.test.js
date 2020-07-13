@@ -18,12 +18,12 @@ describe('Card Content behavior', () => {
   })
 
   test('should be contain title if it´s defined', () => {
-    const component = render(<CardContent title='test'>></CardContent>)
+    const component = render(<CardContent title='test'></CardContent>)
     expect(component.getByText(/test/)).toBeTruthy()
   })
 
   test('should be contain content if it´s defined', () => {
-    const component = render(<CardContent content='test content'>></CardContent>)
+    const component = render(<CardContent content='test content'></CardContent>)
     expect(component.getByText(/test content/)).toBeTruthy()
   })
 
