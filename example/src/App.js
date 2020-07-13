@@ -14,24 +14,25 @@ import {
   HeaderItem,
   Icon,
   Input,
-  InputChip,
-  InputCounter,
-  InputPhone,
-  InputRange,
   InputSearch,
+  Logo,
+  InputPhone,
+  InputCounter,
+  InputRange,
   InputSecurity,
   InputSelect,
-  Logo,
-  Loading,
+  InputChip,
+  Stamp,
+  ContentAction,
   ProgressBar,
   Radio,
+  Loading,
   Separator,
   Sidebar,
   Switch,
   TitleSection,
   Tooltip,
   Voucher,
-  Stamp,
   Message,
   Bullets,
   VoucherResumeContainer,
@@ -40,7 +41,6 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  ContentAction,
   NotificationBadge
 } from 'library-1'
 import 'library-1/dist/index.css'
@@ -741,6 +741,7 @@ const App = () => {
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12">
           <Tooltip
+            interactive
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
             placement="right-end">
@@ -896,13 +897,13 @@ const App = () => {
       <h1 className="mb-4">Badge Notification</h1>
       <div className="row">
         <div className="col">
-            <NotificationBadge content={999}/>
+          <NotificationBadge content={999} />
         </div>
       </div>
     </div>
     <br />
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container">
       <h1 className="mb-4">Voucher</h1>
@@ -912,64 +913,64 @@ const App = () => {
             <VoucherTitle
               title={"Type some text"}
               items={[
-                            [
-                              {
-                                label:'Plazo',
-                                icon:'line-write',
-                                action: ()=> console.log('plazo'),
-                                flex:1
-                              },
-                              {
-                                label:'Descargar',
-                                icon:'line-download',
-                                action: ()=> console.log('descargar')
-                              }
+                [
+                  {
+                    label: 'Plazo',
+                    icon: 'line-write',
+                    action: () => console.log('plazo'),
+                    flex: 1
+                  },
+                  {
+                    label: 'Descargar',
+                    icon: 'line-download',
+                    action: () => console.log('descargar')
+                  }
 
-                            ],
-                          ]}
+                ],
+              ]}
 
             />
             <VoucherResumeContainer items={[
               [
                 {
-                  label:'Plazo',
-                  content:'36 meses',
-                  flex:1
+                  label: 'Plazo',
+                  content: '36 meses',
+                  flex: 1
                 },
                 {
-                  label:'Valor cuota',
-                  number:45000,
+                  label: 'Valor cuota',
+                  number: 45000,
                   currency: true,
-                  flex:1
+                  flex: 1
                 },
                 {
-                  label:'Otros costos',
-                  number:15000,
+                  label: 'Otros costos',
+                  number: 15000,
                   currency: true,
-                  flex:1
+                  flex: 1
                 },
                 {
-                  label:'Saldo anterior',
-                  number:400000,
+                  label: 'Saldo anterior',
+                  number: 400000,
                   currency: true,
-                  flex:1
+                  flex: 1
                 }
               ],
             ]} />
             <VoucherData items={[
               {
-                title:'Label titulo de sección',
+                title: 'Label titulo de sección',
                 items: [
                   {
-                    label:'Deudas:',
+                    label: 'Deudas:',
                     content: '300.000'
                   },
                   {
-                    label:'Label Titulo:',
+                    label: 'Label Titulo:',
                     content: 'Label Contenido'
                   },
                   {
-                    label:'Label Titulo:',
+                    label: 'Label Titulo:',
                     content: 'Label Contenido'
                   }
                 ]
@@ -977,17 +978,17 @@ const App = () => {
             ]} />
             <VoucherColumnData items={[
               {
-                title:'Label title',
-                content:'Label content'
+                title: 'Label title',
+                content: 'Label content'
               },
               {
-                title:'Label title',
-                content:'Label content'
+                title: 'Label title',
+                content: 'Label content'
               }
             ]}>
             </VoucherColumnData>
             <VoucherFooter breakColumn={5} items={{
-              title:'Label titulo de sección',
+              title: 'Label titulo de sección',
               typeList: 'icons',
               bullets: [
                 {
