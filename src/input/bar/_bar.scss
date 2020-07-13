@@ -3,7 +3,7 @@
 
 .rangeWrap{
   position: relative;
-  margin-top: 16px;
+  margin-top: nth(nth($spacers, 5), 2);
 
   input[type=range] {
     margin: 0;
@@ -29,7 +29,7 @@
     width: 24px;
     height: 24px;
     border-radius: $custom-range-thumb-border-radius;
-    margin-top: -12px;
+    margin-top: -#{nth(nth($spacers, 4), 2)};
     box-shadow: $custom-range-thumb-box-shadow;
   }
   
