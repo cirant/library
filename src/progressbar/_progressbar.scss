@@ -9,6 +9,7 @@
 
   .simpleLabel{
     font-weight: 700;
+    margin-bottom: nth(nth($spacers,3),2);
   }
 
   .multiHeader{

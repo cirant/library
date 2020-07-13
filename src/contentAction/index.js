@@ -15,7 +15,7 @@ const ContentAction = ({ label, icon, disabled, onClick, ...props }) => {
   return (
     <div {...props} data-testid='test-container-content-action' onClick={disabled ? null : onClick} className={containerClass.join(' ')}>
       <div>
-        <Icon size="2" name={icon}/>
+        <Icon size="4" name={icon} />
       </div>
       <div className={styles.label}>{<a>{label}</a>}</div>
     </div>
