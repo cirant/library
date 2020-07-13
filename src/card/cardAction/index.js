@@ -24,9 +24,6 @@ const CardActions = ({ buttons, children, ...props }) => {
 
 }
 
-CardActions.defaultProps = {
-
-}
 
 CardActions.propTypes = {
   buttons: PropTypes.arrayOf(PropTypes.shape({

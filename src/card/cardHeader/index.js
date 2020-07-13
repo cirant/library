@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from './_cardheader.scss'
+import PropTypes from 'prop-types'
 
-const CardHeader = ({ imgUrl, option, children, ...props }) => {
+const CardHeader = ({ imgUrl, children, ...props }) => {
 
   let cardHeaderStyle = [styles.cardHeaderContainer]
 
@@ -14,3 +15,8 @@ const CardHeader = ({ imgUrl, option, children, ...props }) => {
 
 
 export default CardHeader
+
+CardHeader.propTypes = {
+  imgUrl: PropTypes.string,
+  children: PropTypes.node,
+}
