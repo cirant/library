@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import {
   Button,
+  BreadCrumb,
   Card,
   Checkbox,
   Grid,
@@ -35,7 +36,6 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  ContentAction,
   NotificationBadge
 } from 'library-1'
 import 'library-1/dist/index.css'
@@ -466,17 +466,17 @@ const App = () => {
     </div>
 
     <div className="container my-4">
-        <h1 className="mb-4">input range</h1>
-        
-          <InputRange 
-            placeholder="Text Placeholder"
-            label="Text Label"
-            min="200"
-            max="800"
-            step="1"
-            onChange={(e) => setRange(e.target.value)}
-            value={range}
-          />
+      <h1 className="mb-4">input range</h1>
+
+      <InputRange
+        placeholder="Text Placeholder"
+        label="Text Label"
+        min="200"
+        max="800"
+        step="1"
+        onChange={(e) => setRange(e.target.value)}
+        value={range.toString()}
+      />
     </div>
 
     <div className="container my-4">
@@ -566,6 +566,43 @@ const App = () => {
         <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)} />
         <Switch status={true} disabled onClick={() => setSwitchStatus(!switchStatus)} />
         <Switch status={false} disabled onClick={() => setSwitchStatus(!switchStatus)} />
+      </div>
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">BreadCrumb</h1>
+
+      <div className="row">
+        <div className="col-7">
+          {
+            switchStatus === false && <BreadCrumb paths={[
+              {
+                name: 'hola soy una ruta 1',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 2',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 3',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 4',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 5',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 6',
+                route: 'https://www.google.com'
+              }
+            ]} />
+          }
+        </div>
       </div>
     </div>
 
@@ -699,6 +736,7 @@ const App = () => {
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12">
           <Tooltip
+            interactive
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
             placement="right-end">
@@ -854,13 +892,13 @@ const App = () => {
       <h1 className="mb-4">Badge Notification</h1>
       <div className="row">
         <div className="col">
-            <NotificationBadge content={999}/>
+          <NotificationBadge content={999} />
         </div>
       </div>
     </div>
     <br />
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container">
       <h1 className="mb-4">Voucher</h1>
@@ -870,64 +908,64 @@ const App = () => {
             <VoucherTitle
               title={"Type some text"}
               items={[
-                            [
-                              {
-                                label:'Plazo',
-                                icon:'line-write',
-                                action: ()=> console.log('plazo'),
-                                flex:1
-                              },
-                              {
-                                label:'Descargar',
-                                icon:'line-download',
-                                action: ()=> console.log('descargar')
-                              }
+                [
+                  {
+                    label: 'Plazo',
+                    icon: 'line-write',
+                    action: () => console.log('plazo'),
+                    flex: 1
+                  },
+                  {
+                    label: 'Descargar',
+                    icon: 'line-download',
+                    action: () => console.log('descargar')
+                  }
 
-                            ],
-                          ]}
+                ],
+              ]}
 
             />
             <VoucherResumeContainer items={[
               [
                 {
-                  label:'Plazo',
-                  content:'36 meses',
-                  flex:1
+                  label: 'Plazo',
+                  content: '36 meses',
+                  flex: 1
                 },
                 {
-                  label:'Valor cuota',
-                  number:45000,
+                  label: 'Valor cuota',
+                  number: 45000,
                   currency: true,
-                  flex:1
+                  flex: 1
                 },
                 {
-                  label:'Otros costos',
-                  number:15000,
+                  label: 'Otros costos',
+                  number: 15000,
                   currency: true,
-                  flex:1
+                  flex: 1
                 },
                 {
-                  label:'Saldo anterior',
-                  number:400000,
+                  label: 'Saldo anterior',
+                  number: 400000,
                   currency: true,
-                  flex:1
+                  flex: 1
                 }
               ],
             ]} />
             <VoucherData items={[
               {
-                title:'Label titulo de sección',
+                title: 'Label titulo de sección',
                 items: [
                   {
-                    label:'Deudas:',
+                    label: 'Deudas:',
                     content: '300.000'
                   },
                   {
-                    label:'Label Titulo:',
+                    label: 'Label Titulo:',
                     content: 'Label Contenido'
                   },
                   {
-                    label:'Label Titulo:',
+                    label: 'Label Titulo:',
                     content: 'Label Contenido'
                   }
                 ]
@@ -935,17 +973,17 @@ const App = () => {
             ]} />
             <VoucherColumnData items={[
               {
-                title:'Label title',
-                content:'Label content'
+                title: 'Label title',
+                content: 'Label content'
               },
               {
-                title:'Label title',
-                content:'Label content'
+                title: 'Label title',
+                content: 'Label content'
               }
             ]}>
             </VoucherColumnData>
             <VoucherFooter breakColumn={5} items={{
-              title:'Label titulo de sección',
+              title: 'Label titulo de sección',
               typeList: 'icons',
               bullets: [
                 {
@@ -986,13 +1024,13 @@ const App = () => {
     </div>
 
 
-    <br/>
+    <br />
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
   </>
 }

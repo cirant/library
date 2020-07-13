@@ -16,7 +16,7 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
   return (
     <React.Fragment>
       <div {...props} className={containerClass.join(' ')}>
-        <h4>{items.title}</h4>
+        <h5>{items.title}</h5>
         <div className={styles.voucherFooterContentContainer}>
           {
             breakColumn && (

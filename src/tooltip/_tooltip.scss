@@ -29,14 +29,19 @@
   position: relative;
   height: auto;
 
+  .box:focus{
+    outline: -webkit-focus-ring-color auto 0px !important;
+  }
+
   .box {
+
     border-radius: 4px;
     min-width: 256px;
     opacity: 0;
     transition: all 150ms linear;
     color: #212529;
     text-align: left;
-    @include elevationElementCreator1();
+    box-shadow: 0 0 5px 0 rgba(31,30,30,0.35);
 
     &[data-placement="right"] {
       .arrow {
@@ -130,6 +135,8 @@
       background-color: white;
       z-index: 1000;
       opacity: 1;
+      font-size: 0.625rem;
+      line-height: 20px;
       position: relative;
       padding: nth(nth($spacers, 4), 2);
       max-width: 256px;
@@ -150,9 +157,3 @@
   }
 
 }
-
-
-
-
-
-

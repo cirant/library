@@ -22,7 +22,7 @@ const VoucherColumnData = ({ items, ...props }) => {
                   items.map((item, i) => {
                     return (
                       <div className={styles.itemColumn} key={`item-${i}`}>
-                        <p className="note">{item.title}</p>
+                        <p className="note" style={{fontWeight:500}}>{item.title}</p>
                         <p className={styles.itemColumnContent}>{item.content}</p>
                       </div>
                     )
