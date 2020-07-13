@@ -17,7 +17,7 @@ const propsDescriptions = {
   },
   newIntem: {
     propType: 'array',
-    description: 'An array ofasd object to create the list'
+    description: 'An array of object to create the list'
   },
 }
 

@@ -46,3 +46,5 @@ CardContent.propTypes = {
   })),
   children: PropTypes.node,
 }
+
+export default CardContent;

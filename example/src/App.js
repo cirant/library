@@ -1092,17 +1092,14 @@ const App = () => {
             <CardContent title={'type something'} typeList={'unorder'} bullets={[
               {
                 text: 'Tipografía / Estilos',
-                prefixType: 'info',
                 type: 'success'
               },
               {
                 text: 'Tipografía / Estilos',
-                prefixType: 'info',
                 type: 'success'
               },
               {
                 text: 'Tipografía / Estilos',
-                prefixType: 'info',
                 type: 'success'
               }
             ]

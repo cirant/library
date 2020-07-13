@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from './_cardimage.scss'
+import PropTypes from 'prop-types'
 
-const CardImage = ({ imgUrl, alt, children, ...props }) => {
+const CardImage = ({ imgUrl, alt, ...props }) => {
 
   let cardImage = [styles.imgCard]
 
@@ -15,5 +16,10 @@ const CardImage = ({ imgUrl, alt, children, ...props }) => {
     />
   )
 }
+
+CardImage.propTypes = {
+  imgUrl: PropTypes.string,
+  alt: PropTypes.string,
+};
 
 export default CardImage
