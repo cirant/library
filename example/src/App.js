@@ -4,6 +4,8 @@ import {
   Button,
   BreadCrumb,
   Card,
+  CardSwitch,
+  CardCheckbox,
   Checkbox,
   Grid,
   Header,
@@ -190,6 +192,35 @@ const App = () => {
       <Card selected> selected </Card>
       <Card onClick={() => alert('clicked')} > click me </Card>
       <Card border > hola mundo </Card>
+    </div>
+
+
+    <div className="my-4">
+      <h1 className="mb-4">Card Switch</h1>
+
+      <div className="d-flex flex-column">
+        <CardSwitch
+          status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)}
+          cardname='martercard'
+          title='Label content'
+          footerTitle='Titular'
+          footerText='Nº **************2345'
+        />
+      </div>
+    </div>
+
+    <div className="my-4">
+      <h1 className="mb-4">Card Checkbox</h1>
+
+      <div className="d-flex flex-column">
+        <CardCheckbox
+          checked={checked} onChange={handleCheckbox}
+          cardname='martercard'
+          title='Label content'
+          footerTitle='Titular'
+          footerText='Nº **************2345'
+        />
+      </div>
     </div>
 
     <h1 className="mb-4">Checkbox</h1>
@@ -488,7 +519,6 @@ const App = () => {
         <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
       </div>
     </div>
-
 
     <div className="container my-4">
       <h1 className="mb-4">input counter</h1>
