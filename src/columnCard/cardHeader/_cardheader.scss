@@ -1,0 +1,12 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+
+.cardHeaderContainer {
+
+  display: flex;
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-top: -24px;
+
+}

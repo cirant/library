@@ -1,0 +1,73 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+
+$shadow-color:rgba(31,30,30,0.10);
+$base: 2px;
+
+.imgCard {
+  flex: 1;
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+%adjustcontainer{
+  margin-right: -16px;
+  margin-top: -17px;
+  margin-bottom: -17px;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.card{
+  display: flex;
+  padding: 16px 16px;
+  margin: 16px;
+  border-radius: 5px;
+
+
+
+  .imageContainer{
+    flex: 1;
+    width: 100%;
+    background-position: center;
+    background-image: url('/assets/images/photo_hight_resolution.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    @extend %adjustcontainer;
+
+  }
+
+  &.border{
+    border: 1px solid $neutral-20;
+    box-shadow: none;
+  }
+
+  @for $i from 1 through 5 {
+    &.elevation-#{$i}{
+      box-shadow: 0 ($base * $i) ($base * ($i + 1)) 0 rgba(31,30,30,0.10);
+    }
+  }
+
+  &.selected {
+    @extend .elevation-5
+  }
+
+  &.animated{
+    animation: all .4s;
+    cursor: pointer;
+    &:hover{
+      @extend .elevation-4;
+    }
+    &:active{
+      box-shadow: 0 4px 6px 0 rgba(31,30,30,0.10) !important;
+    }
+    &:focus{
+      background-color: green;
+    }
+  }
+
+
+}

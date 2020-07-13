@@ -1,0 +1,21 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.columnCardContentContainer{
+
+  flex: 1;
+  overflow-wrap: break-word;
+  margin-left: nth(nth($spacers, 5), 2);
+  margin-right: nth(nth($spacers, 5), 2);
+  padding-right: nth(nth($spacers, 5), 2);
+
+  .columnCardContentHeaderTitle{
+    padding-bottom: nth(nth($spacers, 3), 2);
+    font-weight: 500;
+  }
+
+  .columnCardContent{
+    font-weight: 500;
+  }
+
+}
