@@ -4,6 +4,7 @@ import Grid from './grid';
 import Card from './card';
 import CardSwitch from './card/cardSwitch';
 import CardCheckbox from './card/cardCheckbox';
+import CardDropdown from './card/cardDropdown';
 import Checkbox from './checkbox';
 import Logo from './logo';
 import HeaderItem from './header/headerItem';
@@ -49,6 +50,7 @@ export {
   Card,
   CardSwitch,
   CardCheckbox,
+  CardDropdown,
   Checkbox,
   Logo,
   HeaderItem,

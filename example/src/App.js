@@ -6,6 +6,7 @@ import {
   Card,
   CardSwitch,
   CardCheckbox,
+  CardDropdown,
   Checkbox,
   Grid,
   Header,
@@ -194,6 +195,51 @@ const App = () => {
       <Card border > hola mundo </Card>
     </div>
 
+    <h1 className="mb-4">Card Dropdown</h1>
+
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        opened={checked}
+        onClick={() => handleCheckbox(!checked)}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        border
+        opened={checked}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+        onClick={() => handleCheckbox(!checked)}
+      > Some content </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        disabled
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content disabled </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        selected
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content </CardDropdown>
+    </div>
+
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        selected
+        dark
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content dark </CardDropdown>
+    </div>
 
     <div className="my-4">
       <h1 className="mb-4">Card Switch</h1>
