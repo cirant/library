@@ -22,7 +22,7 @@ const propsDescriptions = {
     },
     min: {
       propType: 'string',
-      description: 'specifies the minimum value allowed'
+      description: 'Specifies the minimum value allowed (Positive number > 0)'
     },
     max: {
         propType: 'string',
