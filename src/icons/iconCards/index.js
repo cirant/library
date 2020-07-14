@@ -3,7 +3,7 @@ import { DefaultCard, Mastercard } from './assets'
 
 const IconCard = ({ variant, ...props }) => {
   switch (variant) {
-    case 'martercard':
+    case 'mastercard':
       return <Mastercard {...props} />
 
     default:

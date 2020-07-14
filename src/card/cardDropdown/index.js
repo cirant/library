@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '../';
 import Icon from '../../icons'
 import styles from './_cardDropdown.scss'

@@ -247,7 +247,7 @@ const App = () => {
       <div className="d-flex flex-column">
         <CardSwitch
           status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)}
-          cardname='martercard'
+          cardname='mastercard'
           title='Label content'
           footerTitle='Titular'
           footerText='Nº **************2345'
@@ -261,7 +261,7 @@ const App = () => {
       <div className="d-flex flex-column">
         <CardCheckbox
           checked={checked} onChange={handleCheckbox}
-          cardname='martercard'
+          cardname='mastercard'
           title='Label content'
           footerTitle='Titular'
           footerText='Nº **************2345'
