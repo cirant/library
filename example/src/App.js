@@ -199,7 +199,7 @@ const App = () => {
       <Card onClick={() => alert('clicked')} > click me </Card>
       <Card border > hola mundo </Card>
     </div>
-
+    
     <h1 className="mb-4">Checkbox</h1>
 
     <div className="d-flex">

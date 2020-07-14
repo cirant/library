@@ -53,6 +53,7 @@ import ColumnCardContentActions from './columnCard/columnCardContent/columnCardC
 
 export {
   Button,
+  BreadCrumb,
   Icon,
   Grid,
   Card,
