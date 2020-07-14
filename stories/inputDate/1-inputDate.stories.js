@@ -9,6 +9,10 @@ import '../../dist/index.css';
 import '../../dist/css/date.css';
 
 const propsDescriptions = {
+    label: {
+      propType: 'string',
+      description: 'This will show this value above the field'
+    },
     startDate: {
       propType: 'object',
       description: 'This will show this value above the field, (instance of new Date())'
@@ -78,6 +82,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 };
 
 export const inputDate = () => <InputDate
+  label={text('label', '', 'text')}
   startDate={object('startDate', (new Date(2020,6,17)), 'object')}
   endDate={object('endDate', (new Date(2020,6,23)), 'object')}
   format={text('format', 'dd/MM/yyyy', 'text')}

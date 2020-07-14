@@ -8,26 +8,25 @@ describe('InputDate behavior', () => {
         const onClick = jest.fn();
         const component = render(<InputDate
           onClick={onClick}
-          placeholder='DD/MM/AAAA'
         />);
         expect(component).toBeTruthy();
-        //expect(component.container.querySelector('[format="dd-MM-yyyy"')).toBeTruthy();
+        expect(component.container.querySelector('[type="text"')).toBeTruthy();
         fireEvent.click(component.container.querySelector('.nice-dates-popover'));
-      });
-
-      it('should be rendered with optional data', () => {
-        const component = render(
-            <InputDate 
-                format="dd-MM-yyyy"
-                minimumDate='2020,6,19'
-                maximumDate='2020,11,31'
-            />
-        );
-        expect(component.getByText(/dd-MM-yyyy/)).toBeTruthy();
-        expect(component.getByText(/2020,6,19/)).toBeTruthy();
-        expect(component.getByText(/2020,11,31/)).toBeTruthy();
     });
 
+    it('should be rendered with optional data', () => {
+      const component = render(
+          <InputDate 
+            format="dd/MM/yyyy"
+            minimumDate="2020/6/1"
+            maximumDate="2020/6/31"
+          />
+      );
+      expect(component).toBeTruthy();
+    });
+
+    it('should be rendered with label', () => {
+      const component = render(<InputDate label="label name" />);
+      expect(component.getByText(/label name/)).toBeTruthy();
+    });
 });
-
-

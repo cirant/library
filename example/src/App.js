@@ -478,6 +478,7 @@ const App = () => {
       <h1 className="mb-4">input date</h1>
       
       <InputDate
+          label="Label text"
           startDate={startDate}
           endDate={endDate}
           onStartDateChange={setStartDate}

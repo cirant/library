@@ -2,9 +2,11 @@ import React from 'react';
 import { es } from 'date-fns/locale';
 import PropTypes from 'prop-types';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
+import Label  from '../_commons/label';
 import icons from '../../scss/_coopeuch-icon.scss';
 
 const InputDate = ({
+    label,
     startDate,
     endDate,
     onStartDateChange,
@@ -22,7 +24,8 @@ const InputDate = ({
     }
 
     return ( 
-        <div className="containerDateRange">   
+        <div className="containerDateRange"> 
+            <Label label={label} />
             <DateRangePicker
                 startDate={startDate}
                 endDate={endDate}
@@ -43,7 +46,7 @@ const InputDate = ({
                                 placeholder='DD/MM/AAAA'
                             />
                             <div className="container-icon">
-                                <i className={icons['icon-bug']}></i>
+                                <i className={icons['icon-calendar']}></i>
                             </div>
                         </div>
                         <span className="date-range_arrow"></span>
@@ -54,7 +57,7 @@ const InputDate = ({
                                 placeholder='DD/MM/AAAA'
                             />
                             <div className="container-icon">
-                                <i className={icons['icon-bug']}></i>
+                                <i className={icons['icon-calendar']}></i>
                             </div>
                         </div>  
                     </div>
@@ -69,6 +72,7 @@ InputDate.defaultProps = {
 };
 
 InputDate.propTypes = {
+    label: PropTypes.string,
     startDate: PropTypes.object,
     endDate: PropTypes.object,
     format: PropTypes.string.isRequired,
