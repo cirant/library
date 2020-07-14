@@ -1,0 +1,31 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+.dataResumeContainer {
+  background-color: $secondary-blue-50;
+  color: white;
+  font-family: Ubuntu;
+  flex: 1;
+  padding: nth(nth($spacers, 4), 2) nth(nth($spacers, 6), 2);
+  text-wrap: normal;
+  box-sizing: border-box;
+
+  h2 {
+    color: white;
+  }
+
+  @media only screen and (max-width: 563px) and (min-device-width: 0px) {
+    flex-basis: 100% !important;
+
+  }
+
+
+}
+
+
+
+
+
+
+

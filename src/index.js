@@ -27,12 +27,27 @@ import InputSearch from './input/search';
 import InputSelect from './input/select';
 import ContentAction from './contentAction';
 import InputPhone from './input/phone';
+import Voucher from './voucher';
+import VoucherColumnData from './voucher/voucherColumnData';
+import VoucherDataResume from './voucher/voucherDataResume';
+import VoucherResumeContainer from './voucher/voucherResumeContainer';
+import VoucherData from './voucher/voucherData';
+import VoucherFooter from './voucher/voucherFooter';
+import VoucherTitle from './voucher/voucherTitle';
 import InputCounter from './input/counter';
 import InputSecurity from './input/security';
 import InputDate from './input/date';
+import KebabMenu from './kebabMenu/';
+import NotificationBadge from './notificationBadge/';
+import CardHeader from './card/cardHeader'
+import CardContent from './card/cardContent'
+import CardActions from './card/cardAction'
+import CardImage from './card/cardHeader/cardImage'
+import BreadCrumb from './breadcrumb'
 
 export {
   Button,
+  BreadCrumb,
   Icon,
   Grid,
   Card,
@@ -63,5 +78,18 @@ export {
   InputSelect,
   Stamp,
   ContentAction,
-  InputDate
+  InputDate,
+  Voucher,
+  VoucherDataResume,
+  VoucherResumeContainer,
+  VoucherTitle,
+  VoucherData,
+  VoucherColumnData,
+  VoucherFooter,
+  KebabMenu,
+  NotificationBadge,
+  CardHeader,
+  CardContent,
+  CardActions,
+  CardImage
 };

@@ -3,7 +3,7 @@
 
 .rangeWrap{
   position: relative;
-  margin-top: 20px;
+  margin-top: nth(nth($spacers, 5), 2);
 
   input[type=range] {
     margin: 0;
@@ -26,17 +26,17 @@
   
   input[type=range]::-webkit-slider-thumb {
     background-color: $white;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: $custom-range-thumb-border-radius;
-    margin-top: -7px;
+    margin-top: -#{nth(nth($spacers, 4), 2)};
     box-shadow: $custom-range-thumb-box-shadow;
   }
   
   input[type=range]::-moz-range-thumb {
     background-color:$white;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: $custom-range-thumb-border-radius;
     box-shadow: $custom-range-thumb-box-shadow;
     border: none;
@@ -44,8 +44,8 @@
   
   input[type=range]::-ms-thumb {
     background-color:$white;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: $custom-range-thumb-border-radius;
     box-shadow: $custom-range-thumb-box-shadow;
   }
@@ -53,7 +53,7 @@
   input[type=range]::-webkit-slider-runnable-track {
     width: $custom-range-track-width;
     background-color: $custom-range-track-bg;
-    height: $custom-range-track-height;
+    height: 2px;
   }
   
   input[type=range]:focus::-webkit-slider-runnable-track {
@@ -63,13 +63,13 @@
   input[type=range]::-moz-range-track {
     width: $custom-range-track-width;
     background-color: $custom-range-track-bg;
-    height: $custom-range-track-height;
+    height: 2px;
   }
   
   input[type=range]::-ms-track {
     width: $custom-range-track-width;
     background-color: $custom-range-track-bg;
-    height: $custom-range-track-height;
+    height: 2px;
   }
 
   .rangeValue{

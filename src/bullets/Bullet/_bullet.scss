@@ -31,8 +31,6 @@
   @include statusColorCreator($info-40);
 }
 
-
-
 .boxCircle {
   margin: 0;
   padding: 0;
@@ -99,6 +97,12 @@
 }
 
 .bulletElement {
+
+  padding-bottom: nth(nth($spacers, 3), 2);;
+
+  :last-child{
+    padding-bottom: 0;
+  }
 
   .textContainer{
     align-items: center;

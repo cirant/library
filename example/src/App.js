@@ -2,38 +2,51 @@ import React, { useState } from 'react';
 
 import {
   Button,
-  Icon,
-  Grid,
+  BreadCrumb,
   Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardImage,
   Checkbox,
-  Logo,
-  HeaderItem,
+  Grid,
   Header,
+  HeaderItem,
+  Icon,
   Input,
   InputSearch,
+  Logo,
   InputPhone,
   InputCounter,
+  InputRange,
+  InputSecurity,
+  InputSelect,
+  InputChip,
+  InputDate,
+  Stamp,
+  ContentAction,
+  ProgressBar,
   Radio,
+  Loading,
   Separator,
   Sidebar,
   Switch,
   TitleSection,
-  InputChip,
-  Loading,
-  Bullets,
   Tooltip,
-  ProgressBar,
+  Voucher,
   Message,
-  InputRange,
-  InputSelect,
-  Stamp,
-  ContentAction,
-  InputSecurity,
-  InputDate
+  Bullets,
+  VoucherResumeContainer,
+  VoucherTitle,
+  VoucherData,
+  KebabMenu,
+  VoucherColumnData,
+  VoucherFooter,
+  NotificationBadge
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
-import 'library-1/src/input/date/_date.css';
+import 'library-1/dist/css/date.css';
 
 const App = () => {
   const [checked, setCheckbox] = useState(false);
@@ -50,6 +63,7 @@ const App = () => {
 
   const [startDate, setStartDate] = useState(new Date(2020,6,20));
   const [endDate, setEndDate] = useState(new Date(2020,6,22));
+  const content = (<div><Button variant="text" color="primary" suffix="arrow-right" > lorem </Button></div>);
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
@@ -99,7 +113,7 @@ const App = () => {
     <h1 className="mb-4">Icons</h1>
 
     <div className="d-flex align-items-baseline flex-wrap">
-      <Icon className="p-4" name="flag" />
+      <Icon className="p-4" name="flag" size="1" />
       <Icon className="p-4" name="flag" size="2" />
       <Icon className="p-4" name="flag" size="3" />
       <Icon className="p-4" name="flag" size="4" />
@@ -580,6 +594,43 @@ const App = () => {
     </div>
 
     <div className="container my-4">
+      <h1 className="mb-4">BreadCrumb</h1>
+
+      <div className="row">
+        <div className="col-7">
+          {
+            switchStatus === false && <BreadCrumb paths={[
+              {
+                name: 'hola soy una ruta 1',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 2',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 3',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 4',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 5',
+                route: 'https://www.google.com'
+              },
+              {
+                name: 'hola soy una ruta 6',
+                route: 'https://www.google.com'
+              }
+            ]} />
+          }
+        </div>
+      </div>
+    </div>
+
+    <div className="container my-4">
       <h1 className="mb-4">Loading</h1>
 
       <div className="d-flex">
@@ -648,7 +699,7 @@ const App = () => {
       <h1>Tooltip</h1>
       {inputText}
       <Tooltip
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        content={content}
         eventListener="hover"
         placement="bottom">
         <Input
@@ -709,6 +760,7 @@ const App = () => {
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12">
           <Tooltip
+            interactive
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
             placement="right-end">
@@ -824,7 +876,7 @@ const App = () => {
     <br />
 
     <div className="container">
-      <h1> Content Action</h1>
+      <h1 className="mb-4"> Content Action</h1>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
           <ContentAction label="Imprimir" onClick={() => console.log('acción')} icon="line-print"></ContentAction>
@@ -835,7 +887,264 @@ const App = () => {
     </div>
 
     <br />
+
+    <div className="container">
+      <h1 className="mb-4">kebab menu</h1>
+      <div className="row">
+        <div className="col">
+          <Card className="d-flex justify-content-end">
+            <KebabMenu options={[
+              {
+                icon: 'line-search',
+                text: 'Label Button',
+                action: () => alert('hola mundo')
+              },
+              {
+                icon: 'home',
+                text: 'Label Button 2',
+                action: () => alert('hola mundo 2')
+              }
+            ]} />
+          </Card>
+        </div>
+      </div>
+    </div>
+
     <br />
+    <br />
+    <div className="container">
+      <h1 className="mb-4">Badge Notification</h1>
+      <div className="row">
+        <div className="col">
+          <NotificationBadge content={999} />
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Voucher</h1>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
+          <Voucher stampdirection="bottom">
+            <VoucherTitle
+              title={"Type some text"}
+              items={[
+                [
+                  {
+                    label: 'Plazo',
+                    icon: 'line-write',
+                    action: () => console.log('plazo'),
+                    flex: 1
+                  },
+                  {
+                    label: 'Descargar',
+                    icon: 'line-download',
+                    action: () => console.log('descargar')
+                  }
+
+                ],
+              ]}
+
+            />
+            <VoucherResumeContainer items={[
+              [
+                {
+                  label: 'Plazo',
+                  content: '36 meses',
+                  flex: 1
+                },
+                {
+                  label: 'Valor cuota',
+                  number: 45000,
+                  currency: true,
+                  flex: 1
+                },
+                {
+                  label: 'Otros costos',
+                  number: 15000,
+                  currency: true,
+                  flex: 1
+                },
+                {
+                  label: 'Saldo anterior',
+                  number: 400000,
+                  currency: true,
+                  flex: 1
+                }
+              ],
+            ]} />
+            <VoucherData items={[
+              {
+                title: 'Label titulo de sección',
+                items: [
+                  {
+                    label: 'Deudas:',
+                    content: '300.000'
+                  },
+                  {
+                    label: 'Label Titulo:',
+                    content: 'Label Contenido'
+                  },
+                  {
+                    label: 'Label Titulo:',
+                    content: 'Label Contenido'
+                  }
+                ]
+              },
+            ]} />
+            <VoucherColumnData items={[
+              {
+                title: 'Label title',
+                content: 'Label content'
+              },
+              {
+                title: 'Label title',
+                content: 'Label content'
+              }
+            ]}>
+            </VoucherColumnData>
+            <VoucherFooter breakColumn={5} items={{
+              title: 'Label titulo de sección',
+              typeList: 'icons',
+              bullets: [
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+                {
+                  text: 'Tipografía / Estilos',
+                  prefixType: 'info',
+                  type: 'success'
+                },
+              ]
+            }} />
+          </Voucher>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Action Card col-lg-5</h1>
+      <div className="row">
+        <div className="col-lg-5 col-md-12 col-sm-6">
+          <Card>
+            <CardHeader>
+              <CardImage imgUrl='/assets/images/photo_hight_resolution.jpg' />
+            </CardHeader>
+            <CardContent>
+              <h6>Type someting</h6>
+              <br />
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.</p>
+            </CardContent>
+            <CardActions>
+              <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+                color='primary'>Button</Button>
+            </CardActions>
+          </Card>
+        </div>
+
+        <br />
+        <br />
+
+        <div className="col-lg-5 col-md-12 col-sm-6">
+          <Card>
+            <CardHeader>
+              <CardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
+            </CardHeader>
+            <CardContent title={'Type something'}
+              content={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.'}>
+            </CardContent>
+            <CardActions buttons={[
+              {
+                color: 'primary',
+                label: 'Button',
+                onClick: () => {
+                  console.log('test')
+                }
+              },
+              {
+                color: 'primary',
+                label: 'Button',
+                onClick: () => {
+                  console.log('test')
+                }
+              }
+            ]}>
+
+            </CardActions>
+          </Card>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Action Card col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <Card>
+            <CardHeader>
+              <CardImage imgUrl='/assets/images/photo_hight_resolution.jpg' />
+            </CardHeader>
+            <CardContent title={'type something'} typeList={'unorder'} bullets={[
+              {
+                text: 'Tipografía / Estilos',
+                type: 'success'
+              },
+              {
+                text: 'Tipografía / Estilos',
+                type: 'success'
+              },
+              {
+                text: 'Tipografía / Estilos',
+                type: 'success'
+              }
+            ]
+            }>
+            </CardContent>
+            <CardActions>
+              <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+                color='primary'>Button</Button>
+            </CardActions>
+          </Card>
+        </div>
+
+        <br />
+        <br />
+
+
+      </div>
+    </div>
+
     <br />
     <br />
 

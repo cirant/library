@@ -1,0 +1,14 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.cardActionsContainer{
+
+  display: flex;
+  padding-top: (nth(nth($spacers, 3), 2));
+  margin-bottom: -(nth(nth($spacers, 3), 2));
+
+  .cardActionItem{
+    flex: 1;
+  }
+
+}

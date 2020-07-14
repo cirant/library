@@ -1,0 +1,51 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+@import '../../scss/mixins/elevation';
+
+.voucherColumnDataContainer {
+
+  display: flex;
+  padding-top: nth(nth($spacers, 3), 2);
+
+  .voucherColumnDataSection {
+    width: 100%;
+    display: flex;
+    flex-basis: 100%;
+    position: relative;
+    padding-bottom: nth(nth($spacers, 6), 2);
+    flex-flow: row wrap;
+
+    .itemColumn {
+      flex: 1;
+      box-sizing: border-box;
+
+      .itemColumnContent {
+        padding-top: nth(nth($spacers, 5), 2);
+      }
+
+    }
+
+
+    .borderSectionBottom {
+      position: absolute;
+      border-top: 1px solid #D8D8D8;
+      width: 80%;
+      bottom: 0%;
+      height: 1px;
+    }
+
+  }
+
+  .voucherColumnDataSection:first-child{
+    .borderSectionTop{
+      position: absolute;
+      border-top: 1px solid #D8D8D8;
+      width: 80%;
+      top: -24px;
+      height: 1px;
+    }
+  }
+
+}
+
+

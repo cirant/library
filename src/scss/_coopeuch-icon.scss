@@ -25,7 +25,13 @@ $availableFonts: (16, 20,24,32,40,48,56,64);
       }
     }
   }
-  
+ 
+.icon-calendar:before {
+  content: "\e9b0";
+}
+.icon-menu-kebab:before {
+  content: "\e9af";
+}
 .icon-alert:before {
   content: "\e9ae";
 }

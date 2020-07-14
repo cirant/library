@@ -1,0 +1,47 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+@import '../scss/mixins/elevation';
+
+.menuContainer{
+  border-radius: 100%;
+  padding: nth(nth($spacers, 3),2);
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+
+  .dropdownMenu{
+    position: absolute;
+    max-width: 400px;
+    top: 100%;
+    right: 0;
+    padding: 0px;
+    list-style: none;
+    border-radius: 4px;
+    overflow: hidden;
+    @include elevationElementCreator(2);
+    z-index: 99;
+    text-align: left;
+    @media screen and (max-width: nth(nth($grid-breakpoints,3),2)){
+      max-width: 60vw;
+    }
+
+    .option{
+      padding: nth(nth($spacers, 3),2) nth(nth($spacers, 6),2);
+      white-space: nowrap;
+      background-color: white;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+      display: inherit;
+
+      &:hover{
+        background-color: $neutral-10;
+      }
+
+      i{
+        margin-right: nth(nth($spacers, 4),2);
+      }
+    }
+  }
+}

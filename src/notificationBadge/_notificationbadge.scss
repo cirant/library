@@ -1,0 +1,17 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+@import '../scss/mixins/elevation';
+
+.notificationBadgeContainer {
+
+  display: inline-block;
+  min-height: 16px;
+  padding: 0 nth(nth($spacers, 2), 2);
+  background-color: $primary-20;
+  color: white;
+  border-radius: 30px;
+  font-size: 12px;
+
+}
+
+

@@ -1,0 +1,11 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+
+.cardHeaderContainer {
+  display: flex;
+  margin-left: -#{nth(nth($spacers, 5), 2)};;
+  margin-right: -#{nth(nth($spacers, 5), 2)};;
+  margin-top: -#{nth(nth($spacers, 6), 2)};;
+
+}

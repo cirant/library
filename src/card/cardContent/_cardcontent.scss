@@ -1,0 +1,12 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.cardContentContainer{
+  padding-top: nth(nth($spacers, 5), 2);
+  overflow-wrap: break-word;
+
+  .cardHeaderTitle{
+    padding-bottom: nth(nth($spacers, 5), 2);
+  }
+
+}
