@@ -1,25 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { es } from 'date-fns/locale';
 import PropTypes from 'prop-types';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 import icons from '../../scss/_coopeuch-icon.scss';
 
 const InputDate = ({
-    startDate, 
-    endDate, 
+    startDate,
+    endDate,
+    onStartDateChange,
+    onEndDateChange,
     format,  
     minimumDate, 
     maximumDate,
-    onStartDateChange,
-    onEndDateChange,
-    valueStartDate, 
-    valueEndDate,
     ...props
-}) => {
+}) => { 
 
-    const minDate = minimumDate.split(',');
-    const maxDate = maximumDate.split(',');
-    
+    const getObjDate = (strDate) => {
+        if(!strDate) return null;
+        const arrayNewDate = strDate.split('/');
+        return new Date(Number(arrayNewDate[0]), Number(arrayNewDate[1]), Number(arrayNewDate[2]));
+    }
+
     return ( 
         <div className="containerDateRange">   
             <DateRangePicker
@@ -27,11 +28,12 @@ const InputDate = ({
                 endDate={endDate}
                 onStartDateChange={onStartDateChange}
                 onEndDateChange={onEndDateChange}
-                minimumDate={minDate ? new Date(minDate[0], minDate[1], minDate[2]) : new Date()}
-                maximumDate={maxDate ? new Date(maxDate[0], maxDate[1], maxDate[2]) : null}
+                minimumDate={getObjDate(minimumDate)}
+                maximumDate={getObjDate(maximumDate)}
                 format={format}
                 locale={es}
-                >
+                {...props}
+            >
                 {({ startDateInputProps, endDateInputProps, focus }) => (
                     <div className="date-range">
                         <div>
@@ -63,15 +65,17 @@ const InputDate = ({
 }
 
 InputDate.defaultProps = {
-    format: 'dd-MM-yyyy'
+    format: 'dd/MM/yyyy'
 };
 
 InputDate.propTypes = {
+    startDate: PropTypes.object,
+    endDate: PropTypes.object,
     format: PropTypes.string.isRequired,
-    minimumDate: PropTypes.string.isRequired,
+    minimumDate: PropTypes.string,
     maximumDate: PropTypes.string,
     onStartDateChange: PropTypes.func,
-    onEndDateChange: PropTypes.func
+    onEndDateChange: PropTypes.func,
 };
  
 export default InputDate;

@@ -48,8 +48,8 @@ const App = () => {
   const [inputSecurity, setInputSecurity] = useState('');
   const [showSecurity, setInputShowSecurity] = useState(true);
 
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const [startDate, setStartDate] = useState(new Date(2020,6,20));
+  const [endDate, setEndDate] = useState(new Date(2020,6,22));
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
@@ -476,14 +476,15 @@ const App = () => {
 
     <div className="container my-4">  
       <h1 className="mb-4">input date</h1>
+      
       <InputDate
-          format="dd-MM-yyyy"
-          minimumDate='2020,6,19'
-          maximumDate='2020,11,31'
-          startDate={new Date()}
+          startDate={startDate}
           endDate={endDate}
           onStartDateChange={setStartDate}
           onEndDateChange={setEndDate}
+          format="dd/MM/yyyy"
+          minimumDate='2020/6/1'
+          maximumDate='2020/6/31'
       />
     </div>
 

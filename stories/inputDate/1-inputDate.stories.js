@@ -9,26 +9,34 @@ import '../../dist/index.css';
 import '../../dist/css/date.css';
 
 const propsDescriptions = {
+    startDate: {
+      propType: 'object',
+      description: 'This will show this value above the field, (instance of new Date())'
+    },
+    endDate: {
+      propType: 'object',
+      description: 'This will show this value above the field (instance of new Date())'
+    },
     format: {
-        propType: 'string',
-        description: 'This will show this value above the field'
+      propType: 'string',
+      description: 'This will show this value above the field (dd/MM/yyyy)'
     },
     minimumDate: {
       propType: 'string',
-      description: 'Days before minimumDate'
+      description: 'Days before minimumDate will be disabled (2020/6/1)'
     },
     maximumDate: {
       propType: 'string',
-      description: 'Days after maximumDate'
+      description: 'Days after maximumDate will be disabled (2020/6/31)' 
     },
     onStartDateChange: {
       propType: 'function',
-      description: 'this is a function which is triggered when the icon is clicked'
+      description: 'This function will return a new value entered into the input'
     },
     onEndDateChange: {
       propType: 'function',
-      description: 'this is a function which is triggered when the icon is clicked'
-    },
+      description: 'This function will return a new value entered into the input'
+    } 
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
@@ -70,11 +78,13 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 };
 
 export const inputDate = () => <InputDate
-  format={text('value', 'dd/MM/yyyy', 'text')}
+  startDate={object('startDate', (new Date(2020,6,17)), 'object')}
+  endDate={object('endDate', (new Date(2020,6,23)), 'object')}
+  format={text('format', 'dd/MM/yyyy', 'text')}
   minimumDate={text('minimumDate', '', 'text')}
   maximumDate={text('maximumDate', '', 'text')}
-  onStartDateChange={action('clicked')}
-  onEndDateChange={action('clicked')}
+  onStartDateChange={action('onStartDateChange action')}
+  onEndDateChange={action('onEndDateChange action')}
 />;
 
 export default {
@@ -100,7 +110,7 @@ export default {
         the basicest component form is: 
 
         ~~~js
-        <InputDate value={someValue} onStartDateChange={()=>null} onEndDateChange={()=>null} />
+        <InputDate onStartDateChange={()=>null} onEndDateChange={()=>null}/>
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
