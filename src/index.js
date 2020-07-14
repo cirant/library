@@ -44,6 +44,7 @@ import KebabMenu from './kebabMenu/';
 import NotificationBadge from './notificationBadge/';
 import CardHeader from './card/cardHeader'
 import CardContent from './card/cardContent'
+import CardBank from './card/cardBank'
 import CardActions from './card/cardAction'
 import CardImage from './card/cardHeader/cardImage'
 import BreadCrumb from './breadcrumb'
@@ -54,6 +55,7 @@ export {
   Icon,
   Grid,
   Card,
+  CardBank,
   CardSwitch,
   CardCheckbox,
   CardDropdown,

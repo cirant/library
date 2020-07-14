@@ -4,6 +4,7 @@ import {
   Button,
   BreadCrumb,
   Card,
+  CardBank,
   CardSwitch,
   CardCheckbox,
   CardDropdown,
@@ -553,8 +554,8 @@ const App = () => {
 
     <div className="container my-4">
         <h1 className="mb-4">input range</h1>
-        
-          <InputRange 
+
+          <InputRange
             placeholder="Text Placeholder"
             label="Text Label"
             min="200"
@@ -565,9 +566,9 @@ const App = () => {
           />
     </div>
 
-    <div className="container my-4">  
+    <div className="container my-4">
       <h1 className="mb-4">input date</h1>
-      
+
       <InputDate
           label="Label text"
           startDate={startDate}
@@ -839,7 +840,7 @@ const App = () => {
             interactive
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="right-end">
+            placement="top">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
@@ -847,7 +848,7 @@ const App = () => {
           <Tooltip
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="right-end">
+            placement="right">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
@@ -1223,6 +1224,20 @@ const App = () => {
 
     <br />
     <br />
+
+    <div className="container">
+      <h1 className="mb-4">Bank Card col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank title='Type something'>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
 
   </>
 }
