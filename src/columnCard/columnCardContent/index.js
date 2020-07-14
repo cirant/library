@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from '../columnCardContent/_columncardcontent.scss'
+import PropTypes from 'prop-types'
 
 const ColumnCardContent = ({ title, content, children, ...props }) => {
 
-  let columnCardContentStyle = [styles.columnCardContentContainer]
+  const columnCardContentStyle = [styles.columnCardContentContainer]
 
   return (
     <div {...props} className={columnCardContentStyle.concat(props.className).join(' ')}>
@@ -19,12 +20,15 @@ const ColumnCardContent = ({ title, content, children, ...props }) => {
           <div className={styles.columnCardContent}><p className='note'>{content}</p></div>
         )
       }
-      {
-        children
-      }
+      {children}
     </div>
   )
 }
 
+ColumnCardContent.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+  children: PropTypes.node,
+}
 
 export default ColumnCardContent;

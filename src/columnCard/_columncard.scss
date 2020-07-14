@@ -4,41 +4,12 @@
 $shadow-color:rgba(31,30,30,0.10);
 $base: 2px;
 
-.imgCard {
-  flex: 1;
-  flex-shrink: 0;
-  width: 100%;
-  height: auto;
-  border-top-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-}
-
-%adjustcontainer{
-  margin-right: -16px;
-  margin-top: -17px;
-  margin-bottom: -17px;
-  border-top-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-}
-
-.card{
+.columnCard{
   display: flex;
-  padding: 16px 16px;
-  margin: 16px;
+  padding: nth(nth($spacers, 5), 2);
+  margin: nth(nth($spacers, 5), 2);
   border-radius: 5px;
 
-
-
-  .imageContainer{
-    flex: 1;
-    width: 100%;
-    background-position: center;
-    background-image: url('/assets/images/photo_hight_resolution.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    @extend %adjustcontainer;
-
-  }
 
   &.border{
     border: 1px solid $neutral-20;
@@ -68,6 +39,5 @@ $base: 2px;
       background-color: green;
     }
   }
-
 
 }

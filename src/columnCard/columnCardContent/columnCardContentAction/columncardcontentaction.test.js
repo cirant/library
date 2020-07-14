@@ -1,23 +1,23 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import CardActions from './index'
+import ColumnCardContentActions from './index'
 import TestRenderer from 'react-test-renderer'
 import Button from '../../../buttons'
 
 
-describe('Card Action behavior', () => {
+describe('ColumnCardContentActions component behavior', () => {
 
   const onClick = jest.fn()
 
   test('should be rendered', () => {
-    const component = render(<CardActions></CardActions>)
+    const component = render(<ColumnCardContentActions></ColumnCardContentActions>)
     expect(component).toBeTruthy()
   })
 
   test('should be contain button if button array it is declared', () => {
 
     const testRenderer = TestRenderer.create(
-      <CardActions
+      <ColumnCardContentActions
         buttons={
           [
             {
@@ -32,7 +32,7 @@ describe('Card Action behavior', () => {
             }
           ]}>
 
-      </CardActions>)
+      </ColumnCardContentActions>)
     const testInstance = testRenderer.root
     expect(testInstance.findAllByType(Button).length).toBe(2)
 
@@ -40,7 +40,7 @@ describe('Card Action behavior', () => {
 
   test('should be contain node if have a children', () => {
 
-    const component = render(<CardActions><p>text</p></CardActions>)
+    const component = render(<ColumnCardContentActions><p>text</p></ColumnCardContentActions>)
     expect(component.getByText(/text/)).toBeTruthy()
 
   })

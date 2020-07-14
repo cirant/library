@@ -45,6 +45,7 @@ import CardImage from './card/cardHeader/cardImage'
 import BreadCrumb from './breadcrumb'
 import ColumnCard from './columnCard'
 import ColumnCardContent from './columnCard/columnCardContent'
+import ColumnCardImage from './columnCard/columnCardImage'
 import ColumnCardContentActions from './columnCard/columnCardContent/columnCardContentAction'
 
 export {
@@ -96,4 +97,5 @@ export {
   ColumnCard,
   ColumnCardContent,
   ColumnCardContentActions,
+  ColumnCardImage
 };

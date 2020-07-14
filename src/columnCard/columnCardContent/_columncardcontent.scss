@@ -3,11 +3,12 @@
 
 .columnCardContentContainer{
 
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
   overflow-wrap: break-word;
-  margin-left: nth(nth($spacers, 5), 2);
-  margin-right: nth(nth($spacers, 5), 2);
   padding-right: nth(nth($spacers, 5), 2);
+  box-sizing: border-box;
 
   .columnCardContentHeaderTitle{
     padding-bottom: nth(nth($spacers, 3), 2);

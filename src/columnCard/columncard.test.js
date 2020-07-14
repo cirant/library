@@ -1,12 +1,12 @@
 import React from "react";
 import { render } from '@testing-library/react';
-import Card from './index'
+import ColumnCard from '.'
 
 
-describe('Card Component', () => {
+describe('ColumnCard Component behavior', () => {
 
   it('should be rendered', () => {
-    const component = render(<Card border> hola </Card>);
+    const component = render(<ColumnCard border> test </ColumnCard>);
     expect(component).toBeTruthy();
   });
 

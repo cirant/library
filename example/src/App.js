@@ -13,6 +13,7 @@ import {
   ColumnCard,
   ColumnCardContent,
   ColumnCardContentActions,
+  ColumnCardImage,
   ContentAction,
   Grid,
   Header,
@@ -1181,8 +1182,8 @@ const App = () => {
                 }
               ]
               }></ColumnCardContentActions>
-
             </ColumnCardContent>
+            <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'}/>
           </ColumnCard>
         </div>
         <br/>
