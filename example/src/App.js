@@ -25,6 +25,7 @@ import {
   InputSecurity,
   InputSelect,
   InputChip,
+  InputDate,
   Stamp,
   ContentAction,
   ProgressBar,
@@ -45,9 +46,10 @@ import {
   VoucherColumnData,
   VoucherFooter,
   NotificationBadge
-} from 'library-1'
-import 'library-1/dist/index.css'
-import 'library-1/dist/css/custom.css'
+} from 'library-1';
+import 'library-1/dist/index.css';
+import 'library-1/dist/css/custom.css';
+import 'library-1/dist/css/date.css';
 
 const App = () => {
   const [checked, setCheckbox] = useState(false);
@@ -62,6 +64,8 @@ const App = () => {
   const [inputSecurity, setInputSecurity] = useState('');
   const [showSecurity, setInputShowSecurity] = useState(true);
 
+  const [startDate, setStartDate] = useState(new Date(2020,6,20));
+  const [endDate, setEndDate] = useState(new Date(2020,6,22));
   const content = (<div><Button variant="text" color="primary" suffix="arrow-right" > lorem </Button></div>);
 
   const handleCheckbox = (value) => {
@@ -548,16 +552,31 @@ const App = () => {
     </div>
 
     <div className="container my-4">
-      <h1 className="mb-4">input range</h1>
+        <h1 className="mb-4">input range</h1>
+        
+          <InputRange 
+            placeholder="Text Placeholder"
+            label="Text Label"
+            min="200"
+            max="800"
+            step="1"
+            onChange={(e) => setRange(Number(e.target.value))}
+            value={range}
+          />
+    </div>
 
-      <InputRange
-        placeholder="Text Placeholder"
-        label="Text Label"
-        min="200"
-        max="800"
-        step="1"
-        onChange={(e) => setRange(e.target.value)}
-        value={range}
+    <div className="container my-4">  
+      <h1 className="mb-4">input date</h1>
+      
+      <InputDate
+          label="Label text"
+          startDate={startDate}
+          endDate={endDate}
+          onStartDateChange={setStartDate}
+          onEndDateChange={setEndDate}
+          format="dd/MM/yyyy"
+          minimumDate='2020/6/1'
+          maximumDate='2020/6/31'
       />
     </div>
 
