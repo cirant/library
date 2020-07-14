@@ -5,8 +5,8 @@
 .cardHeaderContainer {
 
   display: flex;
-  margin-left: -16px;
-  margin-right: -16px;
-  margin-top: -24px;
+  margin-left: -#{nth(nth($spacers, 5), 2)};
+  margin-right: -#{nth(nth($spacers, 5), 2)};
+  margin-top: -#{nth(nth($spacers, 6), 2)};
 
 }

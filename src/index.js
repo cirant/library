@@ -2,6 +2,9 @@ import Button from './buttons';
 import Icon from './icons';
 import Grid from './grid';
 import Card from './card';
+import CardSwitch from './card/cardSwitch';
+import CardCheckbox from './card/cardCheckbox';
+import CardDropdown from './card/cardDropdown';
 import Checkbox from './checkbox';
 import Logo from './logo';
 import HeaderItem from './header/headerItem';
@@ -50,10 +53,12 @@ import ColumnCardContentActions from './columnCard/columnCardContent/columnCardC
 
 export {
   Button,
-  BreadCrumb,
   Icon,
   Grid,
   Card,
+  CardSwitch,
+  CardCheckbox,
+  CardDropdown,
   Checkbox,
   Logo,
   HeaderItem,
