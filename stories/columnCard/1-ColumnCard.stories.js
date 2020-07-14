@@ -127,7 +127,7 @@ export default {
         import { ColumnCard, ColumnCardContent, ColumnCardContentActions, ColumnCardImage } from 'library';
         ~~~
 
-        way to declare the component it is this if you want to know how more about button component please follow the next link [Button Componenet](/?path=/story/button--normal)
+        a way to declare the component it is this if you want to know how more about button component please follow the next link [Button Componenet](/?path=/story/button--normal)
 
         ~~~js
         <div className="container">
