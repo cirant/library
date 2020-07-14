@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 import Label  from '../_commons/label';
 import icons from '../../scss/_coopeuch-icon.scss';
+import RangeDateUtils from '../../utils/rangeDateUtils'
 
 const InputDate = ({
     label,
@@ -17,12 +18,6 @@ const InputDate = ({
     ...props
 }) => { 
 
-    const getObjDate = (strDate) => {
-        if(!strDate) return null;
-        const arrayNewDate = strDate.split('/');
-        return new Date(Number(arrayNewDate[0]), Number(arrayNewDate[1]), Number(arrayNewDate[2]));
-    }
-
     return ( 
         <div className="containerDateRange"> 
             <Label label={label} />
@@ -31,8 +26,8 @@ const InputDate = ({
                 endDate={endDate}
                 onStartDateChange={onStartDateChange}
                 onEndDateChange={onEndDateChange}
-                minimumDate={getObjDate(minimumDate)}
-                maximumDate={getObjDate(maximumDate)}
+                minimumDate={RangeDateUtils.getObjDate(minimumDate)}
+                maximumDate={RangeDateUtils.getObjDate(maximumDate)}
                 format={format}
                 locale={es}
                 {...props}
