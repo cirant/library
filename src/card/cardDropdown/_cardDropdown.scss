@@ -1,0 +1,88 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.card {
+  padding: nth(nth($spacers, 1), 2);
+  width: 100%;
+  overflow: hidden;
+  
+  &[disabled=""] > * {
+    pointer-events: none;
+    color: $neutral-20 !important;
+    
+    &.dropdown .action{
+      color: $neutral-20 !important;
+    }
+  }
+
+  .cardContent{
+    padding: nth(nth($spacers, 6), 2) nth(nth($spacers, 5), 2);
+  }
+}
+
+.dropdown{
+  padding: nth(nth($spacers, 4), 2) nth(nth($spacers, 5), 2);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $neutral-20;
+
+  &.dark{
+    background-color: $secondary-blue-alfa-65;
+    color: white; 
+    .action{
+      color: white;
+    }
+  }
+
+  .textContainer{
+    flex: 1;
+    font-weight: bold;
+
+    .note{
+      font-size: 14px;
+      line-height: 1.5rem;
+    }
+
+  }
+
+  .action{
+    position: relative;
+    padding: nth(nth($spacers, 3), 2);
+    cursor: pointer;
+    overflow: hidden;
+    color: $info-40;
+
+    &:after{
+      content: '';
+      border-radius: 100%;
+      position: absolute;
+      background-color: transparent;
+      animation-timing-function: cubic-bezier(.47,0,.74,.71);
+      animation-duration: .2s;
+    }
+    &:active{
+      &:after{
+        animation-name: circle ;
+      }
+    }
+  }
+}
+
+@keyframes circle {
+  0% { 
+    width: 50%; 
+    height: 50%;
+    top: 25%;
+    left: 25%;
+   }
+  90% { 
+    width: 140%; 
+    height: 140%;
+    top: -20%;
+    left: -20%;
+    background-color: $neutral-alfa-15;
+   }
+  100%{
+    background-color: transparent;
+  }
+}
