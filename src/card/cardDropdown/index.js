@@ -47,7 +47,7 @@ CardDropdown.defaultProps = {
 CardDropdown.propTypes = {
   opened: PropTypes.bool,
   disabled: PropTypes.bool,
-  onClick: PropTypes.function,
+  onClick: PropTypes.func,
   title: PropTypes.string,
   dark: PropTypes.bool,
   description: PropTypes.string
