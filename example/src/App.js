@@ -4,6 +4,9 @@ import {
   Button,
   BreadCrumb,
   Card,
+  CardSwitch,
+  CardCheckbox,
+  CardDropdown,
   CardActions,
   CardContent,
   CardHeader,
@@ -198,6 +201,80 @@ const App = () => {
       <Card selected> selected </Card>
       <Card onClick={() => alert('clicked')} > click me </Card>
       <Card border > hola mundo </Card>
+    </div>
+
+    <h1 className="mb-4">Card Dropdown</h1>
+
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        opened={checked}
+        onClick={() => handleCheckbox(!checked)}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        border
+        opened={checked}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+        onClick={() => handleCheckbox(!checked)}
+      > Some content </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        disabled
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content disabled </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        selected
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content </CardDropdown>
+    </div>
+
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        selected
+        dark
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content dark </CardDropdown>
+    </div>
+
+    <div className="my-4">
+      <h1 className="mb-4">Card Switch</h1>
+
+      <div className="d-flex flex-column">
+        <CardSwitch
+          status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)}
+          cardname='mastercard'
+          title='Label content'
+          footerTitle='Titular'
+          footerText='Nº **************2345'
+        />
+      </div>
+    </div>
+
+    <div className="my-4">
+      <h1 className="mb-4">Card Checkbox</h1>
+
+      <div className="d-flex flex-column">
+        <CardCheckbox
+          checked={checked} onChange={handleCheckbox}
+          cardname='mastercard'
+          title='Label content'
+          footerTitle='Titular'
+          footerText='Nº **************2345'
+        />
+      </div>
     </div>
 
     <h1 className="mb-4">Checkbox</h1>
@@ -511,7 +588,6 @@ const App = () => {
         <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
       </div>
     </div>
-
 
     <div className="container my-4">
       <h1 className="mb-4">input counter</h1>
