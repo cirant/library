@@ -4,6 +4,9 @@ import {
   BreadCrumb,
   Button,
   Card,
+  CardSwitch,
+  CardCheckbox,
+  CardDropdown,
   CardActions,
   CardContent,
   CardHeader,
@@ -113,7 +116,7 @@ const App = () => {
     <h1 className="mb-4">Icons</h1>
 
     <div className="d-flex align-items-baseline flex-wrap">
-      <Icon className="p-4" name="flag" />
+      <Icon className="p-4" name="flag" size="1" />
       <Icon className="p-4" name="flag" size="2" />
       <Icon className="p-4" name="flag" size="3" />
       <Icon className="p-4" name="flag" size="4" />
@@ -199,7 +202,81 @@ const App = () => {
       <Card onClick={() => alert('clicked')} > click me </Card>
       <Card border > hola mundo </Card>
     </div>
-    
+
+    <h1 className="mb-4">Card Dropdown</h1>
+
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        opened={checked}
+        onClick={() => handleCheckbox(!checked)}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        border
+        opened={checked}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+        onClick={() => handleCheckbox(!checked)}
+      > Some content </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        disabled
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content disabled </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        selected
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content </CardDropdown>
+    </div>
+
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        selected
+        dark
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content dark </CardDropdown>
+    </div>
+
+    <div className="my-4">
+      <h1 className="mb-4">Card Switch</h1>
+
+      <div className="d-flex flex-column">
+        <CardSwitch
+          status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)}
+          cardname='mastercard'
+          title='Label content'
+          footerTitle='Titular'
+          footerText='Nº **************2345'
+        />
+      </div>
+    </div>
+
+    <div className="my-4">
+      <h1 className="mb-4">Card Checkbox</h1>
+
+      <div className="d-flex flex-column">
+        <CardCheckbox
+          checked={checked} onChange={handleCheckbox}
+          cardname='mastercard'
+          title='Label content'
+          footerTitle='Titular'
+          footerText='Nº **************2345'
+        />
+      </div>
+    </div>
+
     <h1 className="mb-4">Checkbox</h1>
 
     <div className="d-flex">
@@ -1089,11 +1166,11 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container">
-      <h1 className="mb-4">Action Card col-lg-2</h1>
+      <h1 className="mb-4">Action Card col-lg-6</h1>
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-6">
           <Card>
