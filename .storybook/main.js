@@ -1,5 +1,4 @@
 
-const path = require('path');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
@@ -28,6 +27,19 @@ module.exports = {
       })
     );
     return config;
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+    ],
   },
 
 };

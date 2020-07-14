@@ -1,35 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './_card.scss';
+import React from 'react'
+import styles from '../cardContent/_cardcontent.scss'
+import Bullets from '../../bullets'
+import PropTypes from 'prop-types'
 
-const Card = ({ border, animated, children, ...props }) => {
+const CardContent = ({ title, content, typeList, bullets, children, ...props }) => {
 
+  let cardContentStyle = [styles.cardContentContainer]
 
-  let cardStules = [styles.card];
-  cardStules = border ? cardStules.concat(styles.border) : cardStules.concat(styles['elevation-1']);
-
-  if (props.onClick && !border) {
-    cardStules = cardStules.concat(styles.animated);
+  let getContent = () => {
+    if (content) {
+      return (<p>{content}</p>)
+    } else if (bullets) {
+      return (<Bullets typeList={typeList} items={bullets}/>)
+    }
   }
 
-  if (props.selected) {
-    cardStules = cardStules.concat(styles.selected);
-  }
-
-  return <div {...props} className={cardStules.concat(props.className).join(' ')}>
-    {children}
-  </div>
+  return (
+    <div {...props} className={cardContentStyle.concat(props.className).join(' ')}>
+      {
+        title &&
+        (
+          <div className={styles.cardHeaderTitle}><h6>{title}</h6></div>
+        )
+      }
+      {
+        getContent()
+      }
+      {children}
+    </div>
+  )
 }
 
-Card.defaultProps = {
-  border: false,
-  selected: false,
-};
 
-Card.propTypes = {
-  onClick: PropTypes.func,
-  border: PropTypes.bool,
-  selected: PropTypes.bool,
-};
+CardContent.propTypes = {
+  title: PropTypes.string,
+  typeList: PropTypes.string,
+  content: PropTypes.string,
+  bullets: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    icon: PropTypes.string,
+    type: PropTypes.string,
+    disabled: PropTypes.bool,
+    prefixType: PropTypes.string,
+    contentType: PropTypes.string,
+  })),
+  children: PropTypes.node,
+}
 
-export default Card;
+export default CardContent;
