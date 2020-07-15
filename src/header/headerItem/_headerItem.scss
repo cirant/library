@@ -10,6 +10,10 @@
   align-items: center;
   justify-content: center;
 
+  &.bold{
+    font-weight: bold;
+  }
+
   &:hover{
     background-color: $primary-30;
     cursor: pointer;

@@ -4,8 +4,11 @@ import { Icon } from '../../';
 
 import headerItemStyles from './_headerItem.scss';
 
-const HeaderItem = ({ icon, children, ...props }) => {
-  return <div className={headerItemStyles.headerItem} {...props}>
+const HeaderItem = ({ icon, children, bold, ...props }) => {
+  return <div className={[
+    headerItemStyles.headerItem,
+    bold ? headerItemStyles.bold : null
+  ].join(' ').trim()} {...props}>
     {
       icon && <Icon name={icon} />
     }
@@ -14,12 +17,11 @@ const HeaderItem = ({ icon, children, ...props }) => {
 }
 
 HeaderItem.defaultProps = {
-  children: '',
 };
 
 HeaderItem.propTypes = {
   icon: PropTypes.string,
-  children: PropTypes.string,
+  bold: PropTypes.bool
 };
 
 export default HeaderItem;
