@@ -12,6 +12,10 @@ import {
   CardHeader,
   CardImage,
   Checkbox,
+  ColumnCard,
+  ColumnCardContent,
+  ColumnCardContentActions,
+  ColumnCardImage,
   Grid,
   Header,
   HeaderItem,
@@ -24,8 +28,8 @@ import {
   InputRange,
   InputSecurity,
   InputSelect,
-  InputChip,
   InputDate,
+  InputChip,
   Stamp,
   ContentAction,
   ProgressBar,
@@ -553,8 +557,8 @@ const App = () => {
 
     <div className="container my-4">
         <h1 className="mb-4">input range</h1>
-        
-          <InputRange 
+
+          <InputRange
             placeholder="Text Placeholder"
             label="Text Label"
             min="200"
@@ -565,9 +569,9 @@ const App = () => {
           />
     </div>
 
-    <div className="container my-4">  
+    <div className="container my-4">
       <h1 className="mb-4">input date</h1>
-      
+
       <InputDate
           label="Label text"
           startDate={startDate}
@@ -588,6 +592,7 @@ const App = () => {
         <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
       </div>
     </div>
+
 
     <div className="container my-4">
       <h1 className="mb-4">input counter</h1>
@@ -1221,8 +1226,47 @@ const App = () => {
       </div>
     </div>
 
-    <br />
-    <br />
+    <br/>
+    <br/>
+
+    <div className="container">
+      <h1 className="mb-4">Column Card col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-8 col-md-12 col-sm-6">
+          <ColumnCard>
+            <ColumnCardContent title='Type something'
+                               content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.'>
+              <ColumnCardContentActions buttons={[
+                {
+                  color: 'primary',
+                  label: 'Button',
+                  onClick: () => {
+                    console.log('test')
+                  }
+                },
+                {
+                  color: 'primary',
+                  label: 'Button',
+                  onClick: () => {
+                    console.log('test')
+                  }
+                }
+              ]
+              }></ColumnCardContentActions>
+            </ColumnCardContent>
+            <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'}/>
+          </ColumnCard>
+        </div>
+        <br/>
+        <br/>
+      </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
 
   </>
 }

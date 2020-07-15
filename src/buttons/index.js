@@ -7,7 +7,7 @@ const Button = ({ children, color, variant, disabled, prefix, suffix, ...props }
   const btnVariant = variant !== '' ? `-${variant}` : '';
   const btnStyles = [styles.btn, styles[`btn-${color}${btnVariant}`] || ''];
 
-  return <button {...props} className={btnStyles.join(' ')} disabled={disabled} >
+  return <button {...props} className={btnStyles.concat(props.className).join(' ')} disabled={disabled} >
     {prefix && <Icon className={styles.prefix} name={prefix} />}
     {variant !== 'text' ? children : (!prefix && !suffix) ? <span>{children}</span> : children}
     {suffix && <Icon className={styles.suffix} name={suffix} />}

@@ -1,0 +1,24 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+%adjustcontainer{
+  margin-right: -#{nth(nth($spacers, 5), 2)};
+  margin-top: -#{nth(nth($spacers, 5), 2)};
+  margin-bottom: -#{nth(nth($spacers, 5), 2)};
+  border-bottom-right-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+}
+
+.columnCardImageContainer{
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @extend %adjustcontainer;
+}
+
+
+
+

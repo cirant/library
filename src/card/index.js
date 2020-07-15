@@ -4,7 +4,6 @@ import styles from './_card.scss';
 
 const Card = ({ border, animated, children, ...props }) => {
 
-
   let cardStules = [styles.card];
   cardStules = border ? cardStules.concat(styles.border) : cardStules.concat(styles['elevation-1']);
 
