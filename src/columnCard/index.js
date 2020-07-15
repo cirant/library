@@ -1,31 +1,22 @@
 import React from 'react'
 import styles from './_columncard.scss'
 import PropTypes from 'prop-types'
+import Card from '../card'
 
-const ColumnCard = ({ border, animated, children, ...props }) => {
-
-  let cardStyles = [styles.columnCard]
-  cardStyles = border ? cardStyles.concat(styles.border) : cardStyles.concat(styles['elevation-1'])
-
-  if (props.onClick && !border) {
-    cardStyles = cardStyles.concat(styles.animated)
-  }
-
-  if (props.selected) {
-    cardStyles = cardStyles.concat(styles.selected)
-  }
+const ColumnCard = ({ children, className, ...props }) => {
 
   return (
-    <div {...props} className={cardStyles.concat(props.className).join(' ')}>
-      {children}
-    </div>
+    <Card className={[styles.columnCard, className].join(' ').trim()} {...props}>
+        {children}
+    </Card>
   )
 
 }
 
 ColumnCard.propTypes = {
   border: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
+  animated: PropTypes.bool,
 }
 
 export default ColumnCard

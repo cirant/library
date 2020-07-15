@@ -16,7 +16,7 @@ describe('ColumnCardContent component behavior', () => {
   })
 
   test('should be contain content if have a content property defined', () => {
-    const component = render(<ColumnCardContent content='content'>></ColumnCardContent>)
+    const component = render(<ColumnCardContent content='content'></ColumnCardContent>)
     expect(component.getByText(/content/)).toBeTruthy()
   })
 

@@ -3,8 +3,8 @@
 
 %adjustcontainer{
   margin-right: -#{nth(nth($spacers, 5), 2)};
-  margin-top: -17px;
-  margin-bottom: -17px;
+  margin-top: -#{nth(nth($spacers, 5), 2)};
+  margin-bottom: -#{nth(nth($spacers, 5), 2)};
   border-bottom-right-radius: 5px !important;
   border-top-right-radius: 5px !important;
 }
