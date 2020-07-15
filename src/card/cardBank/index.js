@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from './_cardbank.scss'
+import Card from '../index'
 
 const CardBank = ({ border, animated, cardType, title, children, ...props }) => {
 
   let cardStyle = [styles.card]
   cardStyle = cardStyle.concat(styles.border)
 
-  let cardHeader = styles.header;
+  let cardHeader = styles.header
 
   if (cardType) {
     if (cardType == 'default') {
@@ -25,7 +26,7 @@ const CardBank = ({ border, animated, cardType, title, children, ...props }) => 
   }
 
   return (
-    <div {...props} className={cardStyle.concat(props.className).join(' ')}>
+    <Card className={cardStyle.concat(props.className).join(' ')} {...props}>
       <div className={cardHeader.join(' ')}>
         <div className={styles.prefix}>
           <div>
@@ -45,7 +46,7 @@ const CardBank = ({ border, animated, cardType, title, children, ...props }) => 
         </div>
       </div>
       {children}
-    </div>
+    </Card>
   )
 }
 
