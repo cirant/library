@@ -89,10 +89,6 @@
 
   &.active{ color: $primary; }
 
-  &:hover{
-    background-color: $neutral-10;
-    cursor: pointer;
-  }
 
 }
 
@@ -114,10 +110,5 @@
   }
 
   &.active{ color: $primary; }
-
-  &:hover{
-    background-color: $neutral-10;
-    cursor: pointer;
-  }
 
 }
