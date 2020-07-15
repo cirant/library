@@ -1,109 +1,109 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs/react';
-import { withInfo} from '@storybook/addon-info';
+import { withInfo } from '@storybook/addon-info';
 import { InputRange } from '../../dist';
 import '../codeStyles.css';
 import '../../dist/index.css';
 import { text } from '@storybook/addon-knobs';
 
 const propsDescriptions = {
-    label: {
-        propType: 'string',
-        description: 'This will show this value above the field'
-    },
-    placeholder: {
-      propType: 'string',
-      description: 'Specifies the default value'
-    },
-    value: {
-        propType: 'string',
-        description: 'Specifies the default value'
-    },
-    min: {
-      propType: 'string',
-      description: 'Specifies the minimum value allowed (Positive number > 0)'
-    },
-    max: {
-        propType: 'string',
-        description: 'specifies the maximum value allowed'
-    },
-    step: {
-      propType: 'string',
-      description: 'specifies the legal number intervals'
-    },
-    onChange: {
-        propType: 'function',
-        description: 'This function will return a new value entered into the input'
-    }
+  label: {
+    propType: 'string',
+    description: 'This will show this value above the field'
+  },
+  placeholder: {
+    propType: 'string',
+    description: 'Specifies the default value'
+  },
+  value: {
+    propType: 'string',
+    description: 'Specifies the default value'
+  },
+  min: {
+    propType: 'string',
+    description: 'Specifies the minimum value allowed (Positive number > 0)'
+  },
+  max: {
+    propType: 'string',
+    description: 'specifies the maximum value allowed'
+  },
+  step: {
+    propType: 'string',
+    description: 'specifies the legal number intervals'
+  },
+  onChange: {
+    propType: 'function',
+    description: 'This function will return a new value entered into the input'
+  }
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-    const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
-  
-    const props = propsMixeds.map(
-      ({ property, required, propType, defaultValue, description }) => {
-  
-        return (
-          <tr key={property}>
-            <td className="p-1">{property}
-              {required && <Red />}
-            </td>
-            <td className="p-1" style={{ whiteSpace: "nowrap" }}>{propType}</td>
-            <td className="p-1">{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
-            <td className="p-1">{description}</td>
-          </tr>
-        );
-      }
-    );
-  
-    return (
-      <table style={{
-        width: "100%"
-      }} {...propsx} >
-        <thead>
-          <tr style={{ textAlign: "left" }}>
-            <th>name</th>
-            <th>type</th>
-            <th>default</th>
-            <th>description</th>
-          </tr>
-        </thead>
-        <tbody>{props}</tbody>
-      </table>
-    );
-  };
+  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+
+  const props = propsMixeds.map(
+    ({ property, required, propType, defaultValue, description }) => {
+
+      return (
+        <tr key={property}>
+          <td className="p-1">{property}
+            {required && <Red />}
+          </td>
+          <td className="p-1" style={{ whiteSpace: "nowrap" }}>{propType}</td>
+          <td className="p-1">{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
+          <td className="p-1">{description}</td>
+        </tr>
+      );
+    }
+  );
+
+  return (
+    <table style={{
+      width: "100%"
+    }} {...propsx} >
+      <thead>
+        <tr style={{ textAlign: "left" }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>{props}</tbody>
+    </table>
+  );
+};
 
 export const inputRange = () => <InputRange
-    value={text('value', '', 'text')}
-    placeholder={text('placeholder', '', 'text')}
-    label={text('label', '', 'text')}
-    min={text('min', '', 'text')}
-    max={text('max', '', 'text')}
-    step={text('step', '', 'text')}
-    onChange={action('clearAction action')}
-/>; 
+  value={text('value', '', 'text')}
+  placeholder={text('placeholder', '', 'text')}
+  label={text('label', '', 'text')}
+  min={text('min', '', 'text')}
+  max={text('max', '', 'text')}
+  step={text('step', '', 'text')}
+  onChange={action('clearAction action')}
+/>;
 
 export default {
-    title: 'InputRange',
-    decorators: [withKnobs, withInfo],
-    component: InputRange,
-    parameters: {
-      info: {
-        inline: true,
-        TableComponent,
-        styles: {
-          infoStory: {
-            padding: '0px 40px 0px',
-          }
-        },
-        text: `
+  title: 'InputRange',
+  decorators: [withKnobs, withInfo],
+  component: InputRange,
+  parameters: {
+    info: {
+      inline: true,
+      TableComponent,
+      styles: {
+        infoStory: {
+          padding: '0px 40px 0px',
+        }
+      },
+      text: `
           include into your project to be able to use the component styles
           ~~~js
-          import 'library/dist/index.css';
-          import { InputRange } from 'library';
+          import 'design-system-coopeuch/dist/index.css';
+          import { InputRange }from 'design-system-coopeuch';
           ~~~
   
           the basicest component form is: 
@@ -114,7 +114,7 @@ export default {
   
           change the knobs properties and you'll be able to watch its component structure below at Story Source
         `,
-      },
-  
     },
-  };
+
+  },
+};

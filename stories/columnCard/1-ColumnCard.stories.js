@@ -49,7 +49,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -64,12 +64,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -83,26 +83,26 @@ export const Simple = () => (
       content={text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.', 'Column Card Config')}>
       <ColumnCardContentActions
         buttons={[
-        {
-          color: select('color', colors, 'primary', 'Button I'),
-          disabled: boolean('disabled', false, 'Button I'),
-          prefix: !boolean('prefix Icon', false, 'Button I') ? null : 'home',
-          suffix: !boolean('suffix Icon', false, 'Button I') ? null : 'cloud',
-          onClick: action('clicked', null, 'Button I'),
-          label: text('Label', 'Button', 'Button I')
-        },
-        {
-          color: select('color', colors, 'primary', 'Button II'),
-          disabled: boolean('disabled', false, 'Button II'),
-          prefix: !boolean('prefix Icon', false, 'Button II') ? null : 'home',
-          suffix: !boolean('suffix Icon', false, 'Button II') ? null : 'cloud',
-          onClick: action('clicked', null, 'Button II'),
-          label: text('Label', 'Button', 'Button II')
-        }
-      ]
-      }></ColumnCardContentActions>
+          {
+            color: select('color', colors, 'primary', 'Button I'),
+            disabled: boolean('disabled', false, 'Button I'),
+            prefix: !boolean('prefix Icon', false, 'Button I') ? null : 'home',
+            suffix: !boolean('suffix Icon', false, 'Button I') ? null : 'cloud',
+            onClick: action('clicked', null, 'Button I'),
+            label: text('Label', 'Button', 'Button I')
+          },
+          {
+            color: select('color', colors, 'primary', 'Button II'),
+            disabled: boolean('disabled', false, 'Button II'),
+            prefix: !boolean('prefix Icon', false, 'Button II') ? null : 'home',
+            suffix: !boolean('suffix Icon', false, 'Button II') ? null : 'cloud',
+            onClick: action('clicked', null, 'Button II'),
+            label: text('Label', 'Button', 'Button II')
+          }
+        ]
+        }></ColumnCardContentActions>
     </ColumnCardContent>
-    <ColumnCardImage imgUrl={imageFile}/>
+    <ColumnCardImage imgUrl={imageFile} />
   </ColumnCard>
 )
 
@@ -110,7 +110,7 @@ export const Simple = () => (
 export default {
   title: 'Column Card',
   decorators: [withKnobs, withInfo],
-  component: [ColumnCard,ColumnCardImage,ColumnCardContent],
+  component: [ColumnCard, ColumnCardImage, ColumnCardContent],
   parameters: {
     info: {
       inline: true,
@@ -123,8 +123,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { ColumnCard, ColumnCardContent, ColumnCardContentActions, ColumnCardImage } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { ColumnCard, ColumnCardContent, ColumnCardContentActions, ColumnCardImage }from 'design-system-coopeuch';
         ~~~
 
         a way to declare the component it is this if you want to know how more about button component please follow the next link [Button Componenet](/?path=/story/button--normal)

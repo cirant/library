@@ -2,8 +2,8 @@ import React from 'react'
 import { withInfo } from '@storybook/addon-info'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import {Tooltip} from '../../dist'
-import {TitleSection} from '../../dist'
+import { Tooltip } from '../../dist'
+import { TitleSection } from '../../dist'
 import { select, text, withKnobs } from '@storybook/addon-knobs'
 
 const propsDescriptions = {
@@ -33,7 +33,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -48,12 +48,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -62,7 +62,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export default {
   title: 'Tooltip',
-  decorators: [withInfo,withKnobs],
+  decorators: [withInfo, withKnobs],
   component: Tooltip,
   parameters: {
     info: {
@@ -77,8 +77,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Tooltip } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Tooltip }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
@@ -102,12 +102,12 @@ export default {
 
 
 export const element = () => <Tooltip
-    content={text('content','')}
-    eventListener={select('eventListener',['hover','mouseClick'])}
-    placement={select('placement',['top','bottom','left','right'])}
-    >
-    <TitleSection label="Title Section" prefix="write"></TitleSection>
-  </Tooltip>
+  content={text('content', '')}
+  eventListener={select('eventListener', ['hover', 'mouseClick'])}
+  placement={select('placement', ['top', 'bottom', 'left', 'right'])}
+>
+  <TitleSection label="Title Section" prefix="write"></TitleSection>
+</Tooltip>
 
 
 element.story = {

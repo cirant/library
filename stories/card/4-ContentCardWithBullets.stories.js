@@ -63,7 +63,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -78,12 +78,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -92,44 +92,44 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const CardContentWithTitleAndBullets = () => (
   <div className="container">
-    <div className="row" style={{justifyContent:'center'}}>
+    <div className="row" style={{ justifyContent: 'center' }}>
       <div className="col-lg-4 col-md-12 col-sm-12 d-flex align-items-start">
         <Card
           onClick={select('function', [true, false], false, 'Card Config') ? () => alert('action') : null}
           selected={boolean('selected', false, 'Card Config')}
           border={boolean('border', false, 'Card Config')}>
           <CardHeader>
-            <CardImage imgUrl={imageFile}/>
+            <CardImage imgUrl={imageFile} />
           </CardHeader>
           <CardContent title={text('Title', 'Some title', 'Card Content')}
-                       typeList={select('typeList', ['unorder', 'order', 'icons'], 'order', 'Bullets config')}
-                       bullets={[
-                         {
-                           text: text('text', 'Order Bullet text a', 'Bullet I'),
-                           prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
-                           contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
-                           icon: select('icon', list, 'line-check', 'Bullet I'),
-                           disabled: boolean('disabled', false, 'Bullet I'),
-                           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet I')
-                         },
-                         {
-                           text: text('text', 'Order Bullet text b', 'Bullet II'),
-                           prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
-                           contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
-                           icon: select('icon', list, 'line-check', 'Bullet II'),
-                           disabled: boolean('disabled', false, 'Bullet II'),
-                           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet II')
-                         },
-                         {
-                           text: text('text', 'Order Bullet text c', 'Bullet III'),
-                           prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
-                           contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
-                           icon: select('icon', list, 'line-check', 'Bullet III'),
-                           disabled: boolean('disabled', false, 'Bullet III'),
-                           type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet III')
-                         }
-                       ]
-                       }>
+            typeList={select('typeList', ['unorder', 'order', 'icons'], 'order', 'Bullets config')}
+            bullets={[
+              {
+                text: text('text', 'Order Bullet text a', 'Bullet I'),
+                prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
+                contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
+                icon: select('icon', list, 'line-check', 'Bullet I'),
+                disabled: boolean('disabled', false, 'Bullet I'),
+                type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet I')
+              },
+              {
+                text: text('text', 'Order Bullet text b', 'Bullet II'),
+                prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
+                contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
+                icon: select('icon', list, 'line-check', 'Bullet II'),
+                disabled: boolean('disabled', false, 'Bullet II'),
+                type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet II')
+              },
+              {
+                text: text('text', 'Order Bullet text c', 'Bullet III'),
+                prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
+                contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
+                icon: select('icon', list, 'line-check', 'Bullet III'),
+                disabled: boolean('disabled', false, 'Bullet III'),
+                type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet III')
+              }
+            ]
+            }>
           </CardContent>
         </Card>
       </div>
@@ -157,8 +157,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Card, CardHeader, CardImage, CardContent } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Card, CardHeader, CardImage, CardContent } from 'design-system-coopeuch';
         ~~~
 
         a way to declare the component it is this (the cardHeader container it not mandatory) if you want to know how more about bullets please follow the next link [Bullet Componenet](/?path=/story/bullets--bullet-list)

@@ -122,7 +122,7 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
+        import 'design-system-coopeuch/dist/index.css';
         ~~~
 
         the basicest component form is: 
