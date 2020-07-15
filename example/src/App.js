@@ -50,10 +50,10 @@ import {
   VoucherColumnData,
   VoucherFooter,
   NotificationBadge
-} from 'library-1';
-import 'library-1/dist/index.css';
-import 'library-1/dist/css/custom.css';
-import 'library-1/dist/css/date.css';
+} from 'design-system-coopeuch';
+import 'design-system-coopeuch/dist/index.css';
+import 'design-system-coopeuch/dist/css/custom.css';
+import 'design-system-coopeuch/dist/css/date.css';
 
 const App = () => {
   const [checked, setCheckbox] = useState(false);
@@ -68,8 +68,8 @@ const App = () => {
   const [inputSecurity, setInputSecurity] = useState('');
   const [showSecurity, setInputShowSecurity] = useState(true);
 
-  const [startDate, setStartDate] = useState(new Date(2020,6,20));
-  const [endDate, setEndDate] = useState(new Date(2020,6,22));
+  const [startDate, setStartDate] = useState(new Date(2020, 6, 20));
+  const [endDate, setEndDate] = useState(new Date(2020, 6, 22));
   const content = (<div><Button variant="text" color="primary" suffix="arrow-right" > lorem </Button></div>);
 
   const handleCheckbox = (value) => {
@@ -556,31 +556,31 @@ const App = () => {
     </div>
 
     <div className="container my-4">
-        <h1 className="mb-4">input range</h1>
+      <h1 className="mb-4">input range</h1>
 
-          <InputRange
-            placeholder="Text Placeholder"
-            label="Text Label"
-            min="200"
-            max="800"
-            step="1"
-            onChange={(e) => setRange(Number(e.target.value))}
-            value={range}
-          />
+      <InputRange
+        placeholder="Text Placeholder"
+        label="Text Label"
+        min="200"
+        max="800"
+        step="1"
+        onChange={(e) => setRange(Number(e.target.value))}
+        value={range}
+      />
     </div>
 
     <div className="container my-4">
       <h1 className="mb-4">input date</h1>
 
       <InputDate
-          label="Label text"
-          startDate={startDate}
-          endDate={endDate}
-          onStartDateChange={setStartDate}
-          onEndDateChange={setEndDate}
-          format="dd/MM/yyyy"
-          minimumDate='2020/6/1'
-          maximumDate='2020/6/31'
+        label="Label text"
+        startDate={startDate}
+        endDate={endDate}
+        onStartDateChange={setStartDate}
+        onEndDateChange={setEndDate}
+        format="dd/MM/yyyy"
+        minimumDate='2020/6/1'
+        maximumDate='2020/6/31'
       />
     </div>
 
@@ -1226,8 +1226,8 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container">
       <h1 className="mb-4">Column Card col-lg-6</h1>
@@ -1235,7 +1235,7 @@ const App = () => {
         <div className="col-lg-8 col-md-12 col-sm-6">
           <ColumnCard>
             <ColumnCardContent title='Type something'
-                               content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.'>
+              content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.'>
               <ColumnCardContentActions buttons={[
                 {
                   color: 'primary',
@@ -1254,18 +1254,18 @@ const App = () => {
               ]
               }></ColumnCardContentActions>
             </ColumnCardContent>
-            <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'}/>
+            <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
           </ColumnCard>
         </div>
-        <br/>
-        <br/>
+        <br />
+        <br />
       </div>
     </div>
 
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
 
 
   </>
