@@ -1,0 +1,9 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+@import '../scss/mixins/elevation';
+
+.columnCard{
+  display: flex;
+  padding: nth(nth($spacers, 5), 2);
+  margin: nth(nth($spacers, 5), 2);
+}

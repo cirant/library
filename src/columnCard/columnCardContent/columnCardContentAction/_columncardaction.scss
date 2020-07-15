@@ -1,0 +1,33 @@
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import '../../../scss/variables';
+
+.columnCardActionsContainer{
+
+  display: flex;
+  box-sizing: border-box;
+  padding-top: (nth(nth($spacers, 4), 2));
+  margin-top: auto;
+
+  @media only screen and (max-width:667px) {
+    flex-direction: column;
+    .columnCardActionItem{
+      margin-bottom:  (nth(nth($spacers, 3), 2));
+    }
+    .columnCardActionItem:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  .columnCardActionItem{
+    flex: 1;
+
+    .buttonAction{
+      width: 90%;
+      justify-content: center;
+    }
+
+  }
+
+}
+
+

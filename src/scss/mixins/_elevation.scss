@@ -9,6 +9,8 @@ $base: 2px;
     }
   }
 
+  @include elevationOneToFive();
+
   .elevation-element-1{
     @include elevationElementCreator1();
   }

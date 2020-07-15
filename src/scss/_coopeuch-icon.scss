@@ -3,7 +3,7 @@ $fontsPath: "./css/fonts" !default;
 
 $availableFonts: (16, 20,24,32,40,48,56,64);
 
-[class^="__coopeuch-icon__icon-"], [class*=" __coopeuch-icon__icon-"], 
+[class^="__coopeuch-icon__icon-"], [class*=" __coopeuch-icon__icon-"],
 [class^="coopeuch-icon"], [class*=" coopeuch-icon"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
@@ -15,7 +15,7 @@ $availableFonts: (16, 20,24,32,40,48,56,64);
   line-height: 1;
   display: inline-flex;
   vertical-align: middle;
-  
+
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,7 +25,7 @@ $availableFonts: (16, 20,24,32,40,48,56,64);
       }
     }
   }
- 
+
 .icon-calendar:before {
   content: "\e9b0";
 }
