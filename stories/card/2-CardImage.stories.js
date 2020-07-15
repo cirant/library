@@ -47,7 +47,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -62,12 +62,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -83,10 +83,10 @@ export const CardWithHeaderAndImage = () => (
           selected={boolean('selected', false)}
           border={boolean('border', false)}>
           <CardHeader>
-            <CardImage imgUrl={select('Image Url', [imageFile, imageFile2], imageFile)}/>
+            <CardImage imgUrl={select('Image Url', [imageFile, imageFile2], imageFile)} />
           </CardHeader>
           <CardContent title={text('Title', 'Some title')}
-                       content={text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam at commodi consequatur')}>
+            content={text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam at commodi consequatur')}>
           </CardContent>
         </Card>
       </div>
@@ -110,8 +110,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Card, CardHeader, CardImage, CardContent } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Card, CardHeader, CardImage, CardContent } from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:

@@ -1,4 +1,4 @@
-# library-1
+# Design system coopeuch
 
 > Made with create-react-library
 
@@ -7,7 +7,14 @@
 ## Install
 
 ```bash
-npm install --save library-1
+npm install --save design-system-coopeuch
+```
+
+## Utilities 
+there are some utilities classes you could use. To use them you should import code below into your app root
+
+```bash
+import 'design-system-coopeuch/dist/css/custom.css';
 ```
 
 ## Usage
@@ -15,12 +22,12 @@ npm install --save library-1
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'library-1'
-import 'library-1/dist/index.css'
+import {Button} from 'design-system-coopeuch'
+import 'design-system-coopeuch/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <Button>hello world</Button>
   }
 }
 ```

@@ -1,10 +1,10 @@
 import React from 'react';
-import {withKnobs} from '@storybook/addon-knobs/react';
+import { withKnobs } from '@storybook/addon-knobs/react';
 import { number } from '@storybook/addon-knobs'
-import {withInfo} from '@storybook/addon-info';
+import { withInfo } from '@storybook/addon-info';
 import '../codeStyles.css';
 import '../../dist/index.css';
-import {Stamp} from '../../dist';
+import { Stamp } from '../../dist';
 
 const propsDescriptions = {
   width: {
@@ -17,19 +17,19 @@ const propsDescriptions = {
   },
 }
 
-const Red = props => <span style={{color: 'red'}} {...props} >*</span>;
+const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
 
-const TableComponent = ({propDefinitions, ...propsx}) => {
+const TableComponent = ({ propDefinitions, ...propsx }) => {
 
-  const propsMixeds = propDefinitions.map((el) => ({...el, ...propsDescriptions[el.property]}));
+  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
 
   const props = propsMixeds.map(
-    ({property, required, propType, defaultValue, description}) => {
+    ({ property, required, propType, defaultValue, description }) => {
 
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -44,23 +44,23 @@ const TableComponent = ({propDefinitions, ...propsx}) => {
       width: "100%"
     }} {...propsx} >
       <thead>
-      <tr style={{textAlign: "left"}}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: "left" }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
   );
 };
 
-export const StampComponent = () =>(
+export const StampComponent = () => (
   <Stamp
-    width = {number('width','170')}
-    height = {number('height','168')}
-    >
+    width={number('width', '170')}
+    height={number('height', '168')}
+  >
 
   </Stamp>
 )
@@ -84,8 +84,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Stamp } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Stamp }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
