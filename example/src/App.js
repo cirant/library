@@ -358,7 +358,15 @@ const App = () => {
       <div className="container">
         <Header
           logo={<Logo className="w-100" />}
-          logOut={<HeaderItem icon="line-logout"> label </HeaderItem>}
+          mobile={
+            {
+              onClickBack: () => alert('hola mundo'),
+              burgerClick: () => alert('burger click'),
+              section: 'Text label',
+              leftElement: <Icon name="line-notification" onClick={() => alert('hoooo')} />
+            }
+          }
+          logOut={<HeaderItem icon="line-logout" bold> label </HeaderItem>}
         >
           <HeaderItem icon="home"> label</HeaderItem>
           <HeaderItem icon="line-cloud"> label</HeaderItem>
@@ -844,7 +852,7 @@ const App = () => {
             interactive
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="right-end">
+            placement="bottom">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
@@ -852,7 +860,7 @@ const App = () => {
           <Tooltip
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="right-end">
+            placement="bottom">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
@@ -1226,8 +1234,8 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container">
       <h1 className="mb-4">Column Card col-lg-6</h1>

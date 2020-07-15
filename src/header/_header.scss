@@ -1,4 +1,5 @@
-
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
 
 .header{
   color: white;
@@ -20,7 +21,6 @@
 .profileItemContainer{
   padding: 0px;
   justify-content: end;
-
   @extend .flex;
 }
 
@@ -28,4 +28,43 @@
   @extend .flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.headerMobile{
+  padding: nth(nth($spacers, 5),2) nth(nth($spacers, 2),2);
+  align-items: center;
+  display: none;
+
+  .sectionContent{
+    padding: 0px;
+    display: inline-flex;
+    color: white;
+
+    .backButton{
+      padding: nth(nth($spacers, 1),2) nth(nth($spacers, 2),2);
+    }
+  }
+  
+  .option{
+    padding: nth(nth($spacers, 3),2);
+    color: white;
+  }
+
+  .burgerIcon{
+    color: white;
+    cursor: pointer;
+  }
+
+}
+
+@media screen and (max-width: nth(nth($grid-breakpoints,4),2)){
+
+  .headerDesktop{
+    display: none;
+  }
+
+  .headerMobile{
+    display: flex;
+  }
+
 }
