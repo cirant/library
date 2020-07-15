@@ -3,42 +3,69 @@ import styles from './_tooltip.scss'
 import Tippy from '@tippyjs/react'
 import PropTypes from 'prop-types'
 
-const Tooltip = ({ children, content, placement, eventListener, ...props }) => {
+const Tooltip = ({ children, content, placement, interactive, eventListener, ...etc }) => {
 
   const refBoxTooltip = createRef()
   const refContainerTippy = createRef()
 
-  const node = useRef();
+  const [placements, setPlacements] = useState(placement)
 
+  const previousPosition = placement
+
+  const node = useRef()
 
   const [visible, setVisible] = useState(false)
 
   const handleClick = e => {
     if (node.current.contains(e.target)) {
-      if(!visible) {
+      if (!visible) {
         setVisible(true)
       }
-      return;
+      return
     }
-    if(visible) setVisible(false)
-  };
+    if (visible) setVisible(false)
+  }
+
+  const setResponsivePosition = () => {
+    window.addEventListener('resize', () => {
+      const myWidth = window.screen.width
+      if (myWidth < 550) {
+        setPlacements('top')
+      } else {
+        setPlacements(previousPosition)
+      }
+    })
+  }
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClick);
+    setResponsivePosition()
+  }, [window])
+
+  useEffect(() => {
+    const myWidth = window.screen.width
+    if (myWidth < 550) {
+      setPlacements('top')
+    } else {
+      setPlacements(previousPosition)
+    }
+  }, [])
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClick)
     return () => {
-      document.removeEventListener("mousedown", handleClick);
-    };
-  }, [visible]);
+      document.removeEventListener('mousedown', handleClick)
+    }
+  }, [visible])
 
   const setOpacity = (event) => {
 
     if (eventListener === 'hover') {
       if (event === 'leave') {
-        setVisible(false);
+        setVisible(false)
         refBoxTooltip.current.style.opacity = 0
       }
       if (event === 'enter') {
-        setVisible(true);
+        setVisible(true)
         refBoxTooltip.current.style.opacity = 1
       }
     }
@@ -47,23 +74,29 @@ const Tooltip = ({ children, content, placement, eventListener, ...props }) => {
 
   return (
     <div
-      {...props}
+      {...etc}
       data-testid="test-container" visible={visible.toString()} className={styles.containerTooltip} ref={node}
-      onClick={() => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false} onMouseEnter={(e) => eventListener === 'hover' ? setOpacity('enter', e) : false}
+      onClick={() => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false}
+      onMouseEnter={(e) => eventListener === 'hover' ? setOpacity('enter', e) : false}
       onMouseLeave={() => eventListener === 'hover' ? setOpacity('leave') : false}>
       <Tippy
         offset={[0, 20]}
-        arrow={true} 
+        maxWidth="500px"
+        arrow={true}
         appendTo="parent"
         theme={'light'}
-        placement={placement} visible={true}
+        placement={placements} visible={true}
         animation={false}
-        interactive={props.interactive}
+        interactive={interactive}
         touch={true}
         render={attrs => (
           <div
             data-testid="test-box"
-            style = {{opacity: visible ? 1 :0}}
+            style={
+              {
+                opacity: visible ? 1 : 0 ,
+              }
+            }
             ref={refBoxTooltip}
             className={styles.box}
             tabIndex="-1" {...attrs}>
@@ -73,7 +106,7 @@ const Tooltip = ({ children, content, placement, eventListener, ...props }) => {
               className={styles.content}>
               {content}
             </div>
-            {<div data-testid="test-box-arrow" id="arrow" className={styles.arrow}> </div>}
+            {<div data-testid="test-box-arrow" id="arrow" className={styles.arrow}></div>}
             {/*<div id="arrow" data-popper-arrow className={styles.arrowd}></div>*/}
           </div>
         )}>
@@ -89,11 +122,13 @@ export default Tooltip
 Tooltip.defaultProps = {
   content: 'Text for tooltip',
   placement: 'top',
-  eventListener: 'hover',
+  interactive: false,
+  eventListener: 'hover'
 }
 
 Tooltip.propTypes = {
   placement: PropTypes.oneOf(['top', 'bottom', 'right', 'right-end', 'left']),
   eventListener: PropTypes.oneOf(['mouseClick', 'hover']),
-  content: PropTypes.string.isRequired
+  content: PropTypes.node,
+  interactive: PropTypes.bool
 }
