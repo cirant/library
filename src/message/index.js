@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './_message.scss';
 import { Icon, Button } from '../';
 
-const Message = ({ title, action, type, className, description }) => {
+const Message = ({ title, action, type, className, description, closer }) => {
   const messageClasses = [styles.message, styles[type], className];
 
   const getIcon = () => {
@@ -19,31 +19,35 @@ const Message = ({ title, action, type, className, description }) => {
     }
   }
   return <div className={messageClasses.join(' ').trim()} role="message">
-    <Icon name={getIcon()} className={styles.prefix} />
     <div className={styles.textContainer}>
-      {
-        title && <div> {title} </div>
-      }
-      {
-        description && <p> {description} </p>
-      }
+      <Icon name={getIcon()} className={styles.prefix} />
+      <div className={styles.content}>
+        {
+          title && <div> {title} </div>
+        }
+        {
+          description && <p> {description} </p>
+        }
+      </div>
     </div>
 
     <div className={styles.actionContainer}>
-      {action}
+      {closer ? <Icon name="line-cross" size={3} className={styles.closer} onClick={closer} /> : action}
     </div>
   </div>
 }
 
 Message.defaultProps = {
-  type: 'info'
+  type: 'info',
+  // closer: () => alert('hola mundo')
 };
 
 Message.propTypes = {
   type: PropTypes.oneOf(['error', 'success', 'info', 'warning']).isRequired,
   title: PropTypes.string,
   description: PropTypes.string,
-  action: PropTypes.element
+  action: PropTypes.element,
+  closer: PropTypes.func
 }
 
 export default Message;
