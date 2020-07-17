@@ -3,8 +3,14 @@ import styles from './_voucherdataresume.scss'
 import PropTypes from 'prop-types'
 import { NumberUtils } from '../../utils/'
 
-const VoucherDataResume = ({ label, content, number, currency, flex, ...props }) => {
-
+const VoucherDataResume = ({
+  label,
+  content,
+  number,
+  currency,
+  flex,
+  ...props
+}) => {
   const refContainer = createRef()
 
   useEffect(() => {
@@ -28,7 +34,7 @@ const VoucherDataResume = ({ label, content, number, currency, flex, ...props })
 
   return (
     <div {...props} ref={refContainer} className={styles.dataResumeContainer}>
-      {label && <p className="note">{label}</p>}
+      {label && <p className='note'>{label}</p>}
       <h2>{contentFormant()}</h2>
     </div>
   )

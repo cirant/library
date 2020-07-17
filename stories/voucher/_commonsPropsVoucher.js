@@ -5,7 +5,8 @@ export default {
   },
   items: {
     propType: 'array',
-    description: 'Describe each item of the section please see the story of each component for more detail'
+    description:
+      'Describe each item of the section please see the story of each component for more detail'
   },
   title: {
     propType: 'string',

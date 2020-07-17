@@ -907,7 +907,7 @@ const App = () => {
             interactive
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="bottom">
+            placement="right">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
@@ -915,7 +915,7 @@ const App = () => {
           <Tooltip
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="bottom">
+            placement="left">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
