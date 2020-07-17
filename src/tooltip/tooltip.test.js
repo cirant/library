@@ -75,24 +75,7 @@ describe('Tooltip test', () => {
     let componentRender = container.querySelector('div[data-testid="test-box-arrow"]')
     expect(componentRender).toBeTruthy()
   })
-
-  test('should set visibility false when mouseClick called twice', () => {
-    act(() => {
-      ReactDOM.render(
-        <Tooltip
-          content="label"
-          eventListener="mouseClick"
-          placement="right-end">
-          <TitleSection className="test" prefix="write" label="Title Section" />
-        </Tooltip>, container)
-    })
-    let componentRender = container.querySelector('div[data-testid="test-container"]')
-    componentRender.current.click();
-    fireEvent.click(componentRender)
-    fireEvent.click(componentRender)
-    let componenetVisibility = container.querySelector('div[visible="false"]')
-    expect(componenetVisibility).toBeTruthy()
-  })
+  
 
 
   test('should set visibility false when mouse enter and leave container', () => {

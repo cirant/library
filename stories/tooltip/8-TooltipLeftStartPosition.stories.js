@@ -93,7 +93,6 @@ export const TooltipLeftStartPosition = () => (
   </Tooltip>
 )
 
-
 export default {
   title: 'Tooltip',
   decorators: [withKnobs, withInfo],
