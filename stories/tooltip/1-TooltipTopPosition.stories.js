@@ -32,7 +32,6 @@ const propsDescriptions = {
   },
 }
 
-
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
 
 export const TooltipTopPosition = () => (
@@ -78,8 +77,8 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
 export default {
   title: 'Tooltip',
@@ -98,8 +97,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Tooltip } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Tooltip }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:

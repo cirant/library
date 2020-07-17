@@ -1,5 +1,4 @@
 import React from 'react';
-import { boolean, select, text } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { BreadCrumb } from '../../dist';
 
@@ -52,7 +51,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 const colors = ['primary', 'secondary']
 
-export const BulletList = () => (
+export const breadCrumb = () => (
   <BreadCrumb
     paths={[
       {
@@ -86,8 +85,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { BreadCrumb } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { BreadCrumb } from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:

@@ -63,7 +63,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -78,12 +78,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -101,8 +101,8 @@ export const CardWithOnlyContainers = () => (
               backgroundPosition: 'center center',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
-              paddingTop:'60%',
-              width:'100%',
+              paddingTop: '60%',
+              width: '100%',
               height: 400,
               borderTopLeftRadius: '5px',
               borderTopRightRadius: '5px'
@@ -112,12 +112,12 @@ export const CardWithOnlyContainers = () => (
           </CardHeader>
           <CardContent>
             <h6>Type someting</h6>
-            <br/>
+            <br />
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.</p>
           </CardContent>
           <CardActions>
             <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-                    color='primary'>Button</Button>
+              color='primary'>Button</Button>
           </CardActions>
         </Card>
       </div>
@@ -140,8 +140,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Card, CardHeader, CardImage, CardContent } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Card, CardHeader, CardImage, CardContent } from 'design-system-coopeuch';
         ~~~
 
         a way to declare the component it is this (container are not mandatory)

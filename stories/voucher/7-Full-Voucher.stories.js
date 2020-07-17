@@ -30,7 +30,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -45,12 +45,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -60,7 +60,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 export const voucherFullComponent = () => (
   <Voucher stampdirection="bottom">
     <VoucherTitle
-      title= {text('Title', 'Plazo', 'Voucher Title')}
+      title={text('Title', 'Plazo', 'Voucher Title')}
       items={[
         [
           {
@@ -125,19 +125,19 @@ export const voucherFullComponent = () => (
           }
         ]
       }
-    ]}/>
+    ]} />
     <VoucherColumnData items={[
       {
-        title:text('Title Item I', 'Label title', 'Voucher Column Data'),
-        content:text('Content Item I', 'Label content', 'Voucher Column Data'),
+        title: text('Title Item I', 'Label title', 'Voucher Column Data'),
+        content: text('Content Item I', 'Label content', 'Voucher Column Data'),
       },
       {
-        title:text('Title Item II', 'Label title', 'Voucher Column Data'),
-        content:text('Content Item II', 'Label content', 'Voucher Column Data'),
+        title: text('Title Item II', 'Label title', 'Voucher Column Data'),
+        content: text('Content Item II', 'Label content', 'Voucher Column Data'),
       },
     ]} />
     <VoucherFooter
-      breakColumn= {number('breakColumn', 5, [0,1,2,3,4,5], 'Voucher Footer')}
+      breakColumn={number('breakColumn', 5, [0, 1, 2, 3, 4, 5], 'Voucher Footer')}
       items={{
         title: text('Title Footer', 'Order Bullet text a', 'Voucher Footer'),
         typeList: select('typeList Footer', ['unorder', 'order', 'icons'], 'icons', 'Voucher Footer'),
@@ -160,14 +160,14 @@ export const voucherFullComponent = () => (
           },
           {
             text: text('text Item III', 'Bullet text c', 'Voucher Footer'),
-            prefixType: select('prefixType Item III' , ['info', 'error', 'warning', 'success'], '', 'Voucher Footer'),
+            prefixType: select('prefixType Item III', ['info', 'error', 'warning', 'success'], '', 'Voucher Footer'),
             contentType: select('contentType Item III', ['info', 'error', 'warning', 'success'], '', 'Voucher Footer'),
             icon: select('icon Item III', list, 'line-check', 'Voucher Footer'),
             disabled: boolean('disabled Item III', false, 'Voucher Footer'),
             type: select('type Item III', ['info', 'error', 'warning', 'success'], '', 'Voucher Footer')
           },
         ]
-      }}/>
+      }} />
   </Voucher>)
 
 export default {
@@ -187,8 +187,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Voucher, VoucherTitle, VoucherResumeContainer, VoucherData, VoucherColumnData, VoucherFooter } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Voucher, VoucherTitle, VoucherResumeContainer, VoucherData, VoucherColumnData, VoucherFooter }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:

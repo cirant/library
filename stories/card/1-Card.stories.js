@@ -85,8 +85,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Card } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Card } from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:

@@ -65,7 +65,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -80,12 +80,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -103,10 +103,10 @@ export const CardWithActions = () => (
           selected={boolean('selected', false, 'Card Config')}
           border={boolean('border', false, 'Card Config')}>
           <CardHeader>
-            <CardImage imgUrl={imageFile}/>
+            <CardImage imgUrl={imageFile} />
           </CardHeader>
           <CardContent title={text('Title', 'Some title', 'Card Content')}
-                       content={text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, aliquid at consequuntur ea eum facere ipsa', 'Card Content')}>
+            content={text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, aliquid at consequuntur ea eum facere ipsa', 'Card Content')}>
           </CardContent>
           <CardActions buttons={[
             {
@@ -149,8 +149,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Card, CardHeader, CardImage, CardContent } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Card, CardHeader, CardImage, CardContent } from 'design-system-coopeuch';
         ~~~
 
         a way to declare the component it is this (the cardHeader and cardContent containers it not mandatory) if you want to know how more about button component please follow the next link [Button Componenet](/?path=/story/button--normal)

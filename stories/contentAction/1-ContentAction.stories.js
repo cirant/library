@@ -35,7 +35,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -50,12 +50,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -64,9 +64,9 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const ContentActionComponent = () => (
   <ContentAction
-    label={text('label','Imprimir')}
+    label={text('label', 'Imprimir')}
     onClick={action('clicked')}
-    icon={select('selected', list,'line-print')}
+    icon={select('selected', list, 'line-print')}
     disabled={boolean('disabled', false)}>
   </ContentAction>
 )
@@ -89,8 +89,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { ContentAction } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { ContentAction }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:

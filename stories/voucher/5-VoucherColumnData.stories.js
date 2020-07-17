@@ -25,7 +25,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -40,12 +40,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -55,12 +55,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 export const voucherColumnData = () => (
   <VoucherColumnData items={[
     {
-      title:text('Title', 'Label title', 'I Item'),
-      content:text('Content', 'Label content', 'I Item'),
+      title: text('Title', 'Label title', 'I Item'),
+      content: text('Content', 'Label content', 'I Item'),
     },
     {
-      title:text('Title', 'Label title', 'II Item'),
-      content:text('Content', 'Label content', 'II Item'),
+      title: text('Title', 'Label title', 'II Item'),
+      content: text('Content', 'Label content', 'II Item'),
     },
   ]} />
 )
@@ -82,8 +82,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { VoucherColumnData } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { VoucherColumnData }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:

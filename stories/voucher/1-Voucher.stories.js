@@ -25,7 +25,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -40,12 +40,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       width: '100%'
     }} {...propsx} >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -53,7 +53,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 }
 
 export const voucherComponent = () => (
-  <Voucher style={{ height: 400 }} stampdirection={select('stampdirection', ['top', 'bottom'], 'bottom')}/>
+  <Voucher style={{ height: 400 }} stampdirection={select('stampdirection', ['top', 'bottom'], 'bottom')} />
 )
 
 export default {
@@ -73,8 +73,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Voucher } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Voucher }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
