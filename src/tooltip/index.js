@@ -30,7 +30,14 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
   }
 
   const setResponsivePosition = () => {
-    window.addEventListener('resize', setResponsivePosition)
+    const myWidth = window.screen.width
+    if (myWidth < 550) {
+      setPlacements('top')
+      setTooltipWidth(myWidth * 0.9)
+    } else {
+      setTooltipWidth(tooltipWidthDefault)
+      setPlacements(previousPosition)
+    }
   }
 
   useEffect(() => {
@@ -38,7 +45,7 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
     let isCancelled = false
 
     if (!isCancelled) {
-      setResponsivePosition()
+      window.addEventListener('resize', setResponsivePosition)
     }
 
     return () => {
@@ -53,16 +60,7 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
     let isCancelled = false
 
     if (!isCancelled) {
-
-      const myWidth = window.screen.width
-      if (myWidth < 550) {
-        setPlacements('top')
-        setTooltipWidth(myWidth * 0.9)
-      } else {
-        setTooltipWidth(tooltipWidthDefault)
-        setPlacements(previousPosition)
-      }
-
+      setResponsivePosition();
     }
 
     return () => {
