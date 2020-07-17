@@ -75,7 +75,7 @@ describe('Tooltip test', () => {
     let componentRender = container.querySelector('div[data-testid="test-box-arrow"]')
     expect(componentRender).toBeTruthy()
   })
-  
+
 
 
   test('should set visibility false when mouse enter and leave container', () => {
