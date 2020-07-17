@@ -51,6 +51,9 @@ import ColumnCard from './columnCard'
 import ColumnCardContent from './columnCard/columnCardContent'
 import ColumnCardImage from './columnCard/columnCardImage'
 import ColumnCardContentActions from './columnCard/columnCardContent/columnCardContentAction'
+import BenefitCard from './benefitCard';
+import BenefitCardContent from './benefitCard/benefitCardContent';
+import BenefitCardLogo from './benefitCard/benefitCardLogo';
 
 export {
   Button,
@@ -105,5 +108,8 @@ export {
   ColumnCard,
   ColumnCardContent,
   ColumnCardContentActions,
-  ColumnCardImage
+  ColumnCardImage,
+  BenefitCard,
+  BenefitCardContent,
+  BenefitCardLogo
 };

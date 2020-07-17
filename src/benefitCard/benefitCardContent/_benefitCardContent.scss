@@ -1,0 +1,41 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.benefitCardContent{
+    background-color: $gray-900;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    bottom: 0;
+    opacity: 0.85;
+    color: $white;
+    padding-left: nth(nth($spacers, 7), 2);
+
+    span{
+        display: flex;
+        width: 100%;
+        text-align: left;
+    }
+
+    .benefitCardTopText{
+        font-size: 16px;
+        padding-top: nth(nth($spacers, 5), 2);
+    }
+    
+    .benefitCardMiddleText{
+        width: 100%;
+        padding-top: nth(nth($spacers, 4), 2);
+
+        h4{
+            display: flex;
+            color: $white;
+            font-size: 36px;
+            text-align: left;
+        }
+    }
+
+    .benefitCardBottomText{
+        padding-top: nth(nth($spacers, 4), 2);
+        padding-bottom: nth(nth($spacers, 6), 2);
+        font-size: 16px;
+    }
+}

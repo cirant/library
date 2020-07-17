@@ -10,7 +10,6 @@ const ColumnCard = ({ children, className, ...props }) => {
         {children}
     </Card>
   )
-
 }
 
 ColumnCard.propTypes = {

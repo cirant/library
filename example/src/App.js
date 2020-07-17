@@ -49,7 +49,10 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  NotificationBadge
+  NotificationBadge,
+  BenefitCard,
+  BenefitCardContent,
+  BenefitCardLogo
 } from 'library-1';
 import 'library-1/dist/index.css';
 import 'library-1/dist/css/custom.css';
@@ -1260,6 +1263,79 @@ const App = () => {
         <br/>
         <br/>
       </div>
+    </div>
+
+    <br/>
+    <br/>
+    <div className="container">
+        <h1 className="mb-4">Benefit Access Card</h1>
+        <div className="row">
+          <div className="col-lg-6 col-md-12 col-sm-6"> 
+            <BenefitCard 
+              urlImage={'/assets/images/photo_hight_resolution.jpg'} 
+              link={'https://www.coopeuch.cl/'} 
+              target={'_blank'}
+            >
+              <BenefitCardContent 
+                style={{marginTop: '45%'}}
+                topText={'Desde $50.000'}
+                middleText={'Bonos de Educación superior'}
+                bottomText={'Impulsamos una nueva etapa de crecimiento'}
+              />
+            </BenefitCard>
+          </div>
+          <div className="col-lg-4 col-md-12 col-sm-4"> 
+            <BenefitCard 
+              urlImage={'/assets/images/photo_hight_resolution.jpg'} 
+              link={'https://www.coopeuch.cl/'} 
+              target={'_blank'}
+            >
+              <BenefitCardLogo>
+                <Icon className="p-4" name="line-flag" />
+              </BenefitCardLogo>
+              <BenefitCardContent 
+                style={{marginTop: '70%'}}
+                topText={'Desde $50.000'}
+                middleText={'Bonos de Educación superior'}
+                bottomText={'Impulsamos una nueva etapa de crecimiento'}
+              />
+            </BenefitCard>
+          </div>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <div className="container">
+        <h1 className="mb-4"></h1>
+        <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6"> 
+            <BenefitCard 
+              urlImage={'/assets/images/photo_hight_resolution.jpg'}
+            >
+            <BenefitCardLogo>
+                <Icon className="p-4" name="line-flag" />
+              </BenefitCardLogo>
+              <BenefitCardContent
+                style={{marginTop: '30%'}}
+                bottomText={'Impulsamos una nueva etapa de crecimiento'}
+              />
+            </BenefitCard>
+          </div>
+          <div className="col-lg-2 col-md-12 col-sm-2"> 
+            <BenefitCard 
+              urlImage={'/assets/images/photo_hight_resolution.jpg'}
+            >
+            <BenefitCardLogo>
+                <Icon className="p-4" name="line-flag" />
+              </BenefitCardLogo>
+              <BenefitCardContent
+                style={{marginTop: '85%'}}
+                bottomText={'Canjea una Giftcard con Netflix'}
+              />
+            </BenefitCard>
+          </div>
+        </div>
     </div>
 
     <br/>

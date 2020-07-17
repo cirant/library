@@ -1,0 +1,16 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.benefitCardLogoContainer{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-color: $gray-900;
+    border-radius: 50%;
+    left: 3%;
+    top: 3%;
+
+    i{
+        color: $white;
+    }
+}
