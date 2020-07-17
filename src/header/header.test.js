@@ -14,7 +14,7 @@ describe('Header behavior', () => {
   it('should be rendered logo', () => {
     const component = render(<Header logo={<div>logo</div>}></Header>);
     expect(component).toBeTruthy();
-    expect(component.getByText(/logo/i)).toBeTruthy();
+    expect(component.getAllByText(/logo/i)).toBeTruthy();
   });
 
   it('should be rendered logout component', () => {

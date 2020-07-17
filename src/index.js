@@ -42,15 +42,16 @@ import InputSecurity from './input/security';
 import InputDate from './input/date';
 import KebabMenu from './kebabMenu/';
 import NotificationBadge from './notificationBadge/';
-import CardHeader from './card/cardHeader'
-import CardContent from './card/cardContent'
-import CardActions from './card/cardAction'
-import CardImage from './card/cardHeader/cardImage'
-import BreadCrumb from './breadcrumb'
-import ColumnCard from './columnCard'
-import ColumnCardContent from './columnCard/columnCardContent'
-import ColumnCardImage from './columnCard/columnCardImage'
-import ColumnCardContentActions from './columnCard/columnCardContent/columnCardContentAction'
+import CardHeader from './card/cardHeader';
+import CardContent from './card/cardContent';
+import CardActions from './card/cardAction';
+import CardImage from './card/cardHeader/cardImage';
+import BreadCrumb from './breadcrumb';
+import ColumnCard from './columnCard';
+import ColumnCardContent from './columnCard/columnCardContent';
+import ColumnCardImage from './columnCard/columnCardImage';
+import ColumnCardContentActions from './columnCard/columnCardContent/columnCardContentAction';
+import CardBenefits from './card/cardBenefits';
 
 export {
   Button,
@@ -61,6 +62,7 @@ export {
   CardSwitch,
   CardCheckbox,
   CardDropdown,
+  CardBenefits,
   Checkbox,
   Logo,
   HeaderItem,

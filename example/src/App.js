@@ -7,6 +7,7 @@ import {
   CardSwitch,
   CardCheckbox,
   CardDropdown,
+  CardBenefits,
   CardActions,
   CardContent,
   CardHeader,
@@ -205,6 +206,57 @@ const App = () => {
       <Card selected> selected </Card>
       <Card onClick={() => alert('clicked')} > click me </Card>
       <Card border > hola mundo </Card>
+    </div>
+    <h1 className="mb-4">Card Benefits</h1>
+
+    <div className="row mb-4">
+      <div className="col">
+        <CardBenefits
+          logo={<Icon name="home" size={3} />}
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          topText="Desde $50.500"
+          title="Bono de educacion superior"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+    </div>
+
+    <div className="row mb-4">
+      <div className="col">
+        <CardBenefits
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          title="Bono de educacion superior"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+      <div className="col">
+        <CardBenefits
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+    </div>
+
+    <div className="row mb-4">
+      <div className="col-4">
+        <CardBenefits
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          title="Bono de educacion superior"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+      <div className="col-4">
+        <CardBenefits
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+      <div className="col-4">
+        <CardBenefits
+          logo={<Icon name="cloud" size={3} />}
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
     </div>
 
     <h1 className="mb-4">Card Dropdown</h1>
