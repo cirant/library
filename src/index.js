@@ -23,6 +23,7 @@ import ProgressBar from './progressbar'
 import Bullets from './bullets'
 import Tooltip from './tooltip';
 import Message from './message';
+import ModalInfo from './modal/info';
 import InputRange from './input/range';
 import Bar from './input/bar';
 import Stamp from './stamp';
@@ -84,6 +85,7 @@ export {
   Bullets,
   Tooltip,
   Message,
+  ModalInfo,
   InputRange,
   Bar,
   InputSearch,

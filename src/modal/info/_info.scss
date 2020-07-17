@@ -1,0 +1,40 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.modalInfo{
+  padding: nth(nth($spacers, 7), 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 509px;
+
+  img{
+    margin-bottom: nth(nth($spacers, 7), 2);
+  }
+
+  h4{
+    margin-bottom: nth(nth($spacers, 5), 2);
+    font-weight: bold;
+  }
+  
+  p{
+    font-size: $note-font-size;
+    line-height: 1.5rem;
+    margin-bottom: nth(nth($spacers, 7), 2);
+  }
+
+  .buttonSection{
+    display: flex;
+    justify-content: center;
+
+    button{
+      margin-right: nth(nth($spacers, 7), 2);
+
+      &:last-child{
+        margin-right: nth(nth($spacers, 1), 2)
+      }
+    }
+  }
+}
