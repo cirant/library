@@ -2,13 +2,14 @@ import React, { createRef, useEffect, useRef, useState } from 'react'
 import styles from './_tooltip.scss'
 import Tippy from '@tippyjs/react'
 import PropTypes from 'prop-types'
+import IconListModel from '../icons/models/icon-list.model'
 
 const Tooltip = ({ children, content, placement, interactive, eventListener, ...etc }) => {
 
   const refBoxTooltip = createRef()
   const refContainerTippy = createRef()
 
-  const tooltipWidthDefault = 256
+  const tooltipDefaultWidth = 256
 
   const [placements, setPlacements] = useState(placement)
   const [tooltipWidth, setTooltipWidth] = useState(256)
@@ -31,11 +32,11 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
 
   const setResponsivePosition = () => {
     const myWidth = window.screen.width
-    if (myWidth < 550) {
+    if (myWidth < 599) {
       setPlacements('top')
       setTooltipWidth(myWidth * 0.9)
     } else {
-      setTooltipWidth(tooltipWidthDefault)
+      setTooltipWidth(tooltipDefaultWidth)
       setPlacements(previousPosition)
     }
   }
@@ -151,7 +152,7 @@ Tooltip.defaultProps = {
 }
 
 Tooltip.propTypes = {
-  placement: PropTypes.oneOf(['top', 'bottom', 'right', 'right-end', 'left']),
+  placement: PropTypes.oneOf(IconListModel.placementList),
   eventListener: PropTypes.oneOf(['mouseClick', 'hover']),
   content: PropTypes.node,
   interactive: PropTypes.bool

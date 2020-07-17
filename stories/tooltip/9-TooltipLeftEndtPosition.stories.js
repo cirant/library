@@ -1,12 +1,24 @@
 import React from 'react'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { select, text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
+import { Card, Tooltip } from '../../dist'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import {Tooltip} from '../../dist'
-import {TitleSection} from '../../dist'
-import { select, text, withKnobs } from '@storybook/addon-knobs'
 
 const propsDescriptions = {
+  border: {
+    propType: 'bool',
+    description: 'Add a border to the card and remove the elevation'
+  },
+  selected: {
+    propType: 'bool',
+    description: 'This stand out the element if you want make it more visible'
+  },
+  onClick: {
+    propType: 'function',
+    description: 'This function will be called when the card is pressed, this also add an elevation animation'
+  },
   content: {
     propType: 'string',
     description: 'content of tooltip'
@@ -18,17 +30,21 @@ const propsDescriptions = {
   eventListener: {
     propType: 'string',
     description: 'event who we want the tooltip catch'
+  },
+  interactive: {
+    propType: 'bool',
+    description: 'Define if the tooltip can be clicked'
   }
 }
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-
   const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
+      console.log(defaultValue)
 
       return (
         <tr key={property}>
@@ -60,10 +76,28 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
+export const TooltipLeftEndPosition = () => (
+  <Tooltip
+    content={text('content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquam, dignissimos dolore earum eius eligendi fuga impedit itaque laudantium minima nemo quas quia quos repudiandae sed sunt unde voluptates?')}
+    eventListener={select('eventListener', ['hover', 'mouseClick'])}
+    placement='left-end'
+  >
+    <Card
+      style={{maxWidth:300}}
+      onClick= {()=> null}
+      selected= {false}
+      border= {true}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquam, dignissimos dolore earum eius eligendi fuga impedit itaque laudantium minima nemo quas quia quos repudiandae sed sunt unde voluptates?
+    </Card>
+  </Tooltip>
+)
+
+
 export default {
   title: 'Tooltip',
-  decorators: [withInfo,withKnobs],
-  component: Tooltip,
+  decorators: [withKnobs, withInfo],
+  component: [Card, Tooltip],
   parameters: {
     info: {
       inline: true,
@@ -71,7 +105,8 @@ export default {
       styles: {
         infoStory: {
           padding: '0px 40px 0px',
-          margin: '10px 0'
+          display: 'flex',
+          justifyContent: 'center'
         }
       },
       text: `
@@ -85,7 +120,7 @@ export default {
 
         ~~~js
         <Tooltip>
-            placement = "top"
+            placement = "left-end"
             eventListener = "mouseClick"
             content = "test Content">
             {children}
@@ -98,20 +133,3 @@ export default {
 
   }
 }
-
-
-
-export const element = () => <Tooltip
-    content={text('content','')}
-    eventListener={select('eventListener',['hover','mouseClick'])}
-    placement={select('placement',['top','bottom','left','right'])}
-    >
-    <TitleSection label="Title Section" prefix="write"></TitleSection>
-  </Tooltip>
-
-
-element.story = {
-  name: 'Tooltip componentss',
-};
-
-
