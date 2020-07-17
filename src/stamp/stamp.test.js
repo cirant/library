@@ -1,15 +1,12 @@
-import React from "react";
+import React from 'react'
 import { cleanup, render } from '@testing-library/react'
 import Stamp from './index'
 
 describe('Stamp tests', () => {
-
-  let component;
+  let component
 
   beforeEach(() => {
-    component = render(
-      <Stamp></Stamp>
-    );
+    component = render(<Stamp />)
   })
 
   afterEach(() => {
@@ -17,12 +14,11 @@ describe('Stamp tests', () => {
   })
 
   test('should be rendered', () => {
-    expect(component).toBeTruthy();
-  });
+    expect(component).toBeTruthy()
+  })
 
   test('should component content a svg', () => {
-    const element = component.container.querySelector('svg');
-    expect(element).toBeTruthy();
-  });
-
-});
+    const element = component.container.querySelector('svg')
+    expect(element).toBeTruthy()
+  })
+})

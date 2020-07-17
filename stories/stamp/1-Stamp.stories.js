@@ -17,19 +17,25 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td>{property}
-            {required && <Red/>}
+          <td>
+            {property}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -40,16 +46,19 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -57,12 +66,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 }
 
 export const StampComponent = () => (
-  <Stamp
-    width={number('width', '223')}
-    height={number('height', '217')}
-  >
-
-  </Stamp>
+  <Stamp width={number('width', '223')} height={number('height', '217')} />
 )
 
 export default {
@@ -79,8 +83,7 @@ export default {
           margin: '10px 0'
         }
       },
-      text: `
-        include into your project to be able to use the component styles
+      text: `include into your project to be able to use the component styles
         ~~~js
         import 'design-system-coopeuch/dist/index.css';
         import { Stamp }from 'design-system-coopeuch';
@@ -92,16 +95,12 @@ export default {
         <Stamp> </Stamp>
         ~~~
 
-
         ##### Note: About width and height properties
 
         To give the desired size, please change the width and length, modifying
         only one of the values ​​will not take effect because the width and length
         of the properties of the svg are being modified.
-        change the knobs properties and you'll be able to watch its component structure below at Story Source
-
-  `
+        change the knobs properties and you'll be able to watch its component structure below at Story Source`
     }
-
   }
 }

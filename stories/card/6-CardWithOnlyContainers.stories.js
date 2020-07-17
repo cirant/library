@@ -1,10 +1,16 @@
 import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs/react'
 import { withInfo } from '@storybook/addon-info'
-import { Button, Card, CardActions, CardContent, CardHeader, CardImage } from '../../dist'
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardImage
+} from '../../dist'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import list from '../icons/list'
 
 const propsDescriptions = {
   border: {
@@ -17,11 +23,13 @@ const propsDescriptions = {
   },
   onClick: {
     propType: 'function',
-    description: 'This function will be called when the card is pressed, this also add an elevation animation'
+    description:
+      'This function will be called when the card is pressed, this also add an elevation animation'
   },
   children: {
     propType: 'node',
-    description: 'Node who can be passed to the containers, can be own of the container or anything else'
+    description:
+      'Node who can be passed to the containers, can be own of the container or anything else'
   },
   imgUrl: {
     propType: 'string',
@@ -49,12 +57,18 @@ const propsDescriptions = {
   }
 }
 
-
-let background = 'https://www.w3schools.com/bootstrap4/img_avatar3.png';
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const background = 'https://www.w3schools.com/bootstrap4/img_avatar3.png'
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
@@ -62,7 +76,8 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
@@ -74,9 +89,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
         <tr style={{ textAlign: 'left' }}>
           <th>name</th>
@@ -91,40 +109,50 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 }
 
 export const CardWithOnlyContainers = () => (
-  <div className="container">
-    <div className="row" style={{ justifyContent: 'center' }}>
-      <div className="col-lg-4 col-md-12 col-sm-12 d-flex align-items-start">
+  <div className='container'>
+    <div className='row' style={{ justifyContent: 'center' }}>
+      <div className='col-lg-4 col-md-12 col-sm-12 d-flex align-items-start'>
         <Card>
           <CardHeader>
-            <div style={{
-              backgroundImage: `url(${background})`,
-              backgroundPosition: 'center center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              paddingTop: '60%',
-              width: '100%',
-              height: 400,
-              borderTopLeftRadius: '5px',
-              borderTopRightRadius: '5px'
-            }}>
-
-            </div>
+            <div
+              style={{
+                backgroundImage: `url(${background})`,
+                backgroundPosition: 'center center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                paddingTop: '60%',
+                width: '100%',
+                height: 400,
+                borderTopLeftRadius: '5px',
+                borderTopRightRadius: '5px'
+              }}
+            />
           </CardHeader>
           <CardContent>
             <h6>Type someting</h6>
             <br />
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+              aliquid cumque e.
+            </p>
           </CardContent>
           <CardActions>
-            <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-              color='primary'>Button</Button>
+            <Button
+              style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+              color='primary'
+            >
+              Button
+            </Button>
           </CardActions>
         </Card>
       </div>
     </div>
   </div>
 )
-
 
 export default {
   title: 'Card',
@@ -164,6 +192,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

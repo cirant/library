@@ -4,9 +4,7 @@ import { ArrayUtils } from '../../utils/'
 import Bullets from '../../bullets'
 import PropTypes from 'prop-types'
 
-
 const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
-
   const containerClass = [styles.voucherFooterContainer]
   let newItems
   if (breakColumn) {
@@ -18,32 +16,28 @@ const VoucherFooter = ({ children, items, breakColumn, ...props }) => {
       <div {...props} className={containerClass.join(' ')}>
         <h5>{items.title}</h5>
         <div className={styles.voucherFooterContentContainer}>
-          {
-            breakColumn && (
-              <React.Fragment>
-                {
-                  newItems.map((newItem, index) => (
-                    <div className={styles.voucherFooterSection} key={`newitem-${index}`}>
-                      <Bullets typeList={items.typeList} items={newItem} />
-                    </div>
-                  ))
-                }
-              </React.Fragment>
-            )
-          }
-          {
-            breakColumn == null && (
-              <div className={styles.voucherFooterSection}>
-                <Bullets typeList={items.typeList} items={items.bullets} />
-              </div>
-            )
-          }
+          {breakColumn && (
+            <React.Fragment>
+              {newItems.map((newItem, index) => (
+                <div
+                  className={styles.voucherFooterSection}
+                  key={`newitem-${index}`}
+                >
+                  <Bullets typeList={items.typeList} items={newItem} />
+                </div>
+              ))}
+            </React.Fragment>
+          )}
+          {breakColumn == null && (
+            <div className={styles.voucherFooterSection}>
+              <Bullets typeList={items.typeList} items={items.bullets} />
+            </div>
+          )}
         </div>
-        <div className={styles.borderSectionBottom}></div>
+        <div className={styles.borderSectionBottom} />
       </div>
     </React.Fragment>
   )
-
 }
 
 export default VoucherFooter
@@ -51,17 +45,18 @@ export default VoucherFooter
 VoucherFooter.defaultProps = {
   items: [],
   title: 'Default text',
-  typeList: 'unorder',
+  typeList: 'unorder'
 }
 
 VoucherFooter.prototype = {
   breakColumn: PropTypes.number,
   title: PropTypes.number,
   typeList: PropTypes.string,
-  bullets: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string,
-    prefixType: PropTypes.string,
-    contentType: PropTypes.string,
-  })),
+  bullets: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      prefixType: PropTypes.string,
+      contentType: PropTypes.string
+    })
+  )
 }
-

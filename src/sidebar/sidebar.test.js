@@ -1,10 +1,8 @@
-import React from "react";
-import { render } from '@testing-library/react';
+import React from 'react'
+import { render } from '@testing-library/react'
 import Sidebar from '.'
 
-
 describe('Sidebar behavior', () => {
-
   it('should be rendered', () => {
     const props = [
       {
@@ -16,7 +14,7 @@ describe('Sidebar behavior', () => {
             open: true,
             sublevel: [
               {
-                text: 'label C',
+                text: 'label C'
               }
             ]
           }
@@ -31,7 +29,7 @@ describe('Sidebar behavior', () => {
             open: true,
             sublevel: [
               {
-                text: 'label C',
+                text: 'label C'
               }
             ]
           }
@@ -39,9 +37,8 @@ describe('Sidebar behavior', () => {
       }
     ]
 
-    const component = render(<Sidebar items={props} />);
-    expect(component).toBeTruthy();
-    expect(component.getAllByRole('component').length).toEqual(6);
-  });
-
-});
+    const component = render(<Sidebar items={props} />)
+    expect(component).toBeTruthy()
+    expect(component.getAllByRole('component').length).toEqual(6)
+  })
+})

@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Card from '../';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Card from '../'
 import Icon from '../../icons'
 import styles from './_cardDropdown.scss'
 
@@ -12,37 +12,36 @@ const CardDropdown = ({
   title,
   dark,
   description,
-  ...props }) => {
-
+  ...props
+}) => {
   return (
-    <Card className={[
-      styles.card,
-      className,
-    ].join(' ').trim()} {...props}>
-      <div role="dropdown" className={[
-        styles.dropdown,
-        dark === true ? styles.dark : ''
-      ].join(' ').trim()}>
+    <Card className={[styles.card, className].join(' ').trim()} {...props}>
+      <div
+        role='dropdown'
+        className={[styles.dropdown, dark === true ? styles.dark : '']
+          .join(' ')
+          .trim()}
+      >
         <div className={styles.textContainer}>
           <p>{title}</p>
           <div className={styles.note}>{description}</div>
         </div>
-        <Icon role="action" size={3} name={opened ? "arrow-up" : "arrow-down"} onClick={props.disabled !== true ? onClick : null} className={styles.action} />
+        <Icon
+          role='action'
+          size={3}
+          name={opened ? 'arrow-up' : 'arrow-down'}
+          onClick={props.disabled !== true ? onClick : null}
+          className={styles.action}
+        />
       </div>
-      {
-        opened && (
-          <div className={styles.cardContent}>
-            {children}
-          </div>
-        )
-      }
+      {opened && <div className={styles.cardContent}>{children}</div>}
     </Card>
   )
 }
 
 CardDropdown.defaultProps = {
-  opened: false,
-};
+  opened: false
+}
 
 CardDropdown.propTypes = {
   opened: PropTypes.bool,
@@ -51,6 +50,6 @@ CardDropdown.propTypes = {
   title: PropTypes.string,
   dark: PropTypes.bool,
   description: PropTypes.string
-};
+}
 
-export default CardDropdown;
+export default CardDropdown
