@@ -17,7 +17,8 @@ const propsDescriptions = {
   },
   onClick: {
     propType: 'function',
-    description: 'This function will be called when the card is pressed, this also add an elevation animation'
+    description:
+      'This function will be called when the card is pressed, this also add an elevation animation'
   },
   content: {
     propType: 'string',
@@ -37,10 +38,17 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
@@ -48,8 +56,9 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
       return (
         <tr key={property}>
-          <td>{property}
-            {required && <Red/>}
+          <td>
+            {property}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -60,16 +69,19 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -78,21 +90,26 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const TooltipRightEndPosition = () => (
   <Tooltip
-    content={text('content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquam, dignissimos dolore earum eius eligendi fuga impedit itaque laudantium minima nemo quas quia quos repudiandae sed sunt unde voluptates?')}
+    content={text(
+      'content',
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquam, dignissimos dolore earum eius eligendi fuga impedit itaque laudantium minima nemo quas quia quos repudiandae sed sunt unde voluptates?'
+    )}
     eventListener={select('eventListener', ['hover', 'mouseClick'])}
     placement='right-end'
   >
     <Card
-      style={{maxWidth:300}}
-      onClick= {()=> null}
-      selected= {false}
-      border= {true}
+      style={{ maxWidth: 300 }}
+      onClick={() => null}
+      selected={false}
+      border
     >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquam, dignissimos dolore earum eius eligendi fuga impedit itaque laudantium minima nemo quas quia quos repudiandae sed sunt unde voluptates?
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad
+      aliquam, dignissimos dolore earum eius eligendi fuga impedit itaque
+      laudantium minima nemo quas quia quos repudiandae sed sunt unde
+      voluptates?
     </Card>
   </Tooltip>
 )
-
 
 export default {
   title: 'Tooltip',
@@ -130,6 +147,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

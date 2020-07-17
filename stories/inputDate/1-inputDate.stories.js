@@ -1,12 +1,12 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs/react';
-import { text, object } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
-import { InputDate } from '../../dist';
-import '../codeStyles.css';
-import '../../dist/index.css';
-import '../../dist/css/date.css';
+import React from 'react'
+import { action } from '@storybook/addon-actions'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { text, object } from '@storybook/addon-knobs'
+import { withInfo } from '@storybook/addon-info'
+import { InputDate } from '../../dist'
+import '../codeStyles.css'
+import '../../dist/index.css'
+import '../../dist/css/date.css'
 
 const propsDescriptions = {
   label: {
@@ -15,11 +15,13 @@ const propsDescriptions = {
   },
   startDate: {
     propType: 'object',
-    description: 'This will show this value above the field, (instance of new Date())'
+    description:
+      'This will show this value above the field, (instance of new Date())'
   },
   endDate: {
     propType: 'object',
-    description: 'This will show this value above the field (instance of new Date())'
+    description:
+      'This will show this value above the field (instance of new Date())'
   },
   format: {
     propType: 'string',
@@ -43,33 +45,47 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td className="p-1">{property}
+          <td className='p-1'>
+            {property}
             {required && <Red />}
           </td>
-          <td className="p-1" style={{ whiteSpace: "nowrap" }}>{propType}</td>
-          <td className="p-1">{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
-          <td className="p-1">{description}</td>
+          <td className='p-1' style={{ whiteSpace: 'nowrap' }}>
+            {propType}
+          </td>
+          <td className='p-1'>
+            {defaultValue !== undefined ? `${defaultValue}` : ' - '}
+          </td>
+          <td className='p-1'>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
-    <table style={{
-      width: "100%"
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-        <tr style={{ textAlign: "left" }}>
+        <tr style={{ textAlign: 'left' }}>
           <th>name</th>
           <th>type</th>
           <th>default</th>
@@ -78,19 +94,21 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
-export const inputDate = () => <InputDate
-  label={text('label', '', 'text')}
-  startDate={object('startDate', (new Date(2020, 6, 17)), 'object')}
-  endDate={object('endDate', (new Date(2020, 6, 23)), 'object')}
-  format={text('format', 'dd/MM/yyyy', 'text')}
-  minimumDate={text('minimumDate', '', 'text')}
-  maximumDate={text('maximumDate', '', 'text')}
-  onStartDateChange={action('onStartDateChange action')}
-  onEndDateChange={action('onEndDateChange action')}
-/>;
+export const inputDate = () => (
+  <InputDate
+    label={text('label', '', 'text')}
+    startDate={object('startDate', new Date(2020, 6, 17), 'object')}
+    endDate={object('endDate', new Date(2020, 6, 23), 'object')}
+    format={text('format', 'dd/MM/yyyy', 'text')}
+    minimumDate={text('minimumDate', '', 'text')}
+    maximumDate={text('maximumDate', '', 'text')}
+    onStartDateChange={action('onStartDateChange action')}
+    onEndDateChange={action('onEndDateChange action')}
+  />
+)
 
 export default {
   title: 'InputDate',
@@ -102,7 +120,7 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
+          padding: '0px 40px 0px'
         }
       },
       text: `
@@ -119,8 +137,7 @@ export default {
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
-      `,
-    },
-
-  },
-};
+      `
+    }
+  }
+}

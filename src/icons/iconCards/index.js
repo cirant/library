@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { DefaultCard, Mastercard } from './assets'
 
 const IconCard = ({ variant, ...props }) => {
@@ -11,7 +11,6 @@ const IconCard = ({ variant, ...props }) => {
   }
 }
 
-IconCard.defaultProps = {
-};
+IconCard.defaultProps = {}
 
-export default IconCard;
+export default IconCard

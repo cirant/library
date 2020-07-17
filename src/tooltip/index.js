@@ -4,8 +4,14 @@ import Tippy from '@tippyjs/react'
 import PropTypes from 'prop-types'
 import TooltipListModel from './model/placement-list.model'
 
-const Tooltip = ({ children, content, placement, interactive, eventListener, ...props }) => {
-
+const Tooltip = ({
+  children,
+  content,
+  placement,
+  interactive,
+  eventListener,
+  ...props
+}) => {
   const refBoxTooltip = createRef()
   const refContainerTippy = createRef()
 
@@ -20,7 +26,7 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
 
   const [visible, setVisible] = useState(false)
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     if (node.current.contains(e.target)) {
       if (!visible) {
         setVisible(true)
@@ -42,22 +48,17 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
   }
 
   useEffect(() => {
-
     window.addEventListener('resize', setResponsivePosition)
 
     return () => {
       window.removeEventListener('resize', setResponsivePosition)
     }
-
   }, [window])
 
   useEffect(() => {
-
     setResponsivePosition()
 
-    return () => {
-    }
-
+    return () => {}
   }, [])
 
   useEffect(() => {
@@ -68,7 +69,6 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
   }, [visible])
 
   const setOpacity = (event) => {
-
     if (eventListener === 'hover') {
       if (event === 'leave') {
         setVisible(false)
@@ -79,56 +79,69 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
         refBoxTooltip.current.style.opacity = 1
       }
     }
-
   }
 
   return (
     <div
       {...props}
-      data-testid="test-container" visible={visible.toString()} className={styles.containerTooltip} ref={node}
-      onClick={() => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false}
-      onMouseEnter={(e) => eventListener === 'hover' ? setOpacity('enter', e) : false}
-      onMouseLeave={() => eventListener === 'hover' ? setOpacity('leave') : false}>
+      data-testid='test-container'
+      visible={visible.toString()}
+      className={styles.containerTooltip}
+      ref={node}
+      onClick={() =>
+        eventListener === 'mouseClick' ? setOpacity('mouseClick') : false
+      }
+      onMouseEnter={(e) =>
+        eventListener === 'hover' ? setOpacity('enter', e) : false
+      }
+      onMouseLeave={() =>
+        eventListener === 'hover' ? setOpacity('leave') : false
+      }
+    >
       <Tippy
         offset={[0, 20]}
-        arrow={true}
-        appendTo="parent"
-        theme={'light'}
-        placement={placements} visible={true}
+        arrow
+        appendTo='parent'
+        theme='light'
+        placement={placements}
+        visible
         animation={false}
         interactive={interactive}
-        touch={true}
-        render={attrs => (
+        touch
+        render={(attrs) => (
           <div
-            data-testid="test-box"
-            style={
-              {
-                opacity: visible ? 1 : 0,
-                minWidth: tooltipWidth
-              }
-            }
+            data-testid='test-box'
+            style={{
+              opacity: visible ? 1 : 0,
+              minWidth: tooltipWidth
+            }}
             ref={refBoxTooltip}
             className={styles.box}
-            tabIndex="-1" {...attrs}>
+            tabIndex='-1'
+            {...attrs}
+          >
             <div
-              data-testid="test-box-content"
+              data-testid='test-box-content'
               ref={refContainerTippy}
-              style={
-                {
-                  maxWidth: tooltipWidth
-                }
-              }
-              className={styles.content}>
+              style={{
+                maxWidth: tooltipWidth
+              }}
+              className={styles.content}
+            >
               {content}
             </div>
-            {<div data-testid="test-box-arrow" id="arrow" className={styles.arrow}></div>}
+            <div
+              data-testid='test-box-arrow'
+              id='arrow'
+              className={styles.arrow}
+            />
           </div>
-        )}>
+        )}
+      >
         <span>{children}</span>
       </Tippy>
     </div>
   )
-
 }
 
 export default Tooltip

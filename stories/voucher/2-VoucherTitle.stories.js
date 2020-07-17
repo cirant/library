@@ -15,23 +15,29 @@ const propsDescriptions = {
   },
   items: {
     propType: 'array',
-    description: 'Array of items, this items are button but with according configuration for the title'
+    description:
+      'Array of items, this items are button but with according configuration for the title'
   }
-
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
@@ -43,9 +49,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
         <tr style={{ textAlign: 'left' }}>
           <th>name</th>
@@ -76,11 +85,9 @@ export const voucherTitle = () => (
           action: action('clicked Item 2'),
           flex: number('flex', 1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'II Item')
         }
-
       ]
     ]}
-  >
-  </VoucherTitle>
+  />
 )
 
 export default {
@@ -133,6 +140,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

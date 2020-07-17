@@ -29,51 +29,61 @@ const propsDescriptions = {
   prefix: {
     propType: 'string',
     description: 'Add an icon to the title section'
-  },
+  }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 export const TooltipTopPosition = () => (
   <Tooltip
     content={text('content', 'Type some text')}
     eventListener={select('eventListener', ['hover', 'mouseClick'])}
-    placement= 'top'
+    placement='top'
   >
-    <TitleSection label="Title Section" prefix="write"></TitleSection>
+    <TitleSection label='Title Section' prefix='write' />
   </Tooltip>
 )
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
           <td>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
-    <table style={{
-      width: "100%"
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-      <tr style={{ textAlign: "left" }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -83,7 +93,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 export default {
   title: 'Tooltip',
   decorators: [withInfo, withKnobs],
-  component: [Tooltip,TitleSection],
+  component: [Tooltip, TitleSection],
   parameters: {
     info: {
       inline: true,
@@ -115,6 +125,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

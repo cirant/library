@@ -11,6 +11,6 @@ export default class TooltipListModel {
     'left-end',
     'right',
     'right-start',
-    'right-end',
-  ];
+    'right-end'
+  ]
 }
