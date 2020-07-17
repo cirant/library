@@ -26,18 +26,24 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
@@ -49,9 +55,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
         <tr style={{ textAlign: 'left' }}>
           <th>name</th>
@@ -70,34 +79,85 @@ export const voucherFooter = () => (
     breakColumn={number('breakColumn', 5, [0, 1, 2, 3, 4, 5], 'Footer')}
     items={{
       title: text('Title', 'Order Bullet text a', 'Footer'),
-      typeList: select('typeList', ['unorder', 'order', 'icons'], 'icons', 'Footer'),
+      typeList: select(
+        'typeList',
+        ['unorder', 'order', 'icons'],
+        'icons',
+        'Footer'
+      ),
       bullets: [
         {
           text: text('text', 'Bullet text a', 'Bullet I'),
-          prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
-          contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet I'),
+          prefixType: select(
+            'prefixType',
+            ['info', 'error', 'warning', 'success'],
+            '',
+            'Bullet I'
+          ),
+          contentType: select(
+            'contentType',
+            ['info', 'error', 'warning', 'success'],
+            '',
+            'Bullet I'
+          ),
           icon: select('icon', list, 'line-check', 'Bullet I'),
           disabled: boolean('disabled', false, 'Bullet I'),
-          type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet I')
+          type: select(
+            'type',
+            ['info', 'error', 'warning', 'success'],
+            '',
+            'Bullet I'
+          )
         },
         {
           text: text('text', 'Bullet text b', 'Bullet II'),
-          prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
-          contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet II'),
+          prefixType: select(
+            'prefixType',
+            ['info', 'error', 'warning', 'success'],
+            '',
+            'Bullet II'
+          ),
+          contentType: select(
+            'contentType',
+            ['info', 'error', 'warning', 'success'],
+            '',
+            'Bullet II'
+          ),
           icon: select('icon', list, 'line-check', 'Bullet II'),
           disabled: boolean('disabled', false, 'Bullet II'),
-          type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet II')
+          type: select(
+            'type',
+            ['info', 'error', 'warning', 'success'],
+            '',
+            'Bullet II'
+          )
         },
         {
           text: text('text', 'Bullet text c', 'Bullet III'),
-          prefixType: select('prefixType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
-          contentType: select('contentType', ['info', 'error', 'warning', 'success'], '', 'Bullet III'),
+          prefixType: select(
+            'prefixType',
+            ['info', 'error', 'warning', 'success'],
+            '',
+            'Bullet III'
+          ),
+          contentType: select(
+            'contentType',
+            ['info', 'error', 'warning', 'success'],
+            '',
+            'Bullet III'
+          ),
           icon: select('icon', list, 'line-check', 'Bullet III'),
           disabled: boolean('disabled', false, 'Bullet III'),
-          type: select('type', ['info', 'error', 'warning', 'success'], '', 'Bullet III')
+          type: select(
+            'type',
+            ['info', 'error', 'warning', 'success'],
+            '',
+            'Bullet III'
+          )
         }
       ]
-    }} />
+    }}
+  />
 )
 
 export default {
@@ -153,6 +213,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

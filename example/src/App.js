@@ -905,7 +905,7 @@ const App = () => {
             interactive
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="bottom">
+            placement="right">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
@@ -913,7 +913,7 @@ const App = () => {
           <Tooltip
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="bottom">
+            placement="left">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
@@ -1323,8 +1323,8 @@ const App = () => {
       </div>
     </div>
 
-    <div className="container">
-      <h1 className="mb-4">Action Card col-lg-6</h1>
+    <div className="container pt-5">
+      <h1 className="mb-4">Modal info</h1>
       <div className="row">
         <div className="col">
           <ModalInfo

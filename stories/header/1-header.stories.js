@@ -1,10 +1,9 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { boolean, select, text } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
-import { Header, HeaderItem, Logo, Icon } from '../../dist';
-import '../../dist/css/custom.css';
-
+import React from 'react'
+import { action } from '@storybook/addon-actions'
+import { text } from '@storybook/addon-knobs'
+import { withInfo } from '@storybook/addon-info'
+import { Header, HeaderItem, Logo, Icon } from '../../dist'
+import '../../dist/css/custom.css'
 
 const propsDescriptions = {
   logo: {
@@ -21,7 +20,8 @@ const propsDescriptions = {
   },
   mobile: {
     propType: 'object',
-    description: 'an object structure described below, this options controlling the mobile version'
+    description:
+      'an object structure described below, this options controlling the mobile version'
   },
   icon: {
     propType: 'string',
@@ -33,10 +33,17 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
@@ -44,7 +51,8 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
@@ -56,9 +64,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
         <tr style={{ textAlign: 'left' }}>
           <th>name</th>
@@ -72,29 +83,32 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-const colors = ['primary', 'secondary']
-
 export const BulletList = () => (
-  <div className="bg-primary w-100">
-    <div className="container">
+  <div className='bg-primary w-100'>
+    <div className='container'>
       <Header
-        logo={<Logo className="w-100" />}
+        logo={<Logo className='w-100' />}
         userData={{
           name: text('username', 'Some name'),
           onClick: action('onClick')
         }}
-        mobile={
-          {
-            onClickBack: action('onClickBack'),
-            burgerClick: action('burgerClick'),
-            section: text('mobile text', 'Label text'),
-            leftElement: <Icon name="line-logout" onClick={action('leftElement')} />
-          }
+        mobile={{
+          onClickBack: action('onClickBack'),
+          burgerClick: action('burgerClick'),
+          section: text('mobile text', 'Label text'),
+          leftElement: (
+            <Icon name='line-logout' onClick={action('leftElement')} />
+          )
+        }}
+        logOut={
+          <HeaderItem icon='line-logout' bold>
+            {' '}
+            label{' '}
+          </HeaderItem>
         }
-        logOut={<HeaderItem icon="line-logout" bold> label </HeaderItem>}
       >
-        <HeaderItem icon="home">label</HeaderItem>
-        <HeaderItem icon="line-cloud">label</HeaderItem>
+        <HeaderItem icon='home'>label</HeaderItem>
+        <HeaderItem icon='line-cloud'>label</HeaderItem>
       </Header>
     </div>
   </div>
@@ -114,7 +128,7 @@ export default {
           flexDirection: 'column',
           alignItems: 'start',
           alignSelf: 'start',
-          padding: '0px 40px 0px',
+          padding: '0px 40px 0px'
         }
       },
       text: `
@@ -155,6 +169,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

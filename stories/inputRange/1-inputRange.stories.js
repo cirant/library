@@ -1,11 +1,11 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs/react';
-import { withInfo } from '@storybook/addon-info';
-import { InputRange } from '../../dist';
-import '../codeStyles.css';
-import '../../dist/index.css';
-import { text } from '@storybook/addon-knobs';
+import React from 'react'
+import { action } from '@storybook/addon-actions'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { withInfo } from '@storybook/addon-info'
+import { InputRange } from '../../dist'
+import '../codeStyles.css'
+import '../../dist/index.css'
+import { text } from '@storybook/addon-knobs'
 
 const propsDescriptions = {
   label: {
@@ -38,33 +38,47 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td className="p-1">{property}
+          <td className='p-1'>
+            {property}
             {required && <Red />}
           </td>
-          <td className="p-1" style={{ whiteSpace: "nowrap" }}>{propType}</td>
-          <td className="p-1">{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
-          <td className="p-1">{description}</td>
+          <td className='p-1' style={{ whiteSpace: 'nowrap' }}>
+            {propType}
+          </td>
+          <td className='p-1'>
+            {defaultValue !== undefined ? `${defaultValue}` : ' - '}
+          </td>
+          <td className='p-1'>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
-    <table style={{
-      width: "100%"
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-        <tr style={{ textAlign: "left" }}>
+        <tr style={{ textAlign: 'left' }}>
           <th>name</th>
           <th>type</th>
           <th>default</th>
@@ -73,18 +87,20 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
-export const inputRange = () => <InputRange
-  value={text('value', '', 'text')}
-  placeholder={text('placeholder', '', 'text')}
-  label={text('label', '', 'text')}
-  min={text('min', '', 'text')}
-  max={text('max', '', 'text')}
-  step={text('step', '', 'text')}
-  onChange={action('clearAction action')}
-/>;
+export const inputRange = () => (
+  <InputRange
+    value={text('value', '', 'text')}
+    placeholder={text('placeholder', '', 'text')}
+    label={text('label', '', 'text')}
+    min={text('min', '', 'text')}
+    max={text('max', '', 'text')}
+    step={text('step', '', 'text')}
+    onChange={action('clearAction action')}
+  />
+)
 
 export default {
   title: 'InputRange',
@@ -96,7 +112,7 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
+          padding: '0px 40px 0px'
         }
       },
       text: `
@@ -113,8 +129,7 @@ export default {
           ~~~
   
           change the knobs properties and you'll be able to watch its component structure below at Story Source
-        `,
-    },
-
-  },
-};
+        `
+    }
+  }
+}

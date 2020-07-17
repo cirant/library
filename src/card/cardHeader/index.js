@@ -3,20 +3,20 @@ import styles from './_cardheader.scss'
 import PropTypes from 'prop-types'
 
 const CardHeader = ({ children, ...props }) => {
-
-  let cardHeaderStyle = [styles.cardHeaderContainer]
+  const cardHeaderStyle = [styles.cardHeaderContainer]
 
   return (
-    <div {...props} className={cardHeaderStyle.concat(props.className).join(' ')}>
+    <div
+      {...props}
+      className={cardHeaderStyle.concat(props.className).join(' ')}
+    >
       {children}
     </div>
   )
 }
 
-
 export default CardHeader
 
 CardHeader.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 }
-

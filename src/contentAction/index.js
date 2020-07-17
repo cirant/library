@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import IconListModel from '../icons/models/icon-list.model'
 
 const ContentAction = ({ label, icon, disabled, onClick, ...props }) => {
-
   let containerClass = [styles.contentAction]
 
   if (disabled) {
@@ -13,11 +12,18 @@ const ContentAction = ({ label, icon, disabled, onClick, ...props }) => {
   }
 
   return (
-    <div {...props} data-testid='test-container-content-action' onClick={disabled ? null : onClick} className={containerClass.join(' ')}>
+    <div
+      {...props}
+      data-testid='test-container-content-action'
+      onClick={disabled ? null : onClick}
+      className={containerClass.join(' ')}
+    >
       <div>
-        <Icon size="4" name={icon} />
+        <Icon size='4' name={icon} />
       </div>
-      <div className={styles.label}>{<a>{label}</a>}</div>
+      <div className={styles.label}>
+        <a>{label}</a>
+      </div>
     </div>
   )
 }
@@ -25,11 +31,11 @@ const ContentAction = ({ label, icon, disabled, onClick, ...props }) => {
 export default ContentAction
 
 ContentAction.defaultProps = {
-  label: '',
-};
+  label: ''
+}
 
 ContentAction.propTypes = {
   icon: PropTypes.oneOf(IconListModel.iconList).isRequired,
   label: PropTypes.string.isRequired,
   disabled: PropTypes.bool
-};
+}

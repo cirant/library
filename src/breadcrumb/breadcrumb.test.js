@@ -2,10 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import Component from './'
 
-
-
 describe('BreadCrumb behavior', () => {
-
   const paths = [
     {
       name: 'hola soy una ruta 1',
@@ -26,19 +23,17 @@ describe('BreadCrumb behavior', () => {
     {
       name: 'hola soy una ruta 5',
       route: 'https://www.google.com'
-    },
+    }
   ]
 
   it('should be rendered', () => {
-
-    const component = render(<Component paths={paths} />);
+    const component = render(<Component paths={paths} />)
 
     paths.forEach((el) => {
-      expect(component.getByText(new RegExp(el.name))).toBeTruthy();
-    });
+      expect(component.getByText(new RegExp(el.name))).toBeTruthy()
+    })
 
-    expect(component.getByText('...')).toBeTruthy();
-    expect(component).toBeTruthy();
+    expect(component.getByText('...')).toBeTruthy()
+    expect(component).toBeTruthy()
   })
-
 })

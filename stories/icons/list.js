@@ -1,4 +1,3 @@
+import IconListModel from '../../src/icons/models/icon-list.model'
 
-import IconListModel from '../../src/icons/models/icon-list.model';
-
-export default IconListModel.iconList;
+export default IconListModel.iconList
