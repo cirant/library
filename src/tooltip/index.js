@@ -8,7 +8,7 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
   const refBoxTooltip = createRef()
   const refContainerTippy = createRef()
 
-  const tooltipWidthDefault = 256;
+  const tooltipWidthDefault = 256
 
   const [placements, setPlacements] = useState(placement)
   const [tooltipWidth, setTooltipWidth] = useState(256)
@@ -30,35 +30,45 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
   }
 
   const setResponsivePosition = () => {
-    window.addEventListener('resize', () => {
-      const myWidth = window.screen.width
-      if (myWidth < 550) {
-        console.log('menor');
-        setPlacements('top')
-        setTooltipWidth( myWidth * 0.9)
-      } else {
-        console.log('mayor');
-        setPlacements(previousPosition)
-        setTooltipWidth(tooltipWidthDefault)
-      }
-    })
+    window.addEventListener('resize', setResponsivePosition)
   }
 
   useEffect(() => {
-    setResponsivePosition()
+
+    let isCancelled = false
+
+    if (!isCancelled) {
+      setResponsivePosition()
+    }
+
+    return () => {
+      window.removeEventListener('resize', setResponsivePosition)
+      isCancelled = true
+    }
+
   }, [window])
 
   useEffect(() => {
-    const myWidth = window.screen.width
-    if (myWidth < 550) {
-      console.log('menor !');
-      setPlacements('top')
-      setTooltipWidth( myWidth * 0.9)
-    } else {
-      console.log('mayor !');
-      setTooltipWidth(tooltipWidthDefault)
-      setPlacements(previousPosition)
+
+    let isCancelled = false
+
+    if (!isCancelled) {
+
+      const myWidth = window.screen.width
+      if (myWidth < 550) {
+        setPlacements('top')
+        setTooltipWidth(myWidth * 0.9)
+      } else {
+        setTooltipWidth(tooltipWidthDefault)
+        setPlacements(previousPosition)
+      }
+
     }
+
+    return () => {
+      isCancelled = true
+    }
+
   }, [])
 
   useEffect(() => {
@@ -104,8 +114,8 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
             data-testid="test-box"
             style={
               {
-                opacity: visible ? 1 : 0 ,
-                minWidth:tooltipWidth
+                opacity: visible ? 1 : 0,
+                minWidth: tooltipWidth
               }
             }
             ref={refBoxTooltip}
@@ -116,7 +126,7 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
               ref={refContainerTippy}
               style={
                 {
-                  maxWidth:tooltipWidth
+                  maxWidth: tooltipWidth
                 }
               }
               className={styles.content}>

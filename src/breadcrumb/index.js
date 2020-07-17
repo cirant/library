@@ -78,6 +78,7 @@ const BreadCrumbElement = ({ paths, updateScreen, lastWidth, ...props }) => {
   }
 
   useEffect(() => {
+    let isCancelled = false
     window.addEventListener('resize', resize);
 
     hideOverflow();
