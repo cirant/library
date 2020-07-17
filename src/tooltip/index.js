@@ -43,29 +43,19 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
 
   useEffect(() => {
 
-    let isCancelled = false
-
-    if (!isCancelled) {
-      window.addEventListener('resize', setResponsivePosition)
-    }
+    window.addEventListener('resize', setResponsivePosition)
 
     return () => {
       window.removeEventListener('resize', setResponsivePosition)
-      isCancelled = true
     }
 
   }, [window])
 
   useEffect(() => {
 
-    let isCancelled = false
-
-    if (!isCancelled) {
-      setResponsivePosition();
-    }
+    setResponsivePosition()
 
     return () => {
-      isCancelled = true
     }
 
   }, [])
