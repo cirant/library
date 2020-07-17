@@ -1,14 +1,25 @@
 @import "node_modules/bootstrap/scss/functions";
 @import '../../scss/variables';
 
-.columnCardContentContainer{
 
+.columnCardContentContainer{
   display: flex;
   flex-direction: column;
   flex: 1 1 50%;
   overflow-wrap: break-word;
   padding-right: nth(nth($spacers, 5), 2);
   box-sizing: border-box;
+
+  .columnCardHeaderTitle{
+    background-color: $info-30;
+    padding: nth(nth($spacers, 2), 2) nth(nth($spacers, 4), 2);
+    margin-left: -#{nth(nth($spacers, 5), 2)};
+    margin-right: -#{nth(nth($spacers, 5), 2)};
+    margin-top:-#{nth(nth($spacers, 5), 2)};
+    margin-bottom: #{nth(nth($spacers, 5), 2)};
+    height: 32px;
+    color: white;
+  }
 
   .columnCardContentHeaderTitle{
     padding-bottom: nth(nth($spacers, 3), 2);

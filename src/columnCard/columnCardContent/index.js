@@ -2,16 +2,25 @@ import React from 'react'
 import styles from '../columnCardContent/_columncardcontent.scss'
 import PropTypes from 'prop-types'
 
-const ColumnCardContent = ({ title, content, children, ...props }) => {
+const ColumnCardContent = ({ titleHeader, titleContent, content, children, ...props }) => {
 
   const columnCardContentStyle = [styles.columnCardContentContainer]
 
   return (
     <div {...props} className={columnCardContentStyle.concat(props.className).join(' ')}>
       {
-        title &&
+        titleHeader &&
         (
-          <div className={styles.columnCardContentHeaderTitle}><p>{title}</p></div>
+          <div className={styles.columnCardHeaderTitle}>
+            <p>{titleHeader}</p>
+          </div>
+        )
+      }
+      {
+
+        titleContent &&
+        (
+          <div className={styles.columnCardContentHeaderTitle}><p>{titleContent}</p></div>
         )
       }
       {
@@ -28,7 +37,7 @@ const ColumnCardContent = ({ title, content, children, ...props }) => {
 ColumnCardContent.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,
-  children: PropTypes.node,
+  children: PropTypes.node
 }
 
-export default ColumnCardContent;
+export default ColumnCardContent

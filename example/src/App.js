@@ -1234,7 +1234,7 @@ const App = () => {
       <div className="row">
         <div className="col-lg-8 col-md-12 col-sm-6">
           <ColumnCard>
-            <ColumnCardContent title='Type something'
+            <ColumnCardContent titleHeader='Type something' titleContent='Type something'
                                content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.'>
               <ColumnCardContentActions buttons={[
                 {
