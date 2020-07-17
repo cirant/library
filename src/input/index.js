@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import inputStyles from './_input.scss';
 import InputCore from './core';
+import Icon from '../icons';
 
 const Input = ({
   label,
@@ -27,11 +28,11 @@ const Input = ({
   const getHelperText = (element) => {
     switch (element.type) {
       case 'success':
-        return <div>{successSvg} <span className={inputStyles.successText}>{element.text}</span></div>
+        return <div className={inputStyles.successText}><Icon name="check" size={1} /> <span>{element.text}</span></div>
       case 'error':
-        return <div>{errorSvg} <span className={inputStyles.errorText}>{element.text}</span></div>
+        return <div className={inputStyles.errorText}><Icon name="cross" size={1} /> <span>{element.text}</span></div>
       default:
-        return <div> {element.text}</div>
+        return <div> <i className={inputStyles.empty} /> {element.text}</div>
     }
   }
 
