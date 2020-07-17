@@ -83,7 +83,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 export default {
   title: 'Tooltip',
   decorators: [withInfo, withKnobs],
-  component: [Tooltip],
+  component: [Tooltip,TitleSection],
   parameters: {
     info: {
       inline: true,
