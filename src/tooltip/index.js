@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useRef, useState } from 'react'
 import styles from './_tooltip.scss'
 import Tippy from '@tippyjs/react'
 import PropTypes from 'prop-types'
-import TooltipListModel from './model/icon-list.model'
+import TooltipListModel from './model/placement-list.model'
 
 const Tooltip = ({ children, content, placement, interactive, eventListener, ...props }) => {
 
