@@ -21,4 +21,28 @@ describe('HeaderProfileItem behavior', () => {
     fireEvent.click(name)
     expect(onClick).toBeCalled()
   })
+
+  it('should open menu', () => {
+    const onClick = jest.fn()
+    const component = render(
+      <HeaderProfileItem
+        menu={[
+          {
+            text: 'link 1',
+            action: () => onClick()
+          }
+        ]}
+        name='user name'
+      />
+    )
+    expect(component).toBeTruthy()
+    const box = component.getByRole('profileBox')
+
+    expect(box).toBeTruthy()
+    fireEvent.click(box)
+    const link = component.getByText(/link 1/)
+    expect(link).toBeTruthy()
+    fireEvent.click(link)
+    expect(onClick).toBeCalled()
+  })
 })

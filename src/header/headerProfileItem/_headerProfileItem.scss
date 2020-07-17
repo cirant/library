@@ -1,14 +1,37 @@
 @import "node_modules/bootstrap/scss/functions";
 @import '../../scss/variables';
+@import '../../scss/mixins/elevation';
 
 .profileItemContainer{
   display: flex;
   flex-wrap: nowrap;
   padding: 12px 8px;
   align-items: center;
+  overflow: hidden;
 
   &:hover{
     background-color: $primary-30;
+  }
+  
+  .manuDropdown{
+    padding: 0px;
+    color: black;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    z-index: 4;
+    background-color: white;
+    @include elevationElementCreator(5);
+  
+    .manuDropdownItem{
+      padding: nth(nth($spacers, 3), 2) nth(nth($spacers, 5), 2);
+      cursor: pointer;
+      
+      &:hover{
+        background-color: $neutral-10;
+      }
+    }
   }
 }
 
