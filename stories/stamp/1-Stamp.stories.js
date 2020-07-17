@@ -1,10 +1,10 @@
-import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs/react';
+import React from 'react'
+import { withKnobs } from '@storybook/addon-knobs/react'
 import { number } from '@storybook/addon-knobs'
-import { withInfo } from '@storybook/addon-info';
-import '../codeStyles.css';
-import '../../dist/index.css';
-import { Stamp } from '../../dist';
+import { withInfo } from '@storybook/addon-info'
+import '../codeStyles.css'
+import '../../dist/index.css'
+import { Stamp } from '../../dist'
 
 const propsDescriptions = {
   width: {
@@ -14,14 +14,14 @@ const propsDescriptions = {
   height: {
     propType: 'string',
     description: 'Add height to the svg'
-  },
+  }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
+const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
 
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
@@ -29,43 +29,41 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       return (
         <tr key={property}>
           <td>{property}
-            {required && <Red />}
+            {required && <Red/>}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
           <td>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
     <table style={{
-      width: "100%"
+      width: '100%'
     }} {...propsx} >
       <thead>
-        <tr style={{ textAlign: "left" }}>
-          <th>name</th>
-          <th>type</th>
-          <th>default</th>
-          <th>description</th>
-        </tr>
+      <tr style={{ textAlign: 'left' }}>
+        <th>name</th>
+        <th>type</th>
+        <th>default</th>
+        <th>description</th>
+      </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
 export const StampComponent = () => (
   <Stamp
-    width={number('width', '170')}
-    height={number('height', '168')}
+    width={number('width', '223')}
+    height={number('height', '217')}
   >
 
   </Stamp>
 )
-
-
 
 export default {
   title: 'Stamp',
@@ -94,9 +92,16 @@ export default {
         <Stamp> </Stamp>
         ~~~
 
-        change the knobs properties and you'll be able to watch its component structure below at Story Source
-      `,
-    },
 
-  },
-};
+        ##### Note: About width and height properties
+
+        To give the desired size, please change the width and length, modifying
+        only one of the values ​​will not take effect because the width and length
+        of the properties of the svg are being modified.
+        change the knobs properties and you'll be able to watch its component structure below at Story Source
+
+  `
+    }
+
+  }
+}
