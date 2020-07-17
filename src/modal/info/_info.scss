@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
 
-    button{
+    & > div{
       margin-right: nth(nth($spacers, 7), 2);
 
       &:last-child{

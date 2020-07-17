@@ -1328,7 +1328,7 @@ const App = () => {
       <div className="row">
         <div className="col">
           <ModalInfo
-            image={<img src="assets/images/ilustracion.svg" />}
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
             title="Titulo de mensaje"
             buttons={[
               <Button variant="outline" color="primary" > label button </Button>,
@@ -1338,7 +1338,7 @@ const App = () => {
         </div>
         <div className="col">
           <ModalInfo
-            image={<img src="assets/images/ilustracion.svg" />}
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
             title="Titulo de mensaje"
             description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
             buttons={[
@@ -1350,7 +1350,7 @@ const App = () => {
       <div className="row">
         <div className="col">
           <ModalInfo
-            image={<img src="assets/images/ilustracion.svg" />}
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
             description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
             buttons={[
               <Button variant="outline" color="primary" > label button </Button>,
