@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { act, cleanup, fireEvent, render } from '@testing-library/react'
-import TitleSection from './index'
+import TitleSection from '../title/index'
 import Tooltip from './index'
 
 
@@ -15,7 +15,7 @@ describe('Tooltip test', () => {
       <Tooltip
         content="label"
         eventListener="mouseClick"
-        placement="right-end">
+        placement="bottom">
         <TitleSection className="test" prefix="write" label="Title Section" />
       </Tooltip>
     )
@@ -25,6 +25,8 @@ describe('Tooltip test', () => {
 
   afterEach(() => {
     cleanup()
+    container = null;
+    component = null;
   })
 
   test('should be rendered', () => {
@@ -74,22 +76,6 @@ describe('Tooltip test', () => {
     expect(componentRender).toBeTruthy()
   })
 
-  test('should set visibility true when mouseClick event it is called', () => {
-    act(() => {
-      ReactDOM.render(
-        <Tooltip
-          content="label"
-          eventListener="mouseClick"
-          placement="right-end">
-          <TitleSection className="test" prefix="write" label="Title Section" />
-        </Tooltip>, container)
-    })
-    let componentRender = container.querySelector('div[data-testid="test-container"]')
-    fireEvent.click(componentRender)
-    let componenetVisibility = container.querySelector('div[visible="true"]')
-    expect(componenetVisibility).toBeTruthy()
-  })
-
   test('should set visibility false when mouseClick called twice', () => {
     act(() => {
       ReactDOM.render(
@@ -101,27 +87,13 @@ describe('Tooltip test', () => {
         </Tooltip>, container)
     })
     let componentRender = container.querySelector('div[data-testid="test-container"]')
+    componentRender.current.click();
     fireEvent.click(componentRender)
     fireEvent.click(componentRender)
     let componenetVisibility = container.querySelector('div[visible="false"]')
     expect(componenetVisibility).toBeTruthy()
   })
 
-  test('should set visibility true when mouse enter container', () => {
-    act(() => {
-      ReactDOM.render(
-        <Tooltip
-          content="label"
-          eventListener="hover"
-          placement="top">
-          <TitleSection className="test" prefix="write" label="Title Section" />
-        </Tooltip>, container)
-    })
-    let componentRender = container.querySelector('div[data-testid="test-container"]')
-    fireEvent.mouseEnter(componentRender);
-    let componenetVisibility = container.querySelector('div[visible="false"]')
-    expect(componenetVisibility).toBeTruthy()
-  })
 
   test('should set visibility false when mouse enter and leave container', () => {
     act(() => {
