@@ -24,13 +24,15 @@ const Input = ({ label, assistText, error, success, ...props }) => {
       case 'success':
         return (
           <div className={inputStyles.successText}>
-            <Icon data-testid="successIcon" name='check' size={1} /> <span>{element.text}</span>
+            <Icon data-testid='successIcon' name='check' size={1} />{' '}
+            <span>{element.text}</span>
           </div>
         )
       case 'error':
         return (
           <div className={inputStyles.errorText}>
-            <Icon data-testid="errorIcon" name='cross' size={1} /> <span>{element.text}</span>
+            <Icon data-testid='errorIcon' name='cross' size={1} />{' '}
+            <span>{element.text}</span>
           </div>
         )
       default:
@@ -53,8 +55,8 @@ const Input = ({ label, assistText, error, success, ...props }) => {
         <div>
           {Array.isArray(assistText) && assistText.length > 0
             ? assistText.map((el, i) => (
-              <div key={`${el.text}-${i}`}>{getHelperText(el)}</div>
-            ))
+                <div key={`${el.text}-${i}`}>{getHelperText(el)}</div>
+              ))
             : assistText}
         </div>
         {maxLength && (

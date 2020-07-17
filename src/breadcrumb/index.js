@@ -123,7 +123,7 @@ const BreadCrumbElement = ({ paths, updateScreen, lastWidth, ...props }) => {
             className={[styles.breadCrumbItem, styles.dotsContainer].join(' ')}
           >
             <Tooltip
-              interactive='true'
+              interactive
               placement='bottom'
               eventListener='mouseClick'
               content={<ToolTipContent items={path.values} />}

@@ -1,12 +1,25 @@
 import React from 'react'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { select, text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
+import { Card, Tooltip } from '../../dist'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import { Tooltip, TitleSection } from '../../dist'
-
-import { select, text, withKnobs } from '@storybook/addon-knobs'
 
 const propsDescriptions = {
+  border: {
+    propType: 'bool',
+    description: 'Add a border to the card and remove the elevation'
+  },
+  selected: {
+    propType: 'bool',
+    description: 'This stand out the element if you want make it more visible'
+  },
+  onClick: {
+    propType: 'function',
+    description:
+      'This function will be called when the card is pressed, this also add an elevation animation'
+  },
   content: {
     propType: 'string',
     description: 'content of tooltip'
@@ -18,6 +31,10 @@ const propsDescriptions = {
   eventListener: {
     propType: 'string',
     description: 'event who we want the tooltip catch'
+  },
+  interactive: {
+    propType: 'bool',
+    description: 'Define if the tooltip can be clicked'
   }
 }
 
@@ -35,6 +52,8 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
+      console.log(defaultValue)
+
       return (
         <tr key={property}>
           <td>
@@ -69,10 +88,33 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
+export const TooltipRightEndPosition = () => (
+  <Tooltip
+    content={text(
+      'content',
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquam, dignissimos dolore earum eius eligendi fuga impedit itaque laudantium minima nemo quas quia quos repudiandae sed sunt unde voluptates?'
+    )}
+    eventListener={select('eventListener', ['hover', 'mouseClick'])}
+    placement='right-end'
+  >
+    <Card
+      style={{ maxWidth: 300 }}
+      onClick={() => null}
+      selected={false}
+      border
+    >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad
+      aliquam, dignissimos dolore earum eius eligendi fuga impedit itaque
+      laudantium minima nemo quas quia quos repudiandae sed sunt unde
+      voluptates?
+    </Card>
+  </Tooltip>
+)
+
 export default {
   title: 'Tooltip',
-  decorators: [withInfo, withKnobs],
-  component: Tooltip,
+  decorators: [withKnobs, withInfo],
+  component: [Card, Tooltip],
   parameters: {
     info: {
       inline: true,
@@ -80,21 +122,22 @@ export default {
       styles: {
         infoStory: {
           padding: '0px 40px 0px',
-          margin: '10px 0'
+          display: 'flex',
+          justifyContent: 'center'
         }
       },
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'design-system-coopeuch/dist/index.css';
-        import { Tooltip }from 'design-system-coopeuch';
+        import 'library/dist/index.css';
+        import { Tooltip } from 'library';
         ~~~
 
         the basicest component form is:
 
         ~~~js
         <Tooltip>
-            placement = "top"
+            placement = right-end
             eventListener = "mouseClick"
             content = "test Content">
             {children}
@@ -105,18 +148,4 @@ export default {
       `
     }
   }
-}
-
-export const element = () => (
-  <Tooltip
-    content={text('content', '')}
-    eventListener={select('eventListener', ['hover', 'mouseClick'])}
-    placement={select('placement', ['top', 'bottom', 'left', 'right'])}
-  >
-    <TitleSection label='Title Section' prefix='write' />
-  </Tooltip>
-)
-
-element.story = {
-  name: 'Tooltip componentss'
 }
