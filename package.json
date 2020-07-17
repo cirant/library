@@ -85,8 +85,9 @@
     "@tippyjs/react": "^4.0.5",
     "babel-plugin-react-docgen": "^4.1.0",
     "date-fns": "^2.14.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "react-nice-dates": "^3.0.4",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "webpack": "^4.42.0"
   }
 }

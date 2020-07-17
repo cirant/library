@@ -2,8 +2,7 @@ import React from 'react'
 import { withInfo } from '@storybook/addon-info'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import { Tooltip } from '../../dist'
-import { TitleSection } from '../../dist'
+import { TitleSection, Tooltip } from '../../dist'
 import { select, text, withKnobs } from '@storybook/addon-knobs'
 
 const propsDescriptions = {
@@ -18,14 +17,36 @@ const propsDescriptions = {
   eventListener: {
     propType: 'string',
     description: 'event who we want the tooltip catch'
-  }
+  },
+  interactive: {
+    propType: 'bool',
+    description: 'Define if the tooltip can be clicked'
+  },
+  label: {
+    propType: 'string',
+    description: 'Add a text to the title section'
+  },
+  prefix: {
+    propType: 'string',
+    description: 'Add an icon to the title section'
+  },
 }
+
 
 const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
 
-const TableComponent = ({ propDefinitions, ...propsx }) => {
+export const TooltipTopEndPosition = () => (
+  <Tooltip
+    content={text('content', 'Type some text')}
+    eventListener={select('eventListener', ['hover', 'mouseClick'])}
+    placement= 'top-end'
+  >
+    <TitleSection label="Title Section" prefix="write"></TitleSection>
+  </Tooltip>
+)
 
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+const TableComponent = ({ propDefinitions, ...propsx }) => {
+  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
@@ -39,31 +60,31 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
           <td>{description}</td>
         </tr>
-      )
+      );
     }
-  )
+  );
 
   return (
     <table style={{
-      width: '100%'
+      width: "100%"
     }} {...propsx} >
       <thead>
-        <tr style={{ textAlign: 'left' }}>
-          <th>name</th>
-          <th>type</th>
-          <th>default</th>
-          <th>description</th>
-        </tr>
+      <tr style={{ textAlign: "left" }}>
+        <th>name</th>
+        <th>type</th>
+        <th>default</th>
+        <th>description</th>
+      </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
-  )
-}
+  );
+};
 
 export default {
   title: 'Tooltip',
   decorators: [withInfo, withKnobs],
-  component: Tooltip,
+  component: [Tooltip,TitleSection],
   parameters: {
     info: {
       inline: true,
@@ -77,15 +98,15 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'design-system-coopeuch/dist/index.css';
-        import { Tooltip }from 'design-system-coopeuch';
+        import 'library/dist/index.css';
+        import { Tooltip } from 'library';
         ~~~
 
         the basicest component form is:
 
         ~~~js
         <Tooltip>
-            placement = "top"
+            placement = "top-end"
             eventListener = "mouseClick"
             content = "test Content">
             {children}
@@ -98,20 +119,3 @@ export default {
 
   }
 }
-
-
-
-export const element = () => <Tooltip
-  content={text('content', '')}
-  eventListener={select('eventListener', ['hover', 'mouseClick'])}
-  placement={select('placement', ['top', 'bottom', 'left', 'right'])}
->
-  <TitleSection label="Title Section" prefix="write"></TitleSection>
-</Tooltip>
-
-
-element.story = {
-  name: 'Tooltip componentss',
-};
-
-
