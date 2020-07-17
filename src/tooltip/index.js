@@ -132,7 +132,6 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
               {content}
             </div>
             {<div data-testid="test-box-arrow" id="arrow" className={styles.arrow}></div>}
-            {/*<div id="arrow" data-popper-arrow className={styles.arrowd}></div>*/}
           </div>
         )}>
         <span>{children}</span>
