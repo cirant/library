@@ -8,7 +8,10 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
   const refBoxTooltip = createRef()
   const refContainerTippy = createRef()
 
+  const tooltipWidthDefault = 256;
+
   const [placements, setPlacements] = useState(placement)
+  const [tooltipWidth, setTooltipWidth] = useState(256)
 
   const previousPosition = placement
 
@@ -30,9 +33,13 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
     window.addEventListener('resize', () => {
       const myWidth = window.screen.width
       if (myWidth < 550) {
+        console.log('menor');
         setPlacements('top')
+        setTooltipWidth( myWidth * 0.9)
       } else {
+        console.log('mayor');
         setPlacements(previousPosition)
+        setTooltipWidth(tooltipWidthDefault)
       }
     })
   }
@@ -44,8 +51,12 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
   useEffect(() => {
     const myWidth = window.screen.width
     if (myWidth < 550) {
+      console.log('menor !');
       setPlacements('top')
+      setTooltipWidth( myWidth * 0.9)
     } else {
+      console.log('mayor !');
+      setTooltipWidth(tooltipWidthDefault)
       setPlacements(previousPosition)
     }
   }, [])
@@ -81,7 +92,6 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
       onMouseLeave={() => eventListener === 'hover' ? setOpacity('leave') : false}>
       <Tippy
         offset={[0, 20]}
-        maxWidth="500px"
         arrow={true}
         appendTo="parent"
         theme={'light'}
@@ -95,6 +105,7 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
             style={
               {
                 opacity: visible ? 1 : 0 ,
+                minWidth:tooltipWidth
               }
             }
             ref={refBoxTooltip}
@@ -103,6 +114,11 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
             <div
               data-testid="test-box-content"
               ref={refContainerTippy}
+              style={
+                {
+                  maxWidth:tooltipWidth
+                }
+              }
               className={styles.content}>
               {content}
             </div>
