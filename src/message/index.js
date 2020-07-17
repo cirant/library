@@ -37,8 +37,8 @@ const Message = ({ title, action, type, className, description, closer }) => {
             onClick={closer}
           />
         ) : (
-          action
-        )}
+            action
+          )}
       </div>
     </div>
   )
@@ -46,7 +46,6 @@ const Message = ({ title, action, type, className, description, closer }) => {
 
 Message.defaultProps = {
   type: 'info'
-  // closer: () => alert('hola mundo')
 }
 
 Message.propTypes = {
