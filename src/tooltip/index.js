@@ -4,7 +4,7 @@ import Tippy from '@tippyjs/react'
 import PropTypes from 'prop-types'
 import IconListModel from '../icons/models/icon-list.model'
 
-const Tooltip = ({ children, content, placement, interactive, eventListener, ...etc }) => {
+const Tooltip = ({ children, content, placement, interactive, eventListener, ...props }) => {
 
   const refBoxTooltip = createRef()
   const refContainerTippy = createRef()
@@ -84,7 +84,7 @@ const Tooltip = ({ children, content, placement, interactive, eventListener, ...
 
   return (
     <div
-      {...etc}
+      {...props}
       data-testid="test-container" visible={visible.toString()} className={styles.containerTooltip} ref={node}
       onClick={() => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false}
       onMouseEnter={(e) => eventListener === 'hover' ? setOpacity('enter', e) : false}
