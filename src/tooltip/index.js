@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useRef, useState } from 'react'
 import styles from './_tooltip.scss'
 import Tippy from '@tippyjs/react'
 import PropTypes from 'prop-types'
-import IconListModel from '../icons/models/icon-list.model'
+import TooltipListModel from './model/icon-list.model'
 
 const Tooltip = ({ children, content, placement, interactive, eventListener, ...props }) => {
 
@@ -141,7 +141,7 @@ Tooltip.defaultProps = {
 }
 
 Tooltip.propTypes = {
-  placement: PropTypes.oneOf(IconListModel.placementList),
+  placement: PropTypes.oneOf(TooltipListModel.placementList),
   eventListener: PropTypes.oneOf(['mouseClick', 'hover']),
   content: PropTypes.node,
   interactive: PropTypes.bool
