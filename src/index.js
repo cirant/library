@@ -26,6 +26,7 @@ import Message from './message'
 import InputRange from './input/range'
 import Bar from './input/bar'
 import Stamp from './stamp'
+import EmptyState from './emptyState'
 import InputSearch from './input/search'
 import InputSelect from './input/select'
 import ContentAction from './contentAction'
@@ -74,6 +75,7 @@ export {
   InputSecurity,
   Radio,
   Separator,
+  EmptyState,
   Sidebar,
   SidebarElement,
   Switch,

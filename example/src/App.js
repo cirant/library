@@ -32,6 +32,7 @@ import {
   InputDate,
   InputChip,
   Stamp,
+  EmptyState,
   ContentAction,
   ProgressBar,
   Radio,
@@ -504,6 +505,22 @@ const App = () => {
         variant='textarea'
         onChange={({ target: { value } }) => setInputText(value)}
       />
+    </div>
+
+
+
+    <div className="container my-4">
+      <h1 className="mb-4">Empty state</h1>
+      <div className="d-flex justify-content-center">
+        <EmptyState
+          title='Type something'
+          description='Vestibulum interdum odio et urna sollicitudin tristique.'
+          button={{
+            text: 'label botton',
+            action: () => alert('hola')
+          }}
+        />
+      </div>
     </div>
 
     <div className="container my-4">
