@@ -12,6 +12,53 @@ const propsDescriptions = {
       propType: 'string / array',
       description: 'This will show this value below the field'
     },
+    label: {
+      propType: 'string',
+      description: 'This will show this value above the field'
+    },
+    assistText: {
+      propType: 'string',
+      description: 'This will show this value below the field'
+    },
+    maxLength: {
+      propType: 'string',
+      description:
+        'This will defined the input max length and will show a counter below the field'
+    },
+    type: {
+      propType: 'string',
+      description: 'accept just to values either text or password'
+    },
+    error: {
+      propType: 'bool',
+      description: "input status, if it's true the input border will be green"
+    },
+    success: {
+      propType: 'bool',
+      description: "input status, if it's true the input border will be green"
+    },
+    prefix: {
+      propType: 'string / jsx',
+      description:
+        'This element goes before text, it could be an string or an element like a icon but with a max-width of 16px'
+    },
+    suffix: {
+      propType: 'string / jsx',
+      description:
+        'This element goes after text, it could be an string or an element like a icon but with a max-width of 20px'
+    },
+    variant: {
+      propType: 'string',
+      description: 'This accept text or textarea as a value'
+    },
+    disabled: {
+      propType: 'bool',
+      description: ''
+    },
+    onChange: {
+      propType: 'function',
+      description: 'This function will return a new value entered into the input'
+    }
 };
 
 const Red = (props) => (
@@ -134,7 +181,9 @@ export default {
           the basicest component form is:
   
           ~~~js
-          <InputCoordinate items={[]}>
+          <InputCoordinate assistText={[]}>
+            <Input />
+            <Input />
             <Input />
           </InputCoordinate>
           ~~~
