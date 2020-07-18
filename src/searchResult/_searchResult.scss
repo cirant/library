@@ -1,0 +1,12 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+
+.container{
+  h2{
+    margin-bottom: calc(#{nth(nth($spacers, 6), 2)} * 2);
+  }
+
+  & > *{
+    margin-bottom: calc(#{nth(nth($spacers, 6), 2)} * 2);
+  }
+}

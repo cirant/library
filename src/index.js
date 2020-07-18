@@ -15,6 +15,7 @@ import Radio from './radio'
 import Separator from './separator'
 import Sidebar from './sidebar'
 import SidebarElement from './sidebar/sidebarElement'
+import SearchResult from './searchResult'
 import Switch from './switch'
 import Loading from './loading'
 import TitleSection from './title'
@@ -78,6 +79,7 @@ export {
   Separator,
   Sidebar,
   SidebarElement,
+  SearchResult,
   Switch,
   TitleSection,
   InputChip,
