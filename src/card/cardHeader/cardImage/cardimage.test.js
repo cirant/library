@@ -1,13 +1,20 @@
 import React from "react";
 import { render } from '@testing-library/react';
-import Card from './index'
+import TestRenderer from 'react-test-renderer'
+import CardImage from './index'
 
 
 describe('Card Component', () => {
 
-  it('should be rendered', () => {
-    const component = render(<Card border> hola </Card>);
+  test('should be rendered', () => {
+    const component = render(<CardImage imgUrl=''/>);
     expect(component).toBeTruthy();
+  });
+
+  test('should component contain img', () => {
+    const component = render(<CardImage imgUrl=''/>);
+    expect(component.container.querySelector('img')).toBeTruthy();
+
   });
 
 });
