@@ -5,20 +5,38 @@ $shadow-color: rgba(31, 30, 30, 0.10);
 $base: 2px;
 
 
-.default{
+.default {
   background-color: $secondary-blue-alfa-65;
 }
 
-.debit{
+.debit {
   background-color: #354451;
 }
 
-.default{
-  background-color: $secondary-blue-alfa-65;
+.gold {
+  background-color: $warning-30;
+}
+
+.international {
+  background-color: $primary-20;
 }
 
 .card {
   border-radius: 5px;
+
+  .content{
+    padding-top: (nth(nth($spacers, 5), 2));
+  }
+
+  .actions{
+    margin-top:(nth(nth($spacers, 5), 2));;
+    border-top: 1px solid $gray-200;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -#{(nth(nth($spacers, 5), 2))};
+    margin-left:-#{(nth(nth($spacers, 5), 2))};
+    margin-right: -#{(nth(nth($spacers, 5), 2))};;
+  }
 
   .header {
     display: flex;
@@ -28,15 +46,25 @@ $base: 2px;
     padding-top: (nth(nth($spacers, 5), 2));
     padding-left: (nth(nth($spacers, 5), 2));
     padding-bottom: (nth(nth($spacers, 5), 2));
-    margin-right: -16px;
-    margin-left: -16px;
+    margin-right: -#{(nth(nth($spacers, 5), 2))};
+    margin-left: -#{(nth(nth($spacers, 5), 2))};;
     border-top-left-radius: 5px;
-    border-top-right-radius:5px;
+    border-top-right-radius: 5px;
 
     .prefix {
       display: flex;
 
+      @media screen and (max-width: nth(nth($grid-breakpoints,3),2)){
+        flex-direction: column;
+      }
+
       .title {
+        color: white;
+        font-weight: 500;
+      }
+
+      .titleNumberCard {
+        padding-left: 4px;
         color: white;
         font-weight: 500;
       }
@@ -45,6 +73,10 @@ $base: 2px;
 
   }
 
+  .cardIconSuffix{
+    margin-left: auto;
+    padding-right: (nth(nth($spacers, 5), 2));
+  }
 
   &.border {
     border: 1px solid $neutral-20;

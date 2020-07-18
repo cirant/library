@@ -46,7 +46,7 @@
       border-color: $pressed;
       color: $pressed;
     }
-    
+
   }
 }
 
@@ -63,6 +63,7 @@
   align-items: center;
   display: flex;
   @extend .elevation-element-2;
+  outline: none !important;
 
   i{
     vertical-align: bottom;

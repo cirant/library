@@ -1,12 +1,17 @@
 import React from "react";
 import { render } from '@testing-library/react';
-import Card from './index'
+import CardImage from './index'
 
 
 describe('Card Component', () => {
 
-  it('should be rendered', () => {
-    const component = render(<Card border> hola </Card>);
+  test('should be rendered', () => {
+    const component = render(<CardImage/>);
+    expect(component).toBeTruthy();
+  });
+
+  test('should be rendered', () => {
+    const component = render(<CardImage/>);
     expect(component).toBeTruthy();
   });
 

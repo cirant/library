@@ -1226,10 +1226,84 @@ const App = () => {
     <br />
 
     <div className="container">
-      <h1 className="mb-4">Bank Card col-lg-6</h1>
+      <h1 className="mb-4">Bank Card Default col-lg-6</h1>
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-6">
-          <CardBank title='Type something'>
+          <CardBank title='Normal' >
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
+
+    <div className="container">
+      <h1 className="mb-4">Bank Card Debit col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank
+            title='Mastercard Debito'
+            cardNumber={"N°**** ***2345"}
+            buttons={[
+              {
+                label:'Label text link',
+                prefix:'arrow-left'
+              },
+              {
+                label:'Label text link',
+              }
+            ]}
+            cardType="debit">
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
+
+    <div className="container">
+      <h1 className="mb-4">Bank Card Gold col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank
+            title='Mastercard Gold'
+            cardType="gold"
+            buttons={[
+              {
+                label:'Label text link',
+                prefix:'arrow-left',
+                onClick: ()=> console.log('test 1')
+              },
+              {
+                label:'Label text link',
+                onClick: ()=> console.log('test 2')
+              }
+            ]}
+            cardNumber={"N°**** ***2345"} >
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
+    <div className="container">
+      <h1 className="mb-4">Bank Card International col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank
+            title='Mastercard International'
+            cardType="international"
+            buttons={[
+              {
+                label:'Label text link',
+                prefix:'arrow-left'
+              },
+              {
+                label:'Label text link',
+              }
+            ]}
+            cardNumber={"N°**** ***2345"} >
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
           </CardBank>
         </div>
       </div>
