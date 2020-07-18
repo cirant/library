@@ -175,5 +175,5 @@ export default class IconListModel {
     'verification',
     'wrench',
     'write'
-  ];
+  ]
 }
