@@ -7,17 +7,21 @@ import logo from './logo.svg'
 import '../../dist/index.css'
 
 const propsDescriptions = {
-  typeList: {
+  image: {
+    propType: 'img',
+    description: 'Some img element with a resource'
+  },
+  title: {
     propType: 'string',
-    description: 'type of bullet list'
+    description: 'Main text to be shown'
   },
-  items: {
-    propType: 'array',
-    description: 'An array of object to create the list'
+  description: {
+    propType: 'string',
+    description: 'Secondaty text to be shown'
   },
-  newIntem: {
+  buttons: {
     propType: 'array',
-    description: 'An array of object to create the list'
+    description: 'An array of <Button></Button>'
   }
 }
 
