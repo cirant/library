@@ -46,6 +46,7 @@ import CardHeader from './card/cardHeader'
 import CardContent from './card/cardContent'
 import CardActions from './card/cardAction'
 import CardImage from './card/cardHeader/cardImage'
+import CardSearch from './card/cardSearch'
 import BreadCrumb from './breadcrumb'
 import ColumnCard from './columnCard'
 import ColumnCardContent from './columnCard/columnCardContent'
@@ -63,6 +64,7 @@ export {
   CardCheckbox,
   CardDropdown,
   CardBenefits,
+  CardSearch,
   Checkbox,
   Logo,
   HeaderItem,
