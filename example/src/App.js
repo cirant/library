@@ -31,6 +31,7 @@ import {
   InputSelect,
   InputDate,
   InputChip,
+  InputCoordinate,
   Stamp,
   ContentAction,
   ProgressBar,
@@ -68,6 +69,8 @@ const App = () => {
 
   const [inputSecurity, setInputSecurity] = useState('');
   const [showSecurity, setInputShowSecurity] = useState(true);
+
+  const [inputCoordinate, setInputCoordinate] = useState('');
 
   const [startDate, setStartDate] = useState(new Date(2020, 6, 20));
   const [endDate, setEndDate] = useState(new Date(2020, 6, 22));
@@ -652,7 +655,52 @@ const App = () => {
         <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
       </div>
     </div>
-
+    
+    <div className="container my-4">
+      <h1 className="mb-4">input coordinate</h1>
+      <div className="d-flex">
+          <div className="col-lg-4 col-md-9 col-sm-4">
+            <InputCoordinate 
+              assistText={[
+                  {
+                    type: 'assist', text: 'Texto de asistencia'
+                  },
+                  {
+                    type: 'success', text: 'Texto éxito'
+                  },
+                  {
+                    type: 'error', text: 'Texto error'
+                  }
+              ]}
+            >
+              <Input 
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'} 
+                label={'A1'} 
+                value={inputCoordinate} 
+                onChange={({target: {value}}) => setInputCoordinate(value)}   
+              />
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'} 
+                label={'B2'} 
+                value={inputCoordinate} 
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+              <Input 
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'} 
+                label={'C3'} 
+                value={inputCoordinate} 
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+            </InputCoordinate>
+          </div>
+      </div>
+    </div>
 
     <div className="container my-4">
       <h1 className="mb-4">input counter</h1>
