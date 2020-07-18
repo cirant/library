@@ -3,9 +3,17 @@ import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs/react'
 import { text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
-import { CardSearch } from '../../dist'
-import propsDescriptions from './comonsProps'
+import { CardSearch, SearchResult } from '../../dist'
+import Props from './comonsProps'
 import '../../dist/index.css'
+
+const propsDescriptions = {
+  ...Props,
+  target: {
+    propType: 'string',
+    description: 'Text to be shown into title'
+  }
+}
 
 const Red = (props) => (
   <span style={{ color: 'red' }} {...props}>
@@ -55,23 +63,28 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const simple = () => (
-  <CardSearch
-    onClick={action('card Clicked')}
-    title={text('title', 'some title', 'main')}
-    description={text('description', 'some description', 'main')}
-    routes={[
-      text('route', 'route 1', 'routes'),
-      text('route 2', 'route 2', 'routes'),
-      text('route 3', 'route 3', 'routes')
-    ]}
-  />
+export const resultList = () => (
+  <SearchResult target={text('target', 'some text')} >
+    <CardSearch
+      onClick={action('card Clicked 1')}
+      title="sometimes some text is into a card"
+      description="description card"
+      routes={['location']}
+    />
+    <CardSearch
+      onClick={action('card Clicked 2')}
+      title="sometimes some text is into a card"
+      description="description card"
+      routes={['location']}
+    />
+
+  </SearchResult>
 )
 
 export default {
   title: 'CardSearch',
   decorators: [withKnobs, withInfo],
-  component: CardSearch,
+  component: SearchResult,
   parameters: {
     info: {
       inline: true,
@@ -85,13 +98,13 @@ export default {
         include into your project to be able to use the component styles
         ~~~js
         import 'design-system-coopeuch/dist/index.css';
-        import { CardSearch }from 'design-system-coopeuch';
+        import { SearchResult }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
 
         ~~~js
-        <CardSearch title="some title" onClick={()=>null} />
+        <SearchResult target="some text" onClick={()=>null} > </SearchResult>
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
