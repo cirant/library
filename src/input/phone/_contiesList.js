@@ -1,102 +1,102 @@
 export default [
   {
     AREA: 'Celular',
-    CODE: '56'
+    CODE: 56
   },
   {
     AREA: 'Arica',
-    CODE: '58'
+    CODE: 58
   },
   {
     AREA: 'Iquique',
-    CODE: '57'
+    CODE: 57
   },
   {
     AREA: 'Antofagasta',
-    CODE: '55'
+    CODE: 55
   },
   {
     AREA: 'Copiapo',
-    CODE: '52'
+    CODE: 52
   },
   {
     AREA: 'La Serena',
-    CODE: '51'
+    CODE: 51
   },
   {
     AREA: 'Ovalle',
-    CODE: '53'
+    CODE: 53
   },
   {
     AREA: 'Valparaiso',
-    CODE: '32'
+    CODE: 32
   },
   {
     AREA: 'Quillota',
-    CODE: '33'
+    CODE: 33
   },
   {
     AREA: 'Los Andes',
-    CODE: '34'
+    CODE: 34
   },
   {
     AREA: 'San Antonio',
-    CODE: '35'
+    CODE: 35
   },
   {
     AREA: 'Santiago',
-    CODE: '2'
+    CODE: 2
   },
   {
     AREA: 'Rancagua',
-    CODE: '72'
+    CODE: 72
   },
   {
     AREA: 'Talca',
-    CODE: '71'
+    CODE: 71
   },
   {
     AREA: 'Linares',
-    CODE: '73'
+    CODE: 73
   },
   {
     AREA: 'Curico',
-    CODE: '75'
+    CODE: 75
   },
   {
     AREA: 'Concepción',
-    CODE: '41'
+    CODE: 41
   },
   {
     AREA: 'Chillan',
-    CODE: '42'
+    CODE: 42
   },
   {
     AREA: 'Los Ángeles',
-    CODE: '43'
+    CODE: 43
   },
   {
     AREA: 'Temuco',
-    CODE: '45'
+    CODE: 45
   },
   {
     AREA: 'Valdivia',
-    CODE: '63'
+    CODE: 63
   },
   {
     AREA: 'Puerto Montt',
-    CODE: '65'
+    CODE: 65
   },
   {
     AREA: 'Osorno',
-    CODE: '64'
+    CODE: 64
   },
   {
     AREA: 'Coyhaique',
-    CODE: '67'
+    CODE: 67
   },
   {
     AREA: 'Punta Arenas',
-    CODE: '61'
+    CODE: 61
   }
 ]

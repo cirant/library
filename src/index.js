@@ -15,6 +15,7 @@ import Radio from './radio'
 import Separator from './separator'
 import Sidebar from './sidebar'
 import SidebarElement from './sidebar/sidebarElement'
+import SearchResult from './searchResult'
 import Switch from './switch'
 import Loading from './loading'
 import TitleSection from './title'
@@ -49,6 +50,7 @@ import CardHeader from './card/cardHeader'
 import CardContent from './card/cardContent'
 import CardActions from './card/cardAction'
 import CardImage from './card/cardHeader/cardImage'
+import CardSearch from './card/cardSearch'
 import BreadCrumb from './breadcrumb'
 import ColumnCard from './columnCard'
 import ColumnCardContent from './columnCard/columnCardContent'
@@ -66,6 +68,7 @@ export {
   CardCheckbox,
   CardDropdown,
   CardBenefits,
+  CardSearch,
   Checkbox,
   Logo,
   HeaderItem,
@@ -80,6 +83,7 @@ export {
   EmptyState,
   Sidebar,
   SidebarElement,
+  SearchResult,
   Switch,
   TitleSection,
   InputChip,

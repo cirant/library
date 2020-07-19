@@ -12,6 +12,7 @@ import {
   CardContent,
   CardHeader,
   CardImage,
+  CardSearch,
   Checkbox,
   ColumnCard,
   ColumnCardContent,
@@ -35,6 +36,7 @@ import {
   Stamp,
   EmptyState,
   ContentAction,
+  SearchResult,
   ProgressBar,
   Radio,
   Loading,
@@ -379,6 +381,59 @@ const App = () => {
         <Radio checked={true} disabled={true} />
       </div>
     </div>
+
+    <h1 className="mb-4">Card search</h1>
+
+    <div className="container">
+      <div className="row">
+        <div className="col col-md-7">
+          <CardSearch
+            onClick={() => alert('card clicked')}
+            title='Titulo de elemento de busqueda'
+            routes={['route 1', 'route 2', 'route 3']}
+            description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+          />
+        </div>
+      </div>
+    </div>
+
+    <h1 className=" my-4">search result</h1>
+
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <SearchResult target="nombre de la busqueda">
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+          </SearchResult>
+        </div>
+      </div>
+    </div>
+
+
+
 
     <h1 className="mb-4">separator</h1>
 
