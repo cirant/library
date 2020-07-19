@@ -41,6 +41,7 @@ import VoucherTitle from './voucher/voucherTitle'
 import InputCounter from './input/counter'
 import InputSecurity from './input/security'
 import InputDate from './input/date'
+import InputCoordinate from './input/coordinate'
 import KebabMenu from './kebabMenu/'
 import NotificationBadge from './notificationBadge/'
 import CardHeader from './card/cardHeader'
@@ -93,6 +94,7 @@ export {
   Stamp,
   ContentAction,
   InputDate,
+  InputCoordinate,
   Voucher,
   VoucherDataResume,
   VoucherResumeContainer,
