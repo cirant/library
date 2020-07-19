@@ -43,6 +43,7 @@ import {
   Tooltip,
   Voucher,
   Message,
+  ModalInfo,
   Bullets,
   VoucherResumeContainer,
   VoucherTitle,
@@ -1324,6 +1325,54 @@ const App = () => {
         <br />
       </div>
     </div>
+
+    <div className="container pt-5">
+      <h1 className="mb-4">Modal info</h1>
+      <div className="row">
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            title="Titulo de mensaje"
+            buttons={[
+              <Button variant="outline" color="primary" > label button </Button>,
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            title="Titulo de mensaje"
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button variant="outline" color="primary" > label button </Button>,
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+        <div className="col">
+          <ModalInfo
+            title="Titulo de mensaje"
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+      </div>
+    </div>
+
 
     <br />
     <br />
