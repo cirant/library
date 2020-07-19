@@ -55,7 +55,8 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  NotificationBadge
+  NotificationBadge,
+  CardBranchOffice
 } from 'design-system-coopeuch';
 import 'design-system-coopeuch/dist/index.css';
 import 'design-system-coopeuch/dist/css/custom.css';
@@ -741,12 +742,12 @@ const App = () => {
         <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
       </div>
     </div>
-    
+
     <div className="container my-4">
       <h1 className="mb-4">input coordinate</h1>
       <div className="d-flex">
           <div className="col-lg-4 col-md-9 col-sm-4">
-            <InputCoordinate 
+            <InputCoordinate
               assistText={[
                   {
                     type: 'assist', text: 'Texto de asistencia'
@@ -759,28 +760,28 @@ const App = () => {
                   }
               ]}
             >
-              <Input 
+              <Input
                 placeholder={'**'}
                 maxLength={'2'}
-                type={'password'} 
-                label={'A1'} 
-                value={inputCoordinate} 
-                onChange={({target: {value}}) => setInputCoordinate(value)}   
+                type={'password'}
+                label={'A1'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
               />
               <Input
                 placeholder={'**'}
                 maxLength={'2'}
-                type={'password'} 
-                label={'B2'} 
-                value={inputCoordinate} 
+                type={'password'}
+                label={'B2'}
+                value={inputCoordinate}
                 onChange={({target: {value}}) => setInputCoordinate(value)}
               />
-              <Input 
+              <Input
                 placeholder={'**'}
                 maxLength={'2'}
-                type={'password'} 
-                label={'C3'} 
-                value={inputCoordinate} 
+                type={'password'}
+                label={'C3'}
+                value={inputCoordinate}
                 onChange={({target: {value}}) => setInputCoordinate(value)}
               />
             </InputCoordinate>
@@ -1509,6 +1510,30 @@ const App = () => {
 
     <br />
     <br />
+
+    <div className="container">
+      <h1 className="mb-4">Card Branch Office</h1>
+      <div className="row">
+        <div className="col-lg-4 col-md-12 col-sm-6">
+          <CardBranchOffice
+            name='Name of branch office'
+            address='Address branch office'
+            attentionSchedule={[
+              {
+                schedule: 'Lunes a Domigo: 09:00 Hrs a 16:00 Hrs'
+              },
+              {
+                schedule: 'Sabado a Domigo: 09:00 Hrs a 12:00 Hrs'
+              }
+            ]}
+          />
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+
+
     <br />
     <br />
 
