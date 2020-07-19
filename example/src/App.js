@@ -410,6 +410,19 @@ const App = () => {
     <div className="bg-primary">
       <div className="container">
         <Header
+          userData={{
+            name: 'hola mundo',
+            menu: [
+              {
+                text: 'alguna accion',
+                action: () => alert('hola mundo')
+              },
+              {
+                text: 'alguna accion 2',
+                action: () => alert('hola mundo')
+              }
+            ]
+          }}
           logo={<Logo className="w-100" />}
           mobile={
             {

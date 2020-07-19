@@ -90,7 +90,17 @@ export const BulletList = () => (
         logo={<Logo className='w-100' />}
         userData={{
           name: text('username', 'Some name'),
-          onClick: action('onClick')
+          onClick: action('onClick'),
+          menu: [
+            {
+              text: text('link 1', 'Link 1', 'options'),
+              action: action('link 1')
+            },
+            {
+              text: text('link 2', 'Link 2', 'options'),
+              action: action('link 2')
+            }
+          ]
         }}
         mobile={{
           onClickBack: action('onClickBack'),
@@ -151,7 +161,13 @@ export default {
         {
           name: 'some text',
           date: new Date(),
-          onClick: () => null // a function will be triggered when the user clicked profile box
+          onClick: () => null // a function will be triggered when the user clicked profile box,
+          menu: [
+            {
+              text: 'some action', // text to be shown
+              action: () => null // action to be trigged
+            }
+          ]
         }
         ~~~
 
