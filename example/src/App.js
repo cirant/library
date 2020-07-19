@@ -20,6 +20,7 @@ import {
   Grid,
   Header,
   HeaderItem,
+  PrivateFooter,
   Icon,
   Input,
   InputSearch,
@@ -427,6 +428,22 @@ const App = () => {
           <HeaderItem icon="home"> label</HeaderItem>
         </Header>
       </div>
+    </div>
+
+    <div className="container my-4">
+        <PrivateFooter 
+            logo={<Logo className="w-100" />}
+            items={[
+                {
+                  text: 'Términos y condiciones', 
+                  link: 'http://www.google.cl'
+                }, 
+                {
+                  text: 'Políticas de privacidad', 
+                  link: 'http://www.copeuch.cl'
+                }
+              ]}
+        />
     </div>
 
     <div className="container my-4">

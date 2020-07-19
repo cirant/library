@@ -10,6 +10,7 @@ import Logo from './logo';
 import HeaderItem from './header/headerItem';
 import HeaderProfileItem from './header/headerProfileItem';
 import Header from './header';
+import PrivateFooter from './footer/privateFooter';
 import Input from './input';
 import Radio from './radio';
 import Separator from './separator';
@@ -68,6 +69,7 @@ export {
   HeaderItem,
   HeaderProfileItem,
   Header,
+  PrivateFooter,
   Input,
   InputPhone,
   InputCounter,
