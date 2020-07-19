@@ -828,8 +828,11 @@ const App = () => {
       <h1 className="mb-4">Messages</h1>
 
       <div className="d-flex flex-column">
-        <Message type="success" title="this is a success message" action={<Button variant="text" suffix="arrow-right" > ir a action </Button>} />
-        <Message type="error" title="this is an error message" description="bajada" />
+        <Message type="success" title="this is a success message"
+          description="mmm el bootstrap base que integraron me imagino que era el 4, si es así corroborar si seguiremos teniendo acceso a las clases de bootstrap, por el tema de los display que facilitan harto, si no, crear esas clases para que todos tengamos una forma de tratar a los componentes de manera similar.
+          Lo otro es como consejo, que se contemple bien la grilla para el diseño de las vistas, para que cuadren los elementos, el resto creo que no. Esos elementos van para la construcción del nuevo sitio asumo. Yo no he mirado como se pueden integrar React en AngularJS"
+          action={<Button variant="text" suffix="arrow-right" onClick={() => alert('cerrar')} > ir a action </Button>} />
+        <Message type="error" title="this is an error message" description="bajada" closer={() => alert('cerrar')} />
         <Message type="warning" title="this is a warning message" />
         <Message type="info" title="this is an info message" action={<Button variant="text" > ir a action </Button>} />
       </div>
