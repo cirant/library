@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './_info.scss'
 
-const MofalInfo = ({ image, title, description, buttons, ...props }) => {
+const ModalInfo = ({ image, title, description, buttons, ...props }) => {
   return (
     <div className={styles.modalInfo} {...props}>
       {image}
@@ -16,13 +16,13 @@ const MofalInfo = ({ image, title, description, buttons, ...props }) => {
   )
 }
 
-MofalInfo.defaultProps = {}
+ModalInfo.defaultProps = {}
 
-MofalInfo.propTypes = {
+ModalInfo.propTypes = {
   image: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
   buttons: PropTypes.arrayOf(PropTypes.node)
 }
 
-export default MofalInfo
+export default ModalInfo
