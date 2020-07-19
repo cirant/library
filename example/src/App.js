@@ -398,7 +398,6 @@ const App = () => {
       <div className="row">
         <div className="col">
           <SearchResult target="nombre de la busqueda">
-
             <CardSearch
               onClick={() => alert('card clicked')}
               title='Titulo de elemento de busqueda'

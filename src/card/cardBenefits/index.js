@@ -43,7 +43,7 @@ CardBenefits.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  logo: PropTypes.oneOf([PropTypes.string, PropTypes.node])
+  logo: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 }
 
 export default CardBenefits
