@@ -103,7 +103,7 @@ export const Multiple = () => {
       success={boolean('success', false, 'status')}
       disabled={boolean('disabled', false, 'status')}
       value={text('value', '', 'text')}
-      code={text('code', '', 'text')}
+      code={text('code', 2, 'text')}
       placeholder={text('placeholder', '', 'text')}
       label={text('label', '', 'text')}
       onCodeChange={action('code changed')}
