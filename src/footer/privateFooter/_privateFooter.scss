@@ -2,26 +2,61 @@
 @import '../../scss/variables';
 
 .privateFooter{
-    height: 80px;
-    border: 1px solid #000;
+    min-height: 80px;
+    display: flex;
+
+    svg{
+        background-color: red;
+    }
 
     .items{
-        a{
-            padding-right: nth(nth($spacers, 4),2);
-            color: $black;
+        display: flex;
+        padding-left: nth(nth($spacers, 6),2);
+        
+        p{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: nth(nth($spacers, 6),2);
+        }
+
+        .link{
             text-decoration: none;
+            color: $black;
+        }
+    }
+
+    .end{
+        display: flex;
+        justify-content: end;
+
+        .icon{
+            display: flex;
+            align-items: center;
+            padding-right: nth(nth($spacers, 4),2);
+        }
+
+        .textLabel{
+            display: flex;
+        }
+
+        span{
+            display: flex;
+            align-items: center;
         }
     }
 }
 
-.headerLeftArea{
-    width: 100%;
+.footerLeftArea{
+    width: 78%;
+    display: flex;
 }
 
-.headerLogoContainer{
+.footerLogoContainer{
     @extend .flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: nth(nth($spacers, 5),2);
 }
 
 .flex{
@@ -30,8 +65,21 @@
     padding-left: nth(nth($spacers, 6),2);
 }
 
-.profileItemContainer{
-    padding: 0px;
-    justify-content: end;
-    @extend .flex;
+.footerMobile{
+    align-items: center;
+    display: none;
+    
+    svg{
+        background-color: red;
+    }
+}
+
+@media screen and (max-width: nth(nth($grid-breakpoints,4),2)){
+    .footerDesktop{
+      display: none;
+    }
+  
+    .footerMobile{
+      display: flex;
+    }  
 }

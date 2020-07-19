@@ -1,0 +1,41 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../../scss/variables';
+
+.item{
+    display: flex;
+    line-height: 20px;
+
+    a{
+        color: $white;
+        padding-top: nth(nth($spacers, 4),2);
+        display: flex;
+        font-size: 16px;
+        max-width: 80%;
+
+        &:hover{
+            color: $white;
+            text-decoration: none;
+        }
+    }
+}
+
+.subItems{
+    padding-left: nth(nth($spacers, 4),2);
+
+    a{
+        color: $white;
+        font-size: 14px;
+
+        &:hover{
+            color: $white;
+            text-decoration: none;
+        }
+    }
+
+    .subItem{
+        display: flex;
+        padding-top: nth(nth($spacers, 2),2);
+        line-height: 16px;
+        max-width: 80%;
+    }
+}

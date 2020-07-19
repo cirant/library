@@ -21,6 +21,9 @@ import {
   Header,
   HeaderItem,
   PrivateFooter,
+  PublicFooter,
+  PublicFooterColumn,
+  PublicFooterItem,
   Icon,
   Input,
   InputSearch,
@@ -433,17 +436,102 @@ const App = () => {
     <div className="container my-4">
         <PrivateFooter 
             logo={<Logo className="w-100" />}
-            items={[
-                {
-                  text: 'Términos y condiciones', 
-                  link: 'http://www.google.cl'
-                }, 
-                {
-                  text: 'Políticas de privacidad', 
-                  link: 'http://www.copeuch.cl'
-                }
-              ]}
+            itemsLeft={[
+              {
+                link: 'http://www.google.cl',
+                text: 'Términos y condiciones'
+              },
+              {
+                link: 'http://www.coopeuch.cl',
+                text: 'Políticas y condiciones'
+              },
+              {
+                link: 'http://www.coopeuch.cl',
+                text: 'Otro Link'
+              }
+            ]}
+            itemRight={
+              {
+                icon_name: 'line-snooze',
+                label: 'Texto 1'
+              }
+            }
         />
+    </div>
+    
+    <div className="bg-primary">
+      <div className="container my-4">
+        <PublicFooter logo={<Logo className="w-100" />}>
+           <PublicFooterColumn title={'Productos'}>
+              <PublicFooterItem link={'http://www.coopeuch.cl'} subItems={[
+                  {
+                    text: 'condiciones generales de contratación',
+                    link: 'http://www.2brains.cl'
+                  }
+              ]}>Cuenta Coopeuch</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}
+                  subItems={[
+                  {
+                    text: 'Condiciones generales de contratación',
+                    link: 'http://www.2brains.cl'
+                  }
+              ]}>Monedero Digital Coopeuch</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Cuentas de Ahorro</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Créditos</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'} subItems={[
+                  {
+                    text: 'Enlace Inmobiliario Alzamiento de prendas o hipotecas Ley N° 20.855n',
+                    link: 'http://www.2brains.cl'
+                  }
+              ]}>Crédito Hipotecario</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Tarjeta Mastercard</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Cuota de Participación</PublicFooterItem>
+           </PublicFooterColumn>   
+           <PublicFooterColumn title={'Beneficios'}>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Becas Fundación Coopeuch</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Bonos de Estudio</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Club +60</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Sembrando Cultura</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Remanente</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Descuento de Comercio</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Cátalogo de productos SUMA</PublicFooterItem>
+           </PublicFooterColumn>
+           <PublicFooterColumn title={'Institucional'}>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Memoria 2019</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Qué es ser socio</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Quienes Somos</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Hazte Socio</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Estados financieros</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Investor Relations</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Fundación Coopeuch</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Noticias</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Revista Conversemos</PublicFooterItem>
+           </PublicFooterColumn>
+           <PublicFooterColumn title={'Tarifas'}>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Garantía Estatal de Depósitos CMF</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Tasas y Comisiones 2020</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Políticas De Privacidad</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Terminos de Uso</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Gastos de Cobranza 2020</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Tasas de interés anual Cuentas de Ahorro</PublicFooterItem>
+           </PublicFooterColumn>
+           <PublicFooterColumn title={'Ayuda al Socio'}>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}subItems={[
+                  {
+                    text: 'Tu opinión nos interesa',
+                    link: '#'
+                  }
+              ]}>Evaluános</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Contáctanos</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Horarios de atención</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Sucursales</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Emergencias</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Seguridad</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Buscador</PublicFooterItem>
+              <PublicFooterItem link={'http://www.coopeuch.cl'}>Reclamos</PublicFooterItem>
+           </PublicFooterColumn>
+        </PublicFooter>
+      </div>
     </div>
 
     <div className="container my-4">

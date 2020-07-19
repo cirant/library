@@ -1,0 +1,12 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../../scss/variables';
+
+.column{
+    flex: 1;
+    color: $white;
+
+    .titleColumn{
+        padding-bottom: nth(nth($spacers, 4),2);
+        font-weight: 700;
+    }
+}
