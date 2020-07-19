@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './_message.scss'
 import { Icon } from '../'
 
-const Message = ({ title, action, type, className, description, closer }) => {
+const Message = ({ title, action, type, className, description, closer, ...props }) => {
   const messageClasses = [styles.message, styles[type], className]
 
   const getIcon = () => {
@@ -19,7 +19,7 @@ const Message = ({ title, action, type, className, description, closer }) => {
     }
   }
   return (
-    <div className={messageClasses.join(' ').trim()} role='message'>
+    <div {...props} className={messageClasses.join(' ').trim()} role='message'>
       <div className={styles.textContainer}>
         <Icon name={getIcon()} className={styles.prefix} />
         <div className={styles.content}>
