@@ -3,15 +3,16 @@ import PropTypes from 'prop-types'
 import InputCore from '../core'
 import Icon from '../../icons'
 import styles from './_search.scss'
+import TagLink from '../../tagLink'
 
-const InputSearch = ({ label, filterAction, clearAction, ...props }) => {
+const InputSearch = ({ label, filterAction,tagLinks, clearAction, ...props }) => {
   let inputContainerClases = [styles.inputConteiner]
 
   if (props.disabled) {
     inputContainerClases = inputContainerClases.concat(styles.disabled)
   }
 
-  const prefix = <Icon role='search-icon' name='line-search' size={1} />
+  const prefix = <Icon role='search-icon' name='line-search' size={1}/>
   const suffix = (
     <Icon
       role='cross-icon'
@@ -23,19 +24,40 @@ const InputSearch = ({ label, filterAction, clearAction, ...props }) => {
   )
 
   return (
-    <div className={inputContainerClases.join(' ').trim()}>
-      {label && <span className={styles.inputLabel}> {label} </span>}
-      <div className={styles.inputRow}>
-        <InputCore {...props} prefix={prefix} suffix={suffix} />
-        <Icon
-          role='filter-icon'
-          onClick={filterAction}
-          name='line-filter'
-          size={1}
-          className={styles.filterIcon}
-        />
+    <React.Fragment>
+      <div className={inputContainerClases.join(' ').trim()}>
+        {label && <span className={styles.inputLabel}> {label} </span>}
+        <div className={styles.inputRow}>
+          <InputCore {...props} prefix={prefix} suffix={suffix}/>
+          <Icon
+            role='filter-icon'
+            onClick={filterAction}
+            name='line-filter'
+            size={1}
+            className={styles.filterIcon}
+          />
+        </div>
+        {
+          tagLinks &&
+          (
+            <div className={styles.tagLinkContainer}>
+              {
+                tagLinks.map((item,i)=>{
+                  return (
+                    <div className={styles.tagLinkItem}>
+                      <TagLink
+                        label={item.label}
+                        onClick={item.onClick}
+                      />
+                    </div>
+                  )
+                })
+              }
+            </div>
+          )
+        }
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 

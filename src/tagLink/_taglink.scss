@@ -1,0 +1,17 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+
+.tagLink{
+  padding: nth(nth($spacers, 3),2) nth(nth($spacers, 7),2);
+  border: 1px solid $neutral-20;
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $blue;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+

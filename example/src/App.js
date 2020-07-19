@@ -55,7 +55,8 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  NotificationBadge
+  NotificationBadge,
+  TagLink
 } from 'design-system-coopeuch';
 import 'design-system-coopeuch/dist/index.css';
 import 'design-system-coopeuch/dist/css/custom.css';
@@ -741,12 +742,12 @@ const App = () => {
         <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
       </div>
     </div>
-    
+
     <div className="container my-4">
       <h1 className="mb-4">input coordinate</h1>
       <div className="d-flex">
           <div className="col-lg-4 col-md-9 col-sm-4">
-            <InputCoordinate 
+            <InputCoordinate
               assistText={[
                   {
                     type: 'assist', text: 'Texto de asistencia'
@@ -759,28 +760,28 @@ const App = () => {
                   }
               ]}
             >
-              <Input 
+              <Input
                 placeholder={'**'}
                 maxLength={'2'}
-                type={'password'} 
-                label={'A1'} 
-                value={inputCoordinate} 
-                onChange={({target: {value}}) => setInputCoordinate(value)}   
+                type={'password'}
+                label={'A1'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
               />
               <Input
                 placeholder={'**'}
                 maxLength={'2'}
-                type={'password'} 
-                label={'B2'} 
-                value={inputCoordinate} 
+                type={'password'}
+                label={'B2'}
+                value={inputCoordinate}
                 onChange={({target: {value}}) => setInputCoordinate(value)}
               />
-              <Input 
+              <Input
                 placeholder={'**'}
                 maxLength={'2'}
-                type={'password'} 
-                label={'C3'} 
-                value={inputCoordinate} 
+                type={'password'}
+                label={'C3'}
+                value={inputCoordinate}
                 onChange={({target: {value}}) => setInputCoordinate(value)}
               />
             </InputCoordinate>
@@ -808,7 +809,41 @@ const App = () => {
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
-          onChange={({ target: { value } }) => setInputText(value)} />
+          onChange={({ target: { value } }) => setInputText(value)}
+          tagLinks={
+            [
+              {
+                label:'Element 01',
+                onClick:()=> console.log('Element 01')
+              },
+              {
+                label:'Element 02',
+                onClick:()=> console.log('Element 02')
+              },
+              {
+                label:'Element 03',
+                onClick:()=> console.log('Element 03')
+              },
+              {
+                label:'Element 04',
+                onClick:()=> console.log('Element 04')
+              },
+              {
+                label:'Element 05',
+                onClick:()=> console.log('Element 05')
+              },
+              {
+                label:'Element 06',
+                onClick:()=> console.log('Element 06')
+              },
+              {
+                label:'Element 07',
+                onClick:()=> console.log('Element 07')
+              },
+
+            ]
+          }
+        />
 
         <InputSearch
           maxLength="105"
@@ -1509,6 +1544,18 @@ const App = () => {
 
     <br />
     <br />
+
+    <div className="container my-4">
+      <h1 className="mb-4">Tag Link</h1>
+      <div className="d-flex">
+        <TagLink
+          label='Label link text'
+          onClick={()=> console.log('asdas')}
+        >
+
+        </TagLink>
+      </div>
+    </div>
     <br />
     <br />
 
