@@ -1,19 +1,23 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs/react'
-import { number } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
+import { text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
-import '../codeStyles.css'
+import { EmptyState } from '../../dist'
 import '../../dist/index.css'
-import { Stamp } from '../../dist'
 
 const propsDescriptions = {
-  width: {
+  title: {
     propType: 'string',
-    description: 'Add width to the svg'
+    description: 'Main text to be shown'
   },
-  height: {
+  description: {
     propType: 'string',
-    description: 'Add height to the svg'
+    description: 'Secondary text to be shown below title'
+  },
+  button: {
+    propType: 'object',
+    description:
+      'An object with button configuration, check for more details in basic implementation'
   }
 }
 
@@ -31,6 +35,8 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
+      console.log(defaultValue)
+
       return (
         <tr key={property}>
           <td>
@@ -65,43 +71,52 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const StampComponent = () => (
-  <Stamp width={number('width', '223')} height={number('height', '217')} />
+export const element = () => (
+  <EmptyState
+    title={text('title', 'Some title', 'main')}
+    description={text('description', 'Some description', 'main')}
+    button={{
+      text: text('text', 'label text', 'button'),
+      action: action('button clicked')
+    }}
+  />
 )
 
 export default {
-  title: 'Stamp',
-  decorators: [withKnobs, withInfo],
-  component: Stamp,
+  title: 'EmptyState',
+  decorators: [withInfo],
+  component: EmptyState,
   parameters: {
     info: {
       inline: true,
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
-          margin: '10px 0'
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          alignSelf: 'start',
+          padding: '0px 40px 0px'
         }
       },
-      text: `include into your project to be able to use the component styles
-      
+      text: `
+        include into your project to be able to use the component styles
         ~~~js
         import 'design-system-coopeuch/dist/index.css';
-        import { Stamp }from 'design-system-coopeuch';
+        import { EmptyState } from 'design-system-coopeuch';
         ~~~
-
         the basicest component form is:
-
         ~~~js
-        <Stamp />
+        <EmptyState 
+          title="some text"
+          button={{
+            title: 'label text',
+            action: () => {} // function will be triggered on button click
+          }}
+         />
         ~~~
-
-        ##### Note: About width and height properties
-
-        To give the desired size, please change the width and length, modifying
-        only one of the values ​​will not take effect because the width and length
-        of the properties of the svg are being modified.
-        change the knobs properties and you'll be able to watch its component structure below at Story Source`
+        change the knobs properties and you'll be able to watch its component structure below at Story Source
+      `
     }
   }
 }
