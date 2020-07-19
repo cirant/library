@@ -64,20 +64,19 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 }
 
 export const resultList = () => (
-  <SearchResult target={text('target', 'some text')} >
+  <SearchResult target={text('target', 'some text')}>
     <CardSearch
       onClick={action('card Clicked 1')}
-      title="sometimes some text is into a card"
-      description="description card"
+      title='sometimes some text is into a card'
+      description='description card'
       routes={['location']}
     />
     <CardSearch
       onClick={action('card Clicked 2')}
-      title="sometimes some text is into a card"
-      description="description card"
+      title='sometimes some text is into a card'
+      description='description card'
       routes={['location']}
     />
-
   </SearchResult>
 )
 

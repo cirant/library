@@ -6,7 +6,9 @@ import contiesList from './_contiesList'
 describe('Input behavior', () => {
   it('should be rendered', () => {
     const onChange = jest.fn()
-    const component = render(<InputPhone value='234' onChange={onChange} onCodeChange={() => null} />)
+    const component = render(
+      <InputPhone value='234' onChange={onChange} onCodeChange={() => null} />
+    )
     expect(component).toBeTruthy()
     expect(component.getByText(/\+56/)).toBeTruthy()
 
@@ -18,7 +20,9 @@ describe('Input behavior', () => {
 
   it('should be allow numbers', () => {
     const onChange = jest.fn()
-    const component = render(<InputPhone value='123' onChange={onChange} onCodeChange={() => null} />)
+    const component = render(
+      <InputPhone value='123' onChange={onChange} onCodeChange={() => null} />
+    )
     const element = component.getByDisplayValue(/123/)
     fireEvent.change(element, { target: { value: '12f' } })
     expect(onChange).not.toBeCalled()
@@ -40,23 +44,28 @@ describe('Input behavior', () => {
   })
 
   it('should be show as disabled', () => {
-    const component = render(<InputPhone
-      value={123}
-      disabled
-      onChange={() => null}
-      onCodeChange={() => null}
-    />)
+    const component = render(
+      <InputPhone
+        value={123}
+        disabled
+        onChange={() => null}
+        onCodeChange={() => null}
+      />
+    )
     const element = component.getByDisplayValue(/123/i)
     fireEvent.click(component.getByText(/\+56/))
     expect(element.closest('input').disabled).toBeTruthy()
   })
 
   it('should be render a code value', () => {
-    const component = render(<InputPhone
-      value=''
-      onChange={() => null}
-      onCodeChange={() => null}
-      code={2} />)
+    const component = render(
+      <InputPhone
+        value=''
+        onChange={() => null}
+        onCodeChange={() => null}
+        code={2}
+      />
+    )
     expect(component.getByText(/\+2/)).toBeTruthy()
   })
 
@@ -66,9 +75,8 @@ describe('Input behavior', () => {
       <InputPhone
         value={123}
         onChange={() => null}
-        onCodeChange={() => null}
-        code={2}
         onCodeChange={onCodeChange}
+        code={2}
       />
     )
     fireEvent.click(component.getByText(/\+2/))
