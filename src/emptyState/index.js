@@ -4,17 +4,16 @@ import styles from './_emptyState.scss'
 import image from './assets/nube.svg'
 import Button from '../buttons'
 
-const EmptyState = ({ title, description, button, ...props }) => {
+const EmptyState = ({ title, description, className, button, ...props }) => {
   return (
-    <div className={styles.component} {...props}>
+    <div className={[styles.component, className].join(' ').trim()} {...props}>
       <img src={image} alt="imagen doesn't found" />
       {title && <p>{title}</p>}
       {description && <div className={styles.description}>{description}</div>}
       <div className={styles.buttonSection}>
         {button && (
           <Button color='secondary' variant='outline' onClick={button.action}>
-            {' '}
-            {button.text}{' '}
+            {button.text}
           </Button>
         )}
       </div>
