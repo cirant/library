@@ -44,6 +44,7 @@ import {
   Tooltip,
   Voucher,
   Message,
+  ModalInfo,
   Bullets,
   VoucherResumeContainer,
   VoucherTitle,
@@ -412,6 +413,19 @@ const App = () => {
     <div className="bg-primary">
       <div className="container">
         <Header
+          userData={{
+            name: 'hola mundo',
+            menu: [
+              {
+                text: 'alguna accion',
+                action: () => alert('hola mundo')
+              },
+              {
+                text: 'alguna accion 2',
+                action: () => alert('hola mundo')
+              }
+            ]
+          }}
           logo={<Logo className="w-100" />}
           mobile={
             {
@@ -876,8 +890,11 @@ const App = () => {
       <h1 className="mb-4">Messages</h1>
 
       <div className="d-flex flex-column">
-        <Message type="success" title="this is a success message" action={<Button variant="text" suffix="arrow-right" > ir a action </Button>} />
-        <Message type="error" title="this is an error message" description="bajada" />
+        <Message type="success" title="this is a success message"
+          description="mmm el bootstrap base que integraron me imagino que era el 4, si es así corroborar si seguiremos teniendo acceso a las clases de bootstrap, por el tema de los display que facilitan harto, si no, crear esas clases para que todos tengamos una forma de tratar a los componentes de manera similar.
+          Lo otro es como consejo, que se contemple bien la grilla para el diseño de las vistas, para que cuadren los elementos, el resto creo que no. Esos elementos van para la construcción del nuevo sitio asumo. Yo no he mirado como se pueden integrar React en AngularJS"
+          action={<Button variant="text" suffix="arrow-right" onClick={() => alert('cerrar')} > ir a action </Button>} />
+        <Message type="error" title="this is an error message" description="bajada" closer={() => alert('cerrar')} />
         <Message type="warning" title="this is a warning message" />
         <Message type="info" title="this is an info message" action={<Button variant="text" > ir a action </Button>} />
       </div>
@@ -1369,6 +1386,54 @@ const App = () => {
         <br />
       </div>
     </div>
+
+    <div className="container pt-5">
+      <h1 className="mb-4">Modal info</h1>
+      <div className="row">
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            title="Titulo de mensaje"
+            buttons={[
+              <Button variant="outline" color="primary" > label button </Button>,
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            title="Titulo de mensaje"
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button variant="outline" color="primary" > label button </Button>,
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+        <div className="col">
+          <ModalInfo
+            title="Titulo de mensaje"
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+      </div>
+    </div>
+
 
     <br />
     <br />
