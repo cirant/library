@@ -3,11 +3,6 @@ import { cleanup, render } from '@testing-library/react'
 import InputCoordinate from './';
 
 describe('InputCoordinate tests', () => {
-    let component;
-  
-    beforeEach(() => {
-      component = render(<InputCoordinate />)
-    })
   
     afterEach(() => {
       cleanup()
@@ -29,6 +24,7 @@ describe('InputCoordinate tests', () => {
     })
   
     test('should component content a div container', () => {
+      const component = render(<InputCoordinate />)
       const element = component.container.querySelector('.container')
       expect(element).toBeTruthy()
     })
