@@ -10,21 +10,20 @@ const InputCoordinate = ({children, assistText, ...props}) => {
             case 'success':
             return (
                 <div className={styles.successText}>
-                    <Icon data-testid='successIcon' name='check' size={1} />{' '}
+                    <Icon data-testid='successIcon' name='check' size={1} />
                     <span>{icon.text}</span>
                 </div>
             )
             case 'error':
             return (
                 <div className={styles.errorText}>
-                    <Icon data-testid='errorIcon' name='cross' size={1} />{' '}
+                    <Icon data-testid='errorIcon' name='cross' size={1} />
                     <span>{icon.text}</span>
                 </div>
             )
             default:
             return (
                 <div className={styles.assistText}>
-                    {' '}
                     <i className={styles.empty} /> <span>{icon.text}</span>
                 </div>
             )
@@ -33,8 +32,7 @@ const InputCoordinate = ({children, assistText, ...props}) => {
 
     return ( 
         <div>
-            <div className={[styles.container, styles.coordinate].join(' ')}>
-                {...props}
+            <div className={[styles.container, styles.coordinate].join(' ')} {...props}>
                 {children}
             </div>
             <div className={[styles.containerIcon].join(' ')}>

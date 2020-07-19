@@ -182,9 +182,9 @@ export default {
   
           ~~~js
           <InputCoordinate assistText={[]}>
-            <Input />
-            <Input />
-            <Input />
+            <Input maxLength={'2'} type={'password'} />
+            <Input maxLength={'2'} type={'password'} />
+            <Input maxLength={'2'} type={'password'} />
           </InputCoordinate>
           ~~~
   
