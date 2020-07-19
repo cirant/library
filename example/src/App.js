@@ -50,7 +50,12 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  NotificationBadge
+  NotificationBadge,
+  DRedCard,
+  DBlackCard,
+  MRedCard,
+  MBlackCard,
+  PlasticCard
 } from 'design-system-coopeuch';
 import 'design-system-coopeuch/dist/index.css';
 import 'design-system-coopeuch/dist/css/custom.css';
@@ -1322,10 +1327,124 @@ const App = () => {
       </div>
     </div>
 
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Desktop black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <DBlackCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}
+          >
+          </DBlackCard>
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+
+
+    <br />
+    <br />
+    <div className="container">
+      <h1 className="mb-4">Desktop red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <DRedCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}
+          >
+          </DRedCard>
+        </div>
+      </div>
+    </div>
+
     <br />
     <br />
     <br />
     <br />
+
+    <div className="container">
+      <h1 className="mb-4">Mobile red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <MRedCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </MRedCard>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Mobile black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <MBlackCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </MBlackCard>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Plastic black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <PlasticCard
+            type={'debit'}
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </PlasticCard>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Plastic red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <PlasticCard
+            type={'credit'}
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </PlasticCard>
+        </div>
+      </div>
+    </div>
+
+
 
 
   </>
