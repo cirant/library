@@ -25,8 +25,8 @@ const CardBranchOffice = ({ name, address,className, attentionSchedule,...props 
       </div>
       <div className={styles.schedule}>
         {
-          attentionSchedule.map((item,i)=>{
-            return <p className='note'>{item.schedule}</p>
+          attentionSchedule.map((item,index)=>{
+            return <p className='note' key={`schedule-item${index}`}>{item.schedule}</p>
           })
         }
       </div>

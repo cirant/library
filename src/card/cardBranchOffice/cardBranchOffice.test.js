@@ -1,24 +1,32 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Component from '.'
+import CardBranchOffice from '.'
 
-describe('CardCheckbox behavior', () => {
-  it('should be rendered', () => {
-    const component = render(<Component />)
+describe('CardBranchOffice component behavior', () => {
+
+  test('should be rendered', () => {
+    const component = render(<CardBranchOffice/>)
     expect(component).toBeTruthy()
   })
 
-  it('should be rendered', () => {
-    const component = render(<Component logo='f' />)
-    expect(component.getByText('f')).toBeTruthy()
-  })
-
-  it('should be rendered with text', () => {
+  test('should be rendered with the proper texts', () => {
     const component = render(
-      <Component topText='text top' title='Title' description='description' />
+      <CardBranchOffice
+        name='Name of branch office'
+        address='Address branch office'
+        attentionSchedule={[
+          {
+            schedule: 'Lunes a Domigo: 09:00 Hrs a 16:00 Hrs'
+          },
+          {
+            schedule: 'Sabado a Domigo: 09:00 Hrs a 12:00 Hrs'
+          }
+        ]}
+      />
     )
-    expect(component.getByText(/text top/)).toBeTruthy()
-    expect(component.getByText('Title')).toBeTruthy()
-    expect(component.getByText('description')).toBeTruthy()
+    expect(component.getByText(/Name of branch office/)).toBeTruthy()
+    expect(component.getByText('Address branch office')).toBeTruthy()
+    expect(component.getByText('Lunes a Domigo: 09:00 Hrs a 16:00 Hrs')).toBeTruthy()
+    expect(component.getByText('Sabado a Domigo: 09:00 Hrs a 12:00 Hrs')).toBeTruthy()
   })
 })
