@@ -41,8 +41,6 @@ const Red = (props) => (
   </span>
 )
 
-
-
 const TableComponent = ({ propDefinitions, ...propsx }) => {
   const propsMixeds = propDefinitions.map((el) => ({
     ...el,
@@ -87,17 +85,18 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const CreditPlasticCardComponent = () => (
   <PlasticCard
-    type={'credit'}
-    cardNumber={'N° *** *** 6520'}
-    cardTitle={'Master Card Debit'}
-    cardType={'titular'}
-    owner={'Ricardo Olivares'}
-    state={'Activa'} />
+    type='credit'
+    cardNumber='N° *** *** 6520'
+    cardTitle='Master Card Debit'
+    cardType='titular'
+    owner='Ricardo Olivares'
+    state='Activa'
+  />
 )
 
 export default {
   title: 'Plastic Card',
-  decorators: [ withInfo],
+  decorators: [withInfo],
   component: PlasticCard,
   parameters: {
     info: {

@@ -3,18 +3,19 @@ import { cleanup, render } from '@testing-library/react'
 import PlasticCard from './index'
 
 describe('Plastic Card Component behavior', () => {
-
-  let component;
+  let component
 
   beforeEach(() => {
     component = render(
       <PlasticCard
-        type={'debit'}
-        cardNumber={'N° *** *** 6520'}
-        cardTitle={'MasterCard Debit'}
-        cardType={'Titular'}
-        owner={'Ricardo Olivares'}
-        state={'Activa'}>
+        type='debit'
+        cardNumber='N° *** *** 6520'
+        cardTitle='MasterCard Debit'
+        cardType='Titular'
+        owner='Ricardo Olivares'
+        state='Activa'
+      >
+        >
       </PlasticCard>
     )
   })
@@ -38,59 +39,74 @@ describe('Plastic Card Component behavior', () => {
   test('should debit mobile plastic card must be render', () => {
     const testcomponent = render(
       <PlasticCard
-        type={'debit'}
-        cardNumber={'N° *** *** 6520'}
-        cardTitle={'MasterCard Debit'}
-        cardType={'Titular'}
-        owner={'Ricardo Olivares'}
-        state={'Activa'}>
+        type='debit'
+        cardNumber='N° *** *** 6520'
+        cardTitle='MasterCard Debit'
+        cardType='Titular'
+        owner='Ricardo Olivares'
+        state='Activa'
+      >
+        >
       </PlasticCard>
     )
-    expect(testcomponent.getAllByText(/Tarjetas bancarias mobile black/)).toBeTruthy()
+    expect(
+      testcomponent.getAllByText(/Tarjetas bancarias mobile black/)
+    ).toBeTruthy()
   })
 
   test('should credit mobile plastic card must be render', () => {
     const testcomponent = render(
       <PlasticCard
-        type={'credit'}
-        cardNumber={'N° *** *** 6520'}
-        cardTitle={'MasterCard Debit'}
-        cardType={'Titular'}
-        owner={'Ricardo Olivares'}
-        state={'Activa'}>
+        type='credit'
+        cardNumber='N° *** *** 6520'
+        cardTitle='MasterCard Debit'
+        cardType='Titular'
+        owner='Ricardo Olivares'
+        state='Activa'
+      >
+        >
       </PlasticCard>
     )
-    expect(testcomponent.getAllByText(/Tarjetas bancarias mobile red/)).toBeTruthy()
+    expect(
+      testcomponent.getAllByText(/Tarjetas bancarias mobile red/)
+    ).toBeTruthy()
   })
 
   test('should credit desktop plastic card must be render', () => {
     const testcomponent = render(
       <PlasticCard
-        type={'credit'}
-        cardNumber={'N° *** *** 6520'}
-        cardTitle={'MasterCard Debit'}
-        cardType={'Titular'}
-        forceDesktop={true}
-        owner={'Ricardo Olivares'}
-        state={'Activa'}>
+        type='credit'
+        cardNumber='N° *** *** 6520'
+        cardTitle='MasterCard Debit'
+        cardType='Titular'
+        forceDesktop
+        owner='Ricardo Olivares'
+        state='Activa'
+      >
+        >
       </PlasticCard>
     )
-    expect(testcomponent.getAllByText(/Tarjetas bancarias desktop red/)).toBeTruthy()
+    expect(
+      testcomponent.getAllByText(/Tarjetas bancarias desktop red/)
+    ).toBeTruthy()
   })
 
   test('should debit desktop plastic card must be render', () => {
     const testcomponent = render(
       <PlasticCard
-        type={'debit'}
-        cardNumber={'N° *** *** 6520'}
-        cardTitle={'MasterCard Debit'}
-        cardType={'Titular'}
-        forceDesktop={true}
-        owner={'Ricardo Olivares'}
-        state={'Activa'}>
+        type='debit'
+        cardNumber='N° *** *** 6520'
+        cardTitle='MasterCard Debit'
+        cardType='Titular'
+        forceDesktop
+        owner='Ricardo Olivares'
+        state='Activa'
+      >
+        >
       </PlasticCard>
     )
-    expect(testcomponent.getAllByText(/Atomo Tarjetas bancarias desktop black/)).toBeTruthy()
+    expect(
+      testcomponent.getAllByText(/Atomo Tarjetas bancarias desktop black/)
+    ).toBeTruthy()
   })
-
 })

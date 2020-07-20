@@ -14,8 +14,7 @@ const propsDescriptions = {
   },
   title: {
     propType: 'string',
-    description:
-      'Add the title of the card'
+    description: 'Add the title of the card'
   },
   cardNumber: {
     propType: 'string',
@@ -28,8 +27,7 @@ const propsDescriptions = {
   },
   children: {
     propType: 'node',
-    description:
-      'Add everything that you want like a child'
+    description: 'Add everything that you want like a child'
   }
 }
 
@@ -43,7 +41,12 @@ export const CardBankComponent = () => (
   <CardBank
     title={text('title', 'MasterCard Gold', 'Card Bank Config')}
     cardNumber={text('card number', 'N°**** ***2345', 'Card Bank Config')}
-    cardType={select('card type', ['gold','international','default','debit'],'debit', 'Card Bank Config')}
+    cardType={select(
+      'card type',
+      ['gold', 'international', 'default', 'debit'],
+      'debit',
+      'Card Bank Config'
+    )}
     buttons={[
       {
         label: text('Label', 'Label Text Link', 'Button I'),
@@ -55,10 +58,22 @@ export const CardBankComponent = () => (
       {
         label: text('Label', 'Label Text Link', 'Button II'),
         onClick: action('onClick', null, 'Button II')
-      },
-      ]}
+      }
+    ]}
   >
-    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span>
+    <p>
+      <span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga
+        illo laborum minima modi nesciunt obcaecati officia officiis quo sed
+        sint sit soluta suscipit tempora, totam, vero voluptate voluptates,
+        voluptatum.
+      </span>
+      <span>
+        A accusantium consequatur dignissimos dolor earum eius, ex facere fugit
+        illum laudantium, magni non praesentium qui quos, repudiandae rerum
+        similique tenetur? Accusantium aut dignissimos iste quo ut voluptate.
+        Excepturi, nemo?
+      </span>
     </p>
   </CardBank>
 )
@@ -77,7 +92,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
         <tr key={property}>
           <td>
             {property}
-            {required && <Red/>}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -95,18 +110,17 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       {...propsx}
     >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
   )
 }
-
 
 export default {
   title: 'Card Bank',
