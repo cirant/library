@@ -57,6 +57,7 @@ import ColumnCardContent from './columnCard/columnCardContent'
 import ColumnCardImage from './columnCard/columnCardImage'
 import ColumnCardContentActions from './columnCard/columnCardContent/columnCardContentAction'
 import CardBenefits from './card/cardBenefits'
+import ActionLink from './actionLinkGrid2Columns/actionLink'
 
 export {
   Button,
@@ -117,5 +118,6 @@ export {
   ColumnCard,
   ColumnCardContent,
   ColumnCardContentActions,
-  ColumnCardImage
+  ColumnCardImage,
+  ActionLink
 }
