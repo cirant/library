@@ -4,6 +4,7 @@ import {
   Button,
   BreadCrumb,
   Card,
+  CardBank,
   CardSwitch,
   CardCheckbox,
   CardDropdown,
@@ -1432,6 +1433,100 @@ const App = () => {
     <br />
 
     <div className="container">
+      <h1 className="mb-4">Bank Card Default col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank title='Normal' >
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+
+
+    <div className="container">
+      <h1 className="mb-4">Bank Card Debit col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank
+            title='Mastercard Debito'
+            cardNumber={"N°**** ***2345"}
+            buttons={[
+              {
+                label:'Label text link',
+                prefix:'arrow-left',
+                onClick: ()=> console.log('click')
+              },
+              {
+                label:'Label text link',
+                onClick: ()=> console.log('click')
+              },
+            ]}
+            cardType="debit">
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
+
+    <div className="container">
+      <h1 className="mb-4">Bank Card Gold col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank
+            title='Mastercard Gold'
+            cardType="gold"
+            buttons={[
+              {
+                label:'Label text link',
+                prefix:'arrow-left',
+                onClick: ()=> console.log('test 1')
+              },
+              {
+                label:'Label text link',
+                onClick: ()=> console.log('test 2')
+              }
+            ]}
+            cardNumber={"N°**** ***2345"} >
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
+    <div className="container">
+      <h1 className="mb-4">Bank Card International col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank
+            title='Mastercard International'
+            cardType="international"
+            buttons={[
+              {
+                label:'Label text link',
+                prefix:'arrow-left',
+                onClick: ()=> console.log('click')
+              },
+              {
+                label:'Label text link',
+                onClick: ()=> console.log('click')
+              }
+            ]}
+            cardNumber={"N°**** ***2345"} >
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+
+    <div className="container">
       <h1 className="mb-4">Column Card col-lg-6</h1>
       <div className="row">
         <div className="col-lg-8 col-md-12 col-sm-6">
@@ -1458,87 +1553,6 @@ const App = () => {
             </ColumnCardContent>
             <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
           </ColumnCard>
-        </div>
-        <br />
-        <br />
-      </div>
-    </div>
-
-
-    <br />
-    <br />
-
-    <div className="container">
-      <h1 className="mb-4">Desktop black card</h1>
-      <div className="row">
-        <div className="col-lg-3 col-md-12 col-sm-6">
-          <DBlackCard
-            cardNumber={'N° *** *** 6520'}
-            cardTitle={'MasterCard Debit'}
-            cardType={'Titular'}
-            owner={'Ricardo Olivares'}
-            state={'Activa'}
-          >
-          </DBlackCard>
-        </div>
-        <br />
-        <br />
-      </div>
-    </div>
-
-
-    <br />
-    <br />
-    <div className="container">
-      <h1 className="mb-4">Desktop red card</h1>
-      <div className="row">
-        <div className="col-lg-3 col-md-12 col-sm-6">
-          <DRedCard
-            cardNumber={'N° *** *** 6520'}
-            cardTitle={'MasterCard Debit'}
-            cardType={'Titular'}
-            owner={'Ricardo Olivares'}
-            state={'Activa'}
-          >
-          </DRedCard>
-        </div>
-      </div>
-    </div>
-
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <div className="container">
-      <h1 className="mb-4">Mobile red card</h1>
-      <div className="row">
-        <div className="col-lg-3 col-md-12 col-sm-6">
-          <MRedCard
-            cardNumber={'N° *** *** 6520'}
-            cardTitle={'MasterCard Debit'}
-            cardType={'Titular'}
-            owner={'Ricardo Olivares'}
-            state={'Activa'}>
-          </MRedCard>
-        </div>
-      </div>
-    </div>
-
-    <br />
-    <br />
-
-    <div className="container">
-      <h1 className="mb-4">Mobile black card</h1>
-      <div className="row">
-        <div className="col-lg-3 col-md-12 col-sm-6">
-          <MBlackCard
-            cardNumber={'N° *** *** 6520'}
-            cardTitle={'MasterCard Debit'}
-            cardType={'Titular'}
-            owner={'Ricardo Olivares'}
-            state={'Activa'}>
-          </MBlackCard>
         </div>
       </div>
     </div>
