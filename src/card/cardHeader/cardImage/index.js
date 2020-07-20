@@ -18,8 +18,8 @@ const CardImage = ({ imgUrl, alt, ...props }) => {
 
 CardImage.defaultProps = {
   imgUrl: '',
-  alt:''
-};
+  alt: ''
+}
 
 CardImage.propTypes = {
   imgUrl: PropTypes.string,
