@@ -102,4 +102,23 @@
   *{
     margin: auto;
   }
+
+  @media screen and (min-width: nth(nth($grid-breakpoints,4),2)){
+    width: 48px;
+    height: 48px;
+
+    .radio{
+      width: 32px;
+      height: 32px;
+
+      &::after{
+        width: 20px;
+        height: 20px;
+        top: 4px;
+        left: 4px;
+      }
+
+    }
+  }
+
 }
