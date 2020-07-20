@@ -83,8 +83,10 @@ export default {
           margin: '10px 0'
         }
       },
-      text: `include into your project to be able to use the component styles
-      
+      text: `
+
+        include into your project to be able to use the component styles
+
         ~~~js
         import 'design-system-coopeuch/dist/index.css';
         import { Stamp }from 'design-system-coopeuch';
@@ -101,7 +103,8 @@ export default {
         To give the desired size, please change the width and length, modifying
         only one of the values ​​will not take effect because the width and length
         of the properties of the svg are being modified.
-        change the knobs properties and you'll be able to watch its component structure below at Story Source`
+        change the knobs properties and you'll be able to watch its component structure below at Story Source
+        `
     }
   }
 }
