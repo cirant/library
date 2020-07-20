@@ -57,6 +57,12 @@ import ColumnCardContent from './columnCard/columnCardContent'
 import ColumnCardImage from './columnCard/columnCardImage'
 import ColumnCardContentActions from './columnCard/columnCardContent/columnCardContentAction'
 import CardBenefits from './card/cardBenefits'
+import DBlackCard from './plasticCards/svgs/desktop/black'
+import DRedCard from './plasticCards/svgs/desktop/red'
+import MRedCard from './plasticCards/svgs/mobile/red'
+import MBlackCard from './plasticCards/svgs/mobile/black'
+import PlasticCard from './plasticCards/'
+
 
 export {
   Button,
@@ -117,5 +123,10 @@ export {
   ColumnCard,
   ColumnCardContent,
   ColumnCardContentActions,
-  ColumnCardImage
+  ColumnCardImage,
+  DBlackCard,
+  DRedCard,
+  MRedCard,
+  MBlackCard,
+  PlasticCard
 }

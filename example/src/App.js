@@ -55,7 +55,12 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  NotificationBadge
+  NotificationBadge,
+  DRedCard,
+  DBlackCard,
+  MRedCard,
+  MBlackCard,
+  PlasticCard
 } from 'design-system-coopeuch';
 import 'design-system-coopeuch/dist/index.css';
 import 'design-system-coopeuch/dist/css/custom.css';
@@ -741,12 +746,12 @@ const App = () => {
         <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
       </div>
     </div>
-    
+
     <div className="container my-4">
       <h1 className="mb-4">input coordinate</h1>
       <div className="d-flex">
           <div className="col-lg-4 col-md-9 col-sm-4">
-            <InputCoordinate 
+            <InputCoordinate
               assistText={[
                   {
                     type: 'assist', text: 'Texto de asistencia'
@@ -759,28 +764,28 @@ const App = () => {
                   }
               ]}
             >
-              <Input 
+              <Input
                 placeholder={'**'}
                 maxLength={'2'}
-                type={'password'} 
-                label={'A1'} 
-                value={inputCoordinate} 
-                onChange={({target: {value}}) => setInputCoordinate(value)}   
+                type={'password'}
+                label={'A1'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
               />
               <Input
                 placeholder={'**'}
                 maxLength={'2'}
-                type={'password'} 
-                label={'B2'} 
-                value={inputCoordinate} 
+                type={'password'}
+                label={'B2'}
+                value={inputCoordinate}
                 onChange={({target: {value}}) => setInputCoordinate(value)}
               />
-              <Input 
+              <Input
                 placeholder={'**'}
                 maxLength={'2'}
-                type={'password'} 
-                label={'C3'} 
-                value={inputCoordinate} 
+                type={'password'}
+                label={'C3'}
+                value={inputCoordinate}
                 onChange={({target: {value}}) => setInputCoordinate(value)}
               />
             </InputCoordinate>
@@ -1459,6 +1464,85 @@ const App = () => {
       </div>
     </div>
 
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Desktop black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <DBlackCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}
+          >
+          </DBlackCard>
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+
+
+    <br />
+    <br />
+    <div className="container">
+      <h1 className="mb-4">Desktop red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <DRedCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}
+          >
+          </DRedCard>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Mobile red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <MRedCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </MRedCard>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Mobile black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <MBlackCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </MBlackCard>
+        </div>
+      </div>
+    </div>
+
     <div className="container pt-5">
       <h1 className="mb-4">Modal info</h1>
       <div className="row">
@@ -1509,8 +1593,43 @@ const App = () => {
 
     <br />
     <br />
+
+    <div className="container">
+      <h1 className="mb-4">Plastic black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <PlasticCard
+            type={'debit'}
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </PlasticCard>
+        </div>
+      </div>
+    </div>
+
     <br />
     <br />
+
+    <div className="container">
+      <h1 className="mb-4">Plastic red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <PlasticCard
+            type={'credit'}
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </PlasticCard>
+        </div>
+      </div>
+    </div>
+
+
 
 
   </>
