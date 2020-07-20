@@ -1,0 +1,14 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.publicFooter{
+    padding: nth(nth($spacers, 6),2);
+    display: flex;
+    color: $white;
+}
+
+@media screen and (max-width: nth(nth($grid-breakpoints,4),2)){
+    .footerDesktop{
+      flex-direction: column;
+    }
+}

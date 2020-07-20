@@ -5,13 +5,13 @@ import PropTypes from 'prop-types'
 import TooltipListModel from './model/placement-list.model'
 
 const Tooltip = ({
-                   children,
-                   content,
-                   placement,
-                   interactive,
-                   eventListener,
-                   ...props
-                 }) => {
+  children,
+  content,
+  placement,
+  interactive,
+  eventListener,
+  ...props
+}) => {
   const refBoxTooltip = createRef()
   const refContainerTippy = createRef()
 
@@ -58,8 +58,7 @@ const Tooltip = ({
   useEffect(() => {
     setResponsivePosition()
 
-    return () => {
-    }
+    return () => {}
   }, [])
 
   useEffect(() => {

@@ -10,6 +10,10 @@ import Logo from './logo'
 import HeaderItem from './header/headerItem'
 import HeaderProfileItem from './header/headerProfileItem'
 import Header from './header'
+import PrivateFooter from './footer/privateFooter'
+import PublicFooter from './footer/publicFooter'
+import PublicFooterColumn from './footer/publicFooter/publicFooterColumn'
+import PublicFooterItem from './footer/publicFooter/publicFooterItem'
 import Input from './input'
 import Radio from './radio'
 import Separator from './separator'
@@ -67,7 +71,6 @@ import MRedCard from './plasticCards/svgs/mobile/red'
 import MBlackCard from './plasticCards/svgs/mobile/black'
 import PlasticCard from './plasticCards/'
 
-
 export {
   Button,
   BreadCrumb,
@@ -85,6 +88,10 @@ export {
   HeaderItem,
   HeaderProfileItem,
   Header,
+  PrivateFooter,
+  PublicFooter,
+  PublicFooterColumn,
+  PublicFooterItem,
   Input,
   InputPhone,
   InputCounter,

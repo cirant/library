@@ -54,10 +54,7 @@ const CardBank = ({
   }
 
   return (
-    <Card
-      {...props}
-      className={cardStyle.concat(props.className).join(' ')}
-    >
+    <Card {...props} className={cardStyle.concat(props.className).join(' ')}>
       <div className={cardHeader.join(' ')}>
         <div className={styles.prefix}>
           <div>
