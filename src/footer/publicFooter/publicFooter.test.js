@@ -1,15 +1,11 @@
-import React from "react";
-import { render } from '@testing-library/react';
-import PublicFooter from '.';
+import React from 'react'
+import { render } from '@testing-library/react'
+import PublicFooter from '.'
+import Logo from '.'
 
-
-describe(('PublicFooter behavior'), () => {
-
-    test('should be rendered logo', () => {
-        const component = render(<PublicFooter logo={<div>logo</div>}></PublicFooter>);
-        expect(component).toBeTruthy();
-        expect(component.getAllByText(/logo/i)).toBeTruthy();
-    });
-
-
+describe('PublicFooter behavior', () => {
+  test('should be rendered icon', () => {
+    const component = render(<PublicFooter logo={<Logo className='w-100' />} />)
+    expect(component).toBeTruthy()
+  })
 })

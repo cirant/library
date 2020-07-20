@@ -1,11 +1,11 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs/react';
-import { select, boolean, text } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
-import { CardCheckbox } from '../../dist';
-import '../codeStyles.css';
-import '../../dist/index.css';
+import React from 'react'
+import { action } from '@storybook/addon-actions'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { select, boolean, text } from '@storybook/addon-knobs'
+import { withInfo } from '@storybook/addon-info'
+import { CardCheckbox } from '../../dist'
+import '../codeStyles.css'
+import '../../dist/index.css'
 
 const propsDescriptions = {
   title: {
@@ -26,7 +26,8 @@ const propsDescriptions = {
   },
   cardname: {
     propType: 'string',
-    description: 'it could be just "mastercard", any different text is going to be shown as a default card'
+    description:
+      'it could be just "mastercard", any different text is going to be shown as a default card'
   },
   onClick: {
     propType: 'function',
@@ -34,33 +35,43 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
           <td>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
-    <table style={{
-      width: "100%"
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-        <tr style={{ textAlign: "left" }}>
+        <tr style={{ textAlign: 'left' }}>
           <th>name</th>
           <th>type</th>
           <th>default</th>
@@ -69,20 +80,21 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
-export const Simple = () => <CardCheckbox
-  checked={boolean('checked', false, 'props')}
-  onChange={action('clicked', 'props')}
-  cardname={select('cardname', ['', 'default', 'mastercard'], '', 'props')}
-  title={text('title', 'Label content', 'props')}
-  footerTitle={text('footerTitle', 'Titular', 'props')}
-  footerText={text('footerText', 'Nº **************2345', 'props')}
-  border={boolean('border', false, 'card attribute')}
-  selected={boolean('selected', false, 'card attribute')}
-/>;
-
+export const Simple = () => (
+  <CardCheckbox
+    checked={boolean('checked', false, 'props')}
+    onChange={action('clicked', 'props')}
+    cardname={select('cardname', ['', 'default', 'mastercard'], '', 'props')}
+    title={text('title', 'Label content', 'props')}
+    footerTitle={text('footerTitle', 'Titular', 'props')}
+    footerText={text('footerText', 'Nº **************2345', 'props')}
+    border={boolean('border', false, 'card attribute')}
+    selected={boolean('selected', false, 'card attribute')}
+  />
+)
 
 export default {
   title: 'CardCheckbox',
@@ -94,7 +106,7 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
+          padding: '0px 40px 0px'
         }
       },
       text: `
@@ -111,8 +123,7 @@ export default {
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
-      `,
-    },
-
-  },
-};
+      `
+    }
+  }
+}

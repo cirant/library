@@ -3,6 +3,7 @@
 @import '../scss/mixins/elevation';
 
 
+
 .fadeInFromNone{
   animation: fadeInFromNone 0.5s forwards;
 }
@@ -36,7 +37,6 @@
   .box {
 
     border-radius: 4px;
-    min-width: 256px;
     opacity: 0;
     transition: all 150ms linear;
     color: #212529;
@@ -139,7 +139,6 @@
       line-height: 20px;
       position: relative;
       padding: nth(nth($spacers, 4), 2);
-      max-width: 256px;
       border-radius: 4px;
       height: 100%;
     }

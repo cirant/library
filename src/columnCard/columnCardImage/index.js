@@ -3,21 +3,20 @@ import styles from './_columncardimage.scss'
 import PropTypes from 'prop-types'
 
 const ColumnCardImage = ({ imgUrl, ...props }) => {
-
   const containerStyles = [styles.columnCardImageContainer]
 
   return (
-    <div {...props}
-         data-testid={'data-test-column-card-image'}
-         style={{ backgroundImage: `url(${imgUrl})` }}
-         className={containerStyles.concat(props.className).join(' ')}>
-    </div>
+    <div
+      {...props}
+      data-testid='data-test-column-card-image'
+      style={{ backgroundImage: `url(${imgUrl})` }}
+      className={containerStyles.concat(props.className).join(' ')}
+    />
   )
-
 }
 
 ColumnCardImage.propTypes = {
-  imgUrl: PropTypes.string,
+  imgUrl: PropTypes.string
 }
 
 export default ColumnCardImage

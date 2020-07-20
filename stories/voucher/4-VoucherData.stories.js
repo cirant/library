@@ -9,22 +9,29 @@ import { text } from '@storybook/addon-knobs'
 const propsDescriptions = {
   items: {
     propType: 'array',
-    description: 'Array of items who define the different boxes of the data. Each box will have a title and a content.'
+    description:
+      'Array of items who define the different boxes of the data. Each box will have a title and a content.'
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
@@ -36,9 +43,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
         <tr style={{ textAlign: 'left' }}>
           <th>name</th>
@@ -53,25 +63,27 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 }
 
 export const voucherData = () => (
-  <VoucherData items={[
-    {
-      title: 'Label titulo de sección',
-      items: [
-        {
-          label: text('Label', 'Deudas', 'I Item'),
-          content: text('Content', '$300.000', 'I Item'),
-        },
-        {
-          label: text('Label', 'Label Titulo:', 'II Item'),
-          content: text('Content', 'Label Contenido', 'II Item'),
-        },
-        {
-          label: text('Label', 'Label Titulo:', 'III Item'),
-          content: text('Content', 'Label Contenido', 'III Item'),
-        }
-      ]
-    }
-  ]} />
+  <VoucherData
+    items={[
+      {
+        title: 'Label titulo de sección',
+        items: [
+          {
+            label: text('Label', 'Deudas', 'I Item'),
+            content: text('Content', '$300.000', 'I Item')
+          },
+          {
+            label: text('Label', 'Label Titulo:', 'II Item'),
+            content: text('Content', 'Label Contenido', 'II Item')
+          },
+          {
+            label: text('Label', 'Label Titulo:', 'III Item'),
+            content: text('Content', 'Label Contenido', 'III Item')
+          }
+        ]
+      }
+    ]}
+  />
 )
 
 export default {
@@ -84,7 +96,7 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px',
+          padding: '0px 40px'
         }
       },
       text: `
@@ -126,6 +138,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

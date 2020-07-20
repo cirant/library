@@ -1,9 +1,9 @@
-import React from 'react';
-import { withInfo } from '@storybook/addon-info';
+import React from 'react'
+import { withInfo } from '@storybook/addon-info'
 
-import { boolean, text } from '@storybook/addon-knobs';
-import { ProgressBar } from '../../dist';
-import '../../dist/index.css';
+import { boolean, text } from '@storybook/addon-knobs'
+import { ProgressBar } from '../../dist'
+import '../../dist/index.css'
 
 const propsDescriptions = {
   label: {
@@ -24,7 +24,8 @@ const propsDescriptions = {
   },
   reverse: {
     propType: 'bool',
-    description: 'This will switch the position of the percentage and assistText'
+    description:
+      'This will switch the position of the percentage and assistText'
   },
   helperAlign: {
     propType: 'bool',
@@ -32,34 +33,45 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-      console.log(defaultValue);
+      console.log(defaultValue)
 
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
           <td>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
-    <table style={{
-      width: "100%"
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-        <tr style={{ textAlign: "left" }}>
+        <tr style={{ textAlign: 'left' }}>
           <th>name</th>
           <th>type</th>
           <th>default</th>
@@ -68,8 +80,8 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
 export default {
   title: 'ProgressBar',
@@ -82,7 +94,7 @@ export default {
       styles: {
         infoStory: {
           margin: '0px 40px 0px',
-          textAlign: 'center',
+          textAlign: 'center'
         }
       },
       text: `
@@ -99,41 +111,44 @@ export default {
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
-      `,
-    },
-
-  },
-};
-
-export const element = () => <ProgressBar
-  assistText={text('assistText', '')}
-  label={text('label', '')}
-  percent={boolean('show percent', false)}
-  reverse={boolean('reverse', false)}
-  progress={text('progress', 25)}
-/>;
-
-export const multiple = () => <ProgressBar
-  assistText={text('assistText', '', 'commons')}
-  label={[
-    {
-      label: text('label', 'label', 'label 1'),
-      text: text('text ', '$10.000.000', 'label 1')
-    },
-    {
-      label: text('label', 'monto', 'label 2'),
-      text: text('text', '$20.000.000', 'label 2')
+      `
     }
-  ]}
-  percent={boolean('show percent', false, 'commons')}
-  reverse={boolean('reverse', false, 'commons')}
-  progress={text('progress', 25, 'commons')}
-/>;
+  }
+}
+
+export const element = () => (
+  <ProgressBar
+    assistText={text('assistText', '')}
+    label={text('label', '')}
+    percent={boolean('show percent', false)}
+    reverse={boolean('reverse', false)}
+    progress={text('progress', 25)}
+  />
+)
+
+export const multiple = () => (
+  <ProgressBar
+    assistText={text('assistText', '', 'commons')}
+    label={[
+      {
+        label: text('label', 'label', 'label 1'),
+        text: text('text ', '$10.000.000', 'label 1')
+      },
+      {
+        label: text('label', 'monto', 'label 2'),
+        text: text('text', '$20.000.000', 'label 2')
+      }
+    ]}
+    percent={boolean('show percent', false, 'commons')}
+    reverse={boolean('reverse', false, 'commons')}
+    progress={text('progress', 25, 'commons')}
+  />
+)
 
 multiple.story = {
-  name: 'ProgressBar component multiple label',
+  name: 'ProgressBar component multiple label'
 }
 
 element.story = {
-  name: 'ProgressBar component',
-};
+  name: 'ProgressBar component'
+}

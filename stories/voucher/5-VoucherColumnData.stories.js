@@ -9,22 +9,29 @@ import { text } from '@storybook/addon-knobs'
 const propsDescriptions = {
   items: {
     propType: 'array',
-    description: 'Array of items who define the different boxes of the data. Each box will have a title and a content.'
+    description:
+      'Array of items who define the different boxes of the data. Each box will have a title and a content.'
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
@@ -36,9 +43,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
         <tr style={{ textAlign: 'left' }}>
           <th>name</th>
@@ -53,16 +63,18 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 }
 
 export const voucherColumnData = () => (
-  <VoucherColumnData items={[
-    {
-      title: text('Title', 'Label title', 'I Item'),
-      content: text('Content', 'Label content', 'I Item'),
-    },
-    {
-      title: text('Title', 'Label title', 'II Item'),
-      content: text('Content', 'Label content', 'II Item'),
-    },
-  ]} />
+  <VoucherColumnData
+    items={[
+      {
+        title: text('Title', 'Label title', 'I Item'),
+        content: text('Content', 'Label content', 'I Item')
+      },
+      {
+        title: text('Title', 'Label title', 'II Item'),
+        content: text('Content', 'Label content', 'II Item')
+      }
+    ]}
+  />
 )
 
 export default {
@@ -109,6 +121,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

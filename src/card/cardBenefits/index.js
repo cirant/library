@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cardStyles from './_cardBenefits.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import cardStyles from './_cardBenefits.scss'
 
 const CardBenefits = ({
   topText,
@@ -13,16 +13,21 @@ const CardBenefits = ({
   ...props
 }) => {
   return (
-    <figure role="card" {...props} className={[cardStyles.figure, className].join(' ').trim()} style={{
-      ...style,
-      backgroundImage: `url(${image})`
-    }}>
+    <figure
+      role='card'
+      {...props}
+      className={[cardStyles.figure, className].join(' ').trim()}
+      style={{
+        ...style,
+        backgroundImage: `url(${image})`
+      }}
+    >
       <div className={cardStyles.topContent}>
-        {
-          logo && <div role="logo" className={cardStyles.logoContainer}>
+        {logo && (
+          <div role='logo' className={cardStyles.logoContainer}>
             {logo}
           </div>
-        }
+        )}
       </div>
       <figcaption className={cardStyles.content}>
         <p>{topText}</p>
@@ -38,10 +43,7 @@ CardBenefits.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  logo: PropTypes.oneOf([
-    PropTypes.string,
-    PropTypes.node
-  ]),
-};
+  logo: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+}
 
-export default CardBenefits;
+export default CardBenefits

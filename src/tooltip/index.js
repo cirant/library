@@ -2,86 +2,146 @@ import React, { createRef, useEffect, useRef, useState } from 'react'
 import styles from './_tooltip.scss'
 import Tippy from '@tippyjs/react'
 import PropTypes from 'prop-types'
+import TooltipListModel from './model/placement-list.model'
 
-const Tooltip = ({ children, content, placement, eventListener, ...props }) => {
-
+const Tooltip = ({
+  children,
+  content,
+  placement,
+  interactive,
+  eventListener,
+  ...props
+}) => {
   const refBoxTooltip = createRef()
   const refContainerTippy = createRef()
 
-  const node = useRef();
+  const tooltipDefaultWidth = 256
 
+  const [placements, setPlacements] = useState(placement)
+  const [tooltipWidth, setTooltipWidth] = useState(256)
+
+  const previousPosition = placement
+
+  const node = useRef()
 
   const [visible, setVisible] = useState(false)
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     if (node.current.contains(e.target)) {
-      if(!visible) {
+      if (!visible) {
         setVisible(true)
       }
-      return;
+      return
     }
-    if(visible) setVisible(false)
-  };
+    if (visible) setVisible(false)
+  }
+
+  const setResponsivePosition = () => {
+    const myWidth = window.screen.width
+    if (myWidth < 599) {
+      setPlacements('top')
+      setTooltipWidth(myWidth * 0.9)
+    } else {
+      setTooltipWidth(tooltipDefaultWidth)
+      setPlacements(previousPosition)
+    }
+  }
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClick);
+    window.addEventListener('resize', setResponsivePosition)
+
     return () => {
-      document.removeEventListener("mousedown", handleClick);
-    };
-  }, [visible]);
+      window.removeEventListener('resize', setResponsivePosition)
+    }
+  }, [window])
+
+  useEffect(() => {
+    setResponsivePosition()
+
+    return () => {}
+  }, [])
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClick)
+    return () => {
+      document.removeEventListener('mousedown', handleClick)
+    }
+  }, [visible])
 
   const setOpacity = (event) => {
-
     if (eventListener === 'hover') {
       if (event === 'leave') {
-        setVisible(false);
+        setVisible(false)
         refBoxTooltip.current.style.opacity = 0
       }
       if (event === 'enter') {
-        setVisible(true);
+        setVisible(true)
         refBoxTooltip.current.style.opacity = 1
       }
     }
-
   }
 
   return (
     <div
       {...props}
-      data-testid="test-container" visible={visible.toString()} className={styles.containerTooltip} ref={node}
-      onClick={() => eventListener === 'mouseClick' ? setOpacity('mouseClick') : false} onMouseEnter={(e) => eventListener === 'hover' ? setOpacity('enter', e) : false}
-      onMouseLeave={() => eventListener === 'hover' ? setOpacity('leave') : false}>
+      data-testid='test-container'
+      visible={visible.toString()}
+      className={styles.containerTooltip}
+      ref={node}
+      onClick={() =>
+        eventListener === 'mouseClick' ? setOpacity('mouseClick') : false
+      }
+      onMouseEnter={(e) =>
+        eventListener === 'hover' ? setOpacity('enter', e) : false
+      }
+      onMouseLeave={() =>
+        eventListener === 'hover' ? setOpacity('leave') : false
+      }
+    >
       <Tippy
         offset={[0, 20]}
-        arrow={true} 
-        appendTo="parent"
-        theme={'light'}
-        placement={placement} visible={true}
+        arrow
+        appendTo='parent'
+        theme='light'
+        placement={placements}
+        visible
         animation={false}
-        interactive={props.interactive}
-        touch={true}
-        render={attrs => (
+        interactive={interactive}
+        touch
+        render={(attrs) => (
           <div
-            data-testid="test-box"
-            style = {{opacity: visible ? 1 :0}}
+            data-testid='test-box'
+            style={{
+              opacity: visible ? 1 : 0,
+              minWidth: tooltipWidth
+            }}
             ref={refBoxTooltip}
             className={styles.box}
-            tabIndex="-1" {...attrs}>
+            tabIndex='-1'
+            {...attrs}
+          >
             <div
-              data-testid="test-box-content"
+              data-testid='test-box-content'
               ref={refContainerTippy}
-              className={styles.content}>
+              style={{
+                maxWidth: tooltipWidth
+              }}
+              className={styles.content}
+            >
               {content}
             </div>
-            {<div data-testid="test-box-arrow" id="arrow" className={styles.arrow}> </div>}
-            {/*<div id="arrow" data-popper-arrow className={styles.arrowd}></div>*/}
+            <div
+              data-testid='test-box-arrow'
+              id='arrow'
+              className={styles.arrow}
+            />
           </div>
-        )}>
+        )}
+      >
         <span>{children}</span>
       </Tippy>
     </div>
   )
-
 }
 
 export default Tooltip
@@ -89,11 +149,13 @@ export default Tooltip
 Tooltip.defaultProps = {
   content: 'Text for tooltip',
   placement: 'top',
-  eventListener: 'hover',
+  interactive: false,
+  eventListener: 'hover'
 }
 
 Tooltip.propTypes = {
-  placement: PropTypes.oneOf(['top', 'bottom', 'right', 'right-end', 'left']),
+  placement: PropTypes.oneOf(TooltipListModel.placementList),
   eventListener: PropTypes.oneOf(['mouseClick', 'hover']),
-  content: PropTypes.string.isRequired
+  content: PropTypes.node,
+  interactive: PropTypes.bool
 }
