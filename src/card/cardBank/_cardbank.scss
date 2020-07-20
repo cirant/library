@@ -1,0 +1,93 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+$shadow-color: rgba(31, 30, 30, 0.10);
+$base: 2px;
+
+
+.default {
+  background-color: $secondary-blue-alfa-65;
+}
+
+.debit {
+  background-color: $debitcard;
+}
+
+.gold {
+  background-color: $warning-30;
+}
+
+.international {
+  background-color: $primary-20;
+}
+
+.card {
+  border-radius: 5px;
+
+  .content{
+    padding-top: (nth(nth($spacers, 5), 2));
+  }
+
+  .actions{
+    margin-top:(nth(nth($spacers, 5), 2));;
+    border-top: 1px solid $gray-200;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin-bottom: -#{(nth(nth($spacers, 5), 2))};
+    margin-left:-#{(nth(nth($spacers, 5), 2))};
+    margin-right: -#{(nth(nth($spacers, 5), 2))};;
+  }
+
+  .header {
+    display: flex;
+    min-height: 55px;
+    margin-top: -25px;
+
+    padding-top: (nth(nth($spacers, 5), 2));
+    padding-left: (nth(nth($spacers, 5), 2));
+    padding-bottom: (nth(nth($spacers, 5), 2));
+    margin-right: -#{(nth(nth($spacers, 5), 2))};
+    margin-left: -#{(nth(nth($spacers, 5), 2))};;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    .prefix {
+      display: flex;
+
+      @media screen and (max-width: nth(nth($grid-breakpoints,3),2)){
+        flex-direction: column;
+      }
+
+      .title {
+        color: white;
+        font-weight: 500;
+      }
+
+      .titleNumberCard {
+        padding-left: 4px;
+        color: white;
+        font-weight: 500;
+      }
+
+    }
+
+  }
+
+  .cardIconSuffix{
+    margin-left: auto;
+    padding-right: (nth(nth($spacers, 5), 2));
+  }
+
+  &.border {
+    border: 1px solid $neutral-20;
+    box-shadow: none;
+  }
+
+  @for $i from 1 through 5 {
+    &.elevation-#{$i} {
+      box-shadow: 0 ($base * $i) ($base * ($i + 1)) 0 rgba(31, 30, 30, 0.10);
+    }
+  }
+
+}
