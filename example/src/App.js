@@ -5,8 +5,8 @@ import {
   ActionLink,
   BreadCrumb,
   Card,
-  CardBank,
   CardBenefits,
+  CardBank,
   CardSwitch,
   CardCheckbox,
   CardActions,
@@ -31,8 +31,8 @@ import {
   Input,
   InputSearch,
   Logo,
-  InputCounter,
   InputPhone,
+  InputCounter,
   InputRange,
   InputSecurity,
   InputSelect,
@@ -531,7 +531,7 @@ const App = () => {
             label={'Texto 1'}
         />
     </div>
-    
+
     <div className="bg-primary">
       <div className="container my-4">
         <PublicFooter logo={<Logo className="w-100" />}>
@@ -559,7 +559,7 @@ const App = () => {
               ]}>Crédito Hipotecario</PublicFooterItem>
               <PublicFooterItem link={'http://www.coopeuch.cl'}>Tarjeta Mastercard</PublicFooterItem>
               <PublicFooterItem link={'http://www.coopeuch.cl'}>Cuota de Participación</PublicFooterItem>
-           </PublicFooterColumn>   
+           </PublicFooterColumn>
            <PublicFooterColumn title={'Beneficios'}>
               <PublicFooterItem link={'http://www.coopeuch.cl'}>Becas Fundación Coopeuch</PublicFooterItem>
               <PublicFooterItem link={'http://www.coopeuch.cl'}>Bonos de Estudio</PublicFooterItem>
@@ -1801,17 +1801,22 @@ const App = () => {
     <br/>
     <br/>
 
+    <div className="container">
+      <h1>Action Link Grid</h1>
+    </div>
     <Grid row>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+      <Grid col={12} sm={12} md={12} lg={12} xl={12}>  </Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/></Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/></Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
     </Grid>
 
     <br/>
     <br/>
+
     <div className="container">
       <h1 className="mb-4">Card Branch Office</h1>
       <div className="row">

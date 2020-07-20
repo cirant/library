@@ -97,12 +97,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const ActionLinkWithGrid = () => (
   <Grid row>
-    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
-    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
-    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
-    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
-    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
-    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
+    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/></Grid>
+    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/></Grid>
+    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
+    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
+    <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
   </Grid>
 
 )

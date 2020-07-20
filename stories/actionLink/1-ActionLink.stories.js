@@ -76,8 +76,8 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const ActionLinkComponent = () => (
   <ActionLink
-    icon={select('icon', list,'line-unlock')}
-    label={text('text','Lock')}
+    icon={select('icon', list,'line-cloud')}
+    label={text('text','Cloud')}
     onClick= {action('clicked')}
   />
 )
