@@ -15,6 +15,7 @@ import Radio from './radio'
 import Separator from './separator'
 import Sidebar from './sidebar'
 import SidebarElement from './sidebar/sidebarElement'
+import SearchResult from './searchResult'
 import Switch from './switch'
 import Loading from './loading'
 import TitleSection from './title'
@@ -23,9 +24,11 @@ import ProgressBar from './progressbar'
 import Bullets from './bullets'
 import Tooltip from './tooltip'
 import Message from './message'
+import ModalInfo from './modal/info'
 import InputRange from './input/range'
 import Bar from './input/bar'
 import Stamp from './stamp'
+import EmptyState from './emptyState'
 import InputSearch from './input/search'
 import InputSelect from './input/select'
 import ContentAction from './contentAction'
@@ -40,12 +43,14 @@ import VoucherTitle from './voucher/voucherTitle'
 import InputCounter from './input/counter'
 import InputSecurity from './input/security'
 import InputDate from './input/date'
+import InputCoordinate from './input/coordinate'
 import KebabMenu from './kebabMenu/'
 import NotificationBadge from './notificationBadge/'
 import CardHeader from './card/cardHeader'
 import CardContent from './card/cardContent'
 import CardActions from './card/cardAction'
 import CardImage from './card/cardHeader/cardImage'
+import CardSearch from './card/cardSearch'
 import BreadCrumb from './breadcrumb'
 import ColumnCard from './columnCard'
 import ColumnCardContent from './columnCard/columnCardContent'
@@ -69,6 +74,7 @@ export {
   CardCheckbox,
   CardDropdown,
   CardBenefits,
+  CardSearch,
   Checkbox,
   Logo,
   HeaderItem,
@@ -80,8 +86,10 @@ export {
   InputSecurity,
   Radio,
   Separator,
+  EmptyState,
   Sidebar,
   SidebarElement,
+  SearchResult,
   Switch,
   TitleSection,
   InputChip,
@@ -90,6 +98,7 @@ export {
   Bullets,
   Tooltip,
   Message,
+  ModalInfo,
   InputRange,
   Bar,
   InputSearch,
@@ -97,6 +106,7 @@ export {
   Stamp,
   ContentAction,
   InputDate,
+  InputCoordinate,
   Voucher,
   VoucherDataResume,
   VoucherResumeContainer,

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const MBlackCard = ({ label, width, height,cardTitle,cardType,owner,state,cardNumber, ...props }) => {
+const MBlackCard = ({ width, height,cardTitle,cardType,owner,state,cardNumber, ...props }) => {
   const blackCardSvg = (
     <svg width={width} height='100%' viewBox="0 0 275 149" version="1.1" >
-      <title>01.Atomo/Tarjetas bancarias/mobile/black</title>
+      <title>Tarjetas bancarias mobile black</title>
       <defs>
         <path d="M5,9.09494702e-13 L270,9.09494702e-13 C272.761424,9.08987436e-13 275,2.23857625 275,5 L275,143.671875 C275,146.433299 272.761424,148.671875 270,148.671875 L5,148.671875 C2.23857625,148.671875 3.38176876e-16,146.433299 0,143.671875 L0,5 C-3.38176876e-16,2.23857625 2.23857625,9.10001967e-13 5,9.09494702e-13 Z" id="path-1"></path>
         <filter x="-3.1%" y="-4.4%" width="106.2%" height="111.4%" filterUnits="objectBoundingBox" id="filter-3">
@@ -34,19 +34,19 @@ const MBlackCard = ({ label, width, height,cardTitle,cardType,owner,state,cardNu
           </g>
           <rect id="Rectangle" fill="#F6F3F5" opacity="0.32421875" x="16" y="44" width="75" height="24" rx="5"></rect>
           <text id="nombre-tarjeta" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
-            <tspan x="16" y="31">MasterCard Internacional</tspan>
+            <tspan x="16" y="31">{cardTitle}</tspan>
           </text>
           <text id="tipo" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
-            <tspan x="24" y="59">Adicional</tspan>
+            <tspan x="24" y="59">{cardType}</tspan>
           </text>
           <text id="nombre" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
-            <tspan x="101" y="59">Ricardo Olivares</tspan>
+            <tspan x="101" y="59">{owner}</tspan>
           </text>
           <text id="numero-tarjeta" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
-            <tspan x="101" y="79">Nº **** **** 6520</tspan>
+            <tspan x="101" y="79">{cardNumber}</tspan>
           </text>
           <text id="estado" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
-            <tspan x="101" y="99">Estado: Activa</tspan>
+            <tspan x="101" y="99">Estado: {state}</tspan>
           </text>
         </g>
       </g>
@@ -60,9 +60,19 @@ export default MBlackCard
 
 MBlackCard.defaultProps = {
   width: '275',
+  cardTitle: '',
+  cardType: 'debit',
+  owner: '',
+  state: 'Active',
+  cardNumber:'',
 }
 
-MBlackCard.prototype = {
+MBlackCard.propTypes = {
   width: PropTypes.string,
-  height: PropTypes.string
+  cardTitle: PropTypes.string,
+  cardType: PropTypes.string,
+  owner: PropTypes.string,
+  state: PropTypes.string,
+  cardNumber: PropTypes.string,
+  forceDesktop: PropTypes.bool,
 }

@@ -3,22 +3,30 @@ import DBlackCard from './svgs/desktop/black'
 import MBlackCard from './svgs/mobile/black'
 import MRedCar from './svgs/mobile/red'
 import DRedCar from './svgs/desktop/red'
+import PropTypes from 'prop-types'
 
-const PlasticCard = ({ type, width, cardTitle, cardType, owner, state, cardNumber }) => {
+const PlasticCard = ({
+                       type,
+                       width,
+                       cardTitle,
+                       cardType,
+                       owner,
+                       state,
+                       cardNumber,
+                       forceDesktop
+                     }) => {
 
   let bankCard
 
   const [component, setComponent] = useState(null)
 
   const getCard = () => {
-    console.log('getCard')
     const myWidth = window.screen.width
-    if (myWidth < 599) {
-      console.log('mobile')
+    if (myWidth < 599 && !forceDesktop) {
       switch (type) {
         case 'debit':
           bankCard = <MBlackCard
-            type={type}
+            role={'role-plastic-mobile-debit'}
             width={width}
             cardType={cardType}
             cardTitle={cardTitle}
@@ -28,7 +36,7 @@ const PlasticCard = ({ type, width, cardTitle, cardType, owner, state, cardNumbe
           break
         case 'credit':
           bankCard = <MRedCar
-            type={type}
+            role={'role-plastic-mobile-credit'}
             width={width}
             cardType={cardType}
             cardTitle={cardTitle}
@@ -38,11 +46,10 @@ const PlasticCard = ({ type, width, cardTitle, cardType, owner, state, cardNumbe
           break
       }
     } else {
-      console.log('desktop')
       switch (type) {
         case 'debit':
           bankCard = <DBlackCard
-            type={type}
+            role={'role-plastic-desktop-debit'}
             width={width}
             cardType={cardType}
             cardTitle={cardTitle}
@@ -52,7 +59,6 @@ const PlasticCard = ({ type, width, cardTitle, cardType, owner, state, cardNumbe
           break
         case 'credit':
           bankCard = <DRedCar
-            type={type}
             width={width}
             cardType={cardType}
             cardTitle={cardTitle}
@@ -66,7 +72,6 @@ const PlasticCard = ({ type, width, cardTitle, cardType, owner, state, cardNumbe
   }
 
   useEffect(() => {
-    console.log('resize')
     window.addEventListener('resize', getCard)
     return () => {
       window.removeEventListener('resize', getCard)
@@ -74,7 +79,6 @@ const PlasticCard = ({ type, width, cardTitle, cardType, owner, state, cardNumbe
   }, [window])
 
   useEffect(() => {
-    console.log('mount')
     getCard()
     return () => {
     }
@@ -86,6 +90,27 @@ const PlasticCard = ({ type, width, cardTitle, cardType, owner, state, cardNumbe
     </React.Fragment>
   )
 
+}
+
+PlasticCard.defaults = {
+  type: 'debit',
+  cardTitle: '',
+  cardType: 'debit',
+  owner: '',
+  state: 'Active',
+  cardNumber: '',
+  forceDesktop: false
+}
+
+PlasticCard.propTypes = {
+  width: PropTypes.string,
+  cardTitle: PropTypes.string,
+  type: PropTypes.string,
+  cardType: PropTypes.string,
+  owner: PropTypes.string,
+  state: PropTypes.string,
+  cardNumber: PropTypes.string,
+  forceDesktop: PropTypes.bool
 }
 
 export default PlasticCard

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const DBlackCard = ({ label, width, cardTitle, cardType, owner, state, cardNumber, ...props }) => {
+const DBlackCard = ({ width, cardTitle, cardType, owner, state, cardNumber, ...props }) => {
   const blackCardSvg = (
     <svg width={width} height='100%' viewBox="0 0 385 209" version="1.1">
-      <title>01.Atomo/Tarjetas bancarias/desktop/black</title>
+      <title>Atomo Tarjetas bancarias desktop black</title>
       <defs>
         <path d="M7,1.27329258e-12 L378,1.27329258e-12 C381.865993,1.27258241e-12 385,3.13400675 385,7 L385,201.140625 C385,205.006618 381.865993,208.140625 378,208.140625 L7,208.140625 C3.13400675,208.140625 4.73447626e-16,205.006618 0,201.140625 L0,7 C-4.73447626e-16,3.13400675 3.13400675,1.27400275e-12 7,1.27329258e-12 Z" id="path-1"></path>
         <filter x="-3.1%" y="-4.3%" width="106.2%" height="111.5%" filterUnits="objectBoundingBox" id="filter-3">
@@ -60,9 +60,19 @@ export default DBlackCard
 
 DBlackCard.defaultProps = {
   width: '385',
+  cardTitle: '',
+  cardType: 'debit',
+  owner: '',
+  state: 'Active',
+  cardNumber:'',
 }
 
-DBlackCard.prototype = {
+DBlackCard.propTypes = {
   width: PropTypes.string,
-  height: PropTypes.string
+  cardTitle: PropTypes.string,
+  cardType: PropTypes.string,
+  owner: PropTypes.string,
+  state: PropTypes.string,
+  cardNumber: PropTypes.string,
+  forceDesktop: PropTypes.bool,
 }

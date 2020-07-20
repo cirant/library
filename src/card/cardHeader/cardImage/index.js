@@ -16,6 +16,11 @@ const CardImage = ({ imgUrl, alt, ...props }) => {
   )
 }
 
+CardImage.defaultProps = {
+  imgUrl: '',
+  alt:''
+};
+
 CardImage.propTypes = {
   imgUrl: PropTypes.string,
   alt: PropTypes.string

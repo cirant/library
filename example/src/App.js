@@ -12,6 +12,7 @@ import {
   CardContent,
   CardHeader,
   CardImage,
+  CardSearch,
   Checkbox,
   ColumnCard,
   ColumnCardContent,
@@ -31,8 +32,11 @@ import {
   InputSelect,
   InputDate,
   InputChip,
+  InputCoordinate,
   Stamp,
+  EmptyState,
   ContentAction,
+  SearchResult,
   ProgressBar,
   Radio,
   Loading,
@@ -43,6 +47,7 @@ import {
   Tooltip,
   Voucher,
   Message,
+  ModalInfo,
   Bullets,
   VoucherResumeContainer,
   VoucherTitle,
@@ -73,6 +78,8 @@ const App = () => {
 
   const [inputSecurity, setInputSecurity] = useState('');
   const [showSecurity, setInputShowSecurity] = useState(true);
+
+  const [inputCoordinate, setInputCoordinate] = useState('');
 
   const [startDate, setStartDate] = useState(new Date(2020, 6, 20));
   const [endDate, setEndDate] = useState(new Date(2020, 6, 22));
@@ -380,6 +387,59 @@ const App = () => {
       </div>
     </div>
 
+    <h1 className="mb-4">Card search</h1>
+
+    <div className="container">
+      <div className="row">
+        <div className="col col-md-7">
+          <CardSearch
+            onClick={() => alert('card clicked')}
+            title='Titulo de elemento de busqueda'
+            routes={['route 1', 'route 2', 'route 3']}
+            description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+          />
+        </div>
+      </div>
+    </div>
+
+    <h1 className=" my-4">search result</h1>
+
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <SearchResult target="nombre de la busqueda">
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+          </SearchResult>
+        </div>
+      </div>
+    </div>
+
+
+
+
     <h1 className="mb-4">separator</h1>
 
     <div className="d-flex row">
@@ -414,6 +474,19 @@ const App = () => {
     <div className="bg-primary">
       <div className="container">
         <Header
+          userData={{
+            name: 'hola mundo',
+            menu: [
+              {
+                text: 'alguna accion',
+                action: () => alert('hola mundo')
+              },
+              {
+                text: 'alguna accion 2',
+                action: () => alert('hola mundo')
+              }
+            ]
+          }}
           logo={<Logo className="w-100" />}
           mobile={
             {
@@ -509,6 +582,22 @@ const App = () => {
         variant='textarea'
         onChange={({ target: { value } }) => setInputText(value)}
       />
+    </div>
+
+
+
+    <div className="container my-4">
+      <h1 className="mb-4">Empty state</h1>
+      <div className="d-flex justify-content-center">
+        <EmptyState
+          title='Type something'
+          description='Vestibulum interdum odio et urna sollicitudin tristique.'
+          button={{
+            text: 'label botton',
+            action: () => alert('hola')
+          }}
+        />
+      </div>
     </div>
 
     <div className="container my-4">
@@ -658,6 +747,51 @@ const App = () => {
       </div>
     </div>
 
+    <div className="container my-4">
+      <h1 className="mb-4">input coordinate</h1>
+      <div className="d-flex">
+          <div className="col-lg-4 col-md-9 col-sm-4">
+            <InputCoordinate
+              assistText={[
+                  {
+                    type: 'assist', text: 'Texto de asistencia'
+                  },
+                  {
+                    type: 'success', text: 'Texto éxito'
+                  },
+                  {
+                    type: 'error', text: 'Texto error'
+                  }
+              ]}
+            >
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'}
+                label={'A1'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'}
+                label={'B2'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'}
+                label={'C3'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+            </InputCoordinate>
+          </div>
+      </div>
+    </div>
 
     <div className="container my-4">
       <h1 className="mb-4">input counter</h1>
@@ -833,8 +967,11 @@ const App = () => {
       <h1 className="mb-4">Messages</h1>
 
       <div className="d-flex flex-column">
-        <Message type="success" title="this is a success message" action={<Button variant="text" suffix="arrow-right" > ir a action </Button>} />
-        <Message type="error" title="this is an error message" description="bajada" />
+        <Message type="success" title="this is a success message"
+          description="mmm el bootstrap base que integraron me imagino que era el 4, si es así corroborar si seguiremos teniendo acceso a las clases de bootstrap, por el tema de los display que facilitan harto, si no, crear esas clases para que todos tengamos una forma de tratar a los componentes de manera similar.
+          Lo otro es como consejo, que se contemple bien la grilla para el diseño de las vistas, para que cuadren los elementos, el resto creo que no. Esos elementos van para la construcción del nuevo sitio asumo. Yo no he mirado como se pueden integrar React en AngularJS"
+          action={<Button variant="text" suffix="arrow-right" onClick={() => alert('cerrar')} > ir a action </Button>} />
+        <Message type="error" title="this is an error message" description="bajada" closer={() => alert('cerrar')} />
         <Message type="warning" title="this is a warning message" />
         <Message type="info" title="this is an info message" action={<Button variant="text" > ir a action </Button>} />
       </div>
@@ -1405,6 +1542,54 @@ const App = () => {
         </div>
       </div>
     </div>
+
+    <div className="container pt-5">
+      <h1 className="mb-4">Modal info</h1>
+      <div className="row">
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            title="Titulo de mensaje"
+            buttons={[
+              <Button variant="outline" color="primary" > label button </Button>,
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            title="Titulo de mensaje"
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button variant="outline" color="primary" > label button </Button>,
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+        <div className="col">
+          <ModalInfo
+            title="Titulo de mensaje"
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+      </div>
+    </div>
+
 
     <br />
     <br />

@@ -1,23 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const MRedCard = ({ label, width, height,cardTitle,cardType,owner,state,cardNumber, ...props }) => {
+const MRedCard = ({ width, height,cardTitle,cardType,owner,state,cardNumber, ...props }) => {
   const redCardSvg = (
-    <svg width={width} height='100%' viewBox="0 0 385 209" version="1.1">
-      <title>01.Atomo/Tarjetas bancarias/desktop/red</title>
+    <svg width="275px" height="149px" viewBox="0 0 275 149" version="1.1">
+      <title>Atomo Tarjetas bancarias mobile red</title>
       <defs>
-        <path d="M7,1.27329258e-12 L378,1.27329258e-12 C381.865993,1.27258241e-12 385,3.13400675 385,7 L385,201.140625 C385,205.006618 381.865993,208.140625 378,208.140625 L7,208.140625 C3.13400675,208.140625 4.73447626e-16,205.006618 0,201.140625 L0,7 C-4.73447626e-16,3.13400675 3.13400675,1.27400275e-12 7,1.27329258e-12 Z" id="path-1"></path>
-        <filter x="-3.1%" y="-4.3%" width="106.2%" height="111.5%" filterUnits="objectBoundingBox" id="filter-3">
-          <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-          <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+        <path d="M5,9.09494702e-13 L270,9.09494702e-13 C272.761424,9.08987436e-13 275,2.23857625 275,5 L275,143.671875 C275,146.433299 272.761424,148.671875 270,148.671875 L5,148.671875 C2.23857625,148.671875 3.38176876e-16,146.433299 0,143.671875 L0,5 C-3.38176876e-16,2.23857625 2.23857625,9.10001967e-13 5,9.09494702e-13 Z" id="path-1"></path>
+        <filter x="-3.1%" y="-4.4%" width="106.2%" height="111.4%" filterUnits="objectBoundingBox" id="filter-3">
+          <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+          <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
           <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
           <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.27 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
       </defs>
-      <g id="01.Atomo/Tarjetas-bancarias/desktop/red" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <g id="01.Atomo/Tarjetas-bancarias/mobile/red" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Tarjetas-bancarias">
           <g id="Group-7">
-            <g id="Fill-110" transform="translate(0.000000, -0.000002)">
+            <g id="Fill-110" transform="translate(0.000000, -0.000001)">
               <mask id="mask-2" fill="white">
                 <use xlinkHref="#path-1"></use>
               </mask>
@@ -26,28 +26,28 @@ const MRedCard = ({ label, width, height,cardTitle,cardType,owner,state,cardNumb
                 <use fillOpacity="0.88" fill="#F42534" xlinkHref="#path-1"></use>
               </g>
             </g>
-            <path d="M182.118192,104.263921 C171.091374,140.331019 168.155945,174.847249 173.211507,208.140996 L7,208.140625 C3.13400675,208.140625 4.73447626e-16,205.006618 0,201.140625 L0,7 C-4.73447626e-16,3.13400675 3.13400675,1.60475994e-12 7,1.60404979e-12 L246.062339,-0.00100093141 C216.442303,26.9571341 195.185785,61.5217505 182.118192,104.263921 Z M385.000429,51.8646183 L385,201.140625 C385,205.006618 381.865993,208.140625 378,208.140625 L284.517433,208.140842 C277.39631,185.481156 277.572763,161.203714 285.333355,135.819963 C300.689719,85.5915569 339.715166,54.7548942 385.000429,51.8646183 Z" id="Combined-Shape" fillOpacity="0.88" fill="#FFFFFF" fillRule="nonzero" opacity="0.0834495908"></path>
-            <g id="Group-63" transform="translate(317.625000, 19.250000)">
-              <circle id="Oval" fill="#D33331" cx="14.7853916" cy="14.7853916" r="14.7853916"></circle>
-              <circle id="Oval" fill="#E9A03D" cx="33.3396084" cy="14.7853916" r="14.7853916"></circle>
-              <path d="M24.063615,3.27290269 C27.4223698,5.98322887 29.5707831,10.1334158 29.5707831,14.7853916 C29.5707831,19.4378285 27.4219438,23.5883771 24.0626161,26.2986865 C20.7026302,23.5875543 18.5542169,19.4373673 18.5542169,14.7853916 C18.5542169,10.1790732 20.6606655,6.06474217 23.962841,3.3531203 Z" id="Combined-Shape" fill="#D96035"></path>
+            <path d="M130.084423,74.4742291 C122.208141,100.236387 120.111398,124.890787 123.722482,148.671988 L5,148.671875 C2.23857625,148.671875 3.38176876e-16,146.433299 0,143.671875 L0,5 C-3.38176876e-16,2.23857625 2.23857625,1.18000821e-12 5,1.17950094e-12 L175.759159,-0.00102936258 C154.60181,19.254827 139.418469,43.9439413 130.084423,74.4742291 Z M275.000472,37.0461454 L275,143.671875 C275,146.433299 272.761424,148.671875 270,148.671875 L203.226551,148.671436 C198.140225,132.486115 198.266327,115.145288 203.809539,97.0142589 C214.77839,61.1367651 242.653785,39.1105635 275.000472,37.0461454 Z" id="Combined-Shape" fillOpacity="0.88" fill="#FFFFFF" fillRule="nonzero" opacity="0.0834495908"></path>
+            <g id="Group-63" transform="translate(226.875000, 13.750000)">
+              <circle id="Oval" fill="#D33331" cx="10.560994" cy="10.560994" r="10.560994"></circle>
+              <circle id="Oval" fill="#E9A03D" cx="23.814006" cy="10.560994" r="10.560994"></circle>
+              <path d="M17.1880686,2.33760381 C19.5873098,4.27354725 21.121988,7.23804898 21.121988,10.560994 C21.121988,13.883939 19.5873098,16.8484407 17.1880686,18.7843841 C14.7876902,16.8484407 13.253012,13.883939 13.253012,10.560994 C13.253012,7.30999429 14.7219547,4.40208454 17.0323156,2.46478921 Z" id="Combined-Shape" fill="#D96035"></path>
             </g>
           </g>
-          <rect id="Rectangle" fill="#F6F3F5" opacity="0.377092634" x="23" y="54" width="72" height="32" rx="5"></rect>
-          <text id="nombre-tarjeta" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="16" fontWeight="normal" line-spacing="24" fill="#FFFFFF">
-            <tspan x="24" y="43">{cardTitle}</tspan>
+          <text id="nombre-tarjeta" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
+            <tspan x="16" y="31">{cardTitle}</tspan>
           </text>
-          <text id="tipo" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="16" fontWeight="normal" line-spacing="24" fill="#FFFFFF">
-            <tspan x="37" y="75">{cardType}</tspan>
+          <rect id="Rectangle" fill="#F6F3F5" opacity="0.32421875" x="16" y="44" width="75" height="24" rx="5"></rect>
+          <text id="tipo" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
+            <tspan x="24" y="59">{cardType}</tspan>
           </text>
-          <text id="nombre" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="16" fontWeight="normal" line-spacing="24" fill="#FFFFFF">
-            <tspan x="106" y="75">{owner}</tspan>
+          <text id="nombre" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
+            <tspan x="101" y="59">{owner}</tspan>
           </text>
-          <text id="numero-tarjeta" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="16" fontWeight="normal" line-spacing="24" fill="#FFFFFF">
-            <tspan x="106" y="99">{cardNumber}</tspan>
+          <text id="numero-tarjeta" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
+            <tspan x="101" y="79">{cardNumber}</tspan>
           </text>
-          <text id="estado" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="16" fontWeight="normal" line-spacing="24" fill="#FFFFFF">
-            <tspan x="106" y="123">Estado: {state}</tspan>
+          <text id="estado" fontFamily="Ubuntu-Regular, Ubuntu" fontSize="14" fontWeight="normal" line-spacing="20" fill="#FFFFFF">
+            <tspan x="101" y="99">Estado: {state}</tspan>
           </text>
         </g>
       </g>
@@ -61,9 +61,19 @@ export default MRedCard
 
 MRedCard.defaultProps = {
   width: '275',
+  cardTitle: '',
+  cardType: 'debit',
+  owner: '',
+  state: 'Active',
+  cardNumber:'',
 }
 
-MRedCard.prototype = {
+MRedCard.propTypes = {
   width: PropTypes.string,
-  height: PropTypes.string
+  cardTitle: PropTypes.string,
+  cardType: PropTypes.string,
+  owner: PropTypes.string,
+  state: PropTypes.string,
+  cardNumber: PropTypes.string,
+  forceDesktop: PropTypes.bool,
 }

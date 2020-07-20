@@ -6,7 +6,9 @@ import contiesList from './_contiesList'
 describe('Input behavior', () => {
   it('should be rendered', () => {
     const onChange = jest.fn()
-    const component = render(<InputPhone value='234' onChange={onChange} />)
+    const component = render(
+      <InputPhone value='234' onChange={onChange} onCodeChange={() => null} />
+    )
     expect(component).toBeTruthy()
     expect(component.getByText(/\+56/)).toBeTruthy()
 
@@ -18,7 +20,9 @@ describe('Input behavior', () => {
 
   it('should be allow numbers', () => {
     const onChange = jest.fn()
-    const component = render(<InputPhone value='123' onChange={onChange} />)
+    const component = render(
+      <InputPhone value='123' onChange={onChange} onCodeChange={() => null} />
+    )
     const element = component.getByDisplayValue(/123/)
     fireEvent.change(element, { target: { value: '12f' } })
     expect(onChange).not.toBeCalled()
@@ -27,10 +31,12 @@ describe('Input behavior', () => {
   it('should be rendered with optional data', () => {
     const component = render(
       <InputPhone
-        value='some text'
+        value={2}
         label='label name'
         maxLength='10'
         assistText='example text'
+        onChange={() => null}
+        onCodeChange={() => null}
       />
     )
     expect(component.getByText(/label name/)).toBeTruthy()
@@ -38,21 +44,40 @@ describe('Input behavior', () => {
   })
 
   it('should be show as disabled', () => {
-    const component = render(<InputPhone value='some text' disabled />)
-    const element = component.getByDisplayValue(/some text/i)
+    const component = render(
+      <InputPhone
+        value={123}
+        disabled
+        onChange={() => null}
+        onCodeChange={() => null}
+      />
+    )
+    const element = component.getByDisplayValue(/123/i)
     fireEvent.click(component.getByText(/\+56/))
     expect(element.closest('input').disabled).toBeTruthy()
   })
 
   it('should be render a code value', () => {
-    const component = render(<InputPhone value='' code='2' />)
+    const component = render(
+      <InputPhone
+        value=''
+        onChange={() => null}
+        onCodeChange={() => null}
+        code={2}
+      />
+    )
     expect(component.getByText(/\+2/)).toBeTruthy()
   })
 
   it('should be change code value', () => {
     const onCodeChange = jest.fn()
     const component = render(
-      <InputPhone value='some text' code='2' onCodeChange={onCodeChange} />
+      <InputPhone
+        value={123}
+        onChange={() => null}
+        onCodeChange={onCodeChange}
+        code={2}
+      />
     )
     fireEvent.click(component.getByText(/\+2/))
     expect(component.getAllByRole('region').length).toEqual(contiesList.length)
@@ -64,7 +89,9 @@ describe('Input behavior', () => {
   it('should have success state', () => {
     const component = render(
       <InputPhone
-        value='some text'
+        value={123}
+        onChange={() => null}
+        onCodeChange={() => null}
         success
         assistText={[
           {
@@ -82,7 +109,9 @@ describe('Input behavior', () => {
   it('should have error state', () => {
     const component = render(
       <InputPhone
-        value='some text'
+        value={1}
+        onChange={() => null}
+        onCodeChange={() => null}
         error
         success // in this case error has priority
         assistText={[
@@ -101,7 +130,9 @@ describe('Input behavior', () => {
   it('should have multiple assistTexts', () => {
     const component = render(
       <InputPhone
-        value='some text'
+        value={1}
+        onChange={() => null}
+        onCodeChange={() => null}
         error
         success // in this case error has priority
         assistText={[

@@ -1,0 +1,41 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.cardSearch {
+  max-width: 674px;
+
+  &:hover h5{
+    text-decoration: underline;
+  }
+
+  .headerSection{
+    border-bottom: 1px solid $neutral-20;
+    padding-bottom: nth(nth($spacers,4), 2);
+    margin-bottom: nth(nth($spacers,4), 2);
+
+    h5{
+      font-weight: 400;
+      color: $primary;
+      margin-bottom: nth(nth($spacers,2), 2);
+    }
+
+    .routes{
+      display: flex;
+      padding: 0px;
+      margin: 0px;
+      font-size: $note-font-size;
+      line-height: 1.5rem;
+
+      li{
+        display: inline-flex;
+        align-items: center;
+        text-transform: capitalize;
+        color: $neutral-40;
+
+        &:last-child i{
+          display: none;
+        }
+      }
+    }
+  }
+}

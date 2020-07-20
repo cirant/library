@@ -1,19 +1,37 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs/react'
-import { number } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
+import { PlasticCard } from '../../dist'
 import '../codeStyles.css'
 import '../../dist/index.css'
-import { Stamp } from '../../dist'
 
 const propsDescriptions = {
   width: {
     propType: 'string',
-    description: 'Add width to the svg'
+    description: 'Add a defined width to the plastic card'
   },
-  height: {
+  cardTitle: {
     propType: 'string',
-    description: 'Add height to the svg'
+    description: 'Add a title to the plastic card'
+  },
+  cardType: {
+    propType: 'string',
+    description: 'Add a type of the plastic card'
+  },
+  owner: {
+    propType: 'string',
+    description: 'Add the owner of the plastic card'
+  },
+  state: {
+    propType: 'string',
+    description: 'Add the state of the plastic card'
+  },
+  cardNumber: {
+    propType: 'string',
+    description: 'Add the number of the plastic card'
+  },
+  forceDesktop: {
+    propType: 'bool',
+    description: 'force the card always to be desktop size'
   }
 }
 
@@ -22,6 +40,8 @@ const Red = (props) => (
     *
   </span>
 )
+
+
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
   const propsMixeds = propDefinitions.map((el) => ({
@@ -65,43 +85,44 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const StampComponent = () => (
-  <Stamp width={number('width', '223')} height={number('height', '217')} />
+export const CreditPlasticCardComponent = () => (
+  <PlasticCard
+    type={'credit'}
+    cardNumber={'N° *** *** 6520'}
+    cardTitle={'Master Card Debit'}
+    cardType={'titular'}
+    owner={'Ricardo Olivares'}
+    state={'Activa'} />
 )
 
 export default {
-  title: 'Stamp',
-  decorators: [withKnobs, withInfo],
-  component: Stamp,
+  title: 'Plastic Card',
+  decorators: [ withInfo],
+  component: PlasticCard,
   parameters: {
     info: {
       inline: true,
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
-          margin: '10px 0'
+          padding: '0px 40px 0px'
         }
       },
-      text: `include into your project to be able to use the component styles
-      
+      text: `
+        include into your project to be able to use the component styles
         ~~~js
         import 'design-system-coopeuch/dist/index.css';
-        import { Stamp }from 'design-system-coopeuch';
+        import { PlasticCard } from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
 
         ~~~js
-        <Stamp />
+        <PlasticCard />
         ~~~
 
-        ##### Note: About width and height properties
-
-        To give the desired size, please change the width and length, modifying
-        only one of the values ​​will not take effect because the width and length
-        of the properties of the svg are being modified.
-        change the knobs properties and you'll be able to watch its component structure below at Story Source`
+        change the knobs properties and you'll be able to watch its component structure below at Story Source
+      `
     }
   }
 }

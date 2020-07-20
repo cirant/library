@@ -1,19 +1,17 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs/react'
-import { number } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
-import '../codeStyles.css'
+import { CardSearch, SearchResult } from '../../dist'
+import Props from './comonsProps'
 import '../../dist/index.css'
-import { Stamp } from '../../dist'
 
 const propsDescriptions = {
-  width: {
+  ...Props,
+  target: {
     propType: 'string',
-    description: 'Add width to the svg'
-  },
-  height: {
-    propType: 'string',
-    description: 'Add height to the svg'
+    description: 'Text to be shown into title'
   }
 }
 
@@ -65,43 +63,51 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const StampComponent = () => (
-  <Stamp width={number('width', '223')} height={number('height', '217')} />
+export const resultList = () => (
+  <SearchResult target={text('target', 'some text')}>
+    <CardSearch
+      onClick={action('card Clicked 1')}
+      title='sometimes some text is into a card'
+      description='description card'
+      routes={['location']}
+    />
+    <CardSearch
+      onClick={action('card Clicked 2')}
+      title='sometimes some text is into a card'
+      description='description card'
+      routes={['location']}
+    />
+  </SearchResult>
 )
 
 export default {
-  title: 'Stamp',
+  title: 'CardSearch',
   decorators: [withKnobs, withInfo],
-  component: Stamp,
+  component: SearchResult,
   parameters: {
     info: {
       inline: true,
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
-          margin: '10px 0'
+          padding: '0px 40px 0px'
         }
       },
-      text: `include into your project to be able to use the component styles
-      
+      text: `
+        include into your project to be able to use the component styles
         ~~~js
         import 'design-system-coopeuch/dist/index.css';
-        import { Stamp }from 'design-system-coopeuch';
+        import { SearchResult }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
 
         ~~~js
-        <Stamp />
+        <SearchResult target="some text" onClick={()=>null} > </SearchResult>
         ~~~
 
-        ##### Note: About width and height properties
-
-        To give the desired size, please change the width and length, modifying
-        only one of the values ​​will not take effect because the width and length
-        of the properties of the svg are being modified.
-        change the knobs properties and you'll be able to watch its component structure below at Story Source`
+        change the knobs properties and you'll be able to watch its component structure below at Story Source
+      `
     }
   }
 }
