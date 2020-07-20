@@ -7,7 +7,7 @@ import IconListModel from '../icons/models/icon-list.model'
 const ActionLink = ({ icon,label,onClick, ...props }) => {
 
   return (
-    <div {...props} className={styles.actionLink}>
+    <div {...props} className={styles.actionLink} onClick={onClick}>
       <div className={styles.iconContainer}>
         <Icon name={icon} className={styles.iconSize} size="6" />
       </div>

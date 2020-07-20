@@ -10,6 +10,7 @@
   flex-direction: column;
   padding-top: nth(nth($spacers, 6), 2);
   padding-bottom: nth(nth($spacers, 7), 2);
+  cursor: pointer;
 
   .label{
     font-weight: 500;
