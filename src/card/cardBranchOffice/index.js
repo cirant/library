@@ -3,10 +3,10 @@ import styles from './_cardBranchOffice.scss'
 import Card from '../index'
 import PropTypes from 'prop-types'
 
-const CardBranchOffice = ({ name, address,className, attentionSchedule,...props }) => {
+const CardBranchOffice = ({ name, address, attentionSchedule,...props }) => {
 
   return (
-    <Card className={[styles.card, className].join(' ').trim()} {...props}>
+    <Card className={[styles.card, props.className].join(' ').trim()} {...props}>
       <div className={styles.title}>
         <p>{name}</p>
       </div>
@@ -39,14 +39,12 @@ export default CardBranchOffice
 CardBranchOffice.defaultProps = {
   name: '',
   address: '',
-  className: '',
   attentionSchedule: []
 }
 
 CardBranchOffice.propTypes = {
   name: PropTypes.string,
   address: PropTypes.string,
-  className: PropTypes.string,
   attentionSchedule: PropTypes.arrayOf(
   PropTypes.shape({
     schedule: PropTypes.string,
