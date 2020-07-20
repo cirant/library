@@ -90,7 +90,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-export const inputSearchWithTagLinksh = () => (
+export const inputSearchWithTagLink = () => (
   <InputSearch
     disabled={boolean('disabled', false, 'status')}
     value={text('value', '', 'text')}
