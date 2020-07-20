@@ -1,6 +1,7 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import { withInfo } from '@storybook/addon-info'
-import { text, select } from '@storybook/addon-knobs'
+import { text, select, boolean } from '@storybook/addon-knobs'
 import { Message } from '../../dist'
 import '../../dist/index.css'
 import propsDescriptions from './_commonsProps'
@@ -92,6 +93,7 @@ export const element = () => (
   <Message
     type={select('type', ['error', 'success', 'info', 'warning'], 'info')}
     title={text('title', 'a simple title')}
+    closer={boolean('closer', true,) ? action('closer action') : null}
     description={text('description', '')}
   />
 )
