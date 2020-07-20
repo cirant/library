@@ -48,6 +48,7 @@ import KebabMenu from './kebabMenu/'
 import NotificationBadge from './notificationBadge/'
 import CardHeader from './card/cardHeader'
 import CardContent from './card/cardContent'
+import CardBank from './card/cardBank'
 import CardActions from './card/cardAction'
 import CardImage from './card/cardHeader/cardImage'
 import CardSearch from './card/cardSearch'
@@ -57,6 +58,8 @@ import ColumnCardContent from './columnCard/columnCardContent'
 import ColumnCardImage from './columnCard/columnCardImage'
 import ColumnCardContentActions from './columnCard/columnCardContent/columnCardContentAction'
 import CardBenefits from './card/cardBenefits'
+import TagLink from './tagLink'
+import CardBranchOffice from './card/cardBranchOffice'
 import ActionLink from './actionLink'
 import DBlackCard from './plasticCards/svgs/desktop/black'
 import DRedCard from './plasticCards/svgs/desktop/red'
@@ -71,6 +74,7 @@ export {
   Icon,
   Grid,
   Card,
+  CardBank,
   CardSwitch,
   CardCheckbox,
   CardDropdown,
@@ -130,5 +134,7 @@ export {
   MRedCard,
   MBlackCard,
   PlasticCard,
+  CardBranchOffice,
+  TagLink,
   ActionLink
 }

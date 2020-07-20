@@ -1,8 +1,13 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import InputSearch from '.'
+import TestRenderer from 'react-test-renderer'
+import TagLink from '../../tagLink'
 
 describe('InputSearch behavior', () => {
+
+  const onClick = jest.fn();
+
   it('should be rendered', () => {
     const onChange = jest.fn()
     const component = render(
@@ -32,5 +37,50 @@ describe('InputSearch behavior', () => {
     const component = render(<InputSearch value='some text' disabled />)
     const element = component.getByDisplayValue(/some text/i)
     expect(element.closest('input').disabled).toBeTruthy()
+  })
+
+  it('should contain tagLinks if it are defined', () => {
+    const testRenderer = TestRenderer.create(
+      <InputSearch
+        maxLength="105"
+        label="esto es un label"
+        value='test'
+        tagLinks={
+          [
+            {
+              label:'Element 01',
+              onClick: onClick
+            },
+            {
+              label:'Element 02',
+              onClick: onClick
+            },
+            {
+              label:'Element 03',
+              onClick: onClick
+            },
+            {
+              label:'Element 04',
+              onClick: onClick
+            },
+            {
+              label:'Element 05',
+              onClick: onClick
+            },
+            {
+              label:'Element 06',
+              onClick: onClick
+            },
+            {
+              label:'Element 07',
+              onClick:onClick
+            },
+
+          ]
+        }
+      />
+    )
+    const testInstance = testRenderer.root
+    expect(testInstance.findAllByType(TagLink).length).toBe(7)
   })
 })

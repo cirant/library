@@ -5,6 +5,7 @@ import {
   ActionLink,
   BreadCrumb,
   Card,
+  CardBank,
   CardBenefits,
   CardSwitch,
   CardCheckbox,
@@ -56,12 +57,10 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
+  TagLink,
   NotificationBadge,
-  DRedCard,
-  DBlackCard,
-  MRedCard,
-  MBlackCard,
-  PlasticCard
+  PlasticCard,
+  CardBranchOffice
 } from 'design-system-coopeuch';
 import 'design-system-coopeuch/dist/index.css';
 import 'design-system-coopeuch/dist/css/custom.css';
@@ -814,7 +813,41 @@ const App = () => {
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
-          onChange={({ target: { value } }) => setInputText(value)} />
+          onChange={({ target: { value } }) => setInputText(value)}
+          tagLinks={
+            [
+              {
+                label:'Element 01',
+                onClick:()=> console.log('Element 01')
+              },
+              {
+                label:'Element 02',
+                onClick:()=> console.log('Element 02')
+              },
+              {
+                label:'Element 03',
+                onClick:()=> console.log('Element 03')
+              },
+              {
+                label:'Element 04',
+                onClick:()=> console.log('Element 04')
+              },
+              {
+                label:'Element 05',
+                onClick:()=> console.log('Element 05')
+              },
+              {
+                label:'Element 06',
+                onClick:()=> console.log('Element 06')
+              },
+              {
+                label:'Element 07',
+                onClick:()=> console.log('Element 07')
+              },
+
+            ]
+          }
+        />
 
         <InputSearch
           maxLength="105"
@@ -1466,81 +1499,116 @@ const App = () => {
     </div>
 
 
+    <div className="container">
+      <h1 className="mb-4">Bank Card Debit col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank
+            title='Mastercard Debito'
+            cardNumber={"N°**** ***2345"}
+            buttons={[
+              {
+                label:'Label text link',
+                prefix:'arrow-left',
+                onClick: ()=> console.log('click')
+              },
+              {
+                label:'Label text link',
+                onClick: ()=> console.log('click')
+              },
+            ]}
+            cardType="debit">
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
+
+    <div className="container">
+      <h1 className="mb-4">Bank Card Gold col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank
+            title='Mastercard Gold'
+            cardType="gold"
+            buttons={[
+              {
+                label:'Label text link',
+                prefix:'arrow-left',
+                onClick: ()=> console.log('test 1')
+              },
+              {
+                label:'Label text link',
+                onClick: ()=> console.log('test 2')
+              }
+            ]}
+            cardNumber={"N°**** ***2345"} >
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
+    <div className="container">
+      <h1 className="mb-4">Bank Card International col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-6 col-md-12 col-sm-6">
+          <CardBank
+            title='Mastercard International'
+            cardType="international"
+            buttons={[
+              {
+                label:'Label text link',
+                prefix:'arrow-left',
+                onClick: ()=> console.log('click')
+              },
+              {
+                label:'Label text link',
+                onClick: ()=> console.log('click')
+              }
+            ]}
+            cardNumber={"N°**** ***2345"} >
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
+          </CardBank>
+        </div>
+      </div>
+    </div>
+
     <br />
     <br />
 
+
     <div className="container">
-      <h1 className="mb-4">Desktop black card</h1>
+      <h1 className="mb-4">Column Card col-lg-6</h1>
       <div className="row">
-        <div className="col-lg-3 col-md-12 col-sm-6">
-          <DBlackCard
-            cardNumber={'N° *** *** 6520'}
-            cardTitle={'MasterCard Debit'}
-            cardType={'Titular'}
-            owner={'Ricardo Olivares'}
-            state={'Activa'}
-          >
-          </DBlackCard>
+        <div className="col-lg-8 col-md-12 col-sm-6">
+          <ColumnCard>
+            <ColumnCardContent title='Type something'
+              content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.'>
+              <ColumnCardContentActions buttons={[
+                {
+                  color: 'primary',
+                  label: 'Button',
+                  onClick: () => {
+                    console.log('test')
+                  }
+                },
+                {
+                  color: 'primary',
+                  label: 'Button',
+                  onClick: () => {
+                    console.log('test')
+                  }
+                }
+              ]
+              }></ColumnCardContentActions>
+            </ColumnCardContent>
+            <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
+          </ColumnCard>
         </div>
         <br />
         <br />
-      </div>
-    </div>
-
-
-    <br />
-    <br />
-    <div className="container">
-      <h1 className="mb-4">Desktop red card</h1>
-      <div className="row">
-        <div className="col-lg-3 col-md-12 col-sm-6">
-          <DRedCard
-            cardNumber={'N° *** *** 6520'}
-            cardTitle={'MasterCard Debit'}
-            cardType={'Titular'}
-            owner={'Ricardo Olivares'}
-            state={'Activa'}
-          >
-          </DRedCard>
-        </div>
-      </div>
-    </div>
-
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <div className="container">
-      <h1 className="mb-4">Mobile red card</h1>
-      <div className="row">
-        <div className="col-lg-3 col-md-12 col-sm-6">
-          <MRedCard
-            cardNumber={'N° *** *** 6520'}
-            cardTitle={'MasterCard Debit'}
-            cardType={'Titular'}
-            owner={'Ricardo Olivares'}
-            state={'Activa'}>
-          </MRedCard>
-        </div>
-      </div>
-    </div>
-
-    <br />
-    <br />
-
-    <div className="container">
-      <h1 className="mb-4">Mobile black card</h1>
-      <div className="row">
-        <div className="col-lg-3 col-md-12 col-sm-6">
-          <MBlackCard
-            cardNumber={'N° *** *** 6520'}
-            cardTitle={'MasterCard Debit'}
-            cardType={'Titular'}
-            owner={'Ricardo Olivares'}
-            state={'Activa'}>
-          </MBlackCard>
-        </div>
       </div>
     </div>
 
@@ -1559,11 +1627,11 @@ const App = () => {
         </div>
         <div className="col">
           <ModalInfo
-            image={<img src="assets/images/ilustracion.svg" alt="img"/>}
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
             title="Titulo de mensaje"
             description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
             buttons={[
-              <Button color="primary"> label button </Button>
+              <Button color="primary" > label button </Button>
             ]}
           />
         </div>
@@ -1571,11 +1639,11 @@ const App = () => {
       <div className="row">
         <div className="col">
           <ModalInfo
-            image={<img src="assets/images/ilustracion.svg" alt="img"/>}
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
             description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
             buttons={[
-              <Button variant="outline" color="primary"> label button </Button>,
-              <Button color="primary"> label button </Button>
+              <Button variant="outline" color="primary" > label button </Button>,
+              <Button color="primary" > label button </Button>
             ]}
           />
         </div>
@@ -1584,7 +1652,7 @@ const App = () => {
             title="Titulo de mensaje"
             description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
             buttons={[
-              <Button color="primary"> label button </Button>
+              <Button color="primary" > label button </Button>
             ]}
           />
         </div>
@@ -1644,6 +1712,47 @@ const App = () => {
 
     <br/>
     <br/>
+    <div className="container">
+      <h1 className="mb-4">Card Branch Office</h1>
+      <div className="row">
+        <div className="col-lg-4 col-md-12 col-sm-6">
+          <CardBranchOffice
+            name='Name of branch office'
+            address='Address branch office'
+            attentionSchedule={[
+              {
+                schedule: 'Lunes a Domigo: 09:00 Hrs a 16:00 Hrs'
+              },
+              {
+                schedule: 'Sabado a Domigo: 09:00 Hrs a 12:00 Hrs'
+              }
+            ]}
+          />
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+
+
+
+    <div className="container my-4">
+      <h1 className="mb-4">Tag Link</h1>
+      <div className="d-flex">
+        <TagLink
+          label='Label link text'
+          onClick={()=> console.log('asdas')}
+        >
+
+        </TagLink>
+      </div>
+    </div>
+    <br />
+    <br />
+
+
+
+
 
 
   </>
