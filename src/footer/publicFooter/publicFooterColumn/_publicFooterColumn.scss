@@ -10,3 +10,10 @@
         font-weight: 700;
     }
 }
+
+@media screen and (max-width: nth(nth($grid-breakpoints,4),2)){
+    .column{
+        padding-bottom: nth(nth($spacers, 6),2);
+        padding-top: nth(nth($spacers, 5),2);
+    }
+}

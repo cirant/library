@@ -27,7 +27,6 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-      console.log(defaultValue)
 
       return (
         <tr key={property}>
@@ -137,7 +136,8 @@ export default {
               text: 'name'
             },
           ]}
-  
+          ~~~
+          
           change the knobs properties and you'll be able to watch its component structure below at Story Source
         `
       }

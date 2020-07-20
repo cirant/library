@@ -8,9 +8,6 @@ const PublicFooter = ({children, logo, ...props}) => {
             <div className={[styles.publicFooter, styles.footerDesktop].concat(props.className).join(' ')}>
                 {children}
             </div>
-            <div className={styles.footerMobile}>
-                {logo}
-            </div>
         </React.Fragment>
     );
 }

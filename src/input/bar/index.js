@@ -52,7 +52,7 @@ Bar.defaultProps = {
 Bar.propTypes = {
     min: PropTypes.string,
     max: PropTypes.string,
-    value: PropTypes.number,
+    value: PropTypes.string,
     onChange: PropTypes.func
 };
  

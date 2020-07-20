@@ -67,7 +67,7 @@ const App = () => {
   const [inputText, setInputText] = useState('');
   const [inputPhoneCode, setInputPhoneCode] = useState(56);
   const [inputPhone, setInputPhone] = useState('');
-  const [range, setRange] = useState(200);
+  const [range, setRange] = useState('200');
   const [inputCounter, setInputCounter] = useState(1);
 
   const [inputSecurity, setInputSecurity] = useState('');
@@ -724,7 +724,7 @@ const App = () => {
         min="200"
         max="800"
         step="1"
-        onChange={(e) => setRange(Number(e.target.value))}
+        onChange={(e) => setRange(e.target.value)}
         value={range}
       />
     </div>

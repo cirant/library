@@ -39,7 +39,7 @@ const PrivateFooter = ({items, icon, label, ...props}) => {
                 </div>
             </div>
             <div className={styles.footerMobile}>
-                {logo}
+                <img src={logo} alt="imagen doesn't found" />
             </div>
         </React.Fragment>
     );
