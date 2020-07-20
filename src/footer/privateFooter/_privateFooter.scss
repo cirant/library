@@ -5,13 +5,10 @@
     min-height: 80px;
     display: flex;
 
-    svg{
-        background-color: red;
-    }
-
     .items{
-        display: flex;
+        display: inline-flex;
         padding-left: nth(nth($spacers, 6),2);
+        flex-flow: row wrap;
         
         p{
             display: flex;
@@ -66,12 +63,8 @@
 }
 
 .footerMobile{
-    align-items: center;
+    justify-content: center;
     display: none;
-    
-    svg{
-        background-color: red;
-    }
 }
 
 @media screen and (max-width: nth(nth($grid-breakpoints,4),2)){

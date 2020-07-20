@@ -434,9 +434,8 @@ const App = () => {
     </div>
 
     <div className="container my-4">
-        <PrivateFooter 
-            logo={<Logo className="w-100" />}
-            itemsLeft={[
+        <PrivateFooter
+            items={[
               {
                 link: 'http://www.google.cl',
                 text: 'Términos y condiciones'
@@ -450,12 +449,8 @@ const App = () => {
                 text: 'Otro Link'
               }
             ]}
-            itemRight={
-              {
-                icon_name: 'line-snooze',
-                label: 'Texto 1'
-              }
-            }
+            icon={<Icon name="line-snooze" size="4" />}
+            label={'Texto 1'}
         />
     </div>
     

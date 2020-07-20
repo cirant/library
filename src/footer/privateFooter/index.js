@@ -1,19 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './_privateFooter.scss';
-import Icon from '../../icons';
+import logo from './assets/coopeuch-gris.svg';
 
-const PrivateFooter = ({logo, itemsLeft, itemRight, ...props}) => {
+const PrivateFooter = ({items, icon, label, ...props}) => {
     
     return (
         <React.Fragment>
             <div className={[styles.privateFooter, styles.footerDesktop].concat(props.className).join(' ')}>
                 <div className={styles.footerLeftArea}>
                     <div className={styles.footerLogoContainer}>
-                        {logo}
+                        <img src={logo} alt="imagen doesn't found" />
                     </div>
                     <div className={styles.items}>
                         {
-                            itemsLeft && itemsLeft.map((item, index) => (
+                            items && items.map((item, index) => (
                                 (
                                     <p key={`${item.text}-${index}`}>
                                         <a 
@@ -30,10 +31,10 @@ const PrivateFooter = ({logo, itemsLeft, itemRight, ...props}) => {
                 </div>
                 <div className={styles.end}>
                     <div className={styles.icon}>
-                        <Icon name={itemRight.icon_name} size="4" />
+                        {icon}
                     </div>
                     <div className={styles.textLabel}>
-                        <span>{itemRight.label}</span>
+                        <span>{label}</span>
                     </div>
                 </div>
             </div>
@@ -42,6 +43,22 @@ const PrivateFooter = ({logo, itemsLeft, itemRight, ...props}) => {
             </div>
         </React.Fragment>
     );
+}
+
+PrivateFooter.defaultProps = {}
+
+PrivateFooter.propTypes = {
+    items: PropTypes.oneOfType([
+        PropTypes.arrayOf(
+            PropTypes.shape({
+                text: PropTypes.string,
+                link: PropTypes.string
+            })
+        ),
+        PropTypes.string
+    ]),
+    label: PropTypes.string,
+    icon: PropTypes.element
 }
  
 export default PrivateFooter;

@@ -55,38 +55,11 @@ export const publicFooter = () => (
     <div className="container my-4">
     <PublicFooter logo={<Logo className="w-100" />}>
         <PublicFooterColumn title={text('Column title', 'Productos', 'Column menu 1')}>
-            
-            <PublicFooterItem link={text('Item link 1', 'http://www.coopeuch.cl', 'Column menu 1')} subItems={[
-                {
-                    text: 'condiciones generales de contratación',
-                    link: 'http://www.coopeuch.cl'
-                }
-                ]}>{text('Text link 1', 'Cuenta Coopeuch', 'Column menu 1')}
-            </PublicFooterItem>
-            
-            <PublicFooterItem link={text('Item link 2', 'http://www.coopeuch.cl', 'Column menu 1')}
-                subItems={[
-                    object(
-                      'Sub item 1',
-                      {text: 'Condiciones generales de contratación', link: 'http://www.coopeuch.cl'},
-                      'Column menu 1'
-                    )
-                ]}>{text('Text link 2', 'Monedero Digital Coopeuch', 'Column menu 1')}
-            </PublicFooterItem>
-            
+            <PublicFooterItem link={text('Item link 1', 'http://www.coopeuch.cl', 'Column menu 1')}>{text('Text link 1', 'Cuenta Coopeuch', 'Column menu 1')}</PublicFooterItem>
+            <PublicFooterItem link={text('Item link 2', 'http://www.coopeuch.cl', 'Column menu 1')}>{text('Text link 2', 'Monedero Digital Coopeuch', 'Column menu 1')}</PublicFooterItem>
             <PublicFooterItem link={text('Item link 3', 'http://www.coopeuch.cl', 'Column menu 1')}>{text('Text link 3', 'Cuentas de Ahorro', 'Column menu 1')}</PublicFooterItem>
             <PublicFooterItem link={text('Item link 4', 'http://www.coopeuch.cl', 'Column menu 1')}>{text('Text link 4', 'Créditos', 'Column menu 1')}</PublicFooterItem>
-            
-            <PublicFooterItem link={text('Item link 5', 'http://www.coopeuch.cl', 'Column menu 1')}
-                subItems={[
-                    object(
-                      'Sub item 2',
-                      {text: 'Enlace Inmobiliario Alzamiento de prendas o hipotecas Ley N° 20.855n', link: 'http://www.coopeuch.cl'},
-                      'Column menu 1'
-                    )
-                ]}>{text('Text link 5', 'Crédito Hipotecario', 'Column menu 1')}
-            </PublicFooterItem>
-
+            <PublicFooterItem link={text('Item link 5', 'http://www.coopeuch.cl', 'Column menu 1')}>{text('Text link 5', 'Crédito Hipotecario', 'Column menu 1')}</PublicFooterItem>
             <PublicFooterItem link={text('Text link 6', 'Crédito Hipotecario', 'Column menu 1')}>{text('Text link 6', 'Tarjeta Mastercard', 'Column menu 1')}</PublicFooterItem>
             <PublicFooterItem link={text('Item link 7', 'http://www.coopeuch.cl', 'Column menu 1')}>{text('Text link 7', 'Cuota de Participación', 'Column menu 1')}</PublicFooterItem>
         </PublicFooterColumn>   
@@ -155,15 +128,29 @@ export default {
                 <PublicFooterColumn title={'Productos'}>
                     <PublicFooterItem link={'http://www.coopeuch.cl'} subItems={[
                         {
-                        text: 'condiciones generales de contratación',
-                        link: 'link del enlance'
+                          text: 'condiciones generales de contratación',
+                          link: 'url'
                         }
                     ]}>Cuenta Coopeuch</PublicFooterItem>
                 </PublicFooterColumn>
           </<PublicFooter>
           ~~~
+
+        the object into array 'subItems' should have look like the shown below
+        ~~~js
+        {[
+          {
+            text: 'condiciones generales de contratación',
+            link: 'url'
+          },
+          {
+            text: 'condiciones generales de contratación',
+            link: 'url'
+          }
+        ]}
+        ~~~
   
-          change the knobs properties and you'll be able to watch its component structure below at Story Source
+        change the knobs properties and you'll be able to watch its component structure below at Story Source
         `
       }
     }
