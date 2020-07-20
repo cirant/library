@@ -23,7 +23,7 @@
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
-    "test:lint": "eslint .",
+    "test:lint": "eslint . --fix",
     "test:unit": "cross-env CI=1 react-scripts test --coverage --env=jsdom",
     "test:watch": "react-scripts test -W",
     "predeploy": "cd example && npm install && npm run build",
@@ -66,6 +66,7 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cli": "^2.2.1",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-svg-sprite": "^1.5.0",
     "microbundle-crl": "^0.13.10",
@@ -84,8 +85,10 @@
     "@tippyjs/react": "^4.0.5",
     "babel-plugin-react-docgen": "^4.1.0",
     "date-fns": "^2.14.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "react-nice-dates": "^3.0.4",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "webpack": "^4.42.0",
+    "sass": "^1.26.10"
   }
 }

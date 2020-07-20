@@ -9,6 +9,8 @@ $base: 2px;
     }
   }
 
+  @include elevationOneToFive();
+
   .elevation-element-1{
     @include elevationElementCreator1();
   }
@@ -27,3 +29,12 @@ $base: 2px;
 @mixin elevationElementCreator($number) {
   box-shadow: 0 (($base * $number)) ($base * ($number + 1)) 0 rgba(31,30,30,0.35);
 }
+
+@mixin elevationOneToFive(){
+  @for $i from 1 through 5 {
+    &.elevation-#{$i}{
+      box-shadow: 0 ($base * $i) ($base * ($i + 1)) 0 rgba(31,30,30,0.10);
+    }
+  }
+}
+

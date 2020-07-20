@@ -1,11 +1,9 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs/react';
-import { boolean } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
-import { Grid } from '../../dist';
-import '../codeStyles.css';
-import '../../dist/index.css';
+import React from 'react'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { withInfo } from '@storybook/addon-info'
+import { Grid } from '../../dist'
+import '../codeStyles.css'
+import '../../dist/index.css'
 
 const propsDescriptions = {
   variant: {
@@ -38,34 +36,45 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-      console.log(defaultValue);
+      console.log(defaultValue)
 
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
           <td>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
-    <table style={{
-      width: "100%"
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-        <tr style={{ textAlign: "left" }}>
+        <tr style={{ textAlign: 'left' }}>
           <th>name</th>
           <th>type</th>
           <th>default</th>
@@ -74,14 +83,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
 export const Row = () => {
-  return <Grid row>
-    lorem
-  </Grid>
-};
+  return <Grid row>lorem</Grid>
+}
 
 export default {
   title: 'Grid',
@@ -93,7 +100,7 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
+          padding: '0px 40px 0px'
         }
       },
       text: `
@@ -105,8 +112,8 @@ export default {
         
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Grid } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Grid }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is: 
@@ -116,8 +123,7 @@ export default {
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
-      `,
-    },
-
-  },
-};
+      `
+    }
+  }
+}

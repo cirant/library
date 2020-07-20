@@ -17,11 +17,11 @@ export default {
   },
   error: {
     propType: 'bool',
-    description: 'input status, if it\'s true the input border will be green'
+    description: "input status, if it's true the input border will be green"
   },
   success: {
     propType: 'bool',
-    description: 'input status, if it\'s true the input border will be green'
+    description: "input status, if it's true the input border will be green"
   },
   disabled: {
     propType: 'bool',

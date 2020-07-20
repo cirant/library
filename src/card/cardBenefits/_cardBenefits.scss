@@ -1,0 +1,43 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.figure{
+  position: relative;
+  min-height: 422px;
+  background-size: cover;
+  background-position: center;
+  background-color: $neutral-20;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .topContent{
+    flex: 1;
+
+    .logoContainer{
+      position: absolute;
+      top: nth(nth($spacers, 4),2);
+      left: nth(nth($spacers, 4),2);
+      width: 48px;
+      height: 48px;
+      overflow: hidden;
+      border-radius: 100%;
+      background-color: $neutral-60;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  .content{
+    background-color: $neutral-alfa-85;
+    padding: nth(nth($spacers, 5),2) nth(nth($spacers, 7),2);
+    color: white;
+    h1{
+      color: white;
+    }
+  }
+}

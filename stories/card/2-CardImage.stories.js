@@ -1,4 +1,5 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs/react'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
@@ -19,11 +20,13 @@ const propsDescriptions = {
   },
   onClick: {
     propType: 'function',
-    description: 'This function will be called when the card is pressed, this also add an elevation animation'
+    description:
+      'This function will be called when the card is pressed, this also add an elevation animation'
   },
   children: {
     propType: 'node',
-    description: 'Node who can be passed to the header container, can be a CardImage or anything else'
+    description:
+      'Node who can be passed to the header container, can be a CardImage or anything else'
   },
   imgUrl: {
     propType: 'string',
@@ -35,10 +38,17 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
@@ -46,8 +56,9 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
       return (
         <tr key={property}>
-          <td>{property}
-            {required && <Red/>}
+          <td>
+            {property}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -58,16 +69,19 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -75,25 +89,35 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 }
 
 export const CardWithHeaderAndImage = () => (
-  <div className="container">
-    <div className="row" style={{ justifyContent: 'center' }}>
-      <div className="col-lg-4 col-md-12 col-sm-12 d-flex align-items-start">
+  <div className='container'>
+    <div className='row' style={{ justifyContent: 'center' }}>
+      <div className='col-lg-4 col-md-12 col-sm-12 d-flex align-items-start'>
         <Card
-          onClick={select('function', [true, false], false) ? () => alert('action') : null}
+          onClick={
+            select('function', [true, false], false)
+              ? () => action('click')
+              : null
+          }
           selected={boolean('selected', false)}
-          border={boolean('border', false)}>
+          border={boolean('border', false)}
+        >
           <CardHeader>
-            <CardImage imgUrl={select('Image Url', [imageFile, imageFile2], imageFile)}/>
+            <CardImage
+              imgUrl={select('Image Url', [imageFile, imageFile2], imageFile)}
+            />
           </CardHeader>
-          <CardContent title={text('Title', 'Some title')}
-                       content={text('Content', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam at commodi consequatur')}>
-          </CardContent>
+          <CardContent
+            title={text('Title', 'Some title')}
+            content={text(
+              'Content',
+              'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam at commodi consequatur'
+            )}
+          />
         </Card>
       </div>
     </div>
   </div>
 )
-
 
 export default {
   title: 'Card',
@@ -104,14 +128,13 @@ export default {
       inline: true,
       TableComponent,
       styles: {
-        infoStory: {
-        }
+        infoStory: {}
       },
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Card, CardHeader, CardImage, CardContent } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Card, CardHeader, CardImage, CardContent } from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
@@ -127,6 +150,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

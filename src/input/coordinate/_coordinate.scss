@@ -1,0 +1,53 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../../scss/variables';
+
+.container{
+    display: flex;
+}
+
+.coordinate{
+    div{
+        padding-right: nth(nth($spacers, 3), 2);
+    }
+    
+    input{
+        max-width: 89px;
+        text-align: center;
+
+        &:after{
+            display: none;
+        }
+    }
+
+    label{
+        font-weight: normal;
+    }
+}
+
+.containerIcon{
+    margin-top: nth(nth($spacers, 3), 2);
+
+    .empty{
+        width: 12px;
+        height: 12px;
+        margin: 2px;
+        border: 1px solid $neutral-40;
+        border-radius: 100%;
+        display: inline-flex;
+        vertical-align: middle;
+        font-size: 14px;
+      }
+    
+      .successText{
+        color: $success-40;
+        font-size: 14px;
+      }
+      .errorText{
+        color: $danger-40;
+        font-size: 14px;
+      }
+
+      .assistText{
+        font-size: 14px;
+      }
+}

@@ -3,7 +3,6 @@ import styles from './_notificationbadge.scss'
 import PropTypes from 'prop-types'
 
 const NotificationBadge = ({ content, ...props }) => {
-
   const containerClass = [styles.notificationBadgeContainer]
 
   return (

@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './_progressbar.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from './_progressbar.scss'
 
 const ProgressBar = ({
   label,
@@ -10,32 +10,43 @@ const ProgressBar = ({
   helperAlign,
   reverse
 }) => {
-  const alignment = (assistText && percent) ? styles.between : styles[helperAlign];
-  const direction = reverse ? styles.reverse : null;
-  const bellowClasses = [styles.bellowContent, alignment, direction];
+  const alignment = assistText && percent ? styles.between : styles[helperAlign]
+  const direction = reverse ? styles.reverse : null
+  const bellowClasses = [styles.bellowContent, alignment, direction]
 
-  return <div className={styles.progressBar}>
-    {
-      !Array.isArray(label) ? <div className={styles.simpleLabel}>{label}</div> :
+  return (
+    <div className={styles.progressBar}>
+      {!Array.isArray(label) ? (
+        <div className={styles.simpleLabel}>{label}</div>
+      ) : (
         <div className={styles.multiHeader}>
-          {
-            label.map((el, i) => <div key={i}>
+          {label.map((el, i) => (
+            <div key={i}>
               <label className={styles.multiHeaderLabel}>{el.label}</label>
               <div>{el.text}</div>
-            </div>)
-          }
+            </div>
+          ))}
         </div>
-    }
-    <div className={styles.barContainer}>
-      <div className={styles.bar} data-progress={progress} style={{ width: `${progress}%` }}></div>
+      )}
+      <div className={styles.barContainer}>
+        <div
+          className={styles.bar}
+          data-progress={progress}
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+      {assistText || percent ? (
+        <div className={bellowClasses.join(' ').trim()} role='helper'>
+          {assistText}
+          {percent && (
+            <div
+              className={Number(progress) === 100 ? styles.full : null}
+            >{`${progress}%`}</div>
+          )}
+        </div>
+      ) : null}
     </div>
-    {
-      assistText || percent ? <div className={bellowClasses.join(' ').trim()} role="helper" >
-        {assistText}
-        {percent && <div className={Number(progress) === 100 ? styles.full : null}>{`${progress}%`}</div>}
-      </div> : null
-    }
-  </div>
+  )
 }
 
 ProgressBar.defaultProps = {
@@ -45,7 +56,7 @@ ProgressBar.defaultProps = {
   percent: false,
   helperAlign: 'start',
   reverse: false
-};
+}
 
 ProgressBar.propTypes = {
   label: PropTypes.oneOfType([
@@ -62,6 +73,6 @@ ProgressBar.propTypes = {
   percent: PropTypes.bool,
   reverse: PropTypes.bool,
   helperAlign: PropTypes.oneOf(['start', 'between', 'end'])
-};
+}
 
-export default ProgressBar;
+export default ProgressBar

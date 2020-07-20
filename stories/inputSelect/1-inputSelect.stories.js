@@ -1,11 +1,11 @@
-import React from 'react';
-import { withKnobs } from '@storybook/addon-knobs/react';
-import { select, boolean, text } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
-import { InputSelect } from '../../dist';
-import '../codeStyles.css';
-import '../../dist/index.css';
-import { action } from '@storybook/addon-actions';
+import React from 'react'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { select, boolean, text } from '@storybook/addon-knobs'
+import { withInfo } from '@storybook/addon-info'
+import { InputSelect } from '../../dist'
+import '../codeStyles.css'
+import '../../dist/index.css'
+import { action } from '@storybook/addon-actions'
 
 const propsDescriptions = {
   label: {
@@ -30,37 +30,52 @@ const propsDescriptions = {
   },
   options: {
     propType: 'array',
-    description: 'Array with option that will be shown when the user clicked the input'
+    description:
+      'Array with option that will be shown when the user clicked the input'
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td className="p-1">{property}
+          <td className='p-1'>
+            {property}
             {required && <Red />}
           </td>
-          <td className="p-1" style={{ whiteSpace: "nowrap" }}>{propType}</td>
-          <td className="p-1">{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
-          <td className="p-1">{description}</td>
+          <td className='p-1' style={{ whiteSpace: 'nowrap' }}>
+            {propType}
+          </td>
+          <td className='p-1'>
+            {defaultValue !== undefined ? `${defaultValue}` : ' - '}
+          </td>
+          <td className='p-1'>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
-    <table style={{
-      width: "100%"
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-        <tr style={{ textAlign: "left" }}>
+        <tr style={{ textAlign: 'left' }}>
           <th>name</th>
           <th>type</th>
           <th>default</th>
@@ -69,21 +84,17 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
-export const Select = () => <InputSelect
-  assistText={text('assist text', '')}
-  label={text('label', '')}
-  current={select('current', [
-    '',
-    'option 1',
-    'option 2'
-  ])}
-  disabled={boolean('disabled', false)}
-  onSelected={action('selected')}
-  options={
-    [
+export const Select = () => (
+  <InputSelect
+    assistText={text('assist text', '')}
+    label={text('label', '')}
+    current={select('current', ['', 'option 1', 'option 2'])}
+    disabled={boolean('disabled', false)}
+    onSelected={action('selected')}
+    options={[
       {
         prefix: text('prefix', 'line-user', 'placeholder'),
         text: text('text', 'placeholder', 'placeholder'),
@@ -95,8 +106,9 @@ export const Select = () => <InputSelect
         text: text('text', 'option 1', 'option 1'),
         value: 'option 1'
       }
-    ]
-  } />
+    ]}
+  />
+)
 
 export default {
   title: 'InputSelect',
@@ -108,13 +120,13 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
+          padding: '0px 40px 0px'
         }
       },
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
+        import 'design-system-coopeuch/dist/index.css';
         ~~~
 
         the basicest component form is: 
@@ -124,8 +136,7 @@ export default {
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
-      `,
-    },
-
-  },
-};
+      `
+    }
+  }
+}

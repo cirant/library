@@ -8,11 +8,17 @@ import {
   CardSwitch,
   CardCheckbox,
   CardDropdown,
+  CardBenefits,
   CardActions,
   CardContent,
   CardHeader,
   CardImage,
+  CardSearch,
   Checkbox,
+  ColumnCard,
+  ColumnCardContent,
+  ColumnCardContentActions,
+  ColumnCardImage,
   Grid,
   Header,
   HeaderItem,
@@ -25,10 +31,13 @@ import {
   InputRange,
   InputSecurity,
   InputSelect,
-  InputChip,
   InputDate,
+  InputChip,
+  InputCoordinate,
   Stamp,
+  EmptyState,
   ContentAction,
+  SearchResult,
   ProgressBar,
   Radio,
   Loading,
@@ -39,6 +48,7 @@ import {
   Tooltip,
   Voucher,
   Message,
+  ModalInfo,
   Bullets,
   VoucherResumeContainer,
   VoucherTitle,
@@ -47,10 +57,10 @@ import {
   VoucherColumnData,
   VoucherFooter,
   NotificationBadge
-} from 'library-1';
-import 'library-1/dist/index.css';
-import 'library-1/dist/css/custom.css';
-import 'library-1/dist/css/date.css';
+} from 'design-system-coopeuch';
+import 'design-system-coopeuch/dist/index.css';
+import 'design-system-coopeuch/dist/css/custom.css';
+import 'design-system-coopeuch/dist/css/date.css';
 
 const App = () => {
   const [checked, setCheckbox] = useState(false);
@@ -65,8 +75,10 @@ const App = () => {
   const [inputSecurity, setInputSecurity] = useState('');
   const [showSecurity, setInputShowSecurity] = useState(true);
 
-  const [startDate, setStartDate] = useState(new Date(2020,6,20));
-  const [endDate, setEndDate] = useState(new Date(2020,6,22));
+  const [inputCoordinate, setInputCoordinate] = useState('');
+
+  const [startDate, setStartDate] = useState(new Date(2020, 6, 20));
+  const [endDate, setEndDate] = useState(new Date(2020, 6, 22));
   const content = (<div><Button variant="text" color="primary" suffix="arrow-right" > lorem </Button></div>);
 
   const handleCheckbox = (value) => {
@@ -203,6 +215,57 @@ const App = () => {
       <Card onClick={() => alert('clicked')} > click me </Card>
       <Card border > hola mundo </Card>
     </div>
+    <h1 className="mb-4">Card Benefits</h1>
+
+    <div className="row mb-4">
+      <div className="col">
+        <CardBenefits
+          logo={<Icon name="home" size={3} />}
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          topText="Desde $50.500"
+          title="Bono de educacion superior"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+    </div>
+
+    <div className="row mb-4">
+      <div className="col">
+        <CardBenefits
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          title="Bono de educacion superior"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+      <div className="col">
+        <CardBenefits
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+    </div>
+
+    <div className="row mb-4">
+      <div className="col-4">
+        <CardBenefits
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          title="Bono de educacion superior"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+      <div className="col-4">
+        <CardBenefits
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+      <div className="col-4">
+        <CardBenefits
+          logo={<Icon name="cloud" size={3} />}
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+    </div>
 
     <h1 className="mb-4">Card Dropdown</h1>
 
@@ -320,6 +383,59 @@ const App = () => {
       </div>
     </div>
 
+    <h1 className="mb-4">Card search</h1>
+
+    <div className="container">
+      <div className="row">
+        <div className="col col-md-7">
+          <CardSearch
+            onClick={() => alert('card clicked')}
+            title='Titulo de elemento de busqueda'
+            routes={['route 1', 'route 2', 'route 3']}
+            description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+          />
+        </div>
+      </div>
+    </div>
+
+    <h1 className=" my-4">search result</h1>
+
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <SearchResult target="nombre de la busqueda">
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+          </SearchResult>
+        </div>
+      </div>
+    </div>
+
+
+
+
     <h1 className="mb-4">separator</h1>
 
     <div className="d-flex row">
@@ -354,8 +470,29 @@ const App = () => {
     <div className="bg-primary">
       <div className="container">
         <Header
+          userData={{
+            name: 'hola mundo',
+            menu: [
+              {
+                text: 'alguna accion',
+                action: () => alert('hola mundo')
+              },
+              {
+                text: 'alguna accion 2',
+                action: () => alert('hola mundo')
+              }
+            ]
+          }}
           logo={<Logo className="w-100" />}
-          logOut={<HeaderItem icon="line-logout"> label </HeaderItem>}
+          mobile={
+            {
+              onClickBack: () => alert('hola mundo'),
+              burgerClick: () => alert('burger click'),
+              section: 'Text label',
+              leftElement: <Icon name="line-notification" onClick={() => alert('hoooo')} />
+            }
+          }
+          logOut={<HeaderItem icon="line-logout" bold> label </HeaderItem>}
         >
           <HeaderItem icon="home"> label</HeaderItem>
           <HeaderItem icon="line-cloud"> label</HeaderItem>
@@ -441,6 +578,22 @@ const App = () => {
         variant='textarea'
         onChange={({ target: { value } }) => setInputText(value)}
       />
+    </div>
+
+
+
+    <div className="container my-4">
+      <h1 className="mb-4">Empty state</h1>
+      <div className="d-flex justify-content-center">
+        <EmptyState
+          title='Type something'
+          description='Vestibulum interdum odio et urna sollicitudin tristique.'
+          button={{
+            text: 'label botton',
+            action: () => alert('hola')
+          }}
+        />
+      </div>
     </div>
 
     <div className="container my-4">
@@ -553,31 +706,31 @@ const App = () => {
     </div>
 
     <div className="container my-4">
-        <h1 className="mb-4">input range</h1>
+      <h1 className="mb-4">input range</h1>
 
-          <InputRange
-            placeholder="Text Placeholder"
-            label="Text Label"
-            min="200"
-            max="800"
-            step="1"
-            onChange={(e) => setRange(Number(e.target.value))}
-            value={range}
-          />
+      <InputRange
+        placeholder="Text Placeholder"
+        label="Text Label"
+        min="200"
+        max="800"
+        step="1"
+        onChange={(e) => setRange(Number(e.target.value))}
+        value={range}
+      />
     </div>
 
     <div className="container my-4">
       <h1 className="mb-4">input date</h1>
 
       <InputDate
-          label="Label text"
-          startDate={startDate}
-          endDate={endDate}
-          onStartDateChange={setStartDate}
-          onEndDateChange={setEndDate}
-          format="dd/MM/yyyy"
-          minimumDate='2020/6/1'
-          maximumDate='2020/6/31'
+        label="Label text"
+        startDate={startDate}
+        endDate={endDate}
+        onStartDateChange={setStartDate}
+        onEndDateChange={setEndDate}
+        format="dd/MM/yyyy"
+        minimumDate='2020/6/1'
+        maximumDate='2020/6/31'
       />
     </div>
 
@@ -587,6 +740,52 @@ const App = () => {
       <div className="d-flex flex-column">
         <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} />
         <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
+      </div>
+    </div>
+
+    <div className="container my-4">
+      <h1 className="mb-4">input coordinate</h1>
+      <div className="d-flex">
+          <div className="col-lg-4 col-md-9 col-sm-4">
+            <InputCoordinate
+              assistText={[
+                  {
+                    type: 'assist', text: 'Texto de asistencia'
+                  },
+                  {
+                    type: 'success', text: 'Texto éxito'
+                  },
+                  {
+                    type: 'error', text: 'Texto error'
+                  }
+              ]}
+            >
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'}
+                label={'A1'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'}
+                label={'B2'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'}
+                label={'C3'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+            </InputCoordinate>
+          </div>
       </div>
     </div>
 
@@ -764,8 +963,11 @@ const App = () => {
       <h1 className="mb-4">Messages</h1>
 
       <div className="d-flex flex-column">
-        <Message type="success" title="this is a success message" action={<Button variant="text" suffix="arrow-right" > ir a action </Button>} />
-        <Message type="error" title="this is an error message" description="bajada" />
+        <Message type="success" title="this is a success message"
+          description="mmm el bootstrap base que integraron me imagino que era el 4, si es así corroborar si seguiremos teniendo acceso a las clases de bootstrap, por el tema de los display que facilitan harto, si no, crear esas clases para que todos tengamos una forma de tratar a los componentes de manera similar.
+          Lo otro es como consejo, que se contemple bien la grilla para el diseño de las vistas, para que cuadren los elementos, el resto creo que no. Esos elementos van para la construcción del nuevo sitio asumo. Yo no he mirado como se pueden integrar React en AngularJS"
+          action={<Button variant="text" suffix="arrow-right" onClick={() => alert('cerrar')} > ir a action </Button>} />
+        <Message type="error" title="this is an error message" description="bajada" closer={() => alert('cerrar')} />
         <Message type="warning" title="this is a warning message" />
         <Message type="info" title="this is an info message" action={<Button variant="text" > ir a action </Button>} />
       </div>
@@ -840,7 +1042,7 @@ const App = () => {
             interactive
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="top">
+            placement="right">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
@@ -848,7 +1050,7 @@ const App = () => {
           <Tooltip
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
-            placement="right">
+            placement="left">
             <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
@@ -1247,11 +1449,13 @@ const App = () => {
             buttons={[
               {
                 label:'Label text link',
-                prefix:'arrow-left'
+                prefix:'arrow-left',
+                onClick: ()=> console.log('click')
               },
               {
                 label:'Label text link',
-              }
+                onClick: ()=> console.log('click')
+              },
             ]}
             cardType="debit">
             <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
@@ -1296,10 +1500,12 @@ const App = () => {
             buttons={[
               {
                 label:'Label text link',
-                prefix:'arrow-left'
+                prefix:'arrow-left',
+                onClick: ()=> console.log('click')
               },
               {
                 label:'Label text link',
+                onClick: ()=> console.log('click')
               }
             ]}
             cardNumber={"N°**** ***2345"} >
@@ -1309,6 +1515,93 @@ const App = () => {
       </div>
     </div>
 
+    <br />
+    <br />
+
+
+    <div className="container">
+      <h1 className="mb-4">Column Card col-lg-6</h1>
+      <div className="row">
+        <div className="col-lg-8 col-md-12 col-sm-6">
+          <ColumnCard>
+            <ColumnCardContent title='Type something'
+              content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.'>
+              <ColumnCardContentActions buttons={[
+                {
+                  color: 'primary',
+                  label: 'Button',
+                  onClick: () => {
+                    console.log('test')
+                  }
+                },
+                {
+                  color: 'primary',
+                  label: 'Button',
+                  onClick: () => {
+                    console.log('test')
+                  }
+                }
+              ]
+              }></ColumnCardContentActions>
+            </ColumnCardContent>
+            <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
+          </ColumnCard>
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+
+    <div className="container pt-5">
+      <h1 className="mb-4">Modal info</h1>
+      <div className="row">
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            title="Titulo de mensaje"
+            buttons={[
+              <Button variant="outline" color="primary" > label button </Button>,
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            title="Titulo de mensaje"
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <ModalInfo
+            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button variant="outline" color="primary" > label button </Button>,
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+        <div className="col">
+          <ModalInfo
+            title="Titulo de mensaje"
+            description="Type Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus magna, egestas sit amet lorem egestas."
+            buttons={[
+              <Button color="primary" > label button </Button>
+            ]}
+          />
+        </div>
+      </div>
+    </div>
+
+
+    <br />
+    <br />
     <br />
     <br />
 

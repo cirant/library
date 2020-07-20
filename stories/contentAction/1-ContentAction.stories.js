@@ -19,23 +19,30 @@ const propsDescriptions = {
   },
   disabled: {
     propType: 'bool',
-    description: 'disabled the action click and change the color of the component'
+    description:
+      'disabled the action click and change the color of the component'
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td>{property}
-            {required && <Red/>}
+          <td>
+            {property}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
@@ -46,16 +53,19 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-      <tr style={{ textAlign: 'left' }}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
@@ -64,13 +74,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
 export const ContentActionComponent = () => (
   <ContentAction
-    label={text('label','Imprimir')}
+    label={text('label', 'Imprimir')}
     onClick={action('clicked')}
-    icon={select('selected', list,'line-print')}
-    disabled={boolean('disabled', false)}>
-  </ContentAction>
+    icon={select('selected', list, 'line-print')}
+    disabled={boolean('disabled', false)}
+  />
 )
-
 
 export default {
   title: 'Content Action',
@@ -89,8 +98,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { ContentAction } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { ContentAction }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
@@ -106,6 +115,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

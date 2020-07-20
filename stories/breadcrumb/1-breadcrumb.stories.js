@@ -1,20 +1,25 @@
-import React from 'react';
-import { boolean, select, text } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
-import { BreadCrumb } from '../../dist';
-
+import React from 'react'
+import { withInfo } from '@storybook/addon-info'
+import { BreadCrumb } from '../../dist'
 
 const propsDescriptions = {
   paths: {
     propType: 'array',
     description: 'An array of object to create the component'
-  },
+  }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }))
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
@@ -22,7 +27,8 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
 
       return (
         <tr key={property}>
-          <td>{property}
+          <td>
+            {property}
             {required && <Red />}
           </td>
           <td>{propType}</td>
@@ -34,9 +40,12 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 
   return (
-    <table style={{
-      width: '100%'
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
         <tr style={{ textAlign: 'left' }}>
           <th>name</th>
@@ -50,9 +59,7 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
   )
 }
 
-const colors = ['primary', 'secondary']
-
-export const BulletList = () => (
+export const breadCrumb = () => (
   <BreadCrumb
     paths={[
       {
@@ -63,7 +70,8 @@ export const BulletList = () => (
         name: 'ruta 2',
         route: 'https://www.google.com'
       }
-    ]} />
+    ]}
+  />
 )
 
 export default {
@@ -80,14 +88,14 @@ export default {
           flexDirection: 'column',
           alignItems: 'start',
           alignSelf: 'start',
-          padding: '0px 40px 0px',
+          padding: '0px 40px 0px'
         }
       },
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { BreadCrumb } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { BreadCrumb } from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
@@ -119,6 +127,5 @@ export default {
         change the knobs properties and you'll be able to watch its component structure below at Story Source
       `
     }
-
   }
 }

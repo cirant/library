@@ -3,23 +3,27 @@ import styles from './_cardimage.scss'
 import PropTypes from 'prop-types'
 
 const CardImage = ({ imgUrl, alt, ...props }) => {
-
-  let cardImage = [styles.imgCard]
+  const cardImage = [styles.imgCard]
 
   return (
     <img
       {...props}
       src={imgUrl}
       className={cardImage.concat(props.className).join(' ')}
-      role="presentation"
+      role='presentation'
       alt={alt}
     />
   )
 }
 
+CardImage.defaultProps = {
+  imgUrl: '',
+  alt: ''
+}
+
 CardImage.propTypes = {
   imgUrl: PropTypes.string,
-  alt: PropTypes.string,
-};
+  alt: PropTypes.string
+}
 
 export default CardImage

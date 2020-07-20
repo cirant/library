@@ -1,11 +1,11 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs/react';
-import { boolean, text, select } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
-import { InputSecurity } from '../../dist';
-import '../codeStyles.css';
-import '../../dist/index.css';
+import React from 'react'
+import { action } from '@storybook/addon-actions'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { boolean, text, select } from '@storybook/addon-knobs'
+import { withInfo } from '@storybook/addon-info'
+import { InputSecurity } from '../../dist'
+import '../codeStyles.css'
+import '../../dist/index.css'
 
 const propsDescriptions = {
   label: {
@@ -14,7 +14,8 @@ const propsDescriptions = {
   },
   strength: {
     propType: 'string',
-    description: 'This will define bar value. it could be one of none,low,middle or high'
+    description:
+      'This will define bar value. it could be one of none,low,middle or high'
   },
   value: {
     propType: 'string',
@@ -34,33 +35,47 @@ const propsDescriptions = {
   }
 }
 
-const Red = props => <span style={{ color: 'red' }} {...props} >*</span>;
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
 const TableComponent = ({ propDefinitions, ...propsx }) => {
-  const propsMixeds = propDefinitions.map((el) => ({ ...el, ...propsDescriptions[el.property] }));
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
     ({ property, required, propType, defaultValue, description }) => {
-
       return (
         <tr key={property}>
-          <td className="p-1">{property}
+          <td className='p-1'>
+            {property}
             {required && <Red />}
           </td>
-          <td className="p-1" style={{ whiteSpace: "nowrap" }}>{propType}</td>
-          <td className="p-1">{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
-          <td className="p-1">{description}</td>
+          <td className='p-1' style={{ whiteSpace: 'nowrap' }}>
+            {propType}
+          </td>
+          <td className='p-1'>
+            {defaultValue !== undefined ? `${defaultValue}` : ' - '}
+          </td>
+          <td className='p-1'>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
-    <table style={{
-      width: "100%"
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-        <tr style={{ textAlign: "left" }}>
+        <tr style={{ textAlign: 'left' }}>
           <th>name</th>
           <th>type</th>
           <th>default</th>
@@ -69,20 +84,26 @@ const TableComponent = ({ propDefinitions, ...propsx }) => {
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
-
-export const inputSecurity = () => <InputSecurity
-  disabled={boolean('disabled', false, 'status')}
-  security={boolean('security', true, 'status')}
-  strength={select('strength', ['none', 'low', 'middle', 'high'], 'none', 'bar')}
-  value={text('value', '', 'text')}
-  onSecurityClick={action('onSecurityClick action')}
-  onChange={action('onChange action')}
-  placeholder={text('placeholder', 'password', 'text')}
-  label={text('label', '', 'text')}
-/>;
+export const inputSecurity = () => (
+  <InputSecurity
+    disabled={boolean('disabled', false, 'status')}
+    security={boolean('security', true, 'status')}
+    strength={select(
+      'strength',
+      ['none', 'low', 'middle', 'high'],
+      'none',
+      'bar'
+    )}
+    value={text('value', '', 'text')}
+    onSecurityClick={action('onSecurityClick action')}
+    onChange={action('onChange action')}
+    placeholder={text('placeholder', 'password', 'text')}
+    label={text('label', '', 'text')}
+  />
+)
 
 export default {
   title: 'InputSecurity',
@@ -94,14 +115,14 @@ export default {
       TableComponent,
       styles: {
         infoStory: {
-          padding: '0px 40px 0px',
+          padding: '0px 40px 0px'
         }
       },
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { InputSecurity } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { InputSecurity }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is: 
@@ -111,8 +132,7 @@ export default {
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
-      `,
-    },
-
-  },
-};
+      `
+    }
+  }
+}

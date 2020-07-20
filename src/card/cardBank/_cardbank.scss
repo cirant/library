@@ -32,6 +32,7 @@ $base: 2px;
     margin-top:(nth(nth($spacers, 5), 2));;
     border-top: 1px solid $gray-200;
     display: flex;
+    flex-flow: wrap;
     justify-content: center;
     margin-bottom: -#{(nth(nth($spacers, 5), 2))};
     margin-left:-#{(nth(nth($spacers, 5), 2))};

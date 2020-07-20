@@ -1,11 +1,11 @@
-import React from 'react';
-import {withKnobs} from '@storybook/addon-knobs/react';
-import {select, text} from '@storybook/addon-knobs';
-import {withInfo} from '@storybook/addon-info';
-import '../codeStyles.css';
-import '../../dist/index.css';
-import {TitleSection} from '../../dist';
-import list from "../icons/list";
+import React from 'react'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { select, text } from '@storybook/addon-knobs'
+import { withInfo } from '@storybook/addon-info'
+import '../codeStyles.css'
+import '../../dist/index.css'
+import { TitleSection } from '../../dist'
+import list from '../icons/list'
 
 const propsDescriptions = {
   label: {
@@ -15,54 +15,63 @@ const propsDescriptions = {
   prefix: {
     propType: 'string',
     description: 'Add an icon to the title section'
-  },
+  }
 }
 
-const Red = props => <span style={{color: 'red'}} {...props} >*</span>;
+const Red = (props) => (
+  <span style={{ color: 'red' }} {...props}>
+    *
+  </span>
+)
 
-const TableComponent = ({propDefinitions, ...propsx}) => {
-
-  const propsMixeds = propDefinitions.map((el) => ({...el, ...propsDescriptions[el.property]}));
+const TableComponent = ({ propDefinitions, ...propsx }) => {
+  const propsMixeds = propDefinitions.map((el) => ({
+    ...el,
+    ...propsDescriptions[el.property]
+  }))
 
   const props = propsMixeds.map(
-    ({property, required, propType, defaultValue, description}) => {
-
+    ({ property, required, propType, defaultValue, description }) => {
       return (
         <tr key={property}>
-          <td>{property}
-            {required && <Red/>}
+          <td>
+            {property}
+            {required && <Red />}
           </td>
           <td>{propType}</td>
           <td>{defaultValue !== undefined ? `${defaultValue}` : ' - '}</td>
           <td>{description}</td>
         </tr>
-      );
+      )
     }
-  );
+  )
 
   return (
-    <table style={{
-      width: "100%"
-    }} {...propsx} >
+    <table
+      style={{
+        width: '100%'
+      }}
+      {...propsx}
+    >
       <thead>
-      <tr style={{textAlign: "left"}}>
-        <th>name</th>
-        <th>type</th>
-        <th>default</th>
-        <th>description</th>
-      </tr>
+        <tr style={{ textAlign: 'left' }}>
+          <th>name</th>
+          <th>type</th>
+          <th>default</th>
+          <th>description</th>
+        </tr>
       </thead>
       <tbody>{props}</tbody>
     </table>
-  );
-};
+  )
+}
 
-export const TitleSectionComponent = () =>
-    <TitleSection
-      label={text('label', 'Title Section')}
-      prefix={select('selected', list)}>
-    </TitleSection>;
-
+export const TitleSectionComponent = () => (
+  <TitleSection
+    label={text('label', 'Title Section')}
+    prefix={select('selected', list)}
+  />
+)
 
 export default {
   title: 'Title Section',
@@ -81,8 +90,8 @@ export default {
       text: `
         include into your project to be able to use the component styles
         ~~~js
-        import 'library/dist/index.css';
-        import { Title } from 'library';
+        import 'design-system-coopeuch/dist/index.css';
+        import { Title }from 'design-system-coopeuch';
         ~~~
 
         the basicest component form is:
@@ -92,8 +101,7 @@ export default {
         ~~~
 
         change the knobs properties and you'll be able to watch its component structure below at Story Source
-      `,
-    },
-
-  },
-};
+      `
+    }
+  }
+}
