@@ -5,6 +5,7 @@ import {
   ActionLink,
   BreadCrumb,
   Card,
+  CardBenefits,
   CardBank,
   CardSwitch,
   CardCheckbox,
@@ -31,6 +32,7 @@ import {
   InputSearch,
   Logo,
   InputPhone,
+  InputCounter,
   InputRange,
   InputSecurity,
   InputSelect,
@@ -529,7 +531,7 @@ const App = () => {
             label={'Texto 1'}
         />
     </div>
-    
+
     <div className="bg-primary">
       <div className="container my-4">
         <PublicFooter logo={<Logo className="w-100" />}>
@@ -557,7 +559,7 @@ const App = () => {
               ]}>Crédito Hipotecario</PublicFooterItem>
               <PublicFooterItem link={'http://www.coopeuch.cl'}>Tarjeta Mastercard</PublicFooterItem>
               <PublicFooterItem link={'http://www.coopeuch.cl'}>Cuota de Participación</PublicFooterItem>
-           </PublicFooterColumn>   
+           </PublicFooterColumn>
            <PublicFooterColumn title={'Beneficios'}>
               <PublicFooterItem link={'http://www.coopeuch.cl'}>Becas Fundación Coopeuch</PublicFooterItem>
               <PublicFooterItem link={'http://www.coopeuch.cl'}>Bonos de Estudio</PublicFooterItem>
