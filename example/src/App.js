@@ -1,484 +1,468 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 import {
+  Button,
   ActionLink,
   BreadCrumb,
-  Bullets,
-  Button,
   Card,
-  CardActions,
   CardBenefits,
+  CardSwitch,
   CardCheckbox,
+  CardActions,
   CardContent,
   CardDropdown,
   CardHeader,
   CardImage,
   CardSearch,
-  CardSwitch,
   Checkbox,
   ColumnCard,
   ColumnCardContent,
   ColumnCardContentActions,
   ColumnCardImage,
-  ContentAction,
-  EmptyState,
   Grid,
   Header,
   HeaderItem,
   Icon,
   Input,
-  InputChip,
-  InputCoordinate,
+  InputSearch,
+  Logo,
   InputCounter,
-  InputDate,
   InputPhone,
   InputRange,
-  InputSearch,
   InputSecurity,
   InputSelect,
-  KebabMenu,
-  Loading,
-  Logo,
-  Message,
-  ModalInfo,
-  NotificationBadge,
+  InputDate,
+  InputChip,
+  InputCoordinate,
+  Stamp,
+  EmptyState,
+  ContentAction,
+  SearchResult,
   ProgressBar,
   Radio,
-  SearchResult,
+  Loading,
   Separator,
   Sidebar,
-  Stamp,
   Switch,
   TitleSection,
   Tooltip,
   Voucher,
-  VoucherColumnData,
-  VoucherData,
-  VoucherFooter,
+  Message,
+  ModalInfo,
+  Bullets,
   VoucherResumeContainer,
-  VoucherTitle
-} from 'design-system-coopeuch'
-import 'design-system-coopeuch/dist/index.css'
-import 'design-system-coopeuch/dist/css/custom.css'
-import 'design-system-coopeuch/dist/css/date.css'
+  VoucherTitle,
+  VoucherData,
+  KebabMenu,
+  VoucherColumnData,
+  VoucherFooter,
+  NotificationBadge,
+  DRedCard,
+  DBlackCard,
+  MRedCard,
+  MBlackCard,
+  PlasticCard
+} from 'design-system-coopeuch';
+import 'design-system-coopeuch/dist/index.css';
+import 'design-system-coopeuch/dist/css/custom.css';
+import 'design-system-coopeuch/dist/css/date.css';
 
 const App = () => {
-  const [checked, setCheckbox] = useState(false)
-  const [secondChecked, setSecondCheckbox] = useState(false)
-  const [switchStatus, setSwitchStatus] = useState(false)
-  const [inputText, setInputText] = useState('')
-  const [inputPhoneCode, setInputPhoneCode] = useState(56)
-  const [inputPhone, setInputPhone] = useState('')
-  const [range, setRange] = useState(200)
-  const [inputCounter, setInputCounter] = useState(1)
+  const [checked, setCheckbox] = useState(false);
+  const [secondChecked, setSecondCheckbox] = useState(false);
+  const [switchStatus, setSwitchStatus] = useState(false);
+  const [inputText, setInputText] = useState('');
+  const [inputPhoneCode, setInputPhoneCode] = useState(56);
+  const [inputPhone, setInputPhone] = useState('');
+  const [range, setRange] = useState(200);
+  const [inputCounter, setInputCounter] = useState(1);
 
-  const [inputSecurity, setInputSecurity] = useState('')
-  const [showSecurity, setInputShowSecurity] = useState(true)
+  const [inputSecurity, setInputSecurity] = useState('');
+  const [showSecurity, setInputShowSecurity] = useState(true);
 
-  const [inputCoordinate, setInputCoordinate] = useState('')
+  const [inputCoordinate, setInputCoordinate] = useState('');
 
-  const [startDate, setStartDate] = useState(new Date(2020, 6, 20))
-  const [endDate, setEndDate] = useState(new Date(2020, 6, 22))
-  const content = (<div><Button variant="text" color="primary" suffix="arrow-right"> lorem </Button></div>)
+  const [startDate, setStartDate] = useState(new Date(2020, 6, 20));
+  const [endDate, setEndDate] = useState(new Date(2020, 6, 22));
+  const content = (<div><Button variant="text" color="primary" suffix="arrow-right" > lorem </Button></div>);
 
   const handleCheckbox = (value) => {
     setCheckbox(value)
   }
 
-  const inputSuffix = <Icon onClick={() => alert('hola')} name="eye-open"/>
-  const inputPrefix = <Icon onClick={() => alert('hola')} size={1} name="line-user"/>
-  const inputPrefixText = '$'
+  const inputSuffix = <Icon onClick={() => alert('hola')} name="eye-open" />
+  const inputPrefix = <Icon onClick={() => alert('hola')} size={1} name="line-user" />
+  const inputPrefixText = '$';
 
-  return <>
-    <div className="container p-lg-4">
+  return <> <div className="container p-lg-4">
 
-      <h1 className="mb-4">Fonts</h1>
+    <h1 className="mb-4">Fonts</h1>
 
-      <h1> Sed ut perspiciatis unde omnis iste natus error </h1>
-      <h2> Sed ut perspiciatis unde omnis iste natus error </h2>
-      <h3> Sed ut perspiciatis unde omnis iste natus error </h3>
-      <h4> Sed ut perspiciatis unde omnis iste natus error </h4>
-      <h5> Sed ut perspiciatis unde omnis iste natus error </h5>
-      <h6> Sed ut perspiciatis unde omnis iste natus error </h6>
+    <h1> Sed ut perspiciatis unde omnis iste natus error </h1>
+    <h2> Sed ut perspiciatis unde omnis iste natus error </h2>
+    <h3> Sed ut perspiciatis unde omnis iste natus error </h3>
+    <h4> Sed ut perspiciatis unde omnis iste natus error </h4>
+    <h5> Sed ut perspiciatis unde omnis iste natus error </h5>
+    <h6> Sed ut perspiciatis unde omnis iste natus error </h6>
 
-      <h1 className="mb-4">Margins</h1>
+    <h1 className="mb-4">Margins</h1>
 
-      <div className="d-flex mb-4">
-        <div className="d-inline border p-3 ml-0"></div>
-        <div className="d-inline border p-3 ml-1"></div>
-        <div className="d-inline border p-3 ml-2"></div>
-        <div className="d-inline border p-3 ml-3"></div>
-        <div className="d-inline border p-3 ml-4"></div>
-        <div className="d-inline border p-3 ml-5"></div>
-        <div className="d-inline border p-3 ml-6"></div>
-        <div className="d-inline border p-3 ml-7"></div>
+    <div className="d-flex mb-4">
+      <div className="d-inline border p-3 ml-0"> </div>
+      <div className="d-inline border p-3 ml-1"> </div>
+      <div className="d-inline border p-3 ml-2"> </div>
+      <div className="d-inline border p-3 ml-3"> </div>
+      <div className="d-inline border p-3 ml-4"> </div>
+      <div className="d-inline border p-3 ml-5"> </div>
+      <div className="d-inline border p-3 ml-6"> </div>
+      <div className="d-inline border p-3 ml-7"> </div>
+    </div>
+
+    <h1 className="mb-4">Paddings</h1>
+
+    <div className="d-flex flex-column mb-4">
+      <div className="d-block border pl-0">text</div>
+      <div className="d-block border pl-1">text</div>
+      <div className="d-block border pl-2">text</div>
+      <div className="d-block border pl-3">text</div>
+      <div className="d-block border pl-4">text</div>
+      <div className="d-block border pl-5">text</div>
+      <div className="d-block border pl-6">text</div>
+      <div className="d-block border pl-7">text</div>
+    </div>
+
+    <h1 className="mb-4">Icons</h1>
+
+    <div className="d-flex align-items-baseline flex-wrap">
+      <Icon className="p-4" name="flag" size="1" />
+      <Icon className="p-4" name="flag" size="2" />
+      <Icon className="p-4" name="flag" size="3" />
+      <Icon className="p-4" name="flag" size="4" />
+      <Icon className="p-4" name="flag" size="5" />
+      <Icon className="p-4" name="flag" size="6" />
+      <Icon className="p-4" name="flag" size="7" />
+      <Icon className="p-4" name="flag" size="8" />
+    </div>
+    <div className="d-flex align-items-baseline flex-wrap">
+      <Icon className="p-4" name="line-flag" />
+      <Icon className="p-4" name="line-flag" size="2" />
+      <Icon className="p-4" name="line-flag" size="3" />
+      <Icon className="p-4" name="line-flag" size="4" />
+      <Icon className="p-4" name="line-flag" size="5" />
+      <Icon className="p-4" name="line-flag" size="6" />
+      <Icon className="p-4" name="line-flag" size="7" />
+      <Icon className="p-4" name="line-flag" size="8" />
+    </div>
+
+    <h1 className="mt-5">Buttons</h1>
+
+    <Grid row className="align-items-center text-center mb-4 flex-wrap d-none d-sm-flex">
+      <Grid col={12} md={1} lg={1} xl={4} />
+      <Grid className="p-4" col={6} md={2} lg={2} xl={2}> normal </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> icon left </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> icon right </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> disabled </Grid>
+    </Grid>
+
+    <Grid row className="align-items-center text-center mb-4">
+      <Grid col={12} md={1} lg={1} xl={4}> Primary </Grid>
+      <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button color="primary" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="primary" prefix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="primary" suffix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="primary" prefix="write" disabled > lorem </Button> </Grid>
+    </Grid>
+
+    <Grid row className="align-items-center text-center mb-4">
+      <Grid col={12} md={1} lg={1} xl={4}> Primary outline </Grid>
+      <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button variant="outline" color="primary" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="primary" prefix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="primary" suffix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="primary" prefix="write" disabled > lorem </Button> </Grid>
+    </Grid>
+
+    <Grid row className="align-items-center text-center mb-4">
+      <Grid col={12} md={1} lg={1} xl={4}> Primary text </Grid>
+      <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button variant="text" color="primary" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="primary" prefix="arrow-left" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="primary" suffix="arrow-right" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="primary" suffix="arrow-right" disabled > lorem </Button> </Grid>
+    </Grid>
+
+    <Grid row className="align-items-center text-center mb-4">
+      <Grid col={12} md={1} lg={1} xl={4}> Secondary </Grid>
+      <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button color="secondary" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="secondary" prefix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="secondary" suffix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="secondary" prefix="write" disabled > lorem </Button> </Grid>
+    </Grid>
+
+    <Grid row className="align-items-center text-center mb-4">
+      <Grid col={12} md={1} lg={1} xl={4}> Secondary outline </Grid>
+      <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button variant="outline" color="secondary" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="secondary" prefix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="secondary" suffix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="secondary" prefix="write" disabled > lorem </Button> </Grid>
+    </Grid>
+
+    <Grid row className="align-items-center text-center mb-4">
+      <Grid col={12} md={1} lg={1} xl={4}> Secondary text </Grid>
+      <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button variant="text" color="secondary" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="secondary" prefix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="secondary" suffix="write" > lorem </Button> </Grid>
+      <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="secondary" prefix="write" disabled > lorem </Button> </Grid>
+    </Grid>
+
+    <h1 className="mb-4">Card</h1>
+
+    <div className="d-flex flex-wrap mb-4">
+      <Card> hola mundo </Card>
+      <Card selected> selected </Card>
+      <Card onClick={() => alert('clicked')} > click me </Card>
+      <Card border > hola mundo </Card>
+    </div>
+    <h1 className="mb-4">Card Benefits</h1>
+
+    <div className="row mb-4">
+      <div className="col">
+        <CardBenefits
+          logo={<Icon name="home" size={3} />}
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          topText="Desde $50.500"
+          title="Bono de educacion superior"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
       </div>
+    </div>
 
-      <h1 className="mb-4">Paddings</h1>
-
-      <div className="d-flex flex-column mb-4">
-        <div className="d-block border pl-0">text</div>
-        <div className="d-block border pl-1">text</div>
-        <div className="d-block border pl-2">text</div>
-        <div className="d-block border pl-3">text</div>
-        <div className="d-block border pl-4">text</div>
-        <div className="d-block border pl-5">text</div>
-        <div className="d-block border pl-6">text</div>
-        <div className="d-block border pl-7">text</div>
+    <div className="row mb-4">
+      <div className="col">
+        <CardBenefits
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          title="Bono de educacion superior"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
       </div>
-
-      <h1 className="mb-4">Icons</h1>
-
-      <div className="d-flex align-items-baseline flex-wrap">
-        <Icon className="p-4" name="flag" size="1"/>
-        <Icon className="p-4" name="flag" size="2"/>
-        <Icon className="p-4" name="flag" size="3"/>
-        <Icon className="p-4" name="flag" size="4"/>
-        <Icon className="p-4" name="flag" size="5"/>
-        <Icon className="p-4" name="flag" size="6"/>
-        <Icon className="p-4" name="flag" size="7"/>
-        <Icon className="p-4" name="flag" size="8"/>
+      <div className="col">
+        <CardBenefits
+          description="impulsamos una nueva etapa de crecimiento"
+        />
       </div>
-      <div className="d-flex align-items-baseline flex-wrap">
-        <Icon className="p-4" name="line-flag"/>
-        <Icon className="p-4" name="line-flag" size="2"/>
-        <Icon className="p-4" name="line-flag" size="3"/>
-        <Icon className="p-4" name="line-flag" size="4"/>
-        <Icon className="p-4" name="line-flag" size="5"/>
-        <Icon className="p-4" name="line-flag" size="6"/>
-        <Icon className="p-4" name="line-flag" size="7"/>
-        <Icon className="p-4" name="line-flag" size="8"/>
+    </div>
+
+    <div className="row mb-4">
+      <div className="col-4">
+        <CardBenefits
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          title="Bono de educacion superior"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
       </div>
-
-      <h1 className="mt-5">Buttons</h1>
-
-      <Grid row className="align-items-center text-center mb-4 flex-wrap d-none d-sm-flex">
-        <Grid col={12} md={1} lg={1} xl={4}/>
-        <Grid className="p-4" col={6} md={2} lg={2} xl={2}> normal </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> icon left </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> icon right </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> disabled </Grid>
-      </Grid>
-
-      <Grid row className="align-items-center text-center mb-4">
-        <Grid col={12} md={1} lg={1} xl={4}> Primary </Grid>
-        <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button color="primary"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="primary" prefix="write"> lorem </Button>
-        </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="primary" suffix="write"> lorem </Button>
-        </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="primary" prefix="write"
-                                                                    disabled> lorem </Button> </Grid>
-      </Grid>
-
-      <Grid row className="align-items-center text-center mb-4">
-        <Grid col={12} md={1} lg={1} xl={4}> Primary outline </Grid>
-        <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button variant="outline" color="primary"> lorem </Button>
-        </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="primary"
-                                                                    prefix="write"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="primary"
-                                                                    suffix="write"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="primary" prefix="write"
-                                                                    disabled> lorem </Button> </Grid>
-      </Grid>
-
-      <Grid row className="align-items-center text-center mb-4">
-        <Grid col={12} md={1} lg={1} xl={4}> Primary text </Grid>
-        <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button variant="text" color="primary"> lorem </Button>
-        </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="primary"
-                                                                    prefix="arrow-left"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="primary"
-                                                                    suffix="arrow-right"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="primary" suffix="arrow-right"
-                                                                    disabled> lorem </Button> </Grid>
-      </Grid>
-
-      <Grid row className="align-items-center text-center mb-4">
-        <Grid col={12} md={1} lg={1} xl={4}> Secondary </Grid>
-        <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button color="secondary"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="secondary" prefix="write"> lorem </Button>
-        </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="secondary" suffix="write"> lorem </Button>
-        </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button color="secondary" prefix="write"
-                                                                    disabled> lorem </Button> </Grid>
-      </Grid>
-
-      <Grid row className="align-items-center text-center mb-4">
-        <Grid col={12} md={1} lg={1} xl={4}> Secondary outline </Grid>
-        <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button variant="outline" color="secondary"> lorem </Button>
-        </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="secondary"
-                                                                    prefix="write"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="secondary"
-                                                                    suffix="write"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="outline" color="secondary" prefix="write"
-                                                                    disabled> lorem </Button> </Grid>
-      </Grid>
-
-      <Grid row className="align-items-center text-center mb-4">
-        <Grid col={12} md={1} lg={1} xl={4}> Secondary text </Grid>
-        <Grid className="p-4" col={6} md={2} lg={2} xl={2}> <Button variant="text" color="secondary"> lorem </Button>
-        </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="secondary"
-                                                                    prefix="write"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="secondary"
-                                                                    suffix="write"> lorem </Button> </Grid>
-        <Grid className="p-4" col={6} md={3} lg={3} xl={2}> <Button variant="text" color="secondary" prefix="write"
-                                                                    disabled> lorem </Button> </Grid>
-      </Grid>
-
-      <h1 className="mb-4">Card</h1>
-
-      <div className="d-flex flex-wrap mb-4">
-        <Card> hola mundo </Card>
-        <Card selected> selected </Card>
-        <Card onClick={() => alert('clicked')}> click me </Card>
-        <Card border> hola mundo </Card>
+      <div className="col-4">
+        <CardBenefits
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
       </div>
-      <h1 className="mb-4">Card Benefits</h1>
+      <div className="col-4">
+        <CardBenefits
+          logo={<Icon name="cloud" size={3} />}
+          image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
+          description="impulsamos una nueva etapa de crecimiento"
+        />
+      </div>
+    </div>
 
-      <div className="row mb-4">
+    <h1 className="mb-4">Card Dropdown</h1>
+
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        opened={checked}
+        onClick={() => handleCheckbox(!checked)}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        border
+        opened={checked}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+        onClick={() => handleCheckbox(!checked)}
+      > Some content </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        disabled
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content disabled </CardDropdown>
+    </div>
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        selected
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content </CardDropdown>
+    </div>
+
+    <div className="d-flex flex-wrap mb-4">
+      <CardDropdown
+        selected
+        dark
+        opened={true}
+        title='Label'
+        description='Pago realizado: 30 oct 2020'
+      > Some content dark </CardDropdown>
+    </div>
+
+    <div className="my-4">
+      <h1 className="mb-4">Card Switch</h1>
+
+      <div className="d-flex flex-column">
+        <CardSwitch
+          status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)}
+          cardname='mastercard'
+          title='Label content'
+          footerTitle='Titular'
+          footerText='Nº **************2345'
+        />
+      </div>
+    </div>
+
+    <div className="my-4">
+      <h1 className="mb-4">Card Checkbox</h1>
+
+      <div className="d-flex flex-column">
+        <CardCheckbox
+          checked={checked} onChange={handleCheckbox}
+          cardname='mastercard'
+          title='Label content'
+          footerTitle='Titular'
+          footerText='Nº **************2345'
+        />
+      </div>
+    </div>
+
+    <h1 className="mb-4">Checkbox</h1>
+
+    <div className="d-flex">
+      <div className="d-flex p-4 flex-column align-items-center">
+        normal
+        <Checkbox checked={checked} onChange={handleCheckbox} />
+      </div>
+      <div className="d-flex p-4 flex-column align-items-center">
+        variant
+        <Checkbox onChange={(value) => setSecondCheckbox(value)} variant={checked} checked={secondChecked} />
+      </div>
+      <div className="d-flex p-4 flex-column align-items-center">
+        disabled
+        <Checkbox variant disabled={checked} />
+      </div>
+      <div className="d-flex p-4 flex-column align-items-center">
+        disabled full
+        <Checkbox variant={checked} checked={true} disabled />
+      </div>
+    </div>
+
+    <h1 className="mb-4">Radio</h1>
+
+    <div className="d-flex">
+      <div className="d-flex p-4 flex-column align-items-center">
+        normal
+        <Radio checked={checked} onChange={handleCheckbox} />
+      </div>
+      <div className="d-flex p-4 flex-column align-items-center">
+        variant
+        <Radio onChange={(value) => setSecondCheckbox(value)} checked={secondChecked} />
+      </div>
+      <div className="d-flex p-4 flex-column align-items-center">
+        disabled
+        <Radio checked={false} disabled onChange={handleCheckbox} />
+      </div>
+      <div className="d-flex p-4 flex-column align-items-center">
+        disabled full
+        <Radio checked={true} disabled={true} />
+      </div>
+    </div>
+
+    <h1 className="mb-4">Card search</h1>
+
+    <div className="container">
+      <div className="row">
+        <div className="col col-md-7">
+          <CardSearch
+            onClick={() => alert('card clicked')}
+            title='Titulo de elemento de busqueda'
+            routes={['route 1', 'route 2', 'route 3']}
+            description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+          />
+        </div>
+      </div>
+    </div>
+
+    <h1 className=" my-4">search result</h1>
+
+    <div className="container">
+      <div className="row">
         <div className="col">
-          <CardBenefits
-            logo={<Icon name="home" size={3}/>}
-            image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
-            topText="Desde $50.500"
-            title="Bono de educacion superior"
-            description="impulsamos una nueva etapa de crecimiento"
-          />
-        </div>
-      </div>
-
-      <div className="row mb-4">
-        <div className="col">
-          <CardBenefits
-            image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
-            title="Bono de educacion superior"
-            description="impulsamos una nueva etapa de crecimiento"
-          />
-        </div>
-        <div className="col">
-          <CardBenefits
-            description="impulsamos una nueva etapa de crecimiento"
-          />
-        </div>
-      </div>
-
-      <div className="row mb-4">
-        <div className="col-4">
-          <CardBenefits
-            image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
-            title="Bono de educacion superior"
-            description="impulsamos una nueva etapa de crecimiento"
-          />
-        </div>
-        <div className="col-4">
-          <CardBenefits
-            image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
-            description="impulsamos una nueva etapa de crecimiento"
-          />
-        </div>
-        <div className="col-4">
-          <CardBenefits
-            logo={<Icon name="cloud" size={3}/>}
-            image="https://www.bizneo.com/blog/wp-content/uploads/2019/12/global-benefits-810x455.jpg"
-            description="impulsamos una nueva etapa de crecimiento"
-          />
-        </div>
-      </div>
-
-      <h1 className="mb-4">Card Dropdown</h1>
-
-      <div className="d-flex flex-wrap mb-4">
-        <CardDropdown
-          opened={checked}
-          onClick={() => handleCheckbox(!checked)}
-          title='Label'
-          description='Pago realizado: 30 oct 2020'
-        > Some content </CardDropdown>
-      </div>
-      <div className="d-flex flex-wrap mb-4">
-        <CardDropdown
-          border
-          opened={checked}
-          title='Label'
-          description='Pago realizado: 30 oct 2020'
-          onClick={() => handleCheckbox(!checked)}
-        > Some content </CardDropdown>
-      </div>
-      <div className="d-flex flex-wrap mb-4">
-        <CardDropdown
-          disabled
-          opened={true}
-          title='Label'
-          description='Pago realizado: 30 oct 2020'
-        > Some content disabled </CardDropdown>
-      </div>
-      <div className="d-flex flex-wrap mb-4">
-        <CardDropdown
-          selected
-          opened={true}
-          title='Label'
-          description='Pago realizado: 30 oct 2020'
-        > Some content </CardDropdown>
-      </div>
-
-      <div className="d-flex flex-wrap mb-4">
-        <CardDropdown
-          selected
-          dark
-          opened={true}
-          title='Label'
-          description='Pago realizado: 30 oct 2020'
-        > Some content dark </CardDropdown>
-      </div>
-
-      <div className="my-4">
-        <h1 className="mb-4">Card Switch</h1>
-
-        <div className="d-flex flex-column">
-          <CardSwitch
-            status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)}
-            cardname='mastercard'
-            title='Label content'
-            footerTitle='Titular'
-            footerText='Nº **************2345'
-          />
-        </div>
-      </div>
-
-      <div className="my-4">
-        <h1 className="mb-4">Card Checkbox</h1>
-
-        <div className="d-flex flex-column">
-          <CardCheckbox
-            checked={checked} onChange={handleCheckbox}
-            cardname='mastercard'
-            title='Label content'
-            footerTitle='Titular'
-            footerText='Nº **************2345'
-          />
-        </div>
-      </div>
-
-      <h1 className="mb-4">Checkbox</h1>
-
-      <div className="d-flex">
-        <div className="d-flex p-4 flex-column align-items-center">
-          normal
-          <Checkbox checked={checked} onChange={handleCheckbox}/>
-        </div>
-        <div className="d-flex p-4 flex-column align-items-center">
-          variant
-          <Checkbox onChange={(value) => setSecondCheckbox(value)} variant={checked} checked={secondChecked}/>
-        </div>
-        <div className="d-flex p-4 flex-column align-items-center">
-          disabled
-          <Checkbox variant disabled={checked}/>
-        </div>
-        <div className="d-flex p-4 flex-column align-items-center">
-          disabled full
-          <Checkbox variant={checked} checked={true} disabled/>
-        </div>
-      </div>
-
-      <h1 className="mb-4">Radio</h1>
-
-      <div className="d-flex">
-        <div className="d-flex p-4 flex-column align-items-center">
-          normal
-          <Radio checked={checked} onChange={handleCheckbox}/>
-        </div>
-        <div className="d-flex p-4 flex-column align-items-center">
-          variant
-          <Radio onChange={(value) => setSecondCheckbox(value)} checked={secondChecked}/>
-        </div>
-        <div className="d-flex p-4 flex-column align-items-center">
-          disabled
-          <Radio checked={false} disabled onChange={handleCheckbox}/>
-        </div>
-        <div className="d-flex p-4 flex-column align-items-center">
-          disabled full
-          <Radio checked={true} disabled={true}/>
-        </div>
-      </div>
-
-      <h1 className="mb-4">Card search</h1>
-
-      <div className="container">
-        <div className="row">
-          <div className="col col-md-7">
+          <SearchResult target="nombre de la busqueda">
             <CardSearch
               onClick={() => alert('card clicked')}
               title='Titulo de elemento de busqueda'
               routes={['route 1', 'route 2', 'route 3']}
               description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
             />
-          </div>
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+            <CardSearch
+              onClick={() => alert('card clicked')}
+              title='Titulo de elemento de busqueda'
+              routes={['route 1', 'route 2', 'route 3']}
+              description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
+            />
+          </SearchResult>
         </div>
       </div>
-
-      <h1 className=" my-4">search result</h1>
-
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <SearchResult target="nombre de la busqueda">
-              <CardSearch
-                onClick={() => alert('card clicked')}
-                title='Titulo de elemento de busqueda'
-                routes={['route 1', 'route 2', 'route 3']}
-                description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
-              />
-              <CardSearch
-                onClick={() => alert('card clicked')}
-                title='Titulo de elemento de busqueda'
-                routes={['route 1', 'route 2', 'route 3']}
-                description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
-              />
-              <CardSearch
-                onClick={() => alert('card clicked')}
-                title='Titulo de elemento de busqueda'
-                routes={['route 1', 'route 2', 'route 3']}
-                description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
-              />
-              <CardSearch
-                onClick={() => alert('card clicked')}
-                title='Titulo de elemento de busqueda'
-                routes={['route 1', 'route 2', 'route 3']}
-                description='His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo.'
-              />
-            </SearchResult>
-          </div>
-        </div>
-      </div>
-
-
-      <h1 className="mb-4">separator</h1>
-
-      <div className="d-flex row">
-        <div className="d-inline-flex col justify-content-center" style={{ height: '200px' }}>
-          <Separator vertical/>
-        </div>
-        <div className="d-inline-flex col align-items-center">
-          <Separator/>
-        </div>
-      </div>
-
     </div>
 
+
+
+
+    <h1 className="mb-4">separator</h1>
+
+    <div className="d-flex row">
+      <div className="d-inline-flex col justify-content-center" style={{ height: '200px' }}>
+        <Separator vertical />
+      </div>
+      <div className="d-inline-flex col align-items-center">
+        <Separator />
+      </div>
+    </div>
+
+  </div>
+
     <div className="container">
-      <Grid row className="pb-6">
+      <Grid row className="pb-6" >
         {
           [1, 2, 3, 4, 5].map((val) => <Grid key={val} col>
             <div className={`elevation-${val}`}>{val}</div>
           </Grid>)
         }
       </Grid>
-      <Grid row className="pb-6">
+      <Grid row className="pb-6" >
         {
           [1, 2, 3, 4].map((val) => <Grid key={val} col>
             <div className={`elevation-element-${val}`}>{val}</div>
@@ -504,13 +488,13 @@ const App = () => {
               }
             ]
           }}
-          logo={<Logo className="w-100"/>}
+          logo={<Logo className="w-100" />}
           mobile={
             {
               onClickBack: () => alert('hola mundo'),
               burgerClick: () => alert('burger click'),
               section: 'Text label',
-              leftElement: <Icon name="line-notification" onClick={() => alert('hoooo')}/>
+              leftElement: <Icon name="line-notification" onClick={() => alert('hoooo')} />
             }
           }
           logOut={<HeaderItem icon="line-logout" bold> label </HeaderItem>}
@@ -600,6 +584,7 @@ const App = () => {
         onChange={({ target: { value } }) => setInputText(value)}
       />
     </div>
+
 
 
     <div className="container my-4">
@@ -718,10 +703,10 @@ const App = () => {
       <h1 className="mb-4">input chip</h1>
 
       <div className="d-flex">
-        <InputChip value="action" onClose={() => alert('clicked')}/>
-        <InputChip value="action" onClose={() => alert('clicked')} disabled/>
-        <InputChip value="action" variant onClose={() => alert('clicked')}/>
-        <InputChip value="action" variant onClose={() => alert('clicked')} disabled/>
+        <InputChip value="action" onClose={() => alert('clicked')} />
+        <InputChip value="action" onClose={() => alert('clicked')} disabled />
+        <InputChip value="action" variant onClose={() => alert('clicked')} />
+        <InputChip value="action" variant onClose={() => alert('clicked')} disabled />
       </div>
     </div>
 
@@ -758,56 +743,54 @@ const App = () => {
       <h1 className="mb-4">input Security</h1>
 
       <div className="d-flex flex-column">
-        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)}
-                       value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)}/>
-        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)}
-                       value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled/>
+        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} />
+        <InputSecurity security={showSecurity} onSecurityClick={() => setInputShowSecurity(!showSecurity)} value={inputSecurity} onChange={({ target: { value } }) => setInputSecurity(value)} disabled />
       </div>
     </div>
 
     <div className="container my-4">
       <h1 className="mb-4">input coordinate</h1>
       <div className="d-flex">
-        <div className="col-lg-4 col-md-9 col-sm-4">
-          <InputCoordinate
-            assistText={[
-              {
-                type: 'assist', text: 'Texto de asistencia'
-              },
-              {
-                type: 'success', text: 'Texto éxito'
-              },
-              {
-                type: 'error', text: 'Texto error'
-              }
-            ]}
-          >
-            <Input
-              placeholder={'**'}
-              maxLength={'2'}
-              type={'password'}
-              label={'A1'}
-              value={inputCoordinate}
-              onChange={({ target: { value } }) => setInputCoordinate(value)}
-            />
-            <Input
-              placeholder={'**'}
-              maxLength={'2'}
-              type={'password'}
-              label={'B2'}
-              value={inputCoordinate}
-              onChange={({ target: { value } }) => setInputCoordinate(value)}
-            />
-            <Input
-              placeholder={'**'}
-              maxLength={'2'}
-              type={'password'}
-              label={'C3'}
-              value={inputCoordinate}
-              onChange={({ target: { value } }) => setInputCoordinate(value)}
-            />
-          </InputCoordinate>
-        </div>
+          <div className="col-lg-4 col-md-9 col-sm-4">
+            <InputCoordinate
+              assistText={[
+                  {
+                    type: 'assist', text: 'Texto de asistencia'
+                  },
+                  {
+                    type: 'success', text: 'Texto éxito'
+                  },
+                  {
+                    type: 'error', text: 'Texto error'
+                  }
+              ]}
+            >
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'}
+                label={'A1'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'}
+                label={'B2'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+              <Input
+                placeholder={'**'}
+                maxLength={'2'}
+                type={'password'}
+                label={'C3'}
+                value={inputCoordinate}
+                onChange={({target: {value}}) => setInputCoordinate(value)}
+              />
+            </InputCoordinate>
+          </div>
       </div>
     </div>
 
@@ -815,8 +798,8 @@ const App = () => {
       <h1 className="mb-4">input counter</h1>
 
       <div className="d-flex">
-        <InputCounter value={inputCounter} onChange={(_val) => setInputCounter(_val)}/>
-        <InputCounter value={inputCounter} onChange={(_val) => setInputCounter(_val)} disabled/>
+        <InputCounter value={inputCounter} onChange={(_val) => setInputCounter(_val)} />
+        <InputCounter value={inputCounter} onChange={(_val) => setInputCounter(_val)} disabled />
       </div>
     </div>
 
@@ -831,7 +814,7 @@ const App = () => {
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
-          onChange={({ target: { value } }) => setInputText(value)}/>
+          onChange={({ target: { value } }) => setInputText(value)} />
 
         <InputSearch
           maxLength="105"
@@ -840,7 +823,7 @@ const App = () => {
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
-          onChange={({ target: { value } }) => setInputText(value)} disabled/>
+          onChange={({ target: { value } }) => setInputText(value)} disabled />
       </div>
     </div>
 
@@ -849,7 +832,7 @@ const App = () => {
         <div className="col-lg-3 col-md-4">
           <Sidebar items={[
             {
-              icon: <Icon name="flag" size="1"/>,
+              icon: <Icon name="flag" size="1" />,
               text: 'label first level A',
               notification: true,
               open: true,
@@ -861,9 +844,9 @@ const App = () => {
                     {
                       active: true,
                       text: 'label third level',
-                      sublevel: []
+                      sublevel: [],
                     }
-                  ]
+                  ],
                 },
                 {
                   text: 'label second level 2',
@@ -874,9 +857,9 @@ const App = () => {
             },
             {
               text: 'label first level B',
-              children: []
+              children: [],
             }
-          ]}/>
+          ]} />
         </div>
       </div>
     </div>
@@ -885,9 +868,9 @@ const App = () => {
       <h1 className="mb-4">Switch</h1>
 
       <div className="d-flex">
-        <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)}/>
-        <Switch status={true} disabled onClick={() => setSwitchStatus(!switchStatus)}/>
-        <Switch status={false} disabled onClick={() => setSwitchStatus(!switchStatus)}/>
+        <Switch status={switchStatus} onClick={() => setSwitchStatus(!switchStatus)} />
+        <Switch status={true} disabled onClick={() => setSwitchStatus(!switchStatus)} />
+        <Switch status={false} disabled onClick={() => setSwitchStatus(!switchStatus)} />
       </div>
     </div>
 
@@ -922,7 +905,7 @@ const App = () => {
                 name: 'hola soy una ruta 6',
                 route: 'https://www.google.com'
               }
-            ]}/>
+            ]} />
           }
         </div>
       </div>
@@ -932,14 +915,14 @@ const App = () => {
       <h1 className="mb-4">Loading</h1>
 
       <div className="d-flex">
-        <Loading/>
+        <Loading />
       </div>
     </div>
 
     <div className="container">
       <div className="row">
         <div className="col-lg-6 col-md-12 col-sm-12">
-          <TitleSection label="Title Section" prefix="write"/>
+          <TitleSection label="Title Section" prefix="write" />
         </div>
       </div>
     </div>
@@ -949,33 +932,33 @@ const App = () => {
 
       <div className="d-flex">
         <div className="container">
-          <ProgressBar assistText="un texto de asistencia" progress={25}/>
-          <ProgressBar assistText="un texto de asistencia" progress={25} percent/>
-          <ProgressBar progress={50} percent helperAlign="end"/>
-          <ProgressBar assistText="un texto de asistencia" helperAlign="start" progress={75}/>
+          <ProgressBar assistText="un texto de asistencia" progress={25} />
+          <ProgressBar assistText="un texto de asistencia" progress={25} percent />
+          <ProgressBar progress={50} percent helperAlign="end" />
+          <ProgressBar assistText="un texto de asistencia" helperAlign="start" progress={75} />
         </div>
         <div className="container">
           <ProgressBar assistText="un texto de asistencia" label={
             [
               {
-                label: 'label',
-                text: '$2.000.000'
+                label: "label",
+                text: "$2.000.000"
               },
               {
-                label: 'label',
-                text: '$10.000.000'
+                label: "label",
+                text: "$10.000.000"
               }
             ]
-          } progress={75}/>
+          } progress={75} />
           <ProgressBar assistText="un texto de asistencia" label={
             [
               {
-                label: 'label',
-                text: '$2.000.000'
+                label: "label",
+                text: "$2.000.000"
               }
             ]
-          } progress={75}/>
-          <ProgressBar assistText="un texto de asistencia" percent progress={100}/>
+          } progress={75} />
+          <ProgressBar assistText="un texto de asistencia" percent progress={100} />
         </div>
       </div>
     </div>
@@ -986,13 +969,12 @@ const App = () => {
 
       <div className="d-flex flex-column">
         <Message type="success" title="this is a success message"
-                 description="mmm el bootstrap base que integraron me imagino que era el 4, si es así corroborar si seguiremos teniendo acceso a las clases de bootstrap, por el tema de los display que facilitan harto, si no, crear esas clases para que todos tengamos una forma de tratar a los componentes de manera similar.
+          description="mmm el bootstrap base que integraron me imagino que era el 4, si es así corroborar si seguiremos teniendo acceso a las clases de bootstrap, por el tema de los display que facilitan harto, si no, crear esas clases para que todos tengamos una forma de tratar a los componentes de manera similar.
           Lo otro es como consejo, que se contemple bien la grilla para el diseño de las vistas, para que cuadren los elementos, el resto creo que no. Esos elementos van para la construcción del nuevo sitio asumo. Yo no he mirado como se pueden integrar React en AngularJS"
-                 action={<Button variant="text" suffix="arrow-right" onClick={() => alert('cerrar')}> ir a
-                   action </Button>}/>
-        <Message type="error" title="this is an error message" description="bajada" closer={() => alert('cerrar')}/>
-        <Message type="warning" title="this is a warning message"/>
-        <Message type="info" title="this is an info message" action={<Button variant="text"> ir a action </Button>}/>
+          action={<Button variant="text" suffix="arrow-right" onClick={() => alert('cerrar')} > ir a action </Button>} />
+        <Message type="error" title="this is an error message" description="bajada" closer={() => alert('cerrar')} />
+        <Message type="warning" title="this is a warning message" />
+        <Message type="info" title="this is an info message" action={<Button variant="text" > ir a action </Button>} />
       </div>
     </div>
 
@@ -1066,7 +1048,7 @@ const App = () => {
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
             placement="right">
-            <TitleSection label="Title Section" prefix="write"/>
+            <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
         <div className="col-lg-6 col-md-12 col-sm-12">
@@ -1074,14 +1056,14 @@ const App = () => {
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             eventListener="mouseClick"
             placement="left">
-            <TitleSection label="Title Section" prefix="write"/>
+            <TitleSection label="Title Section" prefix="write" />
           </Tooltip>
         </div>
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container my-4">
       <h1 className="mb-4">Unorder Bullets</h1>
@@ -1094,8 +1076,8 @@ const App = () => {
           },
           {
             text: 'Order Bullet text a',
-            type: 'success'
-          }
+            type: 'success',
+          },
         ]}>
         </Bullets>
 
@@ -1113,8 +1095,8 @@ const App = () => {
           },
           {
             text: 'Order Bullet text b',
-            type: 'success'
-          }
+            type: 'success',
+          },
         ]}>
         </Bullets>
 
@@ -1136,7 +1118,7 @@ const App = () => {
             text: 'Order Bullet text a',
             type: 'info',
             icon: 'home'
-          }
+          },
         ]}>
         </Bullets>
 
@@ -1158,7 +1140,7 @@ const App = () => {
               text: 'Order Bullet text a',
               type: 'info',
               icon: 'home'
-            }
+            },
           ]}>
           </Bullets>
         </div>
@@ -1175,7 +1157,7 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
+    <br />
 
     <div className="container">
       <h1 className="mb-4"> Content Action</h1>
@@ -1188,7 +1170,7 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
+    <br />
 
     <div className="container">
       <h1 className="mb-4">kebab menu</h1>
@@ -1206,25 +1188,25 @@ const App = () => {
                 text: 'Label Button 2',
                 action: () => alert('hola mundo 2')
               }
-            ]}/>
+            ]} />
           </Card>
         </div>
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
     <div className="container">
       <h1 className="mb-4">Badge Notification</h1>
       <div className="row">
         <div className="col">
-          <NotificationBadge content={999}/>
+          <NotificationBadge content={999} />
         </div>
       </div>
     </div>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
 
     <div className="container">
       <h1 className="mb-4">Voucher</h1>
@@ -1232,7 +1214,7 @@ const App = () => {
         <div className="col-lg-12 col-md-12 col-sm-12 d-flex align-items-start">
           <Voucher stampdirection="bottom">
             <VoucherTitle
-              title={'Type some text'}
+              title={"Type some text"}
               items={[
                 [
                   {
@@ -1247,7 +1229,7 @@ const App = () => {
                     action: () => console.log('descargar')
                   }
 
-                ]
+                ],
               ]}
 
             />
@@ -1276,8 +1258,8 @@ const App = () => {
                   currency: true,
                   flex: 1
                 }
-              ]
-            ]}/>
+              ],
+            ]} />
             <VoucherData items={[
               {
                 title: 'Label titulo de sección',
@@ -1295,8 +1277,8 @@ const App = () => {
                     content: 'Label Contenido'
                   }
                 ]
-              }
-            ]}/>
+              },
+            ]} />
             <VoucherColumnData items={[
               {
                 title: 'Label title',
@@ -1341,16 +1323,16 @@ const App = () => {
                   text: 'Tipografía / Estilos',
                   prefixType: 'info',
                   type: 'success'
-                }
+                },
               ]
-            }}/>
+            }} />
           </Voucher>
         </div>
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container">
       <h1 className="mb-4">Action Card col-lg-5</h1>
@@ -1358,30 +1340,30 @@ const App = () => {
         <div className="col-lg-5 col-md-12 col-sm-6">
           <Card>
             <CardHeader>
-              <CardImage imgUrl='/assets/images/photo_hight_resolution.jpg'/>
+              <CardImage imgUrl='/assets/images/photo_hight_resolution.jpg' />
             </CardHeader>
             <CardContent>
               <h6>Type someting</h6>
-              <br/>
+              <br />
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.</p>
             </CardContent>
             <CardActions>
               <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-                      color='primary'>Button</Button>
+                color='primary'>Button</Button>
             </CardActions>
           </Card>
         </div>
 
-        <br/>
-        <br/>
+        <br />
+        <br />
 
         <div className="col-lg-5 col-md-12 col-sm-6">
           <Card>
             <CardHeader>
-              <CardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'}/>
+              <CardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
             </CardHeader>
             <CardContent title={'Type something'}
-                         content={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.'}>
+              content={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid cumque e.'}>
             </CardContent>
             <CardActions buttons={[
               {
@@ -1406,8 +1388,8 @@ const App = () => {
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container">
       <h1 className="mb-4">Action Card col-lg-6</h1>
@@ -1415,7 +1397,7 @@ const App = () => {
         <div className="col-lg-6 col-md-12 col-sm-6">
           <Card>
             <CardHeader>
-              <CardImage imgUrl='/assets/images/photo_hight_resolution.jpg'/>
+              <CardImage imgUrl='/assets/images/photo_hight_resolution.jpg' />
             </CardHeader>
             <CardContent title={'type something'} typeList={'unorder'} bullets={[
               {
@@ -1435,20 +1417,20 @@ const App = () => {
             </CardContent>
             <CardActions>
               <Button style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-                      color='primary'>Button</Button>
+                color='primary'>Button</Button>
             </CardActions>
           </Card>
         </div>
 
-        <br/>
-        <br/>
+        <br />
+        <br />
 
 
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
 
     <div className="container">
       <h1 className="mb-4">Column Card col-lg-6</h1>
@@ -1456,7 +1438,7 @@ const App = () => {
         <div className="col-lg-8 col-md-12 col-sm-6">
           <ColumnCard>
             <ColumnCardContent title='Type something'
-                               content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.'>
+              content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.'>
               <ColumnCardContentActions buttons={[
                 {
                   color: 'primary',
@@ -1475,11 +1457,90 @@ const App = () => {
               ]
               }></ColumnCardContentActions>
             </ColumnCardContent>
-            <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'}/>
+            <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
           </ColumnCard>
         </div>
-        <br/>
-        <br/>
+        <br />
+        <br />
+      </div>
+    </div>
+
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Desktop black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <DBlackCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}
+          >
+          </DBlackCard>
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+
+
+    <br />
+    <br />
+    <div className="container">
+      <h1 className="mb-4">Desktop red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <DRedCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}
+          >
+          </DRedCard>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Mobile red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <MRedCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </MRedCard>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Mobile black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <MBlackCard
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </MBlackCard>
+        </div>
       </div>
     </div>
 
@@ -1531,6 +1592,44 @@ const App = () => {
     </div>
 
 
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Plastic black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <PlasticCard
+            type={'debit'}
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </PlasticCard>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div className="container">
+      <h1 className="mb-4">Plastic red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <PlasticCard
+            type={'credit'}
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </PlasticCard>
+        </div>
+      </div>
+    </div>
+
     <br/>
     <br/>
 
@@ -1545,8 +1644,6 @@ const App = () => {
 
     <br/>
     <br/>
-
-
 
 
   </>
