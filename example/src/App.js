@@ -56,7 +56,12 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
-  NotificationBadge
+  NotificationBadge,
+  DRedCard,
+  DBlackCard,
+  MRedCard,
+  MBlackCard,
+  PlasticCard
 } from 'design-system-coopeuch';
 import 'design-system-coopeuch/dist/index.css';
 import 'design-system-coopeuch/dist/css/custom.css';
@@ -1435,6 +1440,8 @@ const App = () => {
             <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
           </CardBank>
         </div>
+        <br />
+        <br />
       </div>
     </div>
 
@@ -1547,8 +1554,6 @@ const App = () => {
             <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
           </ColumnCard>
         </div>
-        <br />
-        <br />
       </div>
     </div>
 
@@ -1602,8 +1607,44 @@ const App = () => {
 
     <br />
     <br />
+
+    <div className="container">
+      <h1 className="mb-4">Plastic black card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <PlasticCard
+            type={'debit'}
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </PlasticCard>
+        </div>
+      </div>
+    </div>
+
     <br />
     <br />
+
+    <div className="container">
+      <h1 className="mb-4">Plastic red card</h1>
+      <div className="row">
+        <div className="col-lg-3 col-md-12 col-sm-6">
+          <PlasticCard
+            type={'credit'}
+            cardNumber={'N° *** *** 6520'}
+            cardTitle={'MasterCard Debit'}
+            cardType={'Titular'}
+            owner={'Ricardo Olivares'}
+            state={'Activa'}>
+          </PlasticCard>
+        </div>
+      </div>
+    </div>
+
+
+
 
   </>
 }
