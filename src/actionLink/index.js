@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './_actionLink.scss'
 import PropTypes from 'prop-types'
-import Icon from '../../icons'
+import Icon from '../icons'
+import IconListModel from '../icons/models/icon-list.model'
 
-const ActionLink = ({ items,icon,label, prefix, ...props }) => {
+const ActionLink = ({ icon,label,onClick, ...props }) => {
 
   return (
     <div {...props} className={styles.actionLink}>
@@ -16,6 +17,17 @@ const ActionLink = ({ items,icon,label, prefix, ...props }) => {
 
     </div>
   )
+}
+
+ActionLink.defaultProps = {
+  icon: 'line-unlock',
+  label: '',
+}
+
+ActionLink.propTypes = {
+  label: PropTypes.string,
+  icon:  PropTypes.oneOf(IconListModel.iconList).isRequired,
+  onClick: PropTypes.func,
 }
 
 export default ActionLink
