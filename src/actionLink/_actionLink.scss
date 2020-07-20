@@ -1,0 +1,36 @@
+@import "node_modules/bootstrap/scss/functions";
+@import '../scss/variables';
+@import '../scss/mixins/elevation';
+
+.actionLink {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: nth(nth($spacers, 6), 2);
+  padding-bottom: nth(nth($spacers, 7), 2);
+  cursor: pointer;
+
+  .label{
+    font-weight: 500;
+  }
+
+
+  .iconContainer {
+
+    display: flex;
+    padding-bottom: nth(nth($spacers, 3), 2);
+
+    .iconSize {
+      height: 48px;
+      width: 48px;
+    }
+
+  }
+
+
+}
+
+
+

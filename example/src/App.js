@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 
 import {
   Button,
+  ActionLink,
   BreadCrumb,
   Card,
   CardBank,
+  CardBenefits,
   CardSwitch,
   CardCheckbox,
-  CardDropdown,
-  CardBenefits,
   CardActions,
   CardContent,
+  CardDropdown,
   CardHeader,
   CardImage,
   CardSearch,
@@ -26,8 +27,8 @@ import {
   Input,
   InputSearch,
   Logo,
-  InputPhone,
   InputCounter,
+  InputPhone,
   InputRange,
   InputSecurity,
   InputSelect,
@@ -1465,12 +1466,32 @@ const App = () => {
     <br />
 
     <div className="container">
-      <h1 className="mb-4">Bank Card Default col-lg-6</h1>
+      <h1 className="mb-4">Column Card col-lg-6</h1>
       <div className="row">
-        <div className="col-lg-6 col-md-12 col-sm-6">
-          <CardBank title='Normal' >
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa fuga illo laborum minima modi nesciunt obcaecati officia officiis quo sed sint sit soluta suscipit tempora, totam, vero voluptate voluptates, voluptatum.</span><span>A accusantium consequatur dignissimos dolor earum eius, ex facere fugit illum laudantium, magni non praesentium qui quos, repudiandae rerum similique tenetur? Accusantium aut dignissimos iste quo ut voluptate. Excepturi, nemo?</span></p>
-          </CardBank>
+        <div className="col-lg-8 col-md-12 col-sm-6">
+          <ColumnCard>
+            <ColumnCardContent title='Type something'
+              content='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illum ipsum, nulla odit repellendus saepe sed vitae. Ad doloremque dolores enim, error esse id illo, magni praesentium suscipit tenetur ullam.'>
+              <ColumnCardContentActions buttons={[
+                {
+                  color: 'primary',
+                  label: 'Button',
+                  onClick: () => {
+                    console.log('test')
+                  }
+                },
+                {
+                  color: 'primary',
+                  label: 'Button',
+                  onClick: () => {
+                    console.log('test')
+                  }
+                }
+              ]
+              }></ColumnCardContentActions>
+            </ColumnCardContent>
+            <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
+          </ColumnCard>
         </div>
         <br />
         <br />
@@ -1596,11 +1617,11 @@ const App = () => {
       <div className="row">
         <div className="col">
           <ModalInfo
-            image={<img src="assets/images/ilustracion.svg" alt="img" />}
+            image={<img src="assets/images/ilustracion.svg" alt="img"/>}
             title="Titulo de mensaje"
             buttons={[
-              <Button variant="outline" color="primary" > label button </Button>,
-              <Button color="primary" > label button </Button>
+              <Button variant="outline" color="primary"> label button </Button>,
+              <Button color="primary"> label button </Button>
             ]}
           />
         </div>
@@ -1658,6 +1679,9 @@ const App = () => {
       </div>
     </div>
 
+    <br />
+    <br />
+
     <div className="container">
       <h1 className="mb-4">Plastic red card</h1>
       <div className="row">
@@ -1674,7 +1698,20 @@ const App = () => {
       </div>
     </div>
 
+    <br/>
+    <br/>
 
+    <Grid row>
+      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
+      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
+      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+    </Grid>
+
+    <br/>
+    <br/>
     <div className="container">
       <h1 className="mb-4">Card Branch Office</h1>
       <div className="row">
