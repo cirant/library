@@ -6,7 +6,6 @@ import {
   BreadCrumb,
   Card,
   CardBank,
-  CardBenefits,
   CardSwitch,
   CardCheckbox,
   CardActions,
@@ -27,7 +26,6 @@ import {
   Input,
   InputSearch,
   Logo,
-  InputCounter,
   InputPhone,
   InputRange,
   InputSecurity,
@@ -1713,8 +1711,10 @@ const App = () => {
       <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
       <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-cloud' label='Cloud'/> </Grid>
     </Grid>
+
     <br/>
     <br/>
+
     <div className="container">
       <h1 className="mb-4">Card Branch Office</h1>
       <div className="row">
