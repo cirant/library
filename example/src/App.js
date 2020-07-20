@@ -56,6 +56,7 @@ import {
   KebabMenu,
   VoucherColumnData,
   VoucherFooter,
+  TagLink,
   NotificationBadge,
   PlasticCard,
   CardBranchOffice
@@ -811,7 +812,41 @@ const App = () => {
           value={inputText}
           prefix={inputPrefix}
           suffix={inputSuffix}
-          onChange={({ target: { value } }) => setInputText(value)} />
+          onChange={({ target: { value } }) => setInputText(value)}
+          tagLinks={
+            [
+              {
+                label:'Element 01',
+                onClick:()=> console.log('Element 01')
+              },
+              {
+                label:'Element 02',
+                onClick:()=> console.log('Element 02')
+              },
+              {
+                label:'Element 03',
+                onClick:()=> console.log('Element 03')
+              },
+              {
+                label:'Element 04',
+                onClick:()=> console.log('Element 04')
+              },
+              {
+                label:'Element 05',
+                onClick:()=> console.log('Element 05')
+              },
+              {
+                label:'Element 06',
+                onClick:()=> console.log('Element 06')
+              },
+              {
+                label:'Element 07',
+                onClick:()=> console.log('Element 07')
+              },
+
+            ]
+          }
+        />
 
         <InputSearch
           maxLength="105"
@@ -1663,6 +1698,18 @@ const App = () => {
     </div>
 
 
+
+    <div className="container my-4">
+      <h1 className="mb-4">Tag Link</h1>
+      <div className="d-flex">
+        <TagLink
+          label='Label link text'
+          onClick={()=> console.log('asdas')}
+        >
+
+        </TagLink>
+      </div>
+    </div>
     <br />
     <br />
 

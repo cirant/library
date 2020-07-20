@@ -30,6 +30,25 @@
 .inputConteiner{
   width: 100%;
 
+
+  .tagLinkContainer > * {
+    margin-top: nth(nth($spacers, 5), 2);
+    margin-right: nth(nth($spacers, 5), 2)
+  }
+  .tagLinkContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+
+    .tagLinkItem{
+
+    }
+    .tagLinkItem:last-child{
+      margin-right: 0
+    }
+  }
+
   &.disabled{
     .inputRow{
       pointer-events: none;

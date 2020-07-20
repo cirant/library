@@ -58,6 +58,7 @@ import ColumnCardContent from './columnCard/columnCardContent'
 import ColumnCardImage from './columnCard/columnCardImage'
 import ColumnCardContentActions from './columnCard/columnCardContent/columnCardContentAction'
 import CardBenefits from './card/cardBenefits'
+import TagLink from './tagLink'
 import CardBranchOffice from './card/cardBranchOffice'
 import DBlackCard from './plasticCards/svgs/desktop/black'
 import DRedCard from './plasticCards/svgs/desktop/red'
@@ -132,5 +133,6 @@ export {
   MRedCard,
   MBlackCard,
   PlasticCard,
-  CardBranchOffice
+  CardBranchOffice,
+  TagLink
 }
