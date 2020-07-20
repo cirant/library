@@ -5,7 +5,7 @@ import Icon from '../../icons'
 import styles from './_search.scss'
 import TagLink from '../../tagLink'
 
-const InputSearch = ({ label, filterAction,tagLinks, clearAction, ...props }) => {
+const InputSearch = ({ label, filterAction, tagLinks, clearAction, ...props }) => {
   let inputContainerClases = [styles.inputConteiner]
 
   if (props.disabled) {
@@ -42,9 +42,9 @@ const InputSearch = ({ label, filterAction,tagLinks, clearAction, ...props }) =>
           (
             <div className={styles.tagLinkContainer}>
               {
-                tagLinks.map((item,i)=>{
+                tagLinks.map((item, index) => {
                   return (
-                    <div className={styles.tagLinkItem}>
+                    <div key={`tagLinks-item-${index}`} className={styles.tagLinkItem}>
                       <TagLink
                         label={item.label}
                         onClick={item.onClick}
@@ -71,7 +71,13 @@ InputSearch.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   filterAction: PropTypes.func,
-  clearAction: PropTypes.func
+  clearAction: PropTypes.func,
+  tagLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      onClick: PropTypes.func
+    })
+  )
 }
 
 export default InputSearch
