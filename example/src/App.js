@@ -57,11 +57,8 @@ import {
   VoucherColumnData,
   VoucherFooter,
   NotificationBadge,
-  DRedCard,
-  DBlackCard,
-  MRedCard,
-  MBlackCard,
-  PlasticCard
+  PlasticCard,
+  CardBranchOffice
 } from 'design-system-coopeuch';
 import 'design-system-coopeuch/dist/index.css';
 import 'design-system-coopeuch/dist/css/custom.css';
@@ -1554,6 +1551,8 @@ const App = () => {
             <ColumnCardImage imgUrl={'/assets/images/photo_hight_resolution.jpg'} />
           </ColumnCard>
         </div>
+        <br />
+        <br />
       </div>
     </div>
 
@@ -1624,9 +1623,6 @@ const App = () => {
       </div>
     </div>
 
-    <br />
-    <br />
-
     <div className="container">
       <h1 className="mb-4">Plastic red card</h1>
       <div className="row">
@@ -1642,6 +1638,35 @@ const App = () => {
         </div>
       </div>
     </div>
+
+
+    <div className="container">
+      <h1 className="mb-4">Card Branch Office</h1>
+      <div className="row">
+        <div className="col-lg-4 col-md-12 col-sm-6">
+          <CardBranchOffice
+            name='Name of branch office'
+            address='Address branch office'
+            attentionSchedule={[
+              {
+                schedule: 'Lunes a Domigo: 09:00 Hrs a 16:00 Hrs'
+              },
+              {
+                schedule: 'Sabado a Domigo: 09:00 Hrs a 12:00 Hrs'
+              }
+            ]}
+          />
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+
+
+    <br />
+    <br />
+
+
 
 
 
