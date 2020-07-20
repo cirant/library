@@ -1701,15 +1701,18 @@ const App = () => {
     <br/>
     <br/>
 
+    <div className="container">
+      <h1>Action Link Grid</h1>
+    </div>
     <Grid row>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
-      <Grid col={6} sm={6} md={4} lg={6} xl={6}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+      <Grid col={12} sm={12} md={12} lg={12} xl={12}>  </Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/></Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
+      <Grid col={6} sm={6} md={4} lg={4} xl={4}> <ActionLink icon='line-unlock' label='Lock'/> </Grid>
     </Grid>
-
     <br/>
     <br/>
     <div className="container">
